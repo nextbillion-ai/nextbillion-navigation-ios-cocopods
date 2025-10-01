@@ -1,0 +1,35 @@
+{
+  "id": 1,
+  "sdkVersion": "0.3.0",
+  "paddingSdkVersion": null,
+  "appVersion": null,
+  "platform": [
+    1,
+    2
+  ],
+  "value": {
+    "baseUrl": "https://api.nextbillion.io",
+    "interval": {
+      "unit": "hour",
+      "queryInterval": 12
+    },
+    "mapStyles": [
+      {
+        "styleId": 0,
+        "styleDark": "%s/tt/style/1/style/22.2.1-9?map=2/basic_street-dark",
+        "styleBright": "%s/tt/style/1/style/22.2.1-9?map=2/basic_street-light",
+        "styleSatellite": "%s/tt/style/1/style/22.2.1-9?map=2/basic_street-satellite"
+      },
+      {
+        "styleId": 1,
+        "styleDark": "%s/maps/dark/style.json",
+        "styleBright": "%s/maps/streets/style.json",
+        "styleSatellite": "%s/maps/hybrid/style.json"
+      }
+    ],
+    "defaultStyleId": 0
+  },
+  "orgId": 1,
+  "createdAt": 1670569207703,
+  "updatedAt": 1677572974405
+}
