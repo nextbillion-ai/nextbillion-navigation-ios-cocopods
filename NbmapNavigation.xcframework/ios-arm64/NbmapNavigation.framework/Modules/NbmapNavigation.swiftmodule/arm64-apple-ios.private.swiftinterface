@@ -503,6 +503,7 @@ open class NavigationOptions {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func anchorPoint(forGesture gesture: UIKit.UIGestureRecognizer) -> CoreFoundation.CGPoint
   @objc @_Concurrency.MainActor @preconcurrency public func enableFrameByFrameCourseViewTracking(for duration: Foundation.TimeInterval)
   @objc @_Concurrency.MainActor @preconcurrency public func updateCourseTracking(location: CoreLocation.CLLocation?, camera: Nbmap.NGLMapCamera? = nil, animated: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func updateWayName(location: CoreLocation.CLLocation?)
   @_Concurrency.MainActor @preconcurrency public static let defaultPadding: UIKit.UIEdgeInsets
   @objc @_Concurrency.MainActor @preconcurrency public func showcase(_ routes: [NbmapCoreNavigation.Route], padding: UIKit.UIEdgeInsets = NavigationMapView.defaultPadding, animated: Swift.Bool = false)
   @objc @_Concurrency.MainActor @preconcurrency public func showRoutes(_ routes: [NbmapCoreNavigation.Route], legIndex: Swift.Int = 0)
