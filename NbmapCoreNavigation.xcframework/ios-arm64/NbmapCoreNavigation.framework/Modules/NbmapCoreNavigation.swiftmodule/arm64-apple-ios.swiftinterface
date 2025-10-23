@@ -256,6 +256,7 @@ public struct BatchSpanProcessor : NbmapCoreNavigation.SpanProcessor {
   public func forceFlush(timeout: Foundation.TimeInterval? = nil)
 }
 @_inheritsConvenienceInitializers @objc(NBRouteOptionss) open class RouteOptions : NbmapCoreNavigation.DirectionsOptions {
+  public var currentRequestID: Swift.String?
   @objc convenience public init(origin: CoreLocation.CLLocation, destination: CoreLocation.CLLocation, with locations: [CoreLocation.CLLocation]? = nil, mode: NbmapCoreNavigation.NBNavigationMode? = nil)
   @objc convenience public init(from origin: CoreLocation.CLLocationCoordinate2D, to destination: CoreLocation.CLLocationCoordinate2D, with coordinates: [CoreLocation.CLLocationCoordinate2D]? = nil, mode: NbmapCoreNavigation.NBNavigationMode? = nil)
   @objc convenience public init(origin: NbmapCoreNavigation.Waypoint, destination: NbmapCoreNavigation.Waypoint, waypoints: [NbmapCoreNavigation.Waypoint]? = nil, mode: NbmapCoreNavigation.NBNavigationMode? = nil)
@@ -4290,7 +4291,7 @@ extension NbmapCoreNavigation.Google_Protobuf_GeneratedCodeInfo.Annotation.Seman
   public static let _protobuf_nameMap: NbmapCoreNavigation._NameMap
 }
 @_inheritsConvenienceInitializers @objc(NBNavRoute) open class Route : NbmapCoreNavigation.DirectionsResult {
-  @objc(initWithJson:legs:distance:expectedTravelTime:coordinates:speechLocale:options:) public init(json: [Swift.String : Any], legs: [NbmapCoreNavigation.RouteLeg], distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, coordinates: [CoreLocation.CLLocationCoordinate2D]?, speechLocale: Foundation.Locale?, options: NbmapCoreNavigation.DirectionsOptions)
+  @objc(initWithJson:legs:distance:expectedTravelTime:coordinates:speechLocale:geometry:options:) public init(json: [Swift.String : Any], legs: [NbmapCoreNavigation.RouteLeg], distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, coordinates: [CoreLocation.CLLocationCoordinate2D]?, speechLocale: Foundation.Locale?, geometry: Any? = nil, options: NbmapCoreNavigation.DirectionsOptions)
   @objc(initWithJSON:waypoints:routeOptions:) public init(json: [Swift.String : Any], waypoints: [NbmapCoreNavigation.Waypoint], options: NbmapCoreNavigation.DirectionsOptions)
   public var routeOptions: NbmapCoreNavigation.RouteOptions {
     get
@@ -4344,6 +4345,9 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
   }
   public var index: Swift.Int
   weak public var delegate: (any NbmapCoreNavigation.RouterDelegate)?
+  public var lastRerouteReason: Swift.String {
+    get
+  }
   public var routeProgress: NbmapCoreNavigation.RouteProgress {
     get
   }
@@ -4355,7 +4359,7 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
   public var resolvedRoutingProvider: any NbmapCoreNavigation.RoutingProvider {
     get
   }
-  required public init(from routes: [NbmapCoreNavigation.Route], alongIndex index: Swift.Int, customRoutingProvider: (any NbmapCoreNavigation.RoutingProvider)? = nil, navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig? = nil, offRouteDetector: (any NbmapCoreNavigation.OffRouteDetector)? = nil, speedCalibrator: (any NbmapCoreNavigation.SpeedCalibrator)? = nil, deadReckoning: NbmapCoreNavigation.DeadReckoning? = nil)
+  required public init(from routes: [NbmapCoreNavigation.Route], alongIndex index: Swift.Int, customRoutingProvider: (any NbmapCoreNavigation.RoutingProvider)? = nil, navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig? = nil, speedCalibrator: (any NbmapCoreNavigation.SpeedCalibrator)? = nil, deadReckoning: NbmapCoreNavigation.DeadReckoning? = nil)
   public func finishRouting()
   @objc deinit
   public var location: CoreLocation.CLLocation? {
@@ -4675,6 +4679,9 @@ public protocol TextMapBaggagePropagator {
   func inject<S>(baggage: any NbmapCoreNavigation.Baggage, carrier: inout [Swift.String : Swift.String], setter: S) where S : NbmapCoreNavigation.Setter
   @discardableResult
   func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> (any NbmapCoreNavigation.Baggage)? where G : NbmapCoreNavigation.Getter
+}
+public struct PolylineMatcher {
+  public func features(pose: NbmapCoreNavigation.Pose, route: NbmapCoreNavigation.RouteCtx, candidates: [[CoreLocation.CLLocationCoordinate2D]]?, activeIdx: inout Swift.Int) -> NbmapCoreNavigation.Features
 }
 @_hasMissingDesignatedInitializers open class RecordDataConfig {
   public static func isEnableRecord() -> Swift.Bool
@@ -5082,7 +5089,7 @@ extension NbmapCoreNavigation.NBNavigationService : NbmapCoreNavigation.RouterDe
   public func routeController(_: NbmapCoreNavigation.RouteController, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
   public func routeController(_: NbmapCoreNavigation.RouteController, didPassSpokenInstructionPoint instruction: NbmapCoreNavigation.SpokenInstruction, routeProgress: NbmapCoreNavigation.RouteProgress)
   @objc dynamic public func routeController(_: NbmapCoreNavigation.RouteController, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
-  @objc dynamic public func routeController(_: NbmapCoreNavigation.RouteController, willRerouteFrom location: CoreLocation.CLLocation)
+  @objc dynamic public func routeController(_ routeController: NbmapCoreNavigation.RouteController, willRerouteFrom location: CoreLocation.CLLocation)
   @objc dynamic public func routeController(_: NbmapCoreNavigation.RouteController, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
   @objc dynamic public func routeController(_: NbmapCoreNavigation.RouteController, didFailToRerouteWith error: any Swift.Error)
   @objc dynamic public func routeController(_: NbmapCoreNavigation.RouteController, shouldDiscard location: CoreLocation.CLLocation) -> Swift.Bool
@@ -5417,6 +5424,14 @@ public struct NoopRawHistogramMetric<T> : NbmapCoreNavigation.RawHistogramMetric
   public static let instance: any NbmapCoreNavigation.LoggerProvider
   public func get(instrumentationScopeName: Swift.String) -> any NbmapCoreNavigation.Logger
   public func loggerBuilder(instrumentationScopeName _: Swift.String) -> any NbmapCoreNavigation.LoggerBuilder
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(NBNetworkSessionManager) final public class NetworkSessionManager : ObjectiveC.NSObject {
+  @objc public static let shared: NbmapCoreNavigation.NetworkSessionManager
+  @objc final public func resetSession()
+  @objc final public func getSession() -> Foundation.URLSession
+  @objc final public func handleNetworkError(_ error: any Swift.Error)
+  @objc public static func isRetryableError(_ error: any Swift.Error) -> Swift.Bool
   @objc deinit
 }
 @objc open class SimulatedLocationManager : NbmapCoreNavigation.NavigationLocationManager {
@@ -6035,6 +6050,7 @@ public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swif
   @objc open var apiEndpoint: Foundation.URL?
   @objc open var routeIdentifier: Swift.String?
   @objc open var speechLocale: Foundation.Locale?
+  @objc open var geometry: Any?
   @objc open var json: Swift.String?
   @objc open var fetchStartDate: Foundation.Date?
   @objc open var responseEndDate: Foundation.Date?
@@ -7190,7 +7206,7 @@ public protocol Baggage : AnyObject {
 }
 public func == (lhs: any NbmapCoreNavigation.Baggage, rhs: any NbmapCoreNavigation.Baggage) -> Swift.Bool
 public protocol SpeedCalibrator {
-  func updateSpeed(with location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress, userStatus: NbmapCoreNavigation.OffRouteStatus)
+  func updateSpeed(with location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress, userStatus: NbmapCoreNavigation.PuckState)
   func reset(routeProgress: NbmapCoreNavigation.RouteProgress)
   func postSpeed(speed: CoreLocation.CLLocationSpeed?)
   var delegate: (any NbmapCoreNavigation.SpeedCalibratorDelegate)? { get set }
@@ -7388,6 +7404,38 @@ open class SnapDistanceTracker {
   public static func roundUpTo2(value: Swift.Double) -> Swift.Double
   public static func calcDistanceOffsetTolerance(accuracy: Swift.Double, speed: Swift.Double) -> Swift.Double
   public static func getSpeedWeight(speed: Swift.Double) -> Swift.Double
+  @objc deinit
+}
+public struct Pose {
+  public let ts: Foundation.TimeInterval
+  public let coord: CoreLocation.CLLocationCoordinate2D
+  public let speed: Swift.Double
+  public let heading: Swift.Double
+  public let cep: Swift.Double
+  public let dr: Swift.Bool
+}
+public struct RouteCtx {
+  public let route: NbmapCoreNavigation.Route
+  public var stepIndex: Swift.Int
+  public init(route: NbmapCoreNavigation.Route, stepIndex: Swift.Int = 0)
+}
+@_hasMissingDesignatedInitializers final public class NbLogger {
+  public static let shared: NbmapCoreNavigation.NbLogger
+  final public func write(_ data: [Swift.String : Any])
+  final public func scenario(_ event: Swift.String, extra: [Swift.String : Any] = [:])
+  final public func features(_ distance: Swift.Double, _ theta: Swift.Double, _ sdot: Swift.Double, cep: Swift.Double, speed: Swift.Double, parallel: Swift.Bool, zOK: Swift.Bool)
+  final public func fsm(from: NbmapCoreNavigation.PuckState, to: NbmapCoreNavigation.PuckState, reason: Swift.String, thresholds: [Swift.String : Swift.Double] = [:])
+  final public func fsm(_ from: Swift.String, _ to: Swift.String, reason: Swift.String, extra: [Swift.String : Any] = [:])
+  final public func dr(_ enabled: Swift.Bool)
+  final public func decision(state: NbmapCoreNavigation.PuckState, reason: Swift.String, priority: Swift.Int, offroute: Swift.Bool = false, wrongWay: Swift.Bool = false, drHold: Swift.Bool = false)
+  final public func decision(state: Swift.String, offroute: Swift.Bool, wrongWay: Swift.Bool, junction90: Swift.Bool, drHold: Swift.Bool, reroute: Swift.Bool)
+  final public func routeSwitch(to index: Swift.Int)
+  final public func stepAdjust(delta: Swift.Int, cause: Swift.String)
+  final public func rerouteRequest(reason: Swift.String, hardOffroute: Swift.Bool = false)
+  final public func rerouteAsk(reason: Swift.String)
+  final public func getAllLogs() -> [Swift.String]
+  final public func clearLogs()
+  final public func exportLogs() -> Swift.String
   @objc deinit
 }
 public protocol NavigationServiceDelegate : AnyObject, NbmapCoreNavigation.UnimplementedLogging {
@@ -7755,6 +7803,117 @@ open class BoundHistogramMetric<T> {
   }
   @objc deinit
 }
+public enum PuckState : Swift.String {
+  case raw, snapped
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ABBucket {
+  case bucketA, bucketB
+  public static func == (a: NbmapCoreNavigation.ABBucket, b: NbmapCoreNavigation.ABBucket) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct DebugOut {
+  public let distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double
+  public let reason: Swift.String
+  public let offroute: Swift.Bool, wrongWay: Swift.Bool, junction90: Swift.Bool, parallel: Swift.Bool, zOK: Swift.Bool, reroute: Swift.Bool
+  public let rerouteReason: Swift.String
+  public init(distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double, reason: Swift.String = "", offroute: Swift.Bool = false, wrongWay: Swift.Bool = false, junction90: Swift.Bool = false, parallel: Swift.Bool = false, zOK: Swift.Bool = true, reroute: Swift.Bool = false, rerouteReason: Swift.String = "")
+  public static let empty: NbmapCoreNavigation.DebugOut
+}
+public struct DecisionResult {
+  public let state: NbmapCoreNavigation.PuckState
+  public let debug: NbmapCoreNavigation.DebugOut
+  public let drHold: Swift.Bool
+  public init(state: NbmapCoreNavigation.PuckState, debug: NbmapCoreNavigation.DebugOut, drHold: Swift.Bool)
+}
+public struct RegionProfile : Swift.Codable {
+  public let dOn: Swift.Double
+  public let dOff: Swift.Double
+  public let thetaOn: Swift.Double
+  public let thetaOff: Swift.Double
+  public let vOn: Swift.Double
+  public let vOff: Swift.Double
+  public let tOn: Swift.Double
+  public let tOff: Swift.Double
+  public let dJump: Swift.Double
+  public let cepGate: Swift.Double
+  public let offsetHintGate: Swift.Double
+  public let vGateStart: Swift.Double
+  public let vMotorist: Swift.Double
+  public let startGracePeriod: Swift.Double
+  public let vRerouteStartGate: Swift.Double
+  public let dRerouteStartTrig: Swift.Double
+  public let deltaMinStart: Swift.Double
+  public let tRerouteStartHold: Swift.Double
+  public let dAbsMax: Swift.Double
+  public let rerouteMinInterval: Swift.Double
+  public let exitWindow: Swift.Double
+  public let thetaWrongOn: Swift.Double
+  public let sDotGate: Swift.Double
+  public let vWrongGate: Swift.Double
+  public let dWrongGate: Swift.Double
+  public let tOffWrongway: Swift.Double
+  public let tOnRecover: Swift.Double
+  public let kOn: Swift.Double
+  public let kOff: Swift.Double
+  public let vHighwayEnter: Swift.Double
+  public let vHighwayStable: Swift.Double
+  public let vCityStable: Swift.Double
+  public let vCityDecel: Swift.Double
+  public init(dOn: Swift.Double, dOff: Swift.Double, thetaOn: Swift.Double, thetaOff: Swift.Double, vOn: Swift.Double, vOff: Swift.Double, tOn: Swift.Double, tOff: Swift.Double, dJump: Swift.Double, cepGate: Swift.Double, offsetHintGate: Swift.Double, vGateStart: Swift.Double, vMotorist: Swift.Double, startGracePeriod: Swift.Double, vRerouteStartGate: Swift.Double, dRerouteStartTrig: Swift.Double, deltaMinStart: Swift.Double, tRerouteStartHold: Swift.Double, dAbsMax: Swift.Double, rerouteMinInterval: Swift.Double, exitWindow: Swift.Double, thetaWrongOn: Swift.Double, sDotGate: Swift.Double, vWrongGate: Swift.Double, dWrongGate: Swift.Double, tOffWrongway: Swift.Double, tOnRecover: Swift.Double, kOn: Swift.Double, kOff: Swift.Double, vHighwayEnter: Swift.Double, vHighwayStable: Swift.Double, vCityStable: Swift.Double, vCityDecel: Swift.Double)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum RegionProfiles {
+  public static let usCity: NbmapCoreNavigation.RegionProfile
+  public static let usHighway: NbmapCoreNavigation.RegionProfile
+  public static let weCity: NbmapCoreNavigation.RegionProfile
+  public static let weHighway: NbmapCoreNavigation.RegionProfile
+  public static let inCity: NbmapCoreNavigation.RegionProfile
+  public static let inHighway: NbmapCoreNavigation.RegionProfile
+}
+public struct Features {
+  public let distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double
+  public let snapCoord: CoreLocation.CLLocationCoordinate2D
+  public let indexOnRoute: Swift.Int
+  public let parallel: Swift.Bool, zOK: Swift.Bool
+}
+final public class OffRouteDecisionEngine {
+  public enum ConfigMode : Swift.String {
+    case city
+    case highway
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum StepAdjustmentSuggestion : Swift.Equatable {
+    case advance(confidence: Swift.Double)
+    case rollback(confidence: Swift.Double)
+    case maintain
+    public static func == (a: NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion, b: NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion) -> Swift.Bool
+  }
+  public init(cityProfile: NbmapCoreNavigation.RegionProfile, highwayProfile: NbmapCoreNavigation.RegionProfile)
+  final public func updateProfiles(city: NbmapCoreNavigation.RegionProfile, highway: NbmapCoreNavigation.RegionProfile)
+  final public func applyAB(_ profile: NbmapCoreNavigation.RegionProfile?)
+  final public func getCurrentConfigMode() -> NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode
+  final public func getCurrentSpeedPattern() -> Swift.String
+  final public func getCurrentConfigConfidence() -> Swift.Double
+  final public func updateRouteContext(_ context: NbmapCoreNavigation.RouteCtx)
+  final public func resetEngineState()
+  final public func resetEngineStateForReroute()
+  final public func decide(pose: NbmapCoreNavigation.Pose, feat: NbmapCoreNavigation.Features) -> NbmapCoreNavigation.DecisionResult
+  final public func getStepAdjustmentSuggestion(pose: NbmapCoreNavigation.Pose, feat: NbmapCoreNavigation.Features, profile: NbmapCoreNavigation.RegionProfile, routeProgress: NbmapCoreNavigation.RouteProgress) -> NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion
+  @objc deinit
+}
 public protocol DoubleObserverMetric {
   func observe(value: Swift.Double, labelset: NbmapCoreNavigation.LabelSet)
   func observe(value: Swift.Double, labels: [Swift.String : Swift.String])
@@ -7937,5 +8096,13 @@ extension NbmapCoreNavigation.SimulationState : Swift.Hashable {}
 extension NbmapCoreNavigation.SimulationState : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Equatable {}
 extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Hashable {}
+extension NbmapCoreNavigation.PuckState : Swift.Equatable {}
+extension NbmapCoreNavigation.PuckState : Swift.Hashable {}
+extension NbmapCoreNavigation.PuckState : Swift.RawRepresentable {}
+extension NbmapCoreNavigation.ABBucket : Swift.Equatable {}
+extension NbmapCoreNavigation.ABBucket : Swift.Hashable {}
+extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.Equatable {}
+extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.Hashable {}
+extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.BinaryDelimited.Error : Swift.Equatable {}
 extension NbmapCoreNavigation.BinaryDelimited.Error : Swift.Hashable {}

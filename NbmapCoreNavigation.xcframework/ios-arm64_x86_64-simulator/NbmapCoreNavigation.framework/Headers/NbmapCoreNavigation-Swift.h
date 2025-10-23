@@ -575,6 +575,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// The locale to use for spoken instructions.
 /// This locale is specific to Nbmap Voice API. If <code>nil</code> is returned, the instruction should be spoken with an alternative speech synthesizer.
 @property (nonatomic, copy) NSLocale * _Nullable speechLocale;
+/// The geometry of the route
+@property (nonatomic) id _Nullable geometry;
 @property (nonatomic, copy) NSString * _Nullable json;
 /// The request of the route start time
 @property (nonatomic, copy) NSDate * _Nullable fetchStartDate;
@@ -854,7 +856,7 @@ SWIFT_CLASS("_TtC19NbmapCoreNavigation19NBNavigationService")
 @class RouteController;
 @interface NBNavigationService (SWIFT_EXTENSION(NbmapCoreNavigation))
 - (BOOL)routeController:(RouteController * _Nonnull)_ shouldRerouteFrom:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
-- (void)routeController:(RouteController * _Nonnull)_ willRerouteFrom:(CLLocation * _Nonnull)location;
+- (void)routeController:(RouteController * _Nonnull)routeController willRerouteFrom:(CLLocation * _Nonnull)location;
 - (void)routeController:(RouteController * _Nonnull)_ didRerouteAlong:(NBNavRoute * _Nonnull)route at:(CLLocation * _Nullable)location proactive:(BOOL)proactive;
 - (void)routeController:(RouteController * _Nonnull)_ didFailToRerouteWith:(NSError * _Nonnull)error;
 - (BOOL)routeController:(RouteController * _Nonnull)_ shouldDiscard:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
@@ -1117,6 +1119,25 @@ SWIFT_CLASS_NAMED("NavigationSettings")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSURLSession;
+/// Manages URLSession for navigation network requests
+/// Provides robust network handling with automatic recovery from connection issues
+SWIFT_CLASS_NAMED("NetworkSessionManager")
+@interface NBNetworkSessionManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBNetworkSessionManager * _Nonnull shared;)
++ (NBNetworkSessionManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Reset URLSession (call when persistent network errors occur)
+- (void)resetSession;
+/// Get current URLSession
+- (NSURLSession * _Nonnull)getSession SWIFT_WARN_UNUSED_RESULT;
+/// Check if error is recoverable and should trigger session reset
+- (void)handleNetworkError:(NSError * _Nonnull)error;
+/// Check if error is retryable
++ (BOOL)isRetryableError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+@end
+
 /// <code>ReplayLocationManager</code> replays an array of locations exactly as they were
 /// recorded with the single exception of the location’s timestamp which will be
 /// adjusted by interval between locations.
@@ -1158,7 +1179,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param options The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale geometry:(id _Nullable)geometry options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new route object with the given JSON dictionary representation and waypoints.
 /// This initializer is intended for use in conjunction with the <code>Directions.url(forCalculating:)</code> method.
 /// \param json A JSON dictionary representation of the route as returned by the Nbmap Directions API.
@@ -2429,6 +2450,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// The locale to use for spoken instructions.
 /// This locale is specific to Nbmap Voice API. If <code>nil</code> is returned, the instruction should be spoken with an alternative speech synthesizer.
 @property (nonatomic, copy) NSLocale * _Nullable speechLocale;
+/// The geometry of the route
+@property (nonatomic) id _Nullable geometry;
 @property (nonatomic, copy) NSString * _Nullable json;
 /// The request of the route start time
 @property (nonatomic, copy) NSDate * _Nullable fetchStartDate;
@@ -2708,7 +2731,7 @@ SWIFT_CLASS("_TtC19NbmapCoreNavigation19NBNavigationService")
 @class RouteController;
 @interface NBNavigationService (SWIFT_EXTENSION(NbmapCoreNavigation))
 - (BOOL)routeController:(RouteController * _Nonnull)_ shouldRerouteFrom:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
-- (void)routeController:(RouteController * _Nonnull)_ willRerouteFrom:(CLLocation * _Nonnull)location;
+- (void)routeController:(RouteController * _Nonnull)routeController willRerouteFrom:(CLLocation * _Nonnull)location;
 - (void)routeController:(RouteController * _Nonnull)_ didRerouteAlong:(NBNavRoute * _Nonnull)route at:(CLLocation * _Nullable)location proactive:(BOOL)proactive;
 - (void)routeController:(RouteController * _Nonnull)_ didFailToRerouteWith:(NSError * _Nonnull)error;
 - (BOOL)routeController:(RouteController * _Nonnull)_ shouldDiscard:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
@@ -2971,6 +2994,25 @@ SWIFT_CLASS_NAMED("NavigationSettings")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSURLSession;
+/// Manages URLSession for navigation network requests
+/// Provides robust network handling with automatic recovery from connection issues
+SWIFT_CLASS_NAMED("NetworkSessionManager")
+@interface NBNetworkSessionManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBNetworkSessionManager * _Nonnull shared;)
++ (NBNetworkSessionManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Reset URLSession (call when persistent network errors occur)
+- (void)resetSession;
+/// Get current URLSession
+- (NSURLSession * _Nonnull)getSession SWIFT_WARN_UNUSED_RESULT;
+/// Check if error is recoverable and should trigger session reset
+- (void)handleNetworkError:(NSError * _Nonnull)error;
+/// Check if error is retryable
++ (BOOL)isRetryableError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+@end
+
 /// <code>ReplayLocationManager</code> replays an array of locations exactly as they were
 /// recorded with the single exception of the location’s timestamp which will be
 /// adjusted by interval between locations.
@@ -3012,7 +3054,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param options The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale geometry:(id _Nullable)geometry options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new route object with the given JSON dictionary representation and waypoints.
 /// This initializer is intended for use in conjunction with the <code>Directions.url(forCalculating:)</code> method.
 /// \param json A JSON dictionary representation of the route as returned by the Nbmap Directions API.
