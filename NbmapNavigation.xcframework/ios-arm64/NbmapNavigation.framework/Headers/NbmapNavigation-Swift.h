@@ -576,20 +576,20 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 - (void)carPlayNavigationViewControllerDidDismiss:(CarPlayNavigationViewController * _Nonnull)_ byCanceling:(BOOL)_;
 @end
 
-@class UIApplication;
+@class CPTemplateApplicationScene;
 @class CPInterfaceController;
 @class CPWindow;
-SWIFT_AVAILABILITY(ios,introduced=13.0)
-@interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPApplicationDelegate>
-- (void)application:(UIApplication * _Nonnull)_ didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
-- (void)application:(UIApplication * _Nonnull)_ didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
-@end
-
-@class CPTemplateApplicationScene;
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPTemplateApplicationSceneDelegate>
 - (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
 - (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
+@end
+
+@class UIApplication;
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPApplicationDelegate>
+- (void)application:(UIApplication * _Nonnull)_ didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
+- (void)application:(UIApplication * _Nonnull)_ didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
 @end
 
 @class CPTemplate;
@@ -1625,17 +1625,19 @@ SWIFT_CLASS("_TtC15NbmapNavigation19RouteDurationSymbol")
 @end
 
 @class AVAudioPlayer;
-@class AVSpeechSynthesizer;
-@class AVSpeechUtterance;
 @class NSNotification;
-/// The <code>RouteVoiceController</code> class provides voice guidance.
+/// Provides voice guidance orchestration (ding + TTS) without managing AVAudioSession directly.
+/// AVAudioSession is managed by <code>SystemSpeechSynthesizer</code> (recommended).
 SWIFT_CLASS_NAMED("RouteVoiceController")
-@interface NBRouteVoiceController : NSObject <AVSpeechSynthesizerDelegate>
-/// If true, a noise indicating the user is going to be rerouted will play prior to rerouting.
+@interface NBRouteVoiceController : NSObject
+/// If true, a reroute ding is played before rerouting.
 @property (nonatomic) BOOL playRerouteSound;
-/// Sound to play prior to reroute. Inherits volume level from <code>volume</code>.
+/// Auto resume on audio interruption end even if system does not set <code>.shouldResume</code>.
+/// Default is <code>true</code> for navigation UX (resume guidance ASAP).
+@property (nonatomic) BOOL autoResumeOnInterruptionEnd;
+/// Reroute ding player (volume follows <code>NavigationSettings.shared.voiceVolume</code>).
 @property (nonatomic, readonly, strong) AVAudioPlayer * _Nullable rerouteSoundPlayer;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+/// Triggered when passing the instruction point; refines instruction and delegates to speechSynthesizer.
 - (void)didPassSpokenInstructionPointWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1811,18 +1813,34 @@ SWIFT_CLASS_NAMED("SubtitleLabel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-/// <code>SpeechSynthesizing</code> implementation, using <code>AVSpeechSynthesizer</code>.
+/// SpeechSynthesizing implementation using AVSpeechSynthesizer with:
+/// <ul>
+///   <li>
+///     FIFO queue (no mid-utterance interruption)
+///   </li>
+///   <li>
+///     Stable AVAudioSession setup (single owner; serialized; minimal options)
+///   </li>
+///   <li>
+///     First-utterance pre-roll to avoid transient low volume
+///   </li>
+///   <li>
+///     Extensive debug logging for field diagnostics
+///   </li>
+/// </ul>
 SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
 @interface SystemSpeechSynthesizer : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AVSpeechSynthesizer;
+@class AVSpeechUtterance;
 @interface SystemSpeechSynthesizer (SWIFT_EXTENSION(NbmapNavigation)) <AVSpeechSynthesizerDelegate>
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 @end
 
 /// :nodoc:
