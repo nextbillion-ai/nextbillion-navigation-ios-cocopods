@@ -12755,208 +12755,6 @@
           },
           {
             "kind": "Var",
-            "name": "speedConfidence",
-            "printedName": "speedConfidence",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15NbmapNavigation9SpeedViewC15speedConfidenceSdvp",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC15speedConfidenceSdvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedConfidenceSdvg",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedConfidenceSdvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedConfidenceSdvs",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedConfidenceSdvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedConfidenceSdvM",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedConfidenceSdvM",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "speedStateFlags",
-            "printedName": "speedStateFlags",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Set",
-                "printedName": "Swift.Set<Swift.String>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sh"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvp",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Set",
-                    "printedName": "Swift.Set<Swift.String>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sh"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvg",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Set",
-                    "printedName": "Swift.Set<Swift.String>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sh"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvs",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvM",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC15speedStateFlagsShySSGvM",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "formatedUnit",
             "printedName": "formatedUnit",
             "children": [
@@ -90509,50 +90307,36 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "FloatLiteral",
-      "offset": 1877,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "Array",
-      "offset": 2136,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "StringLiteral",
-      "offset": 2302,
+      "offset": 1776,
       "length": 6,
       "value": "\"km\/h\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2785,
+      "offset": 2259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3129,
+      "offset": 2603,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3459,
+      "offset": 2933,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3796,
+      "offset": 3270,
       "length": 1,
       "value": "1"
     },

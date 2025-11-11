@@ -393,14 +393,6 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
     get
     set
   }
-  @_Concurrency.MainActor @preconcurrency public var speedConfidence: Swift.Double {
-    get
-    set
-  }
-  @_Concurrency.MainActor @preconcurrency public var speedStateFlags: Swift.Set<Swift.String> {
-    get
-    set
-  }
   @_Concurrency.MainActor @preconcurrency public var formatedUnit: Swift.String? {
     get
     set

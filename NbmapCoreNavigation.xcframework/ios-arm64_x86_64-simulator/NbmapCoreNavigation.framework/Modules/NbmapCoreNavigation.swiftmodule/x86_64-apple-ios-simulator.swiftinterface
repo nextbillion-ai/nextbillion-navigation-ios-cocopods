@@ -26,7 +26,6 @@ import _SwiftConcurrencyShims
 import os.activity
 import os.log
 import os
-import simd
 @objc(NBVisualInstructionComponentType) public enum VisualInstructionComponentType : Swift.Int, Swift.CustomStringConvertible {
   case delimiter
   case text
@@ -340,23 +339,6 @@ extension UIKit.UIApplication.State : @retroactive Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers public class StepLink {
-  @objc deinit
-}
-public class ReplayIMUManager {
-  public var speedMultiplier: Swift.Double
-  public var onIMUData: ((NbmapCoreNavigation.IMUObservation) -> Swift.Void)?
-  public var isReplaying: Swift.Bool {
-    get
-  }
-  public init()
-  public init(imuData: [NbmapCoreNavigation.IMUObservation])
-  public func loadIMUData(_ data: [NbmapCoreNavigation.IMUObservation])
-  public func start()
-  public func stop()
-  public func pause()
-  public func resume()
-  public func reset()
-  public func getInfo() -> Swift.String
   @objc deinit
 }
 open class BoundRawCounterMetric<T> {
@@ -2396,58 +2378,6 @@ extension NbmapCoreNavigation.RouteOptions {
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class SpeedLogger {
-  public static let shared: NbmapCoreNavigation.SpeedLogger
-  public var isEnabled: Swift.Bool
-  public struct TestSession : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public struct LogEntry : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public struct SpeedRecord : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public struct LocationData : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public func log(_ type: Swift.String, _ message: Swift.String, data: [Swift.String : Swift.String]? = nil)
-  public func startNewSession(name: Swift.String = "")
-  public func endCurrentSession()
-  public func getSessions() -> [NbmapCoreNavigation.SpeedLogger.TestSession]
-  public func logSpeed(gpsSpeed: Swift.Double, ekfSpeed: Swift.Double, displaySpeed: Swift.Double, confidence: Swift.Double, flags: Swift.Set<Swift.String>, location: CoreLocation.CLLocation, imuAvailable: Swift.Bool, isSimulated: Swift.Bool = false)
-  public func exportAsText() -> Swift.String
-  public func exportCurrentSessionAsCSV() -> Swift.String
-  public func exportSessionAsCSV(sessionIndex: Swift.Int) -> Swift.String?
-  public func exportAllSessionsAsCSV() -> Swift.String
-  public func exportAsJSON() -> Swift.String?
-  public func saveToFile(format: NbmapCoreNavigation.SpeedLogger.ExportFormat = .text, scope: NbmapCoreNavigation.SpeedLogger.ExportScope = .currentSession) -> Foundation.URL?
-  public func shareLog(format: NbmapCoreNavigation.SpeedLogger.ExportFormat = .csv, scope: NbmapCoreNavigation.SpeedLogger.ExportScope = .currentSession, completion: @escaping (Foundation.URL?) -> Swift.Void)
-  public func clear()
-  public func clearCurrentSession()
-  public func getStatistics() -> Swift.String
-  public func getSessionsInfo() -> Swift.String
-  public enum ExportFormat {
-    case text
-    case csv
-    case json
-    public static func == (a: NbmapCoreNavigation.SpeedLogger.ExportFormat, b: NbmapCoreNavigation.SpeedLogger.ExportFormat) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum ExportScope {
-    case currentSession
-    case allSessions
-    case sessionAt(Swift.Int)
-  }
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers open class NextBillionConfig {
   public static func initialize(completionHandler: @escaping (_ configurationResponse: NbmapCoreNavigation.ConfigurationResponse) -> Swift.Void, errorHandler: @escaping (_ configurationResponse: NbmapCoreNavigation.ConfigurationResponse, _ error: Foundation.NSError) -> Swift.Void, apiNotInvokedHandler: @escaping (_ configurationResponse: NbmapCoreNavigation.ConfigurationResponse) -> Swift.Void)
   @objc deinit
@@ -4433,10 +4363,6 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
   public var resolvedRoutingProvider: any NbmapCoreNavigation.RoutingProvider {
     get
   }
-  public var speedCalibrator: any NbmapCoreNavigation.SpeedCalibrator {
-    get
-    set
-  }
   required public init(from routes: [NbmapCoreNavigation.Route], alongIndex index: Swift.Int, customRoutingProvider: (any NbmapCoreNavigation.RoutingProvider)? = nil, navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig? = nil, speedCalibrator: (any NbmapCoreNavigation.SpeedCalibrator)? = nil, deadReckoning: NbmapCoreNavigation.DeadReckoning? = nil)
   public func finishRouting()
   @objc deinit
@@ -4454,6 +4380,14 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
 extension NbmapCoreNavigation.RouteController : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc dynamic public func locationManager(_: CoreLocation.CLLocationManager, didUpdateHeading newHeading: CoreLocation.CLHeading)
+}
+extension NbmapCoreNavigation.RouteController : NbmapCoreNavigation.OffRouteDetectorDelegate {
+  public func offRouteDetactorEnableStationaryDetector() -> Swift.Bool
+  public func offRouteDetactorIsMoving() -> Swift.Bool
+  public func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldPreventReroutesWhenArrivingAt waypoint: NbmapCoreNavigation.Waypoint) -> Swift.Bool
+  public func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
+  public func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldAdvanceStepIndex toIndex: Swift.Array<NbmapCoreNavigation.RouteStep>.Index?)
+  public func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldForwardStepIndex toIndex: Swift.Array<NbmapCoreNavigation.RouteStep>.Index?)
 }
 extension NbmapCoreNavigation.RouteController : NbmapCoreNavigation.RerouteDelegate {
   public func willRerouteFrom(location: CoreLocation.CLLocation)
@@ -5073,161 +5007,6 @@ public struct TraceId : Swift.Comparable, Swift.Hashable, Swift.CustomStringConv
   open class func onBackgroundThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping (Foundation.Notification?) -> Swift.Void) -> any ObjectiveC.NSObjectProtocol
   open class func unregister(_ target: Swift.AnyObject)
   open class func unregister(_ target: Swift.AnyObject, name: Swift.String)
-  @objc deinit
-}
-public class EKFSpeedCalibratorAdapter : NbmapCoreNavigation.SpeedCalibrator {
-  final public let speedCalculator: NbmapCoreNavigation.EKFSpeedCalculator
-  weak public var delegate: (any NbmapCoreNavigation.SpeedCalibratorDelegate)?
-  public init(config: NbmapCoreNavigation.SpeedConfig = SpeedConfig())
-  public func updateSpeed(with location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress, userStatus: NbmapCoreNavigation.PuckState)
-  public func reset(routeProgress: NbmapCoreNavigation.RouteProgress)
-  public func enableReplayMode()
-  public func postSpeed(speed: CoreLocation.CLLocationSpeed?)
-  public func cancel()
-  @objc deinit
-}
-public class UISpeedSmoother {
-  public init(config: NbmapCoreNavigation.SpeedConfig)
-  public func smooth(trackingSpeedMps: Swift.Double, timestamp: Foundation.TimeInterval, isHolding: Swift.Bool, isDegraded: Swift.Bool, isSimulated: Swift.Bool = false) -> Swift.Double
-  public func reset()
-  public var currentSpeed: Swift.Double {
-    get
-  }
-  @objc deinit
-}
-public class EKFSpeedCalculator {
-  public var onSpeedUpdate: ((NbmapCoreNavigation.SpeedOutput) -> Swift.Void)?
-  public init(config: NbmapCoreNavigation.SpeedConfig = SpeedConfig())
-  public func start(replayMode: Swift.Bool = false)
-  public func stop()
-  public func reset()
-  public func setSimulationMode(_ enabled: Swift.Bool)
-  public func updateWithGNSS(_ location: CoreLocation.CLLocation)
-  public func updateWithMapMatching(roadHeading: Swift.Double, curvature: Swift.Double, alongRoutePosition: Swift.Double, confidence: Swift.Double)
-  public func injectIMUData(_ imuData: NbmapCoreNavigation.IMUObservation)
-  public func getCurrentSpeed() -> Swift.Double
-  public func getDisplaySpeed() -> Swift.Double
-  public func isStationary() -> Swift.Bool
-  public var hasIMU: Swift.Bool {
-    get
-  }
-  @objc deinit
-}
-public class StationaryDetector {
-  public init(config: NbmapCoreNavigation.SpeedConfig)
-  public func update(speed: Swift.Double, acceleration: (x: Swift.Double, y: Swift.Double, z: Swift.Double), angularVelocity: Swift.Double, heading: Swift.Double, headingDeviation: Swift.Double, mmConfidence: Swift.Double, timestamp: Foundation.TimeInterval, isSimulated: Swift.Bool = false, hasIMU: Swift.Bool = true) -> Swift.Bool
-  public var isHolding: Swift.Bool {
-    get
-  }
-  public func reset()
-  @objc deinit
-}
-public enum SpeedStateFlag : Swift.String {
-  case gnssWeak
-  case tunnel
-  case hold
-  case ekfDegraded
-  case obdUsed
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public struct SpeedOutput {
-  public let trackingSpeedMps: Swift.Double
-  public let displaySpeedMps: Swift.Double
-  public let confidence: Swift.Double
-  public let stateFlags: Swift.Set<NbmapCoreNavigation.SpeedStateFlag>
-  public let timestamp: Foundation.TimeInterval
-  public init(trackingSpeedMps: Swift.Double, displaySpeedMps: Swift.Double, confidence: Swift.Double, stateFlags: Swift.Set<NbmapCoreNavigation.SpeedStateFlag>, timestamp: Foundation.TimeInterval)
-}
-public enum SpeedMode : Swift.String {
-  case drive
-  case ride
-  case walk
-  case auto
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public struct SpeedConfig {
-  public var mode: NbmapCoreNavigation.SpeedMode
-  public var uiLowPassTauSec: Swift.Double
-  public var stopEnterKph: Swift.Double
-  public var stopExitKph: Swift.Double
-  public var maxAccelMps2: Swift.Double
-  public var ekfUpdateRateHz: Swift.Double
-  public var maxLongitudinalAccel: Swift.Double
-  public var maxAngularVelocity: Swift.Double
-  public var gnssMinNoise: Swift.Double
-  public var mmConfidenceThreshold: Swift.Double
-  public var holdEnterDuration: Swift.Double
-  public var holdExitDuration: Swift.Double
-  public var maxDegradedDuration: Swift.Double
-  public init(mode: NbmapCoreNavigation.SpeedMode = .drive, uiLowPassTauSec: Swift.Double = 0.7, stopEnterKph: Swift.Double = 1.0, stopExitKph: Swift.Double = 3.0, maxAccelMps2: Swift.Double = 3.5, ekfUpdateRateHz: Swift.Double = 50.0, maxLongitudinalAccel: Swift.Double = 3.5, maxAngularVelocity: Swift.Double = 1.5, gnssMinNoise: Swift.Double = 0.3, mmConfidenceThreshold: Swift.Double = 0.6, holdEnterDuration: Swift.Double = 0.7, holdExitDuration: Swift.Double = 0.5, maxDegradedDuration: Swift.Double = 20.0)
-}
-public class EKFSpeedFilter {
-  public init(config: NbmapCoreNavigation.SpeedConfig, initialState: NbmapCoreNavigation.EKFState? = nil)
-  public func predict(aLong: Swift.Double, omegaZ: Swift.Double, kappa: Swift.Double, dt: Swift.Double)
-  public func updateGNSSVelocity(_ observation: NbmapCoreNavigation.GNSSObservation, roadTheta: Swift.Double, hasIMU: Swift.Bool = true) -> Swift.Bool
-  public func updateMapMatchingPosition(_ observation: NbmapCoreNavigation.MapMatchingObservation) -> Swift.Bool
-  public func updateHeadingConstraint(relaxed: Swift.Bool = false) -> Swift.Bool
-  public func updateZUPT() -> Swift.Bool
-  public func getVelocity() -> Swift.Double
-  public func getPosition() -> Swift.Double
-  public func getHeadingDeviation() -> Swift.Double
-  public func getState() -> NbmapCoreNavigation.EKFState
-  public func reset(initialState: NbmapCoreNavigation.EKFState? = nil)
-  public func initializeWithGPS(speed: Swift.Double, hasIMU: Swift.Bool = true)
-  @objc deinit
-}
-public struct EKFState {
-  public var s: Swift.Double
-  public var v: Swift.Double
-  public var psi: Swift.Double
-  public var aBias: Swift.Double
-  public var gyroBias: Swift.Double
-  public var P: [[Swift.Double]]
-  public init(s: Swift.Double = 0.0, v: Swift.Double = 0.0, psi: Swift.Double = 0.0, aBias: Swift.Double = 0.0, gyroBias: Swift.Double = 0.0, P: [[Swift.Double]]? = nil)
-  public var vector: [Swift.Double] {
-    get
-  }
-  public mutating func update(from vector: [Swift.Double])
-}
-public struct MapMatchingObservation {
-  public let theta: Swift.Double
-  public let kappa: Swift.Double
-  public let s: Swift.Double
-  public let confidence: Swift.Double
-  public init(theta: Swift.Double, kappa: Swift.Double, s: Swift.Double, confidence: Swift.Double)
-}
-public struct GNSSObservation {
-  public let velocityENU: (east: Swift.Double, north: Swift.Double)
-  public let speedAccuracy: Swift.Double
-  public let timestamp: Foundation.TimeInterval
-  public let course: Swift.Double
-  public let courseAccuracy: Swift.Double
-  public init(velocityENU: (east: Swift.Double, north: Swift.Double), speedAccuracy: Swift.Double, timestamp: Foundation.TimeInterval, course: Swift.Double, courseAccuracy: Swift.Double)
-}
-public struct IMUObservation {
-  public let acceleration: (x: Swift.Double, y: Swift.Double, z: Swift.Double)
-  public let angularVelocity: (x: Swift.Double, y: Swift.Double, z: Swift.Double)
-  public let timestamp: Foundation.TimeInterval
-  public init(acceleration: (x: Swift.Double, y: Swift.Double, z: Swift.Double), angularVelocity: (x: Swift.Double, y: Swift.Double, z: Swift.Double), timestamp: Foundation.TimeInterval)
-}
-public class IMUProcessor {
-  public var onIMUData: ((NbmapCoreNavigation.IMUObservation) -> Swift.Void)?
-  public init()
-  public func start()
-  public func stop()
-  public func extractRoadAlignedMotion(imuData: NbmapCoreNavigation.IMUObservation, roadHeading: Swift.Double, deviceHeading: Swift.Double) -> (longitudinalAccel: Swift.Double, angularVelocity: Swift.Double)
-  public func calibrateAccelerometer(samples: [NbmapCoreNavigation.IMUObservation])
-  public func calibrateGyroscope(samples: [NbmapCoreNavigation.IMUObservation])
-  public func getAccelerometerBias() -> (x: Swift.Double, y: Swift.Double, z: Swift.Double)
-  public func getGyroscopeBias() -> (x: Swift.Double, y: Swift.Double, z: Swift.Double)
   @objc deinit
 }
 public class JaegerBaggagePropagator : NbmapCoreNavigation.TextMapBaggagePropagator {
@@ -6752,51 +6531,6 @@ public struct EnvVarResource {
   public static let resource: NbmapCoreNavigation.Resource
   public static func get(environment: [Swift.String : Swift.String] = ProcessInfo.processInfo.environment) -> NbmapCoreNavigation.Resource
 }
-@_hasMissingDesignatedInitializers public class SessionReplayManager {
-  public static let shared: NbmapCoreNavigation.SessionReplayManager
-  public struct ReplayLocation : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public struct ReplayIMU : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public struct ReplaySession : Swift.Codable {
-    public var duration: Foundation.TimeInterval {
-      get
-    }
-    public var formattedName: Swift.String {
-      get
-    }
-    public var locationCount: Swift.Int {
-      get
-    }
-    public var imuCount: Swift.Int {
-      get
-    }
-    public var hasIMU: Swift.Bool {
-      get
-    }
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public func startRecording(name: Swift.String = "", includeIMU: Swift.Bool = true)
-  public func recordLocation(_ location: CoreLocation.CLLocation)
-  public func recordIMU(_ imu: NbmapCoreNavigation.IMUObservation)
-  public func stopRecording(name: Swift.String = "", includeSpeedLog: Swift.Bool = false) -> NbmapCoreNavigation.SessionReplayManager.ReplaySession?
-  public func getSavedSessions() -> [NbmapCoreNavigation.SessionReplayManager.ReplaySession]
-  public func getLocations(for sessionIndex: Swift.Int) -> [CoreLocation.CLLocation]?
-  public func getIMUData(for sessionIndex: Swift.Int) -> [NbmapCoreNavigation.IMUObservation]?
-  public func getSession(at index: Swift.Int) -> NbmapCoreNavigation.SessionReplayManager.ReplaySession?
-  public func saveSessionToFile(sessionIndex: Swift.Int) -> Foundation.URL?
-  public func loadSessionFromFile(_ fileURL: Foundation.URL) -> NbmapCoreNavigation.SessionReplayManager.ReplaySession?
-  public func exportAsGPX(sessionIndex: Swift.Int) -> Swift.String?
-  public func deleteSession(at index: Swift.Int)
-  public func clearAll()
-  public func getSessionsInfo() -> Swift.String
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class ConfigurationApiQueryInterval : ObjectiveC.NSObject, Foundation.NSSecureCoding {
   @objc public static var supportsSecureCoding: Swift.Bool
   convenience public init(json: NbmapCoreNavigation.JSONDictionary)
@@ -7738,6 +7472,81 @@ public struct RouteCtx {
   final public func getAllLogs() -> [Swift.String]
   final public func clearLogs()
   final public func exportLogs() -> Swift.String
+  final public func startCSVSession()
+  final public func stopCSVSession()
+  final public func logNavigationEventToCSV(timestamp: Foundation.TimeInterval, eventType: Swift.String, puckState: Swift.String, offRoute: Swift.Bool, wrongWay: Swift.Bool, reroute: Swift.Bool, rerouteReason: Swift.String, distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double, smoothedDistance: Swift.Double, smoothedAngle: Swift.Double, trend: Swift.Double, vLat: Swift.Double, dOffAdaptive: Swift.Double, dynamicRerouteTrigger: Swift.Double, stepIndex: Swift.Int, legIndex: Swift.Int, additionalInfo: Swift.String = "")
+  final public func logLocationToCSV(timestamp: Foundation.TimeInterval, rawLatitude: Swift.Double, rawLongitude: Swift.Double, rawAccuracy: Swift.Double, rawSpeed: Swift.Double, rawCourse: Swift.Double, puckState: Swift.String, snappedLatitude: Swift.Double, snappedLongitude: Swift.Double, snappedSpeed: Swift.Double, snappedCourse: Swift.Double, distanceRemaining: Swift.Double, durationRemaining: Foundation.TimeInterval, fractionTraveled: Swift.Double, stepIndex: Swift.Int, legIndex: Swift.Int)
+  final public func logRouteToCSV(timestamp: Foundation.TimeInterval, sessionID: Swift.String, routeDistance: Swift.Double, expectedTravelTime: Foundation.TimeInterval, legCount: Swift.Int, stepCount: Swift.Int, waypointCount: Swift.Int, waypoints: Swift.String, startLatLng: Swift.String, endLatLng: Swift.String, profileIdentifier: Swift.String, routeType: Swift.String, mapOption: Swift.String, routeGeometry: Swift.String, currentRequestID: Swift.String, requestBody: Swift.String)
+  final public func getCurrentCSVFiles() -> [Foundation.URL]
+  final public func getAllCSVSessions() -> [Swift.String]
+  final public func getCSVSessionFiles(sessionID: Swift.String) -> [Foundation.URL]
+  final public func exportCSVSession(sessionID: Swift.String, completion: @escaping (Swift.Result<Foundation.URL, any Swift.Error>) -> Swift.Void)
+  final public func getCurrentCSVSessionID() -> Swift.String
+  final public func isCSVLogging() -> Swift.Bool
+  final public func getCSVLogsDirectory() -> Foundation.URL?
+  final public func cleanupOldCSVSessions(keepRecent: Swift.Int = 10)
+  final public func getTotalCSVStorageUsed() -> Swift.Int64
+  public struct CSVNavigationEvent {
+    public let timestamp: Foundation.TimeInterval
+    public let eventType: Swift.String
+    public let puckState: Swift.String
+    public let offRoute: Swift.Bool
+    public let wrongWay: Swift.Bool
+    public let reroute: Swift.Bool
+    public let rerouteReason: Swift.String
+    public let distance: Swift.Double
+    public let theta: Swift.Double
+    public let sdot: Swift.Double
+    public let smoothedDistance: Swift.Double
+    public let smoothedAngle: Swift.Double
+    public let trend: Swift.Double
+    public let vLat: Swift.Double
+    public let dOffAdaptive: Swift.Double
+    public let dynamicRerouteTrigger: Swift.Double
+    public let stepIndex: Swift.Int
+    public let legIndex: Swift.Int
+    public let additionalInfo: Swift.String
+  }
+  public struct CSVLocationUpdate {
+    public let timestamp: Foundation.TimeInterval
+    public let type: Swift.String
+    public let latitude: Swift.Double
+    public let longitude: Swift.Double
+    public let altitude: Swift.Double
+    public let horizontalAccuracy: Swift.Double
+    public let verticalAccuracy: Swift.Double
+    public let speed: Swift.Double
+    public let speedAccuracy: Swift.Double
+    public let course: Swift.Double
+    public let courseAccuracy: Swift.Double
+    public let isQualified: Swift.Bool?
+    public let puckState: Swift.String?
+    public let snappedLatitude: Swift.Double?
+    public let snappedLongitude: Swift.Double?
+    public let distanceRemaining: Swift.Double?
+    public let durationRemaining: Foundation.TimeInterval?
+    public let fractionTraveled: Swift.Double?
+    public let stepIndex: Swift.Int?
+    public let legIndex: Swift.Int?
+  }
+  public struct CSVRouteData {
+    public let timestamp: Foundation.TimeInterval
+    public let sessionID: Swift.String
+    public let routeDistance: Swift.Double
+    public let expectedTravelTime: Foundation.TimeInterval
+    public let legCount: Swift.Int
+    public let stepCount: Swift.Int
+    public let waypointCount: Swift.Int
+    public let startLat: Swift.Double
+    public let startLng: Swift.Double
+    public let endLat: Swift.Double
+    public let endLng: Swift.Double
+    public let profileIdentifier: Swift.String
+    public let routeType: Swift.String
+    public let mapOption: Swift.String
+    public let routeJSON: Swift.String
+  }
+  final public func loadCSVSession(sessionID: Swift.String) throws
   @objc deinit
 }
 public protocol NavigationServiceDelegate : AnyObject, NbmapCoreNavigation.UnimplementedLogging {
@@ -8352,8 +8161,6 @@ extension NbmapCoreNavigation.DrivingSide : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.MeasurementSystem : Swift.Equatable {}
 extension NbmapCoreNavigation.MeasurementSystem : Swift.Hashable {}
 extension NbmapCoreNavigation.MeasurementSystem : Swift.RawRepresentable {}
-extension NbmapCoreNavigation.SpeedLogger.ExportFormat : Swift.Equatable {}
-extension NbmapCoreNavigation.SpeedLogger.ExportFormat : Swift.Hashable {}
 extension NbmapCoreNavigation.InstructionFormat : Swift.Equatable {}
 extension NbmapCoreNavigation.InstructionFormat : Swift.Hashable {}
 extension NbmapCoreNavigation.InstructionFormat : Swift.RawRepresentable {}
@@ -8365,12 +8172,6 @@ extension NbmapCoreNavigation.DispatchTimer.State : Swift.Equatable {}
 extension NbmapCoreNavigation.DispatchTimer.State : Swift.Hashable {}
 extension NbmapCoreNavigation.JSONEncodingError : Swift.Equatable {}
 extension NbmapCoreNavigation.JSONEncodingError : Swift.Hashable {}
-extension NbmapCoreNavigation.SpeedStateFlag : Swift.Equatable {}
-extension NbmapCoreNavigation.SpeedStateFlag : Swift.Hashable {}
-extension NbmapCoreNavigation.SpeedStateFlag : Swift.RawRepresentable {}
-extension NbmapCoreNavigation.SpeedMode : Swift.Equatable {}
-extension NbmapCoreNavigation.SpeedMode : Swift.Hashable {}
-extension NbmapCoreNavigation.SpeedMode : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.Severity : Swift.Hashable {}
 extension NbmapCoreNavigation.Severity : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.BinaryEncodingError : Swift.Equatable {}
