@@ -178,8 +178,15 @@ public enum SpeechError : Foundation.LocalizedError {
 extension Foundation.NSAttributedString {
   public func pronounced(_ pronunciation: Swift.String) -> Foundation.NSAttributedString
 }
-@objc(NBRouteVoiceController) open class RouteVoiceController : ObjectiveC.NSObject, AVFAudio.AVSpeechSynthesizerDelegate {
+public protocol VoiceControllerDelegate : AnyObject, NbmapCoreNavigation.UnimplementedLogging {
+  func voiceController(_ voiceController: NbmapNavigation.RouteVoiceController, spokenInstructionsDidFailWith error: any Swift.Error)
+}
+extension NbmapNavigation.VoiceControllerDelegate {
+  public func routeVoiceController(_: NbmapNavigation.RouteVoiceController, encountered _: NbmapNavigation.SpeechError)
+}
+@objc(NBRouteVoiceController) open class RouteVoiceController : ObjectiveC.NSObject {
   @objc public var playRerouteSound: Swift.Bool
+  @objc public var autoResumeOnInterruptionEnd: Swift.Bool
   @objc public var rerouteSoundPlayer: AVFAudio.AVAudioPlayer? {
     get
   }
@@ -187,14 +194,13 @@ extension Foundation.NSAttributedString {
   public var speechSynthesizer: any NbmapNavigation.SpeechSynthesizing
   public init(speechSynthesizer: (any NbmapNavigation.SpeechSynthesizing)? = nil)
   @objc deinit
-  @objc public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didFinish _: AVFAudio.AVSpeechUtterance)
   @objc open func didPassSpokenInstructionPoint(notification: Foundation.NSNotification)
 }
-public protocol VoiceControllerDelegate : AnyObject, NbmapCoreNavigation.UnimplementedLogging {
-  func voiceController(_ voiceController: NbmapNavigation.RouteVoiceController, spokenInstructionsDidFailWith error: any Swift.Error)
-}
-extension NbmapNavigation.VoiceControllerDelegate {
-  public func routeVoiceController(_: NbmapNavigation.RouteVoiceController, encountered _: NbmapNavigation.SpeechError)
+extension NbmapNavigation.RouteVoiceController : NbmapNavigation.SpeechSynthesizingDelegate {
+  public func speechSynthesizer(_ speechSynthesizer: any NbmapNavigation.SpeechSynthesizing, willSpeak instruction: NbmapCoreNavigation.SpokenInstruction) -> NbmapCoreNavigation.SpokenInstruction?
+  public func speechSynthesizer(_ synthesizer: any NbmapNavigation.SpeechSynthesizing, didSpeak instruction: NbmapCoreNavigation.SpokenInstruction, with error: NbmapNavigation.SpeechError?)
+  public func speechSynthesizer(_ synthesizer: any NbmapNavigation.SpeechSynthesizing, didInterrupt previousInstruction: NbmapCoreNavigation.SpokenInstruction, with newInstruction: NbmapCoreNavigation.SpokenInstruction)
+  public func speechSynthesizer(_ synthesizer: any NbmapNavigation.SpeechSynthesizing, encounteredError error: NbmapNavigation.SpeechError)
 }
 extension NbmapCoreNavigation.CongestionLevel {
   public var asCPTimeRemainingColor: CarPlay.CPTimeRemainingColor {
@@ -1365,6 +1371,7 @@ public struct GeometryFramingAfterManeuver : Swift.Equatable {
 public struct PitchNearManeuver : Swift.Equatable {
   public var enabled: Swift.Bool
   public var triggerDistanceToManeuver: Swift.Double
+  public static let minPitch: Swift.Double
   public init()
   public static func == (lhs: NbmapNavigation.PitchNearManeuver, rhs: NbmapNavigation.PitchNearManeuver) -> Swift.Bool
 }
@@ -1450,17 +1457,17 @@ extension UIKit.UIImage {
   }
   @objc override dynamic public init()
   @objc deinit
-  open func prepareIncomingSpokenInstructions(_: [NbmapCoreNavigation.SpokenInstruction], locale _: Foundation.Locale?)
+  open func prepareIncomingSpokenInstructions(_ instructions: [NbmapCoreNavigation.SpokenInstruction], locale: Foundation.Locale?)
   open func speak(_ instruction: NbmapCoreNavigation.SpokenInstruction, during legProgress: NbmapCoreNavigation.RouteLegProgress, locale: Foundation.Locale? = nil)
   open func stopSpeaking()
   open func interruptSpeaking()
 }
 extension NbmapNavigation.SystemSpeechSynthesizer : AVFAudio.AVSpeechSynthesizerDelegate {
-  @objc dynamic public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didStart _: AVFAudio.AVSpeechUtterance)
-  @objc dynamic public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didContinue _: AVFAudio.AVSpeechUtterance)
-  @objc dynamic public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didFinish _: AVFAudio.AVSpeechUtterance)
-  @objc dynamic public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didPause _: AVFAudio.AVSpeechUtterance)
-  @objc dynamic public func speechSynthesizer(_: AVFAudio.AVSpeechSynthesizer, didCancel _: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didStart utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didContinue utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didFinish utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didPause utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didCancel utterance: AVFAudio.AVSpeechUtterance)
 }
 public enum NavigationCameraState {
   case idle

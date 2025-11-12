@@ -5646,6 +5646,124 @@
         "moduleName": "NbmapNavigation"
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "VoiceControllerDelegate",
+        "printedName": "VoiceControllerDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "voiceController",
+            "printedName": "voiceController(_:spokenInstructionsDidFailWith:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteVoiceController",
+                "printedName": "NbmapNavigation.RouteVoiceController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation23VoiceControllerDelegateP05voiceD0_29spokenInstructionsDidFailWithyAA05RoutecD0C_s5Error_ptF",
+            "mangledName": "$s15NbmapNavigation23VoiceControllerDelegateP05voiceD0_29spokenInstructionsDidFailWithyAA05RoutecD0C_s5Error_ptF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.VoiceControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.VoiceControllerDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "routeVoiceController",
+            "printedName": "routeVoiceController(_:encountered:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteVoiceController",
+                "printedName": "NbmapNavigation.RouteVoiceController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechError",
+                "printedName": "NbmapNavigation.SpeechError",
+                "usr": "s:15NbmapNavigation11SpeechErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation23VoiceControllerDelegatePAAE05routecD0_11encounteredyAA05RoutecD0C_AA11SpeechErrorOtF",
+            "mangledName": "$s15NbmapNavigation23VoiceControllerDelegatePAAE05routecD0_11encounteredyAA05RoutecD0C_AA11SpeechErrorOtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.VoiceControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.VoiceControllerDelegate>",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:15NbmapNavigation23VoiceControllerDelegateP",
+        "mangledName": "$s15NbmapNavigation23VoiceControllerDelegateP",
+        "moduleName": "NbmapNavigation",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : NbmapCoreNavigation.UnimplementedLogging>",
+        "sugared_genericSig": "<Self : AnyObject, Self : NbmapCoreNavigation.UnimplementedLogging>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UnimplementedLogging",
+            "printedName": "UnimplementedLogging",
+            "usr": "s:19NbmapCoreNavigation20UnimplementedLoggingP",
+            "mangledName": "$s19NbmapCoreNavigation20UnimplementedLoggingP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "RouteVoiceController",
         "printedName": "RouteVoiceController",
@@ -5738,6 +5856,100 @@
                 "declKind": "Accessor",
                 "usr": "s:15NbmapNavigation20RouteVoiceControllerC16playRerouteSoundSbvM",
                 "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC16playRerouteSoundSbvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "autoResumeOnInterruptionEnd",
+            "printedName": "autoResumeOnInterruptionEnd",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController(py)autoResumeOnInterruptionEnd",
+            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC27autoResumeOnInterruptionEndSbvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController(im)autoResumeOnInterruptionEnd",
+                "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC27autoResumeOnInterruptionEndSbvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController(im)setAutoResumeOnInterruptionEnd:",
+                "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC27autoResumeOnInterruptionEndSbvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation20RouteVoiceControllerC27autoResumeOnInterruptionEndSbvM",
+                "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC27autoResumeOnInterruptionEndSbvM",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -6039,40 +6251,6 @@
           },
           {
             "kind": "Function",
-            "name": "speechSynthesizer",
-            "printedName": "speechSynthesizer(_:didFinish:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "AVSpeechSynthesizer",
-                "printedName": "AVFAudio.AVSpeechSynthesizer",
-                "usr": "c:objc(cs)AVSpeechSynthesizer"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "AVSpeechUtterance",
-                "printedName": "AVFAudio.AVSpeechUtterance",
-                "usr": "c:objc(cs)AVSpeechUtterance"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController(im)speechSynthesizer:didFinishSpeechUtterance:",
-            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_9didFinishySo08AVSpeechG0C_So0J9UtteranceCtF",
-            "moduleName": "NbmapNavigation",
-            "objc_name": "speechSynthesizer:didFinishSpeechUtterance:",
-            "declAttributes": [
-              "ObjC",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "didPassSpokenInstructionPoint",
             "printedName": "didPassSpokenInstructionPoint(notification:)",
             "children": [
@@ -6096,7 +6274,8 @@
             "objc_name": "didPassSpokenInstructionPointWithNotification:",
             "declAttributes": [
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -6125,6 +6304,167 @@
               "Override"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "speechSynthesizer",
+            "printedName": "speechSynthesizer(_:willSpeak:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.SpokenInstruction?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpokenInstruction",
+                    "printedName": "NbmapCoreNavigation.SpokenInstruction",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBSpokenInstruction"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechSynthesizing",
+                "printedName": "any NbmapNavigation.SpeechSynthesizing",
+                "usr": "s:15NbmapNavigation18SpeechSynthesizingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpokenInstruction",
+                "printedName": "NbmapCoreNavigation.SpokenInstruction",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBSpokenInstruction"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_9willSpeak0a4CoreB017SpokenInstructionCSgAA18SpeechSynthesizing_p_AHtF",
+            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_9willSpeak0a4CoreB017SpokenInstructionCSgAA18SpeechSynthesizing_p_AHtF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechSynthesizer",
+            "printedName": "speechSynthesizer(_:didSpeak:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechSynthesizing",
+                "printedName": "any NbmapNavigation.SpeechSynthesizing",
+                "usr": "s:15NbmapNavigation18SpeechSynthesizingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpokenInstruction",
+                "printedName": "NbmapCoreNavigation.SpokenInstruction",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBSpokenInstruction"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapNavigation.SpeechError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeechError",
+                    "printedName": "NbmapNavigation.SpeechError",
+                    "usr": "s:15NbmapNavigation11SpeechErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_8didSpeak4withyAA18SpeechSynthesizing_p_0a4CoreB017SpokenInstructionCAA0K5ErrorOSgtF",
+            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_8didSpeak4withyAA18SpeechSynthesizing_p_0a4CoreB017SpokenInstructionCAA0K5ErrorOSgtF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechSynthesizer",
+            "printedName": "speechSynthesizer(_:didInterrupt:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechSynthesizing",
+                "printedName": "any NbmapNavigation.SpeechSynthesizing",
+                "usr": "s:15NbmapNavigation18SpeechSynthesizingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpokenInstruction",
+                "printedName": "NbmapCoreNavigation.SpokenInstruction",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBSpokenInstruction"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpokenInstruction",
+                "printedName": "NbmapCoreNavigation.SpokenInstruction",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBSpokenInstruction"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_12didInterrupt4withyAA18SpeechSynthesizing_p_0a4CoreB017SpokenInstructionCAJtF",
+            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_12didInterrupt4withyAA18SpeechSynthesizing_p_0a4CoreB017SpokenInstructionCAJtF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechSynthesizer",
+            "printedName": "speechSynthesizer(_:encounteredError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechSynthesizing",
+                "printedName": "any NbmapNavigation.SpeechSynthesizing",
+                "usr": "s:15NbmapNavigation18SpeechSynthesizingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechError",
+                "printedName": "NbmapNavigation.SpeechError",
+                "usr": "s:15NbmapNavigation11SpeechErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_16encounteredErroryAA18SpeechSynthesizing_p_AA0jI0OtF",
+            "mangledName": "$s15NbmapNavigation20RouteVoiceControllerC17speechSynthesizer_16encounteredErroryAA18SpeechSynthesizing_p_AA0jI0OtF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -6208,114 +6548,10 @@
           },
           {
             "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "VoiceControllerDelegate",
-        "printedName": "VoiceControllerDelegate",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "voiceController",
-            "printedName": "voiceController(_:spokenInstructionsDidFailWith:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "RouteVoiceController",
-                "printedName": "NbmapNavigation.RouteVoiceController",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Error",
-                "printedName": "any Swift.Error",
-                "usr": "s:s5ErrorP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation23VoiceControllerDelegateP05voiceD0_29spokenInstructionsDidFailWithyAA05RoutecD0C_s5Error_ptF",
-            "mangledName": "$s15NbmapNavigation23VoiceControllerDelegateP05voiceD0_29spokenInstructionsDidFailWithyAA05RoutecD0C_s5Error_ptF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.VoiceControllerDelegate>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.VoiceControllerDelegate>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "routeVoiceController",
-            "printedName": "routeVoiceController(_:encountered:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "RouteVoiceController",
-                "printedName": "NbmapNavigation.RouteVoiceController",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBRouteVoiceController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SpeechError",
-                "printedName": "NbmapNavigation.SpeechError",
-                "usr": "s:15NbmapNavigation11SpeechErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation23VoiceControllerDelegatePAAE05routecD0_11encounteredyAA05RoutecD0C_AA11SpeechErrorOtF",
-            "mangledName": "$s15NbmapNavigation23VoiceControllerDelegatePAAE05routecD0_11encounteredyAA05RoutecD0C_AA11SpeechErrorOtF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.VoiceControllerDelegate>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.VoiceControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:15NbmapNavigation23VoiceControllerDelegateP",
-        "mangledName": "$s15NbmapNavigation23VoiceControllerDelegateP",
-        "moduleName": "NbmapNavigation",
-        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : NbmapCoreNavigation.UnimplementedLogging>",
-        "sugared_genericSig": "<Self : AnyObject, Self : NbmapCoreNavigation.UnimplementedLogging>",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
+            "name": "SpeechSynthesizingDelegate",
+            "printedName": "SpeechSynthesizingDelegate",
+            "usr": "s:15NbmapNavigation26SpeechSynthesizingDelegateP",
+            "mangledName": "$s15NbmapNavigation26SpeechSynthesizingDelegateP"
           },
           {
             "kind": "Conformance",
@@ -48822,6 +49058,54 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "minPitch",
+            "printedName": "minPitch",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapNavigation17PitchNearManeuverV03minC0SdvpZ",
+            "mangledName": "$s15NbmapNavigation17PitchNearManeuverV03minC0SdvpZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation17PitchNearManeuverV03minC0SdvgZ",
+                "mangledName": "$s15NbmapNavigation17PitchNearManeuverV03minC0SdvgZ",
+                "moduleName": "NbmapNavigation",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -48838,8 +49122,7 @@
             "mangledName": "$s15NbmapNavigation17PitchNearManeuverVACycfc",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "init_kind": "Designated"
           },
@@ -51042,8 +51325,8 @@
       },
       {
         "kind": "Import",
-        "name": "AVFAudio",
-        "printedName": "AVFAudio",
+        "name": "NbmapCoreNavigation",
+        "printedName": "NbmapCoreNavigation",
         "declKind": "Import",
         "moduleName": "NbmapNavigation",
         "declAttributes": [
@@ -51052,8 +51335,15 @@
       },
       {
         "kind": "Import",
-        "name": "NbmapCoreNavigation",
-        "printedName": "NbmapCoreNavigation",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
         "declKind": "Import",
         "moduleName": "NbmapNavigation"
       },
@@ -51185,7 +51475,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -51269,7 +51560,8 @@
             "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC6volumeSfvp",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "accessors": [
               {
@@ -51360,7 +51652,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -51593,7 +51886,8 @@
               "Dynamic",
               "ObjC",
               "AccessControl",
-              "Override"
+              "Override",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
@@ -51642,7 +51936,8 @@
             "moduleName": "NbmapNavigation",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -51690,7 +51985,8 @@
             "moduleName": "NbmapNavigation",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -51711,7 +52007,8 @@
             "moduleName": "NbmapNavigation",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -82822,6 +83119,9 @@
             "usr": "s:So18NSAttributedStringC15NbmapNavigationE10pronouncedyABSSF",
             "mangledName": "$sSo18NSAttributedStringC15NbmapNavigationE10pronouncedyABSSF",
             "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
@@ -89699,17 +89999,24 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/RouteVoiceController.swift",
-      "kind": "StringLiteral",
-      "offset": 2854,
-      "length": 8,
-      "value": "\".audio\""
+      "kind": "BooleanLiteral",
+      "offset": 3922,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/RouteVoiceController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3021,
+      "offset": 4144,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/RouteVoiceController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5017,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/CPRouteChoice.swift",
@@ -98779,359 +99086,324 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 759,
+      "offset": 699,
       "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 796,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "StringLiteral",
-      "offset": 831,
-      "length": 55,
-      "value": "\"Lower bound of the pitch should not be lower than 0.0\""
+      "value": "5.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 933,
+      "offset": 736,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 784,
       "length": 4,
-      "value": "85.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 971,
-      "length": 2,
-      "value": "85"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "StringLiteral",
-      "offset": 1007,
-      "length": 57,
-      "value": "\"Upper bound of the pitch should not be higher than 85.0\""
+      "value": "60.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 705,
+      "offset": 822,
       "length": 4,
-      "value": "32.0"
+      "value": "60.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1209,
+      "offset": 645,
+      "length": 4,
+      "value": "40.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 970,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1248,
+      "offset": 1009,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "StringLiteral",
-      "offset": 1287,
+      "offset": 1048,
       "length": 55,
       "value": "\"Lower bound of the pitch should not be lower than 100\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1150,
+      "offset": 911,
       "length": 6,
       "value": "1000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1501,
+      "offset": 1262,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1540,
+      "offset": 1301,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 1443,
+      "offset": 1204,
       "length": 5,
       "value": "700.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2113,
+      "offset": 1587,
+      "length": 4,
+      "value": "10.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1617,
+      "length": 4,
+      "value": "20.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1656,
+      "length": 4,
+      "value": "10.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1692,
+      "length": 4,
+      "value": "20.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1480,
+      "length": 4,
+      "value": "14.5"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1489,
+      "length": 4,
+      "value": "18.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 1912,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2142,
+      "offset": 1941,
       "length": 4,
       "value": "22.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2181,
+      "offset": 1980,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2214,
-      "length": 2,
-      "value": "22"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
-      "offset": 2292,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "StringLiteral",
-      "offset": 2331,
-      "length": 60,
-      "value": "\"Lower bound of the zoom range should not be lower than 0.0\""
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
-      "offset": 2445,
-      "length": 4,
-      "value": "22.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "StringLiteral",
-      "offset": 2485,
-      "length": 62,
-      "value": "\"Upper bound of the zoom range should not be higher than 22.0\""
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
-      "offset": 2003,
-      "length": 5,
-      "value": "15.10"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
       "offset": 2013,
-      "length": 5,
-      "value": "16.95"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
-      "offset": 2741,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "FloatLiteral",
-      "offset": 2770,
-      "length": 4,
-      "value": "22.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2809,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2842,
       "length": 2,
       "value": "22"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2920,
+      "offset": 2091,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "StringLiteral",
-      "offset": 2959,
+      "offset": 2130,
       "length": 60,
       "value": "\"Lower bound of the zoom range should not be lower than 0.0\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 3073,
+      "offset": 2244,
       "length": 4,
       "value": "22.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "StringLiteral",
-      "offset": 3113,
+      "offset": 2284,
       "length": 62,
       "value": "\"Upper bound of the zoom range should not be higher than 22.0\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2635,
+      "offset": 1806,
       "length": 2,
       "value": "13"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2642,
+      "offset": 1813,
       "length": 4,
       "value": "16.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 3623,
+      "offset": 2794,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 3993,
+      "offset": 3164,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 4377,
+      "offset": 3548,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 4755,
+      "offset": 3926,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 5139,
+      "offset": 4310,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 5499,
+      "offset": 4670,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 6641,
+      "offset": 5812,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 8058,
+      "offset": 7229,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 8294,
+      "offset": 7465,
       "length": 3,
       "value": "7.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 8651,
+      "offset": 7822,
       "length": 4,
       "value": "20.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 9399,
+      "offset": 8570,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 9885,
+      "offset": 9056,
       "length": 4,
       "value": "45.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 10604,
+      "offset": 9775,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 10847,
+      "offset": 10018,
       "length": 5,
       "value": "150.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 11065,
+      "offset": 10236,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 11834,
+      "offset": 11029,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 12003,
+      "offset": 11290,
       "length": 5,
       "value": "180.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 11468,
+      "length": 3,
+      "value": "5.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/LaneView.swift",
@@ -99437,16 +99709,58 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 457,
+      "offset": 842,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 1175,
+      "offset": 1408,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "Array",
+      "offset": 1843,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "Dictionary",
+      "offset": 1929,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1996,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2053,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "FloatLiteral",
+      "offset": 2112,
+      "length": 4,
+      "value": "0.12"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "StringLiteral",
+      "offset": 2241,
+      "length": 27,
+      "value": "\"nbmap.audio.session.queue\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/AvoidSetting.swift",
@@ -100081,63 +100395,63 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 27829,
+      "offset": 28054,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 27867,
+      "offset": 28092,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 27961,
+      "offset": 28186,
       "length": 4,
       "value": "12.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 28004,
+      "offset": 28229,
       "length": 4,
       "value": "22.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 28047,
+      "offset": 28272,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "BooleanLiteral",
-      "offset": 28094,
+      "offset": 28319,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 28141,
+      "offset": 28366,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 37174,
+      "offset": 37372,
       "length": 6,
       "value": "1000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 37505,
+      "offset": 37703,
       "length": 3,
       "value": "0.0"
     },

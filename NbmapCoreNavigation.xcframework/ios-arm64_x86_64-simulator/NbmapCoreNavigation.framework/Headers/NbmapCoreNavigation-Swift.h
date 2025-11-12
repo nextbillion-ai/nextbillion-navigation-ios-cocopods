@@ -432,27 +432,11 @@ enum NBFeedbackSource : NSInteger;
 @class NSURLSessionDataTask;
 @class NBDirectionsOptions;
 @class NSURL;
-/// A <code>Directions</code> object provides you with optimal directions between different locations, or waypoints. The directions object passes your request to the <a href="https://docs.nextbillion.ai/docs/navigation/api/navigation">Nbmap Navigation  API</a> and returns the requested information to a closure (block) that you provide. A directions object can handle multiple simultaneous requests. A <code>RouteOptions</code> object specifies criteria for the results, such as intermediate waypoints, a mode of transportation, or the level of detail to be returned.
-/// Each result produced by the directions object is stored in a <code>Route</code> object. Depending on the <code>RouteOptions</code> object you provide, each route may include detailed information suitable for turn-by-turn directions, or it may include only high-level information such as the distance, estimated travel time, and name of each leg of the trip. The waypoints that form the request may be conflated with nearby locations, as appropriate; the resulting waypoints are provided to the closure.
 SWIFT_CLASS_NAMED("Directions")
 @interface NBDirections : NSObject
-/// The shared directions object.
-/// To use this object, a Nbmap [access token] should be specified in the <code>NBMapAccessKey</code> key in the main application bundle’s Info.plist.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBDirections * _Nonnull sharedDirections;)
 + (NBDirections * _Nonnull)sharedDirections SWIFT_WARN_UNUSED_RESULT;
-/// Begins asynchronously calculating the route or routes using the given options and delivers the results to a closure.
-/// This method retrieves the routes asynchronously over a network connection. If a connection error or server error occurs, details about the error are passed into the given completion handler in lieu of the routes.
-/// Routes may be displayed atop a [Nbmap map]. They may be cached but may not be stored permanently.
-/// \param options A <code>RouteOptions</code> object specifying the requirements for the resulting routes.
-///
-/// \param completionHandler The closure (block) to call with the resulting routes. This closure is executed on the application’s main thread.
-///
-///
-/// returns:
-/// The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting routes, cancel this task.
 - (NSURLSessionDataTask * _Nonnull)calculateNavigationWithOptions:(NBRouteOptionss * _Nonnull)options completionHandler:(void (^ _Nonnull)(NSArray<NBNavRoute *> * _Nullable, NSError * _Nullable))completionHandler;
-/// The HTTP URL used to fetch the routes from the API.
-/// After requesting the URL returned by this method, you can parse the JSON data in the response and pass it into the <code>Route.init(json:waypoints:profileIdentifier:)</code> initializer.
 - (NSURL * _Nonnull)URLForCalculatingDirectionsWithOptions:(NBDirectionsOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1001,9 +985,68 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
 /// Please note this parameter is effective only when <code>profileIdentifier</code> is <code>.truck</code> and <code>mapOption</code> is<code>.valhalla</code>
 @property (nonatomic) double truckAxleLoad;
-/// Allowed Values:  <code>taxi</code> <code>hov</code>
+/// Allowed Values:  <code>taxi</code> <code>hov</code>
 @property (nonatomic, copy) NSString * _Nonnull allow;
 @property (nonatomic) NBNavigationRoadInfo _Nullable roadInfo;
+/// Specifies routing preferences for truck navigation.
+/// Set this to <code>.truckRoute</code> to prioritize truck-friendly roads when calculating routes,
+/// aiming to maximize their inclusion in the final route.
+/// <em>Important</em>: This parameter is effective only when:
+/// <ul>
+///   <li>
+///     <code>mapOption</code> is set to <code>.flexible</code> or <code>.valhalla</code>
+///   </li>
+///   <li>
+///     <code>profileIdentifier</code> is set to <code>NBNavigationMode.truck</code>
+///   </li>
+/// </ul>
+/// <em>Note</em>: The <code>truckTypes</code> setting is ineffective without this parameter.
+/// Default value is <code>.none</code>.
+/// Example:
+/// \code
+/// options.truckPrefer = .truckRoute
+///
+/// \endcode
+@property (nonatomic) NBTruckPrefer prefer;
+/// Defines the truck type(s) for route calculation.
+/// This information is used for determining permissible roads and generating
+/// an appropriate route for the given truck type(s).
+/// Available options:
+/// <ul>
+///   <li>
+///     <code>.rigidTruck</code> - Rigid truck with fixed body and chassis
+///   </li>
+///   <li>
+///     <code>.semiTrailer</code> - Semi-trailer with detachable trailer
+///   </li>
+///   <li>
+///     <code>.bDouble</code> - B-double with two trailers
+///   </li>
+///   <li>
+///     <code>.roadTrain</code> - Road train with multiple trailers
+///   </li>
+///   <li>
+///     <code>.genericTruck</code> - Generic truck (unspecified type)
+///   </li>
+/// </ul>
+/// Multiple types can be combined using OptionSet syntax:
+/// \code
+/// options.truckTypes = [.rigidTruck, .semiTrailer]
+///
+/// \endcode<em>Important</em>: This parameter is effective only when:
+/// <ul>
+///   <li>
+///     <code>mapOption</code> is set to <code>.flexible</code> or <code>.valhalla</code>
+///   </li>
+///   <li>
+///     <code>profileIdentifier</code> is set to <code>NBNavigationMode.truck</code>
+///   </li>
+///   <li>
+///     <code>prefer</code> is set to <code>.truckRoute</code>
+///   </li>
+/// </ul>
+/// Default value is <code>[]</code> (empty set).
+@property (nonatomic) NBTruckTypes truckTypes;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
@@ -1120,21 +1163,13 @@ SWIFT_CLASS_NAMED("NavigationSettings")
 @end
 
 @class NSURLSession;
-/// Manages URLSession for navigation network requests
-/// Provides robust network handling with automatic recovery from connection issues
 SWIFT_CLASS_NAMED("NetworkSessionManager")
 @interface NBNetworkSessionManager : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBNetworkSessionManager * _Nonnull shared;)
-+ (NBNetworkSessionManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-/// Reset URLSession (call when persistent network errors occur)
-- (void)resetSession;
-/// Get current URLSession
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Get current URLSession (thread-safe; no re-entrant sync)
 - (NSURLSession * _Nonnull)getSession SWIFT_WARN_UNUSED_RESULT;
-/// Check if error is recoverable and should trigger session reset
 - (void)handleNetworkError:(NSError * _Nonnull)error;
-/// Check if error is retryable
+/// Retryable network errors (client perspective)
 + (BOOL)isRetryableError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -2307,27 +2342,11 @@ enum NBFeedbackSource : NSInteger;
 @class NSURLSessionDataTask;
 @class NBDirectionsOptions;
 @class NSURL;
-/// A <code>Directions</code> object provides you with optimal directions between different locations, or waypoints. The directions object passes your request to the <a href="https://docs.nextbillion.ai/docs/navigation/api/navigation">Nbmap Navigation  API</a> and returns the requested information to a closure (block) that you provide. A directions object can handle multiple simultaneous requests. A <code>RouteOptions</code> object specifies criteria for the results, such as intermediate waypoints, a mode of transportation, or the level of detail to be returned.
-/// Each result produced by the directions object is stored in a <code>Route</code> object. Depending on the <code>RouteOptions</code> object you provide, each route may include detailed information suitable for turn-by-turn directions, or it may include only high-level information such as the distance, estimated travel time, and name of each leg of the trip. The waypoints that form the request may be conflated with nearby locations, as appropriate; the resulting waypoints are provided to the closure.
 SWIFT_CLASS_NAMED("Directions")
 @interface NBDirections : NSObject
-/// The shared directions object.
-/// To use this object, a Nbmap [access token] should be specified in the <code>NBMapAccessKey</code> key in the main application bundle’s Info.plist.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBDirections * _Nonnull sharedDirections;)
 + (NBDirections * _Nonnull)sharedDirections SWIFT_WARN_UNUSED_RESULT;
-/// Begins asynchronously calculating the route or routes using the given options and delivers the results to a closure.
-/// This method retrieves the routes asynchronously over a network connection. If a connection error or server error occurs, details about the error are passed into the given completion handler in lieu of the routes.
-/// Routes may be displayed atop a [Nbmap map]. They may be cached but may not be stored permanently.
-/// \param options A <code>RouteOptions</code> object specifying the requirements for the resulting routes.
-///
-/// \param completionHandler The closure (block) to call with the resulting routes. This closure is executed on the application’s main thread.
-///
-///
-/// returns:
-/// The data task used to perform the HTTP request. If, while waiting for the completion handler to execute, you no longer want the resulting routes, cancel this task.
 - (NSURLSessionDataTask * _Nonnull)calculateNavigationWithOptions:(NBRouteOptionss * _Nonnull)options completionHandler:(void (^ _Nonnull)(NSArray<NBNavRoute *> * _Nullable, NSError * _Nullable))completionHandler;
-/// The HTTP URL used to fetch the routes from the API.
-/// After requesting the URL returned by this method, you can parse the JSON data in the response and pass it into the <code>Route.init(json:waypoints:profileIdentifier:)</code> initializer.
 - (NSURL * _Nonnull)URLForCalculatingDirectionsWithOptions:(NBDirectionsOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2876,9 +2895,68 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
 /// Please note this parameter is effective only when <code>profileIdentifier</code> is <code>.truck</code> and <code>mapOption</code> is<code>.valhalla</code>
 @property (nonatomic) double truckAxleLoad;
-/// Allowed Values:  <code>taxi</code> <code>hov</code>
+/// Allowed Values:  <code>taxi</code> <code>hov</code>
 @property (nonatomic, copy) NSString * _Nonnull allow;
 @property (nonatomic) NBNavigationRoadInfo _Nullable roadInfo;
+/// Specifies routing preferences for truck navigation.
+/// Set this to <code>.truckRoute</code> to prioritize truck-friendly roads when calculating routes,
+/// aiming to maximize their inclusion in the final route.
+/// <em>Important</em>: This parameter is effective only when:
+/// <ul>
+///   <li>
+///     <code>mapOption</code> is set to <code>.flexible</code> or <code>.valhalla</code>
+///   </li>
+///   <li>
+///     <code>profileIdentifier</code> is set to <code>NBNavigationMode.truck</code>
+///   </li>
+/// </ul>
+/// <em>Note</em>: The <code>truckTypes</code> setting is ineffective without this parameter.
+/// Default value is <code>.none</code>.
+/// Example:
+/// \code
+/// options.truckPrefer = .truckRoute
+///
+/// \endcode
+@property (nonatomic) NBTruckPrefer prefer;
+/// Defines the truck type(s) for route calculation.
+/// This information is used for determining permissible roads and generating
+/// an appropriate route for the given truck type(s).
+/// Available options:
+/// <ul>
+///   <li>
+///     <code>.rigidTruck</code> - Rigid truck with fixed body and chassis
+///   </li>
+///   <li>
+///     <code>.semiTrailer</code> - Semi-trailer with detachable trailer
+///   </li>
+///   <li>
+///     <code>.bDouble</code> - B-double with two trailers
+///   </li>
+///   <li>
+///     <code>.roadTrain</code> - Road train with multiple trailers
+///   </li>
+///   <li>
+///     <code>.genericTruck</code> - Generic truck (unspecified type)
+///   </li>
+/// </ul>
+/// Multiple types can be combined using OptionSet syntax:
+/// \code
+/// options.truckTypes = [.rigidTruck, .semiTrailer]
+///
+/// \endcode<em>Important</em>: This parameter is effective only when:
+/// <ul>
+///   <li>
+///     <code>mapOption</code> is set to <code>.flexible</code> or <code>.valhalla</code>
+///   </li>
+///   <li>
+///     <code>profileIdentifier</code> is set to <code>NBNavigationMode.truck</code>
+///   </li>
+///   <li>
+///     <code>prefer</code> is set to <code>.truckRoute</code>
+///   </li>
+/// </ul>
+/// Default value is <code>[]</code> (empty set).
+@property (nonatomic) NBTruckTypes truckTypes;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
@@ -2995,21 +3073,13 @@ SWIFT_CLASS_NAMED("NavigationSettings")
 @end
 
 @class NSURLSession;
-/// Manages URLSession for navigation network requests
-/// Provides robust network handling with automatic recovery from connection issues
 SWIFT_CLASS_NAMED("NetworkSessionManager")
 @interface NBNetworkSessionManager : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBNetworkSessionManager * _Nonnull shared;)
-+ (NBNetworkSessionManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-/// Reset URLSession (call when persistent network errors occur)
-- (void)resetSession;
-/// Get current URLSession
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Get current URLSession (thread-safe; no re-entrant sync)
 - (NSURLSession * _Nonnull)getSession SWIFT_WARN_UNUSED_RESULT;
-/// Check if error is recoverable and should trigger session reset
 - (void)handleNetworkError:(NSError * _Nonnull)error;
-/// Check if error is retryable
+/// Retryable network errors (client perspective)
 + (BOOL)isRetryableError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
 @end
 

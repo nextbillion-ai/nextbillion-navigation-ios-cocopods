@@ -11,3 +11,5 @@ FOUNDATION_EXPORT const unsigned char NbmapDirectionsVersionString[];
 #import "NBAttribute.h"
 #import "NBRouteOptions.h"
 #import "NBRoadClasses.h"
+#import "NBTruckTypes.h"
+#import "NBTruckPrefer.h"
