@@ -12,10 +12,7 @@ Pod::Spec.new do |spec|
   spec.version      = "3.1.3-beta.5"
   spec.summary      = "The nextbillion.ai iOS  navigation cocoapods repo"
 
-  spec.description  = <<-DESC
-  This is a iOS xcframework repository, users can integrate with Nextbillion iOS navigation through cocoaPods 
-                   DESC
-
+  spec.description  = "This is a iOS xcframework repository, users can integrate with Nextbillion iOS navigation through cocoaPods "
   spec.homepage     = "https://github.com/nextbillion-ai/nextbillion-navigation-ios-cocopods"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
