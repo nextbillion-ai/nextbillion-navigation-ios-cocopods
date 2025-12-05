@@ -265377,7 +265377,7 @@
       "kind": "IntegerLiteral",
       "offset": 3884,
       "length": 2,
-      "value": "20"
+      "value": "30"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/Network\/NetworkSessionManager.swift",
@@ -269967,63 +269967,63 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 3240,
+      "offset": 3303,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 4016,
+      "offset": 4205,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 4380,
+      "offset": 4632,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 4893,
+      "offset": 5271,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 4917,
+      "offset": 5295,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 4939,
+      "offset": 5317,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 6175,
+      "offset": 6805,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "StringLiteral",
-      "offset": 10841,
+      "offset": 11597,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 25920,
+      "offset": 26676,
       "length": 2,
       "value": "10"
     },

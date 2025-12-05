@@ -360,6 +360,7 @@ extension NbmapCoreNavigation.Route {
   @objc deinit
 }
 extension NbmapNavigation.NavigationMapView {
+  @_Concurrency.MainActor @preconcurrency public func resetTraveledPoints()
   @_Concurrency.MainActor @preconcurrency public func updateRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?, routes: [NbmapCoreNavigation.Route], shouldRedraw: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public func updateUpcomingRoutePointIndex(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?) -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency public func travelAlongRouteLine(to coordinate: CoreLocation.CLLocationCoordinate2D?, by verhence: Swift.Bool = false)
