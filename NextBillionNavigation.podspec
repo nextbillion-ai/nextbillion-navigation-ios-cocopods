@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.authors             = { "qiu" => "zhengshen@nextbillion.ai" }
   spec.source       = { 
     :git => "https://github.com/nextbillion-ai/nextbillion-navigation-ios-cocopods.git",
-    :tag => "3.1.3"
+    :tag => "3.1.4-beta.1"
   }
 
   spec.vendored_frameworks = '*.xcframework'
