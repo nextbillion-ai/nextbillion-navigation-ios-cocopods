@@ -3131,6 +3131,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3320,6 +3327,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3509,6 +3523,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3696,6 +3717,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4429,6 +4457,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -4931,6 +4966,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -5621,6 +5663,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -9662,13 +9711,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -9786,7 +9835,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -9821,7 +9870,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -9862,12 +9911,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -9905,12 +9954,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -9948,12 +9997,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -9992,7 +10041,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -10033,12 +10082,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -10406,12 +10455,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -11645,6 +11694,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -11937,6 +11993,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -13382,6 +13445,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -13812,6 +13882,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -17907,12 +17984,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -17967,12 +18044,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -18449,18 +18526,18 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+                "printedName": "[_LocationEssentials.CLLocationCoordinate2D]",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocationCoordinate2D",
-                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                     "usr": "c:@S@CLLocationCoordinate2D"
                   }
                 ],
@@ -18650,12 +18727,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocationCoordinate2D?",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocationCoordinate2D",
-                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                     "usr": "c:@S@CLLocationCoordinate2D"
                   }
                 ],
@@ -18716,12 +18793,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocationCoordinate2D?",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocationCoordinate2D",
-                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                     "usr": "c:@S@CLLocationCoordinate2D"
                   }
                 ],
@@ -18754,12 +18831,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocationCoordinate2D?",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocationCoordinate2D",
-                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                     "usr": "c:@S@CLLocationCoordinate2D"
                   }
                 ],
@@ -18920,6 +18997,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -20002,6 +20086,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -20215,7 +20306,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -20935,6 +21026,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -21947,6 +22045,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -22429,6 +22534,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -23083,6 +23195,13 @@
             "printedName": "NavigationServiceDelegate",
             "usr": "s:19NbmapCoreNavigation0C15ServiceDelegateP",
             "mangledName": "$s19NbmapCoreNavigation0C15ServiceDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -24069,6 +24188,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -25301,12 +25427,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -25464,13 +25590,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -25547,7 +25673,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -25582,7 +25708,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -25623,12 +25749,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -25855,6 +25981,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -27552,6 +27685,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -27966,6 +28106,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -28169,6 +28316,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -28360,6 +28514,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -28551,6 +28712,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -28759,6 +28927,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -28981,6 +29156,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -31696,6 +31878,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl",
               "RawDocComment"
             ],
@@ -31727,6 +31911,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -31780,6 +31966,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32093,6 +32281,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32129,6 +32319,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32165,6 +32357,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32201,6 +32395,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32355,6 +32551,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32397,6 +32595,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32469,6 +32669,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32499,6 +32701,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32535,6 +32739,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32565,6 +32771,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32607,6 +32815,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -32643,6 +32853,8 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -33276,12 +33488,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -33308,12 +33520,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
+                    "printedName": "_LocationEssentials.CLLocation?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
+                        "printedName": "_LocationEssentials.CLLocation",
                         "usr": "c:objc(cs)CLLocation"
                       }
                     ],
@@ -33340,12 +33552,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation?",
+                    "printedName": "_LocationEssentials.CLLocation?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
+                        "printedName": "_LocationEssentials.CLLocation",
                         "usr": "c:objc(cs)CLLocation"
                       }
                     ],
@@ -33387,17 +33599,17 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[CoreLocation.CLLocation]?",
+                "printedName": "[_LocationEssentials.CLLocation]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[CoreLocation.CLLocation]",
+                    "printedName": "[_LocationEssentials.CLLocation]",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
+                        "printedName": "_LocationEssentials.CLLocation",
                         "usr": "c:objc(cs)CLLocation"
                       }
                     ],
@@ -33427,17 +33639,17 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "[CoreLocation.CLLocation]?",
+                    "printedName": "[_LocationEssentials.CLLocation]?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Array",
-                        "printedName": "[CoreLocation.CLLocation]",
+                        "printedName": "[_LocationEssentials.CLLocation]",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CLLocation",
-                            "printedName": "CoreLocation.CLLocation",
+                            "printedName": "_LocationEssentials.CLLocation",
                             "usr": "c:objc(cs)CLLocation"
                           }
                         ],
@@ -33467,17 +33679,17 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "[CoreLocation.CLLocation]?",
+                    "printedName": "[_LocationEssentials.CLLocation]?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Array",
-                        "printedName": "[CoreLocation.CLLocation]",
+                        "printedName": "[_LocationEssentials.CLLocation]",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CLLocation",
-                            "printedName": "CoreLocation.CLLocation",
+                            "printedName": "_LocationEssentials.CLLocation",
                             "usr": "c:objc(cs)CLLocation"
                           }
                         ],
@@ -33548,12 +33760,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -33562,17 +33774,17 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[CoreLocation.CLLocation]?",
+                "printedName": "[_LocationEssentials.CLLocation]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[CoreLocation.CLLocation]",
+                    "printedName": "[_LocationEssentials.CLLocation]",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CLLocation",
-                        "printedName": "CoreLocation.CLLocation",
+                        "printedName": "_LocationEssentials.CLLocation",
                         "usr": "c:objc(cs)CLLocation"
                       }
                     ],
@@ -34560,6 +34772,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -34616,7 +34835,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
@@ -34744,7 +34963,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
@@ -35370,6 +35589,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -35735,6 +35961,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -37073,6 +37306,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -37935,6 +38175,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -40484,12 +40731,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -40607,13 +40854,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -41029,6 +41276,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -45969,422 +46223,6 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "NbmapNavigation"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DashedLineView",
-        "printedName": "DashedLineView",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "dashedLength",
-            "printedName": "dashedLength",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(py)dashedLength",
-            "mangledName": "$s15NbmapNavigation14DashedLineViewC12dashedLength12CoreGraphics7CGFloatVvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "IBInspectable",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)dashedLength",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC12dashedLength12CoreGraphics7CGFloatVvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)setDashedLength:",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC12dashedLength12CoreGraphics7CGFloatVvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation14DashedLineViewC12dashedLength14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC12dashedLength12CoreGraphics7CGFloatVvM",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "dashedGap",
-            "printedName": "dashedGap",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(py)dashedGap",
-            "mangledName": "$s15NbmapNavigation14DashedLineViewC9dashedGap12CoreGraphics7CGFloatVvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "IBInspectable",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)dashedGap",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC9dashedGap12CoreGraphics7CGFloatVvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)setDashedGap:",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC9dashedGap12CoreGraphics7CGFloatVvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation14DashedLineViewC9dashedGap14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15NbmapNavigation14DashedLineViewC9dashedGap12CoreGraphics7CGFloatVvM",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "layoutSubviews",
-            "printedName": "layoutSubviews()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)layoutSubviews",
-            "mangledName": "$s15NbmapNavigation14DashedLineViewC14layoutSubviewsyyF",
-            "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "objc_name": "layoutSubviews",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(frame:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DashedLineView",
-                "printedName": "NbmapNavigation.DashedLineView",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGRect",
-                "printedName": "CoreFoundation.CGRect",
-                "usr": "c:@S@CGRect"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)initWithFrame:",
-            "mangledName": "$s15NbmapNavigation14DashedLineViewC5frameACSo6CGRectV_tcfc",
-            "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithFrame:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "Override"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(coder:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "NbmapNavigation.DashedLineView?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DashedLineView",
-                    "printedName": "NbmapNavigation.DashedLineView",
-                    "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NSCoder",
-                "printedName": "Foundation.NSCoder",
-                "usr": "c:objc(cs)NSCoder"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView(im)initWithCoder:",
-            "mangledName": "$s15NbmapNavigation14DashedLineViewC5coderACSgSo7NSCoderC_tcfc",
-            "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithCoder:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "Required"
-            ],
-            "init_kind": "Designated"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@NbmapNavigation@objc(cs)NBDashedLineView",
-        "mangledName": "$s15NbmapNavigation14DashedLineViewC",
-        "moduleName": "NbmapNavigation",
-        "objc_name": "NBDashedLineView",
-        "declAttributes": [
-          "Preconcurrency",
-          "Custom",
-          "AccessControl",
-          "ObjC",
-          "IBDesignable",
-          "RawDocComment"
-        ],
-        "superclassUsr": "c:@M@NbmapNavigation@objc(cs)NBLineView",
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "NbmapNavigation.LineView",
-          "UIKit.UIView",
-          "UIKit.UIResponder",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "__DefaultCustomPlaygroundQuickLookable",
-            "printedName": "__DefaultCustomPlaygroundQuickLookable",
-            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
-            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "CoreLocation",
         "printedName": "CoreLocation",
         "declKind": "Import",
@@ -49949,6 +49787,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -50792,6 +50637,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -51018,6 +50870,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -52330,6 +52189,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -54002,13 +53868,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -54045,7 +53911,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -54117,7 +53983,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -54793,7 +54659,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -54838,7 +54704,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -54911,12 +54777,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -54955,12 +54821,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -54999,12 +54865,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -55601,13 +55467,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -55640,7 +55506,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -55704,7 +55570,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -55996,7 +55862,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -56066,12 +55932,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -56106,12 +55972,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -56146,12 +56012,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -56465,7 +56331,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -56766,6 +56632,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -56955,6 +56828,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -57144,6 +57024,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -57333,6 +57220,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -57520,6 +57414,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -58393,6 +58294,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -58871,155 +58779,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "NbmapNavigation",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "NbmapCoreNavigation",
-        "printedName": "NbmapCoreNavigation",
-        "declKind": "Import",
-        "moduleName": "NbmapNavigation"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "NavigationMapStyle",
-        "printedName": "NavigationMapStyle",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationMapStyle",
-                "printedName": "NbmapNavigation.NavigationMapStyle",
-                "usr": "s:15NbmapNavigation0B8MapStyleC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15NbmapNavigation0B8MapStyleC6sharedACvpZ",
-            "mangledName": "$s15NbmapNavigation0B8MapStyleC6sharedACvpZ",
-            "moduleName": "NbmapNavigation",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NavigationMapStyle",
-                    "printedName": "NbmapNavigation.NavigationMapStyle",
-                    "usr": "s:15NbmapNavigation0B8MapStyleC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B8MapStyleC6sharedACvgZ",
-                "mangledName": "$s15NbmapNavigation0B8MapStyleC6sharedACvgZ",
-                "moduleName": "NbmapNavigation",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "updateNavigationMapStyle",
-            "printedName": "updateNavigationMapStyle(configurationMapStyle:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ConfigurationMapStyle",
-                "printedName": "NbmapCoreNavigation.ConfigurationMapStyle",
-                "usr": "c:@M@NbmapCoreNavigation@objc(cs)ConfigurationMapStyle"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B8MapStyleC06updatebcD0013configurationcD0y0a4CoreB0013ConfigurationcD0C_tF",
-            "mangledName": "$s15NbmapNavigation0B8MapStyleC06updatebcD0013configurationcD0y0a4CoreB0013ConfigurationcD0C_tF",
-            "moduleName": "NbmapNavigation",
-            "isOpen": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getRefinedConfigurationMapStyle",
-            "printedName": "getRefinedConfigurationMapStyle()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ConfigurationMapStyle",
-                "printedName": "NbmapCoreNavigation.ConfigurationMapStyle",
-                "usr": "c:@M@NbmapCoreNavigation@objc(cs)ConfigurationMapStyle"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B8MapStyleC023getRefinedConfigurationcD00a4CoreB00gcD0CyF",
-            "mangledName": "$s15NbmapNavigation0B8MapStyleC023getRefinedConfigurationcD00a4CoreB00gcD0CyF",
-            "moduleName": "NbmapNavigation",
-            "isOpen": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:15NbmapNavigation0B8MapStyleC",
-        "mangledName": "$s15NbmapNavigation0B8MapStyleC",
-        "moduleName": "NbmapNavigation",
-        "isOpen": true,
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -60608,6 +60367,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -60916,12 +60682,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -61804,6 +61570,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -62444,6 +62217,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UnimplementedLogging",
             "printedName": "UnimplementedLogging",
             "usr": "s:19NbmapCoreNavigation20UnimplementedLoggingP",
@@ -62792,6 +62572,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -66575,7 +66362,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
@@ -66625,19 +66412,19 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               }
             ],
@@ -67810,7 +67597,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               }
             ],
@@ -67834,7 +67621,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocationCoordinate2D",
-                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                     "usr": "c:@S@CLLocationCoordinate2D"
                   }
                 ],
@@ -68409,7 +68196,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               }
             ],
@@ -69985,6 +69772,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -70178,6 +69972,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -70371,6 +70172,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -70564,6 +70372,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -70757,6 +70572,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -70950,6 +70772,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -71142,6 +70971,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -71334,6 +71170,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -71659,6 +71502,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -71984,6 +71834,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -72523,6 +72380,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -72814,6 +72678,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -73355,6 +73226,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -73547,6 +73425,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -73739,6 +73624,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -73929,6 +73821,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -74525,6 +74424,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -74716,6 +74622,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -74907,6 +74820,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -75098,6 +75018,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -75289,6 +75216,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -75920,6 +75854,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -76111,6 +76052,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -76460,6 +76408,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -76729,6 +76684,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -76917,6 +76879,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -77528,6 +77497,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -77717,6 +77693,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -77906,6 +77889,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -78095,6 +78085,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -78720,6 +78717,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -80063,6 +80067,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -80813,12 +80824,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[CoreLocation.CLLocation]",
+                "printedName": "[_LocationEssentials.CLLocation]",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -80862,12 +80873,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -80993,13 +81004,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -81139,7 +81150,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -81427,7 +81438,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -81534,6 +81545,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -83697,6 +83715,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ObjectiveCBridgeable",
             "printedName": "_ObjectiveCBridgeable",
             "children": [
@@ -83745,7 +83770,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "printedName": "_LocationEssentials.CLLocationCoordinate2D",
                 "usr": "c:@S@CLLocationCoordinate2D"
               },
               {
@@ -84008,6 +84033,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -85106,6 +85138,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Encodable",
             "printedName": "Encodable",
             "usr": "s:SE",
@@ -85124,35 +85163,6 @@
             "printedName": "_HasContiguousBytes",
             "usr": "s:s19_HasContiguousBytesP",
             "mangledName": "$ss19_HasContiguousBytesP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_ObjectiveCBridgeable",
-            "printedName": "_ObjectiveCBridgeable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "_ObjectiveCType",
-                "printedName": "_ObjectiveCType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSArray",
-                    "printedName": "Foundation.NSArray",
-                    "usr": "c:objc(cs)NSArray"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:s21_ObjectiveCBridgeableP",
-            "mangledName": "$ss21_ObjectiveCBridgeableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
           },
           {
             "kind": "Conformance",
@@ -85247,6 +85257,49 @@
             ],
             "usr": "s:10Foundation26DecodableWithConfigurationP",
             "mangledName": "$s10Foundation26DecodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSArray",
+                    "printedName": "Foundation.NSArray",
+                    "usr": "c:objc(cs)NSArray"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Content",
+            "printedName": "Content",
+            "usr": "s:So17CMSampleBufferRefa9CoreMediaE7ContentP",
+            "mangledName": "$sSo17CMSampleBufferRefa9CoreMediaE7ContentP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ContentWithFormatDescription",
+            "printedName": "ContentWithFormatDescription",
+            "usr": "s:So17CMSampleBufferRefa9CoreMediaE28ContentWithFormatDescriptionP",
+            "mangledName": "$sSo17CMSampleBufferRefa9CoreMediaE28ContentWithFormatDescriptionP"
           }
         ]
       },
@@ -85395,6 +85448,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -85536,6 +85596,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -85757,6 +85824,13 @@
             "printedName": "_HasCustomAnyHashableRepresentation",
             "usr": "s:s35_HasCustomAnyHashableRepresentationP",
             "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -86103,13 +86177,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "_ObjectiveCBridgeable",
             "printedName": "_ObjectiveCBridgeable",
             "children": [
@@ -86150,6 +86217,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -86228,23 +86302,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86265,23 +86339,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86302,23 +86376,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86339,23 +86413,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86376,23 +86450,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86413,23 +86487,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86450,23 +86524,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86487,23 +86561,23 @@
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation.CodingKeys.Type) -> CoreLocation.CLLocation.CodingKeys",
+                    "printedName": "(_LocationEssentials.CLLocation.CodingKeys.Type) -> _LocationEssentials.CLLocation.CodingKeys",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "Metatype",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys.Type",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CodingKeys",
-                            "printedName": "CoreLocation.CLLocation.CodingKeys",
+                            "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                             "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                           }
                         ]
@@ -86524,12 +86598,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation.CodingKeys?",
+                    "printedName": "_LocationEssentials.CLLocation.CodingKeys?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       }
                     ],
@@ -86635,12 +86709,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation.CodingKeys?",
+                    "printedName": "_LocationEssentials.CLLocation.CodingKeys?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       }
                     ],
@@ -86723,12 +86797,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "CoreLocation.CLLocation.CodingKeys?",
+                    "printedName": "_LocationEssentials.CLLocation.CodingKeys?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "CodingKeys",
-                        "printedName": "CoreLocation.CLLocation.CodingKeys",
+                        "printedName": "_LocationEssentials.CLLocation.CodingKeys",
                         "usr": "s:So10CLLocationC15NbmapNavigationE10CodingKeysO"
                       }
                     ],
@@ -86836,6 +86910,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -86870,7 +86951,7 @@
         ],
         "declKind": "Class",
         "usr": "c:objc(cs)CLLocation",
-        "moduleName": "CoreLocation",
+        "moduleName": "_LocationEssentials",
         "isOpen": true,
         "intro_iOS": "2.0",
         "objc_name": "CLLocation",
@@ -86957,6 +87038,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -87679,6 +87767,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -88157,6 +88252,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -99094,20 +99196,6 @@
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/DashedLineView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 158,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/DashedLineView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 245,
-      "length": 1,
-      "value": "4"
-    },
-    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
       "offset": 699,
@@ -100212,13 +100300,6 @@
       "offset": 3609,
       "length": 41,
       "value": "\"Feedback type for Other Map Issue Issue\""
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Style\/NavigationMapStyle.swift",
-      "kind": "StringLiteral",
-      "offset": 258,
-      "length": 26,
-      "value": "\"NAVIGATION_MAP_STYLE_KEY\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Feedback\/FeedbackViewController.swift",
