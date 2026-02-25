@@ -7586,6 +7586,13 @@
         "moduleName": "NbmapCoreNavigation"
       },
       {
+        "kind": "Import",
+        "name": "Nbmap",
+        "printedName": "Nbmap",
+        "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
         "kind": "TypeDecl",
         "name": "RouteOptions",
         "printedName": "RouteOptions",
@@ -251419,140 +251426,140 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 412,
+      "offset": 425,
       "length": 16,
       "value": "\"NBMapAccessKey\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 516,
+      "offset": 529,
       "length": 14,
       "value": "\"NBNavBaseUri\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 607,
+      "offset": 620,
       "length": 23,
       "value": "\"NBMapApiKeyHeaderName\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8084,
+      "offset": 8097,
       "length": 17,
       "value": "\"navigation\/json\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8265,
+      "offset": 8278,
       "length": 28,
       "value": "\"https:\/\/api.nextbillion.io\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8523,
-      "length": 197,
-      "value": "\"A Nbmap access token is required. Go to <https:\/\/nextbillion.ai\/book-a-demo>. In Info.plist, set the NBMapAccessKey key to your access token, or use the Directions(accessToken:host:) initializer.\""
+      "offset": 8595,
+      "length": 202,
+      "value": "\"A Nbmap access token is required. Go to <https:\/\/nextbillion.ai\/book-a-demo>. In Info.plist, set the NBMapAccessKey key to your access token, or use NGLAccountManager.accessToken set the access token.\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8754,
+      "offset": 8831,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 10318,
+      "offset": 10395,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 10512,
+      "offset": 10589,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 10765,
+      "offset": 10842,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 12125,
+      "offset": 12202,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 12640,
+      "offset": 12717,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 13008,
+      "offset": 13085,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 13333,
+      "offset": 13410,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 14187,
+      "offset": 14264,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 14533,
+      "offset": 14610,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "FloatLiteral",
-      "offset": 14939,
+      "offset": 15016,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 15034,
+      "offset": 15111,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 16750,
+      "offset": 16827,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 21507,
+      "offset": 21584,
       "length": 4,
       "value": "true"
     },
@@ -257075,28 +257082,28 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/DataTracking.swift",
       "kind": "StringLiteral",
-      "offset": 2086,
+      "offset": 2119,
       "length": 156,
       "value": "\"`accessToken` must be set in the Info.plist as `NBMapAccessKey` or the `Route` passed into the `RouteController` must have the `accessToken` property set.\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/DataTracking.swift",
       "kind": "StringLiteral",
-      "offset": 2309,
+      "offset": 2342,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/DataTracking.swift",
       "kind": "BooleanLiteral",
-      "offset": 3984,
+      "offset": 4017,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/DataTracking.swift",
       "kind": "StringLiteral",
-      "offset": 23833,
+      "offset": 23866,
       "length": 15,
       "value": "\"user_offroute\""
     },
