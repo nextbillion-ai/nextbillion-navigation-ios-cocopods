@@ -1694,6 +1694,7 @@ extension UIKit.UIImage {
   }
   @objc override dynamic public init()
   @objc deinit
+  public func preWarm()
   #if compiler(>=5.3) && $NonescapableTypes
   open func prepareIncomingSpokenInstructions(_ instructions: [NbmapCoreNavigation.SpokenInstruction], locale: Foundation.Locale?)
   #endif
@@ -1706,8 +1707,8 @@ extension UIKit.UIImage {
 extension NbmapNavigation.SystemSpeechSynthesizer : AVFAudio.AVSpeechSynthesizerDelegate {
   @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didStart utterance: AVFAudio.AVSpeechUtterance)
   @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didContinue utterance: AVFAudio.AVSpeechUtterance)
-  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didFinish utterance: AVFAudio.AVSpeechUtterance)
   @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didPause utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didFinish utterance: AVFAudio.AVSpeechUtterance)
   @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didCancel utterance: AVFAudio.AVSpeechUtterance)
 }
 public enum NavigationCameraState {

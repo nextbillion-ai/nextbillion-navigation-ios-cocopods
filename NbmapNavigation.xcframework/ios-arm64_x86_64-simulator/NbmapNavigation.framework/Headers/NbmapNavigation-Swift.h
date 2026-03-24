@@ -1802,19 +1802,18 @@ SWIFT_CLASS_NAMED("SubtitleLabel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-/// SpeechSynthesizing implementation using AVSpeechSynthesizer with:
+/// SpeechSynthesizing implementation using AVSpeechSynthesizer.
+/// Key design decisions for iOS 26 compatibility:
 /// <ul>
 ///   <li>
-///     FIFO queue (no mid-utterance interruption)
+///     Audio session uses <code>.mixWithOthers</code> so external category changes (e.g. from Flutter)
+///     do not tear down the audio graph and crash (AVAudioBuffer.mm:281).
 ///   </li>
 ///   <li>
-///     Stable AVAudioSession setup (single owner; serialized; minimal options)
+///     Lightweight pre-warm (voice cache only, NO speak()) keeps navigation startup fast.
 ///   </li>
 ///   <li>
-///     First-utterance pre-roll to avoid transient low volume
-///   </li>
-///   <li>
-///     Extensive debug logging for field diagnostics
+///     FIFO queue ensures instructions are played in order.
 ///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
@@ -1827,8 +1826,8 @@ SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
 @interface SystemSpeechSynthesizer (SWIFT_EXTENSION(NbmapNavigation)) <AVSpeechSynthesizerDelegate>
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 @end
 
@@ -3734,19 +3733,18 @@ SWIFT_CLASS_NAMED("SubtitleLabel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-/// SpeechSynthesizing implementation using AVSpeechSynthesizer with:
+/// SpeechSynthesizing implementation using AVSpeechSynthesizer.
+/// Key design decisions for iOS 26 compatibility:
 /// <ul>
 ///   <li>
-///     FIFO queue (no mid-utterance interruption)
+///     Audio session uses <code>.mixWithOthers</code> so external category changes (e.g. from Flutter)
+///     do not tear down the audio graph and crash (AVAudioBuffer.mm:281).
 ///   </li>
 ///   <li>
-///     Stable AVAudioSession setup (single owner; serialized; minimal options)
+///     Lightweight pre-warm (voice cache only, NO speak()) keeps navigation startup fast.
 ///   </li>
 ///   <li>
-///     First-utterance pre-roll to avoid transient low volume
-///   </li>
-///   <li>
-///     Extensive debug logging for field diagnostics
+///     FIFO queue ensures instructions are played in order.
 ///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
@@ -3759,8 +3757,8 @@ SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
 @interface SystemSpeechSynthesizer (SWIFT_EXTENSION(NbmapNavigation)) <AVSpeechSynthesizerDelegate>
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 @end
 

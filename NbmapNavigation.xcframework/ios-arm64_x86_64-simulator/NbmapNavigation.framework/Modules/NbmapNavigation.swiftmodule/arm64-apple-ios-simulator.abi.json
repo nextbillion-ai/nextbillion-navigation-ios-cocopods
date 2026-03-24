@@ -51358,8 +51358,7 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -51443,8 +51442,7 @@
             "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC6volumeSfvp",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "accessors": [
               {
@@ -51535,8 +51533,7 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -51638,8 +51635,7 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -51723,8 +51719,7 @@
             "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC10isSpeakingSbvp",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "accessors": [
               {
@@ -51776,6 +51771,27 @@
           },
           {
             "kind": "Function",
+            "name": "preWarm",
+            "printedName": "preWarm()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation23SystemSpeechSynthesizerC7preWarmyyF",
+            "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC7preWarmyyF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "prepareIncomingSpokenInstructions",
             "printedName": "prepareIncomingSpokenInstructions(_:locale:)",
             "children": [
@@ -51819,8 +51835,7 @@
             "moduleName": "NbmapNavigation",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -51890,8 +51905,7 @@
             "moduleName": "NbmapNavigation",
             "isOpen": true,
             "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -51991,42 +52005,6 @@
           {
             "kind": "Function",
             "name": "speechSynthesizer",
-            "printedName": "speechSynthesizer(_:didFinish:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "AVSpeechSynthesizer",
-                "printedName": "AVFAudio.AVSpeechSynthesizer",
-                "usr": "c:objc(cs)AVSpeechSynthesizer"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "AVSpeechUtterance",
-                "printedName": "AVFAudio.AVSpeechUtterance",
-                "usr": "c:objc(cs)AVSpeechUtterance"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@NbmapNavigation@objc(cs)SystemSpeechSynthesizer(im)speechSynthesizer:didFinishSpeechUtterance:",
-            "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC06speechE0_9didFinishySo08AVSpeechE0C_So0I9UtteranceCtF",
-            "moduleName": "NbmapNavigation",
-            "objc_name": "speechSynthesizer:didFinishSpeechUtterance:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "speechSynthesizer",
             "printedName": "speechSynthesizer(_:didPause:)",
             "children": [
               {
@@ -52052,6 +52030,42 @@
             "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC06speechE0_8didPauseySo08AVSpeechE0C_So0I9UtteranceCtF",
             "moduleName": "NbmapNavigation",
             "objc_name": "speechSynthesizer:didPauseSpeechUtterance:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "speechSynthesizer",
+            "printedName": "speechSynthesizer(_:didFinish:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVSpeechSynthesizer",
+                "printedName": "AVFAudio.AVSpeechSynthesizer",
+                "usr": "c:objc(cs)AVSpeechSynthesizer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AVSpeechUtterance",
+                "printedName": "AVFAudio.AVSpeechUtterance",
+                "usr": "c:objc(cs)AVSpeechUtterance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@NbmapNavigation@objc(cs)SystemSpeechSynthesizer(im)speechSynthesizer:didFinishSpeechUtterance:",
+            "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC06speechE0_9didFinishySo08AVSpeechE0C_So0I9UtteranceCtF",
+            "moduleName": "NbmapNavigation",
+            "objc_name": "speechSynthesizer:didFinishSpeechUtterance:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -90210,56 +90224,56 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14801,
+      "offset": 13630,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15236,
+      "offset": 14065,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15407,
+      "offset": 14236,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15873,
+      "offset": 14702,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 16836,
+      "offset": 15665,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 18247,
+      "offset": 17076,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 20091,
+      "offset": 18920,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 43917,
+      "offset": 42946,
       "length": 4,
       "value": "true"
     },
@@ -91253,35 +91267,35 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10281,
+      "offset": 10138,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
+      "offset": 10189,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10236,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
+      "kind": "BooleanLiteral",
       "offset": 10332,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10379,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10475,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12270,
+      "offset": 12127,
       "length": 5,
       "value": "false"
     },
@@ -99821,56 +99835,49 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 842,
+      "offset": 779,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 1408,
+      "offset": 1126,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "Array",
-      "offset": 1843,
+      "offset": 1829,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "Dictionary",
-      "offset": 1929,
+      "offset": 1887,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 1996,
+      "offset": 1923,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2053,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
-      "kind": "FloatLiteral",
-      "offset": 2112,
-      "length": 4,
-      "value": "0.12"
+      "kind": "BooleanLiteral",
+      "offset": 1966,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "StringLiteral",
-      "offset": 2241,
+      "offset": 2029,
       "length": 27,
       "value": "\"nbmap.audio.session.queue\""
     },
