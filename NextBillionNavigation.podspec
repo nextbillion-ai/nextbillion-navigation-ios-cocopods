@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = '*.xcframework'
   spec.platform     = :ios, '12.0'
   spec.swift_versions = ['5.0']
-  spec.dependency 'NextBillionMap', '2.0.3'
+  spec.dependency 'NextBillionMap', '2.1.2'
   spec.dependency 'NextBillionTurf', '3.0.4'
   spec.user_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
   spec.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
