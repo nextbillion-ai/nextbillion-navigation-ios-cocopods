@@ -215098,7 +215098,8 @@
         "mangledName": "$s19NbmapCoreNavigation15SpeedCalibratorP",
         "moduleName": "NbmapCoreNavigation",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -215217,6 +215218,2301 @@
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
             "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeedQuality",
+        "printedName": "SpeedQuality",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "high",
+            "printedName": "high",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedQuality.Type) -> NbmapCoreNavigation.SpeedQuality",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedQuality",
+                        "printedName": "NbmapCoreNavigation.SpeedQuality",
+                        "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO4highyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO4highyA2CmF",
+            "moduleName": "NbmapCoreNavigation"
+          },
+          {
+            "kind": "Var",
+            "name": "medium",
+            "printedName": "medium",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedQuality.Type) -> NbmapCoreNavigation.SpeedQuality",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedQuality",
+                        "printedName": "NbmapCoreNavigation.SpeedQuality",
+                        "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO6mediumyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO6mediumyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "low",
+            "printedName": "low",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedQuality.Type) -> NbmapCoreNavigation.SpeedQuality",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedQuality",
+                        "printedName": "NbmapCoreNavigation.SpeedQuality",
+                        "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO3lowyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO3lowyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "weakSignal",
+            "printedName": "weakSignal",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedQuality.Type) -> NbmapCoreNavigation.SpeedQuality",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedQuality",
+                        "printedName": "NbmapCoreNavigation.SpeedQuality",
+                        "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO10weakSignalyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO10weakSignalyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalid",
+            "printedName": "invalid",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedQuality.Type) -> NbmapCoreNavigation.SpeedQuality",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedQuality",
+                        "printedName": "NbmapCoreNavigation.SpeedQuality",
+                        "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO7invalidyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO7invalidyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.SpeedQuality?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedQuality",
+                    "printedName": "NbmapCoreNavigation.SpeedQuality",
+                    "usr": "s:19NbmapCoreNavigation12SpeedQualityO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO8rawValueACSgSS_tcfc",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO8rawValueACSgSS_tcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation12SpeedQualityO8rawValueSSvp",
+            "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO8rawValueSSvp",
+            "moduleName": "NbmapCoreNavigation",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation12SpeedQualityO8rawValueSSvg",
+                "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO8rawValueSSvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19NbmapCoreNavigation12SpeedQualityO",
+        "mangledName": "$s19NbmapCoreNavigation12SpeedQualityO",
+        "moduleName": "NbmapCoreNavigation",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeedSource",
+        "printedName": "SpeedSource",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "gnss",
+            "printedName": "gnss",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedSource.Type) -> NbmapCoreNavigation.SpeedSource",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedSource",
+                    "printedName": "NbmapCoreNavigation.SpeedSource",
+                    "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedSource.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedSource",
+                        "printedName": "NbmapCoreNavigation.SpeedSource",
+                        "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO4gnssyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO4gnssyA2CmF",
+            "moduleName": "NbmapCoreNavigation"
+          },
+          {
+            "kind": "Var",
+            "name": "displacement",
+            "printedName": "displacement",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedSource.Type) -> NbmapCoreNavigation.SpeedSource",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedSource",
+                    "printedName": "NbmapCoreNavigation.SpeedSource",
+                    "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedSource.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedSource",
+                        "printedName": "NbmapCoreNavigation.SpeedSource",
+                        "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO12displacementyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO12displacementyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "frozen",
+            "printedName": "frozen",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedSource.Type) -> NbmapCoreNavigation.SpeedSource",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedSource",
+                    "printedName": "NbmapCoreNavigation.SpeedSource",
+                    "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedSource.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedSource",
+                        "printedName": "NbmapCoreNavigation.SpeedSource",
+                        "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO6frozenyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO6frozenyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stationary",
+            "printedName": "stationary",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NbmapCoreNavigation.SpeedSource.Type) -> NbmapCoreNavigation.SpeedSource",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedSource",
+                    "printedName": "NbmapCoreNavigation.SpeedSource",
+                    "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NbmapCoreNavigation.SpeedSource.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedSource",
+                        "printedName": "NbmapCoreNavigation.SpeedSource",
+                        "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO10stationaryyA2CmF",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO10stationaryyA2CmF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.SpeedSource?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedSource",
+                    "printedName": "NbmapCoreNavigation.SpeedSource",
+                    "usr": "s:19NbmapCoreNavigation11SpeedSourceO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO8rawValueACSgSS_tcfc",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO8rawValueACSgSS_tcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation11SpeedSourceO8rawValueSSvp",
+            "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO8rawValueSSvp",
+            "moduleName": "NbmapCoreNavigation",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation11SpeedSourceO8rawValueSSvg",
+                "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO8rawValueSSvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19NbmapCoreNavigation11SpeedSourceO",
+        "mangledName": "$s19NbmapCoreNavigation11SpeedSourceO",
+        "moduleName": "NbmapCoreNavigation",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeedProcessorConfig",
+        "printedName": "SpeedProcessorConfig",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "highAccuracyThreshold",
+            "printedName": "highAccuracyThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV21highAccuracyThresholdSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mediumAccuracyThreshold",
+            "printedName": "mediumAccuracyThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23mediumAccuracyThresholdSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "weakSignalThreshold",
+            "printedName": "weakSignalThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19weakSignalThresholdSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maxAcceleration",
+            "printedName": "maxAcceleration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxAccelerationSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maxDeceleration",
+            "printedName": "maxDeceleration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15maxDecelerationSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alphaHigh",
+            "printedName": "alphaHigh",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV9alphaHighSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alphaMedium",
+            "printedName": "alphaMedium",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV11alphaMediumSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alphaLow",
+            "printedName": "alphaLow",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV8alphaLowSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alphaWeakSignal",
+            "printedName": "alphaWeakSignal",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV15alphaWeakSignalSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stationarySpeedThreshold",
+            "printedName": "stationarySpeedThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV010stationaryD9ThresholdSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stationaryDuration",
+            "printedName": "stationaryDuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18stationaryDurationSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "freezeHoldDuration",
+            "printedName": "freezeHoldDuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV18freezeHoldDurationSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "freezeTotalDuration",
+            "printedName": "freezeTotalDuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV19freezeTotalDurationSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "weakSignalCountThreshold",
+            "printedName": "weakSignalCountThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV24weakSignalCountThresholdSivM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "enableDisplacementFallback",
+            "printedName": "enableDisplacementFallback",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV26enableDisplacementFallbackSbvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "minDisplacementInterval",
+            "printedName": "minDisplacementInterval",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV23minDisplacementIntervalSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maxDisplacementSpeed",
+            "printedName": "maxDisplacementSpeed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0Sdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0SdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0SdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SpeedProcessorConfig",
+                "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigVACycfc",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigVACycfc",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "automotive",
+            "printedName": "automotive",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SpeedProcessorConfig",
+                "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV10automotiveACvpZ",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV10automotiveACvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedProcessorConfig",
+                    "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                    "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV10automotiveACvgZ",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV10automotiveACvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pedestrian",
+            "printedName": "pedestrian",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SpeedProcessorConfig",
+                "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV10pedestrianACvpZ",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV10pedestrianACvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedProcessorConfig",
+                    "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                    "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV10pedestrianACvgZ",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV10pedestrianACvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cycling",
+            "printedName": "cycling",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SpeedProcessorConfig",
+                "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV7cyclingACvpZ",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV7cyclingACvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SpeedProcessorConfig",
+                    "printedName": "NbmapCoreNavigation.SpeedProcessorConfig",
+                    "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV7cyclingACvgZ",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV7cyclingACvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV",
+        "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV",
+        "moduleName": "NbmapCoreNavigation",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -262415,134 +264711,134 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
-      "kind": "IntegerLiteral",
+      "kind": "FloatLiteral",
       "offset": 138,
-      "length": 1,
-      "value": "6"
+      "length": 4,
+      "value": "12.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 200,
+      "offset": 203,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 254,
+      "offset": 257,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 310,
+      "offset": 313,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 436,
+      "offset": 439,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 562,
+      "offset": 565,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 686,
+      "offset": 689,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 787,
+      "offset": 790,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 844,
+      "offset": 847,
       "length": 37,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 865,
+      "offset": 868,
       "length": 1,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 880,
+      "offset": 883,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1219,
+      "offset": 1222,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4127,
+      "offset": 4130,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4836,
+      "offset": 4839,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4886,
+      "offset": 4889,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4951,
+      "offset": 4954,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5005,
+      "offset": 5008,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5062,
+      "offset": 5065,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SimulatedLocationManager.swift",
       "kind": "StringLiteral",
-      "offset": 5306,
+      "offset": 5309,
       "length": 41,
       "value": "\"nextbillion.ai.SimulatedLocationManager\""
     },
@@ -266490,44 +268786,177 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 740,
+      "offset": 1804,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 1924,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2066,
+      "length": 3,
+      "value": "2.5"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2252,
+      "length": 3,
+      "value": "6.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2380,
+      "length": 3,
+      "value": "8.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2540,
+      "length": 3,
+      "value": "0.7"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2630,
+      "length": 3,
+      "value": "0.4"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2721,
+      "length": 4,
+      "value": "0.15"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2825,
+      "length": 4,
+      "value": "0.05"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 2998,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3128,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3289,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3415,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3542,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3711,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3845,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3971,
+      "length": 4,
+      "value": "50.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 5382,
       "length": 3,
       "value": "2.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 824,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
-      "kind": "FloatLiteral",
-      "offset": 894,
-      "length": 3,
-      "value": "1.5"
+      "offset": 5479,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2501,
+      "offset": 5684,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 6441,
+      "offset": 5805,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
-      "kind": "FloatLiteral",
-      "offset": 6599,
-      "length": 3,
-      "value": "0.0"
+      "kind": "BooleanLiteral",
+      "offset": 5845,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5905,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6026,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6917,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Telemetry\/OpenTelemetryApi\/Baggage\/DefaultBaggageBuilder.swift",
