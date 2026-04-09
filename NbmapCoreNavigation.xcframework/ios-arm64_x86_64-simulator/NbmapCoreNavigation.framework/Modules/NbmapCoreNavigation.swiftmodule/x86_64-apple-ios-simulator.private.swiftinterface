@@ -7815,6 +7815,62 @@ public protocol SpeedCalibratorDelegate : AnyObject {
   func isOnMoving() -> Swift.Bool
   func onSpeedChanged(speed: _LocationEssentials.CLLocationSpeed)
 }
+public enum SpeedQuality : Swift.String {
+  case high
+  case medium
+  case low
+  case weakSignal
+  case invalid
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SpeedSource : Swift.String {
+  case gnss
+  case displacement
+  case frozen
+  case stationary
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SpeedProcessorConfig {
+  public var highAccuracyThreshold: Swift.Double
+  public var mediumAccuracyThreshold: Swift.Double
+  public var weakSignalThreshold: Swift.Double
+  public var maxAcceleration: Swift.Double
+  public var maxDeceleration: Swift.Double
+  public var alphaHigh: Swift.Double
+  public var alphaMedium: Swift.Double
+  public var alphaLow: Swift.Double
+  public var alphaWeakSignal: Swift.Double
+  public var stationarySpeedThreshold: Swift.Double
+  public var stationaryDuration: Swift.Double
+  public var freezeHoldDuration: Swift.Double
+  public var freezeTotalDuration: Swift.Double
+  public var weakSignalCountThreshold: Swift.Int
+  public var enableDisplacementFallback: Swift.Bool
+  public var minDisplacementInterval: Swift.Double
+  public var maxDisplacementSpeed: Swift.Double
+  public init()
+  public static var automotive: NbmapCoreNavigation.SpeedProcessorConfig {
+    get
+  }
+  public static var pedestrian: NbmapCoreNavigation.SpeedProcessorConfig {
+    get
+  }
+  public static var cycling: NbmapCoreNavigation.SpeedProcessorConfig {
+    get
+  }
+}
 public class DefaultBaggageBuilder : NbmapCoreNavigation.BaggageBuilder {
   public init()
   #if compiler(>=5.3) && $NonescapableTypes
@@ -8902,6 +8958,12 @@ extension NbmapCoreNavigation.SimulationMode : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.SimulationState : Swift.Equatable {}
 extension NbmapCoreNavigation.SimulationState : Swift.Hashable {}
 extension NbmapCoreNavigation.SimulationState : Swift.RawRepresentable {}
+extension NbmapCoreNavigation.SpeedQuality : Swift.Equatable {}
+extension NbmapCoreNavigation.SpeedQuality : Swift.Hashable {}
+extension NbmapCoreNavigation.SpeedQuality : Swift.RawRepresentable {}
+extension NbmapCoreNavigation.SpeedSource : Swift.Equatable {}
+extension NbmapCoreNavigation.SpeedSource : Swift.Hashable {}
+extension NbmapCoreNavigation.SpeedSource : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Equatable {}
 extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Hashable {}
 extension NbmapCoreNavigation.PuckState : Swift.Equatable {}

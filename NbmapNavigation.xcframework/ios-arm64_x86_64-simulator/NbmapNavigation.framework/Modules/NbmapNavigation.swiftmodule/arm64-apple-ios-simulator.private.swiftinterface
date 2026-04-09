@@ -446,12 +446,6 @@ extension NbmapNavigation.NavigationMapView {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func updateRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: _LocationEssentials.CLLocationCoordinate2D?, routes: [NbmapCoreNavigation.Route], shouldRedraw: Swift.Bool = false)
   #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public func updateUpcomingRoutePointIndex(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: _LocationEssentials.CLLocationCoordinate2D?) -> Swift.Bool
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public func travelAlongRouteLine(to coordinate: _LocationEssentials.CLLocationCoordinate2D?, by verhence: Swift.Bool = false)
-  #endif
 }
 public protocol InstructionsBannerViewDelegate : NbmapNavigation.VisualInstructionDelegate {
   func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)

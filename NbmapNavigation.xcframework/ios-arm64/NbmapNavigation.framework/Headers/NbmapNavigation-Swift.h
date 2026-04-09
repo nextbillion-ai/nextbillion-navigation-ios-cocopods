@@ -1803,14 +1803,20 @@ SWIFT_CLASS_NAMED("SubtitleLabel")
 @end
 
 /// SpeechSynthesizing implementation using AVSpeechSynthesizer.
-/// Key design decisions for iOS 26 compatibility:
+/// Key design decisions:
 /// <ul>
 ///   <li>
 ///     Audio session uses <code>.mixWithOthers</code> so external category changes (e.g. from Flutter)
-///     do not tear down the audio graph and crash (AVAudioBuffer.mm:281).
+///     do not tear down the audio graph and crash on iOS 26 (AVAudioBuffer.mm:281).
 ///   </li>
 ///   <li>
-///     Lightweight pre-warm (voice cache only, NO speak()) keeps navigation startup fast.
+///     AVSpeechSynthesizer is lazy-created to avoid blocking navigation startup.
+///   </li>
+///   <li>
+///     Voice resolution searches installed voices first to avoid slow system voice lookups.
+///   </li>
+///   <li>
+///     Background pre-warm caches the voice list for fast resolution.
 ///   </li>
 ///   <li>
 ///     FIFO queue ensures instructions are played in order.
