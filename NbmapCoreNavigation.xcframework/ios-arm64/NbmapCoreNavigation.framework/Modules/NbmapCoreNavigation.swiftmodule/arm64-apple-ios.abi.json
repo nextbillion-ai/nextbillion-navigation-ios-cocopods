@@ -216819,6 +216819,93 @@
           },
           {
             "kind": "Var",
+            "name": "stationaryDisplacementOverride",
+            "printedName": "stationaryDisplacementOverride",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV30stationaryDisplacementOverrideSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "freezeHoldDuration",
             "printedName": "freezeHoldDuration",
             "children": [
@@ -217333,6 +217420,180 @@
                 "declKind": "Accessor",
                 "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0SdvM",
                 "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV015maxDisplacementD0SdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "driftAccuracyThreshold",
+            "printedName": "driftAccuracyThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV22driftAccuracyThresholdSdvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "driftSpeedThreshold",
+            "printedName": "driftSpeedThreshold",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvp",
+            "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvg",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvs",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvM",
+                "mangledName": "$s19NbmapCoreNavigation20SpeedProcessorConfigV05driftD9ThresholdSdvM",
                 "moduleName": "NbmapCoreNavigation",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -225525,7 +225786,10 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "NbmapCoreNavigation"
+        "moduleName": "NbmapCoreNavigation",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -268786,175 +269050,196 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 1804,
+      "offset": 1808,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 1924,
+      "offset": 1928,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2066,
+      "offset": 2070,
       "length": 3,
       "value": "2.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2252,
+      "offset": 2256,
       "length": 3,
       "value": "6.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2380,
+      "offset": 2384,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2540,
+      "offset": 2544,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2630,
+      "offset": 2634,
       "length": 3,
       "value": "0.4"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2721,
+      "offset": 2725,
       "length": 4,
       "value": "0.15"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2825,
+      "offset": 2829,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 2998,
+      "offset": 3002,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 3128,
+      "offset": 3132,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 3289,
+      "offset": 3448,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 3609,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 3415,
+      "offset": 3735,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 3542,
+      "offset": 3862,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3711,
+      "offset": 4031,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 3845,
+      "offset": 4165,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 3971,
+      "offset": 4291,
       "length": 4,
       "value": "50.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "FloatLiteral",
-      "offset": 5382,
+      "offset": 4566,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 4718,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
+      "kind": "FloatLiteral",
+      "offset": 6128,
       "length": 3,
       "value": "2.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 5479,
+      "offset": 6225,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 5684,
+      "offset": 6483,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 5805,
+      "offset": 6604,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 5845,
+      "offset": 6644,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "IntegerLiteral",
-      "offset": 5905,
+      "offset": 6704,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 6026,
+      "offset": 6825,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/SpeedCalibrator.swift",
       "kind": "BooleanLiteral",
-      "offset": 6917,
+      "offset": 7716,
       "length": 5,
       "value": "false"
     },
@@ -269171,140 +269456,140 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/Models.swift",
       "kind": "IntegerLiteral",
-      "offset": 941,
+      "offset": 942,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "StringLiteral",
-      "offset": 417,
+      "offset": 480,
       "length": 30,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "StringLiteral",
-      "offset": 498,
+      "offset": 561,
       "length": 5,
       "value": "\"UTC\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Array",
-      "offset": 616,
+      "offset": 679,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 651,
+      "offset": 714,
       "length": 5,
       "value": "15000"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Array",
-      "offset": 809,
+      "offset": 872,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Array",
-      "offset": 862,
+      "offset": 925,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Array",
-      "offset": 909,
+      "offset": 972,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "StringLiteral",
-      "offset": 956,
+      "offset": 1019,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 1003,
+      "offset": 1066,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 1176,
+      "offset": 1239,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 3303,
+      "offset": 3366,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 4205,
+      "offset": 4268,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "Dictionary",
-      "offset": 4632,
+      "offset": 4695,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 5271,
+      "offset": 5334,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 5295,
+      "offset": 5358,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 5317,
+      "offset": 5380,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 6805,
+      "offset": 6868,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "StringLiteral",
-      "offset": 11597,
+      "offset": 11660,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/NbLogger.swift",
       "kind": "IntegerLiteral",
-      "offset": 26676,
+      "offset": 26739,
       "length": 2,
       "value": "10"
     },

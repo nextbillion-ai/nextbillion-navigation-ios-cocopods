@@ -7854,12 +7854,15 @@ public struct SpeedProcessorConfig {
   public var alphaWeakSignal: Swift.Double
   public var stationarySpeedThreshold: Swift.Double
   public var stationaryDuration: Swift.Double
+  public var stationaryDisplacementOverride: Swift.Double
   public var freezeHoldDuration: Swift.Double
   public var freezeTotalDuration: Swift.Double
   public var weakSignalCountThreshold: Swift.Int
   public var enableDisplacementFallback: Swift.Bool
   public var minDisplacementInterval: Swift.Double
   public var maxDisplacementSpeed: Swift.Double
+  public var driftAccuracyThreshold: Swift.Double
+  public var driftSpeedThreshold: Swift.Double
   public init()
   public static var automotive: NbmapCoreNavigation.SpeedProcessorConfig {
     get
