@@ -172,6 +172,50 @@ public protocol Getter {
   }
   @objc deinit
 }
+@objc(NBMaxSpeedSegment) public class MaxSpeedSegment : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc final public let offset: Swift.Int
+  @objc final public let length: Swift.Int
+  @objc final public let value: Swift.Double
+  @objc public init(offset: Swift.Int, length: Swift.Int, value: Swift.Double)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
+@objc(NBTruckRouteSegment) public class TruckRouteSegment : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc final public let offset: Swift.Int
+  @objc final public let length: Swift.Int
+  @objc final public let value: [Swift.String]
+  @objc public init(offset: Swift.Int, length: Swift.Int, value: [Swift.String])
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
+@objc(NBRoadInfo) public class RoadInfo : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc final public let maxSpeed: [NbmapCoreNavigation.MaxSpeedSegment]
+  @objc final public let truckRoute: [NbmapCoreNavigation.TruckRouteSegment]
+  @objc public init(maxSpeed: [NbmapCoreNavigation.MaxSpeedSegment], truckRoute: [NbmapCoreNavigation.TruckRouteSegment])
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func speedLimit(atCoordinateIndex index: Swift.Int) -> Foundation.NSNumber?
+  #endif
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
 public protocol ReadableSpan : NbmapCoreNavigation.Span {
   var name: Swift.String { get set }
   var instrumentationScopeInfo: NbmapCoreNavigation.InstrumentationScopeInfo { get }
@@ -336,7 +380,7 @@ public struct BatchSpanProcessor : NbmapCoreNavigation.SpanProcessor {
   open var hazmatTypes: NbmapCoreNavigation.NavigationHazmatTypes
   @objc open var truckAxleLoad: Swift.Double
   @objc open var allow: Swift.String
-  @objc open var roadInfo: NbmapCoreNavigation.NBNavigationRoadInfo?
+  @objc open var roadInfo: [NbmapCoreNavigation.NBNavigationRoadInfo]
   @objc open var prefer: NbmapCoreNavigation.TruckPrefer
   @objc open var truckTypes: NbmapCoreNavigation.TruckTypes
   #if compiler(>=5.3) && $NonescapableTypes
@@ -6586,6 +6630,7 @@ public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swif
   @objc open var fetchStartDate: Foundation.Date?
   @objc open var responseEndDate: Foundation.Date?
   final public let segmentCongestionLevels: [NbmapCoreNavigation.CongestionLevel]?
+  @objc public var roadInfo: NbmapCoreNavigation.RoadInfo?
   @objc deinit
 }
 @objc(NBDirectionsOptions) open class DirectionsOptions : ObjectiveC.NSObject, Foundation.NSSecureCoding, Foundation.NSCopying {
