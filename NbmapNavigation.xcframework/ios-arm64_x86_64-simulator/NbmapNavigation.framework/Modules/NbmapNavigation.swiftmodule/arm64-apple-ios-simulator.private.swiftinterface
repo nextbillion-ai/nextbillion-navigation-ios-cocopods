@@ -456,23 +456,11 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
   public func didSwipeInstructionsBanner(_: NbmapNavigation.BaseInstructionsBannerView, swipeDirection _: UIKit.UISwipeGestureRecognizer.Direction)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class SpeedView : UIKit.UIView {
-  @objc @_Concurrency.MainActor @preconcurrency dynamic public var signBackColor: UIKit.UIColor {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor @preconcurrency dynamic public var textColor: UIKit.UIColor {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor @preconcurrency dynamic public var regulatoryBorderColor: UIKit.UIColor {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor @preconcurrency public var speedLimit: Foundation.Measurement<Foundation.UnitSpeed>? {
+  @_Concurrency.MainActor @preconcurrency public var currentSpeed: Foundation.Measurement<Foundation.UnitSpeed>? {
     get
     set
   }
-  @_Concurrency.MainActor @preconcurrency public var currentSpeed: Foundation.Measurement<Foundation.UnitSpeed>? {
+  @_Concurrency.MainActor @preconcurrency public var speedLimit: Foundation.Measurement<Foundation.UnitSpeed>? {
     get
     set
   }
@@ -496,7 +484,18 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
     get
     set
   }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var signBackColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var regulatoryBorderColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(NBStyleKitMarker) public class StyleKitMarker : ObjectiveC.NSObject {
@@ -1692,6 +1691,7 @@ extension UIKit.UIImage {
   #if compiler(>=5.3) && $NonescapableTypes
   open func prepareIncomingSpokenInstructions(_ instructions: [NbmapCoreNavigation.SpokenInstruction], locale: Foundation.Locale?)
   #endif
+  public func isLanguageSupported(_ languageTag: Swift.String) -> Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
   open func speak(_ instruction: NbmapCoreNavigation.SpokenInstruction, during legProgress: NbmapCoreNavigation.RouteLegProgress, locale: Foundation.Locale? = nil)
   #endif

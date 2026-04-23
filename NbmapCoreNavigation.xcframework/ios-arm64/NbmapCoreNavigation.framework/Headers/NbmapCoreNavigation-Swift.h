@@ -440,6 +440,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 @class NBNavRouteLeg;
 @class NSDate;
+@class NBRoadInfo;
 /// A <code>DirectionsResult</code> represents a result returned from either the Nbmap Directions service.
 /// You do not create instances of this class directly. Instead, you receive <code>Route</code> objects when you request directions using the <code>Directions.calculate(options:completionHandler:)</code> method.
 SWIFT_CLASS_NAMED("DirectionsResult")
@@ -501,6 +502,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, copy) NSDate * _Nullable fetchStartDate;
 /// The  requestresponse time
 @property (nonatomic, copy) NSDate * _Nullable responseEndDate;
+/// Road information including speed limits and truck route data.
+/// Available when the request includes <code>road_info=max_speed</code> with <code>option=flexible</code>.
+@property (nonatomic, strong) NBRoadInfo * _Nullable roadInfo;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -745,6 +749,25 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NBManeuverType, "ManeuverType", open) {
   NBManeuverTypePassWaypoint = 18,
 };
 
+/// Speed limit segment along a route geometry.
+/// Each segment defines a contiguous range of coordinates with the same speed limit.
+SWIFT_CLASS_NAMED("MaxSpeedSegment")
+@interface NBMaxSpeedSegment : NSObject <NSSecureCoding>
+/// Start index into the route geometry coordinates array.
+@property (nonatomic, readonly) NSInteger offset;
+/// Number of coordinate points covered by this segment.
+@property (nonatomic, readonly) NSInteger length;
+/// Speed limit in km/h. A value of 0 means unknown/no speed limit data.
+@property (nonatomic, readonly) double value;
+- (nonnull instancetype)initWithOffset:(NSInteger)offset length:(NSInteger)length value:(double)value OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// A system of units of measuring distances and other quantities.
 typedef SWIFT_ENUM_NAMED(NSUInteger, NBMeasurementSystem, "MeasurementSystem", open) {
 /// U.S. customary and British imperial units.
@@ -922,7 +945,12 @@ SWIFT_CLASS_NAMED("RouteOptions")
 @property (nonatomic) double truckAxleLoad;
 /// Allowed Values:  <code>taxi</code> <code>hov</code>
 @property (nonatomic, copy) NSString * _Nonnull allow;
-@property (nonatomic) NBNavigationRoadInfo _Nullable roadInfo;
+/// Road information types to include in the response.
+/// Allowed values: <code>NBNavigationRoadInfoMaxSpeed</code>, <code>NBNavigationRoadInfoTruckRoute</code>.
+/// Multiple values are joined with <code>|</code> in the request.
+/// Defaults to <code>[NBNavigationRoadInfoMaxSpeed]</code>.
+/// Effective only when <code>mapOption</code> is <code>.flexible</code>.
+@property (nonatomic, copy) NSArray<NBNavigationRoadInfo> * _Nonnull roadInfo;
 /// Specifies routing preferences for truck navigation.
 /// Set this to <code>.truckRoute</code> to prioritize truck-friendly roads when calculating routes,
 /// aiming to maximize their inclusion in the final route.
@@ -1126,6 +1154,31 @@ SWIFT_CLASS_NAMED("ReplayLocationManager")
 
 SWIFT_CLASS("_TtC19NbmapCoreNavigation17RerouteController")
 @interface RerouteController : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class NBTruckRouteSegment;
+/// Road information associated with a route, including speed limits and truck route data.
+/// Available when the route request includes <code>road_info=max_speed</code> and/or <code>road_info=truck_route</code>
+/// with <code>option=flexible</code>.
+SWIFT_CLASS_NAMED("RoadInfo")
+@interface NBRoadInfo : NSObject <NSSecureCoding>
+/// Segment-wise maximum speed information along the route geometry.
+/// Each element covers a range of coordinate indices defined by <code>offset</code> and <code>length</code>.
+@property (nonatomic, readonly, copy) NSArray<NBMaxSpeedSegment *> * _Nonnull maxSpeed;
+/// Allowed truck types per segment along the route geometry.
+@property (nonatomic, readonly, copy) NSArray<NBTruckRouteSegment *> * _Nonnull truckRoute;
+- (nonnull instancetype)initWithMaxSpeed:(NSArray<NBMaxSpeedSegment *> * _Nonnull)maxSpeed truckRoute:(NSArray<NBTruckRouteSegment *> * _Nonnull)truckRoute OBJC_DESIGNATED_INITIALIZER;
+/// Returns the speed limit (km/h) for a given coordinate index in the route geometry.
+/// Returns <code>nil</code> if no speed data covers that index, or if the value is 0 (unknown).
+/// Coverage: a segment with <code>offset=1, length=3</code> covers points 1,2,3,4
+/// (3 line segments = 4 endpoints, range <code>[offset, offset+length]</code>).
+- (NSNumber * _Nullable)speedLimitAtCoordinateIndex:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1654,6 +1707,25 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NBTransportType, "TransportType", open) {
 
 SWIFT_CLASS("_TtC19NbmapCoreNavigation20TravelledRawLocation")
 @interface TravelledRawLocation : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// Truck route segment along a route geometry.
+/// Each segment defines a contiguous range of coordinates with allowed truck types.
+SWIFT_CLASS_NAMED("TruckRouteSegment")
+@interface NBTruckRouteSegment : NSObject <NSSecureCoding>
+/// Start index into the route geometry coordinates array.
+@property (nonatomic, readonly) NSInteger offset;
+/// Number of coordinate points covered by this segment.
+@property (nonatomic, readonly) NSInteger length;
+/// Allowed truck type identifiers for this segment.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull value;
+- (nonnull instancetype)initWithOffset:(NSInteger)offset length:(NSInteger)length value:(NSArray<NSString *> * _Nonnull)value OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

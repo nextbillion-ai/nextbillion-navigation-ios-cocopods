@@ -3837,6 +3837,1335 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MaxSpeedSegment",
+        "printedName": "MaxSpeedSegment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "offset",
+            "printedName": "offset",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(py)offset",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6offsetSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)offset",
+                "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6offsetSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "length",
+            "printedName": "length",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(py)length",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6lengthSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)length",
+                "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6lengthSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(py)value",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC5valueSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)value",
+                "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC5valueSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(offset:length:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MaxSpeedSegment",
+                "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)initWithOffset:length:value:",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6offset6length5valueACSi_SiSdtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithOffset:length:value:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(cpy)supportsSecureCoding",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC20supportsSecureCodingSbvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(cm)supportsSecureCoding",
+                "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC20supportsSecureCodingSbvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)encodeWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC6encode4withySo7NSCoderC_tF",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "encodeWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.MaxSpeedSegment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MaxSpeedSegment",
+                    "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)initWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MaxSpeedSegment",
+                "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment(im)init",
+            "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentCACycfc",
+            "moduleName": "NbmapCoreNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment",
+        "mangledName": "$s19NbmapCoreNavigation15MaxSpeedSegmentC",
+        "moduleName": "NbmapCoreNavigation",
+        "objc_name": "NBMaxSpeedSegment",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TruckRouteSegment",
+        "printedName": "TruckRouteSegment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "offset",
+            "printedName": "offset",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(py)offset",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6offsetSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)offset",
+                "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6offsetSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "length",
+            "printedName": "length",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(py)length",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6lengthSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)length",
+                "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6lengthSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(py)value",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC5valueSaySSGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)value",
+                "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC5valueSaySSGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(offset:length:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TruckRouteSegment",
+                "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)initWithOffset:length:value:",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6offset6length5valueACSi_SiSaySSGtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithOffset:length:value:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(cpy)supportsSecureCoding",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC20supportsSecureCodingSbvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(cm)supportsSecureCoding",
+                "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC20supportsSecureCodingSbvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)encodeWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC6encode4withySo7NSCoderC_tF",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "encodeWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.TruckRouteSegment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TruckRouteSegment",
+                    "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)initWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TruckRouteSegment",
+                "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment(im)init",
+            "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentCACycfc",
+            "moduleName": "NbmapCoreNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment",
+        "mangledName": "$s19NbmapCoreNavigation17TruckRouteSegmentC",
+        "moduleName": "NbmapCoreNavigation",
+        "objc_name": "NBTruckRouteSegment",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RoadInfo",
+        "printedName": "RoadInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "maxSpeed",
+            "printedName": "maxSpeed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.MaxSpeedSegment]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MaxSpeedSegment",
+                    "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(py)maxSpeed",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC8maxSpeedSayAA03MaxG7SegmentCGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.MaxSpeedSegment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MaxSpeedSegment",
+                        "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)maxSpeed",
+                "mangledName": "$s19NbmapCoreNavigation8RoadInfoC8maxSpeedSayAA03MaxG7SegmentCGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "truckRoute",
+            "printedName": "truckRoute",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.TruckRouteSegment]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TruckRouteSegment",
+                    "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(py)truckRoute",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC10truckRouteSayAA05TruckG7SegmentCGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.TruckRouteSegment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TruckRouteSegment",
+                        "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)truckRoute",
+                "mangledName": "$s19NbmapCoreNavigation8RoadInfoC10truckRouteSayAA05TruckG7SegmentCGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(maxSpeed:truckRoute:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RoadInfo",
+                "printedName": "NbmapCoreNavigation.RoadInfo",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.MaxSpeedSegment]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MaxSpeedSegment",
+                    "printedName": "NbmapCoreNavigation.MaxSpeedSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBMaxSpeedSegment"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.TruckRouteSegment]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TruckRouteSegment",
+                    "printedName": "NbmapCoreNavigation.TruckRouteSegment",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBTruckRouteSegment"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)initWithMaxSpeed:truckRoute:",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC8maxSpeed10truckRouteACSayAA03MaxG7SegmentCG_SayAA05TruckiK0CGtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithMaxSpeed:truckRoute:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "speedLimit",
+            "printedName": "speedLimit(atCoordinateIndex:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)speedLimitAtCoordinateIndex:",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC10speedLimit17atCoordinateIndexSo8NSNumberCSgSi_tF",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "speedLimitAtCoordinateIndex:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(cpy)supportsSecureCoding",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC20supportsSecureCodingSbvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(cm)supportsSecureCoding",
+                "mangledName": "$s19NbmapCoreNavigation8RoadInfoC20supportsSecureCodingSbvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)encodeWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC6encode4withySo7NSCoderC_tF",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "encodeWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.RoadInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RoadInfo",
+                    "printedName": "NbmapCoreNavigation.RoadInfo",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)initWithCoder:",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RoadInfo",
+                "printedName": "NbmapCoreNavigation.RoadInfo",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo(im)init",
+            "mangledName": "$s19NbmapCoreNavigation8RoadInfoCACycfc",
+            "moduleName": "NbmapCoreNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo",
+        "mangledName": "$s19NbmapCoreNavigation8RoadInfoC",
+        "moduleName": "NbmapCoreNavigation",
+        "objc_name": "NBRoadInfo",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "NbmapCoreNavigation",
         "declAttributes": [
           "RawDocComment"
@@ -9598,8 +10927,8 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "NbmapCoreNavigation.NBNavigationRoadInfo?",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.NBNavigationRoadInfo]",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9608,19 +10937,20 @@
                     "usr": "c:NBRouteOptions.h@T@NBNavigationRoadInfo"
                   }
                 ],
-                "usr": "s:Sq"
+                "usr": "s:Sa"
               }
             ],
             "declKind": "Var",
             "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteOptionss(py)roadInfo",
-            "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSo016NBNavigationRoadG0aSgvp",
+            "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSaySo016NBNavigationRoadG0aGvp",
             "moduleName": "NbmapCoreNavigation",
             "isOpen": true,
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -9631,8 +10961,8 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "NbmapCoreNavigation.NBNavigationRoadInfo?",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.NBNavigationRoadInfo]",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -9641,12 +10971,12 @@
                         "usr": "c:NBRouteOptions.h@T@NBNavigationRoadInfo"
                       }
                     ],
-                    "usr": "s:Sq"
+                    "usr": "s:Sa"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteOptionss(im)roadInfo",
-                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSo016NBNavigationRoadG0aSgvg",
+                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSaySo016NBNavigationRoadG0aGvg",
                 "moduleName": "NbmapCoreNavigation",
                 "implicit": true,
                 "isOpen": true,
@@ -9667,8 +10997,8 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "NbmapCoreNavigation.NBNavigationRoadInfo?",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.NBNavigationRoadInfo]",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -9677,12 +11007,12 @@
                         "usr": "c:NBRouteOptions.h@T@NBNavigationRoadInfo"
                       }
                     ],
-                    "usr": "s:Sq"
+                    "usr": "s:Sa"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteOptionss(im)setRoadInfo:",
-                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSo016NBNavigationRoadG0aSgvs",
+                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSaySo016NBNavigationRoadG0aGvs",
                 "moduleName": "NbmapCoreNavigation",
                 "implicit": true,
                 "isOpen": true,
@@ -9703,8 +11033,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:19NbmapCoreNavigation12RouteOptionsC8roadInfoSo016NBNavigationRoadG0aSgvM",
-                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSo016NBNavigationRoadG0aSgvM",
+                "usr": "s:19NbmapCoreNavigation12RouteOptionsC8roadInfoSaySo016NBNavigationRoadG0aGvM",
+                "mangledName": "$s19NbmapCoreNavigation12RouteOptionsC8roadInfoSaySo016NBNavigationRoadG0aGvM",
                 "moduleName": "NbmapCoreNavigation",
                 "implicit": true,
                 "isOpen": true,
@@ -180013,6 +181343,124 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "roadInfo",
+            "printedName": "roadInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.RoadInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RoadInfo",
+                    "printedName": "NbmapCoreNavigation.RoadInfo",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBDirectionsResult(py)roadInfo",
+            "mangledName": "$s19NbmapCoreNavigation16DirectionsResultC8roadInfoAA04RoadG0CSgvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NbmapCoreNavigation.RoadInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RoadInfo",
+                        "printedName": "NbmapCoreNavigation.RoadInfo",
+                        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBDirectionsResult(im)roadInfo",
+                "mangledName": "$s19NbmapCoreNavigation16DirectionsResultC8roadInfoAA04RoadG0CSgvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NbmapCoreNavigation.RoadInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RoadInfo",
+                        "printedName": "NbmapCoreNavigation.RoadInfo",
+                        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRoadInfo"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBDirectionsResult(im)setRoadInfo:",
+                "mangledName": "$s19NbmapCoreNavigation16DirectionsResultC8roadInfoAA04RoadG0CSgvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation16DirectionsResultC8roadInfoAA04RoadG0CSgvM",
+                "mangledName": "$s19NbmapCoreNavigation16DirectionsResultC8roadInfoAA04RoadG0CSgvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -253809,6 +255257,27 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRoadInfo.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1064,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRoadInfo.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2514,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRoadInfo.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5000,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RerouteController.swift",
       "kind": "IntegerLiteral",
       "offset": 278,
@@ -254007,119 +255476,119 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8097,
+      "offset": 8134,
       "length": 17,
       "value": "\"navigation\/json\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8278,
+      "offset": 8315,
       "length": 28,
       "value": "\"https:\/\/api.nextbillion.io\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8595,
+      "offset": 8632,
       "length": 202,
       "value": "\"A Nbmap access token is required. Go to <https:\/\/nextbillion.ai\/book-a-demo>. In Info.plist, set the NBMapAccessKey key to your access token, or use NGLAccountManager.accessToken set the access token.\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 8831,
+      "offset": 8868,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 10395,
+      "offset": 10432,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 10589,
+      "offset": 10626,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 10842,
+      "offset": 10879,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 12202,
+      "offset": 12239,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 12717,
+      "offset": 12754,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 13085,
+      "offset": 13122,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "IntegerLiteral",
-      "offset": 13410,
+      "offset": 13447,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 14264,
+      "offset": 14301,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 14610,
+      "offset": 14647,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "FloatLiteral",
-      "offset": 15016,
+      "offset": 15053,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 15111,
+      "offset": 15148,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 16827,
+      "offset": 17218,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 21584,
+      "offset": 22258,
       "length": 4,
       "value": "true"
     },
@@ -265129,10 +266598,10 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/BillionEventDetails.swift",
-      "kind": "FloatLiteral",
-      "offset": 369,
-      "length": 3,
-      "value": "0.0"
+      "kind": "IntegerLiteral",
+      "offset": 498,
+      "length": 2,
+      "value": "-1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBLane.swift",
@@ -266173,21 +267642,21 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBDirectionsResult.swift",
       "kind": "BooleanLiteral",
-      "offset": 3004,
+      "offset": 3083,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBDirectionsResult.swift",
       "kind": "IntegerLiteral",
-      "offset": 4630,
+      "offset": 4760,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBDirectionsResult.swift",
       "kind": "StringLiteral",
-      "offset": 6202,
+      "offset": 6332,
       "length": 7,
       "value": "\" – \""
     },

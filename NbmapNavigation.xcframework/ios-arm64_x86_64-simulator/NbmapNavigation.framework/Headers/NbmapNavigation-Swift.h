@@ -1666,19 +1666,23 @@ typedef SWIFT_ENUM_NAMED(NSInteger, SpeedLimitStyleKitResizingBehavior, "Resizin
   SpeedLimitStyleKitResizingBehaviorCenter = 3,
 };
 
-/// A view that displays a speed limit and resembles a real-world speed limit sign.
+/// A view that displays the current speed in a circular badge with an optional
+/// speed-limit indicator.
+/// Layout (bottom-left corner of navigation):
+/// ┌─────────────┐
+/// │  (28) limit  │  ← small circle, top-left overlap
+/// │       ┌─────┐│
+/// │       │ 63  ││  ← 60×60 white circle (or red when over speed limit)
+/// │       │km/h ││
+/// │       └─────┘│
+/// └─────────────┘
 SWIFT_CLASS("_TtC15NbmapNavigation9SpeedView")
 @interface SpeedView : UIView
-/// The sign’s background color.
 @property (nonatomic, strong) UIColor * _Nonnull signBackColor;
-/// The color of the text on the sign.
-/// This color is also used for the border of an MUTCD-style sign.
 @property (nonatomic, strong) UIColor * _Nonnull textColor;
-/// The color of the border of a regulatory sign according to the Vienna Convention.
 @property (nonatomic, strong) UIColor * _Nonnull regulatoryBorderColor;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (void)drawRect:(CGRect)rect;
 @end
 
 /// :nodoc:
@@ -3603,19 +3607,23 @@ typedef SWIFT_ENUM_NAMED(NSInteger, SpeedLimitStyleKitResizingBehavior, "Resizin
   SpeedLimitStyleKitResizingBehaviorCenter = 3,
 };
 
-/// A view that displays a speed limit and resembles a real-world speed limit sign.
+/// A view that displays the current speed in a circular badge with an optional
+/// speed-limit indicator.
+/// Layout (bottom-left corner of navigation):
+/// ┌─────────────┐
+/// │  (28) limit  │  ← small circle, top-left overlap
+/// │       ┌─────┐│
+/// │       │ 63  ││  ← 60×60 white circle (or red when over speed limit)
+/// │       │km/h ││
+/// │       └─────┘│
+/// └─────────────┘
 SWIFT_CLASS("_TtC15NbmapNavigation9SpeedView")
 @interface SpeedView : UIView
-/// The sign’s background color.
 @property (nonatomic, strong) UIColor * _Nonnull signBackColor;
-/// The color of the text on the sign.
-/// This color is also used for the border of an MUTCD-style sign.
 @property (nonatomic, strong) UIColor * _Nonnull textColor;
-/// The color of the border of a regulatory sign according to the Vienna Convention.
 @property (nonatomic, strong) UIColor * _Nonnull regulatoryBorderColor;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (void)drawRect:(CGRect)rect;
 @end
 
 /// :nodoc:

@@ -28,3 +28,4 @@ extern NBNavigationRouteType const NBNavigationRouteTypeShortest;
 typedef NSString * NBNavigationRoadInfo NS_EXTENSIBLE_STRING_ENUM;
 
 extern NBNavigationRoadInfo const NBNavigationRoadInfoMaxSpeed;
+extern NBNavigationRoadInfo const NBNavigationRoadInfoTruckRoute;

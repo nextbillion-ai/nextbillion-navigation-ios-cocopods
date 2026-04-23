@@ -12291,28 +12291,42 @@
         "children": [
           {
             "kind": "Var",
-            "name": "signBackColor",
-            "printedName": "signBackColor",
+            "name": "currentSpeed",
+            "printedName": "currentSpeed",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "UIColor",
-                "printedName": "UIKit.UIColor",
-                "usr": "c:objc(cs)UIColor"
+                "name": "Optional",
+                "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Measurement",
+                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnitSpeed",
+                        "printedName": "Foundation.UnitSpeed",
+                        "usr": "c:objc(cs)NSUnitSpeed"
+                      }
+                    ],
+                    "usr": "s:10Foundation11MeasurementV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)signBackColor",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvp",
+            "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvp",
+            "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvp",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
               "HasInitialValue",
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "Dynamic",
               "AccessControl",
-              "ObjC",
               "RawDocComment"
             ],
             "hasStorage": true,
@@ -12324,20 +12338,32 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
+                    "name": "Optional",
+                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Measurement",
+                        "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UnitSpeed",
+                            "printedName": "Foundation.UnitSpeed",
+                            "usr": "c:objc(cs)NSUnitSpeed"
+                          }
+                        ],
+                        "usr": "s:10Foundation11MeasurementV"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)signBackColor",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvg",
+                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvg",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvg",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
                 "accessorKind": "get"
               },
               {
@@ -12352,183 +12378,51 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
+                    "name": "Optional",
+                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Measurement",
+                        "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UnitSpeed",
+                            "printedName": "Foundation.UnitSpeed",
+                            "usr": "c:objc(cs)NSUnitSpeed"
+                          }
+                        ],
+                        "usr": "s:10Foundation11MeasurementV"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setSignBackColor:",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvs",
+                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvs",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvs",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
                 "accessorKind": "set"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "textColor",
-            "printedName": "textColor",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "UIColor",
-                "printedName": "UIKit.UIColor",
-                "usr": "c:objc(cs)UIColor"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)textColor",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)textColor",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
               },
               {
                 "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
+                "name": "Modify",
+                "printedName": "Modify()",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Void",
                     "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setTextColor:",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvs",
+                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvM",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvM",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "regulatoryBorderColor",
-            "printedName": "regulatoryBorderColor",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "UIColor",
-                "printedName": "UIKit.UIColor",
-                "usr": "c:objc(cs)UIColor"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)regulatoryBorderColor",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "Dynamic",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)regulatoryBorderColor",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIColor",
-                    "printedName": "UIKit.UIColor",
-                    "usr": "c:objc(cs)UIColor"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setRegulatoryBorderColor:",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -12671,143 +12565,6 @@
           },
           {
             "kind": "Var",
-            "name": "currentSpeed",
-            "printedName": "currentSpeed",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Measurement",
-                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UnitSpeed",
-                        "printedName": "Foundation.UnitSpeed",
-                        "usr": "c:objc(cs)NSUnitSpeed"
-                      }
-                    ],
-                    "usr": "s:10Foundation11MeasurementV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvp",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvp",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "HasInitialValue",
-              "Preconcurrency",
-              "Custom",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Measurement",
-                        "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "UnitSpeed",
-                            "printedName": "Foundation.UnitSpeed",
-                            "usr": "c:objc(cs)NSUnitSpeed"
-                          }
-                        ],
-                        "usr": "s:10Foundation11MeasurementV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvg",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvg",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Measurement<Foundation.UnitSpeed>?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Measurement",
-                        "printedName": "Foundation.Measurement<Foundation.UnitSpeed>",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "UnitSpeed",
-                            "printedName": "Foundation.UnitSpeed",
-                            "usr": "c:objc(cs)NSUnitSpeed"
-                          }
-                        ],
-                        "usr": "s:10Foundation11MeasurementV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvs",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvs",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvM",
-                "mangledName": "$s15NbmapNavigation9SpeedViewC07currentC010Foundation11MeasurementVySo06NSUnitC0CGSgvM",
-                "moduleName": "NbmapNavigation",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "formatedUnit",
             "printedName": "formatedUnit",
             "children": [
@@ -12835,7 +12592,8 @@
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -13141,8 +12899,7 @@
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -13230,8 +12987,7 @@
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -13299,37 +13055,245 @@
             ]
           },
           {
-            "kind": "Function",
-            "name": "draw",
-            "printedName": "draw(_:)",
+            "kind": "Var",
+            "name": "signBackColor",
+            "printedName": "signBackColor",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGRect",
-                "printedName": "CoreFoundation.CGRect",
-                "usr": "c:@S@CGRect"
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
               }
             ],
-            "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)drawRect:",
-            "mangledName": "$s15NbmapNavigation9SpeedViewC4drawyySo6CGRectVF",
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)signBackColor",
+            "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvp",
             "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "objc_name": "drawRect:",
             "declAttributes": [
-              "Dynamic",
-              "ObjC",
+              "HasInitialValue",
               "Preconcurrency",
               "Custom",
+              "HasStorage",
+              "Dynamic",
               "AccessControl",
-              "Override"
+              "ObjC",
+              "RawDocComment"
             ],
-            "funcSelfKind": "NonMutating"
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)signBackColor",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setSignBackColor:",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC13signBackColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "textColor",
+            "printedName": "textColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)textColor",
+            "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)textColor",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setTextColor:",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC9textColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "regulatoryBorderColor",
+            "printedName": "regulatoryBorderColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(py)regulatoryBorderColor",
+            "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)regulatoryBorderColor",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)SpeedView(im)setRegulatoryBorderColor:",
+                "mangledName": "$s15NbmapNavigation9SpeedViewC21regulatoryBorderColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -51741,6 +51705,34 @@
           },
           {
             "kind": "Function",
+            "name": "isLanguageSupported",
+            "printedName": "isLanguageSupported(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation23SystemSpeechSynthesizerC19isLanguageSupportedySbSSF",
+            "mangledName": "$s15NbmapNavigation23SystemSpeechSynthesizerC19isLanguageSupportedySbSSF",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "speak",
             "printedName": "speak(_:during:locale:)",
             "children": [
@@ -90055,6 +90047,20 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/OrnamentsController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11129,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/OrnamentsController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11333,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationPreviewController.swift",
       "kind": "IntegerLiteral",
       "offset": 1045,
@@ -90294,120 +90300,85 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 476,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 486,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 495,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 505,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 768,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 778,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 787,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 797,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "FloatLiteral",
-      "offset": 1044,
-      "length": 5,
-      "value": "0.800"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1058,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1067,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1077,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "StringLiteral",
-      "offset": 1776,
+      "offset": 1219,
       "length": 6,
       "value": "\"km\/h\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2259,
+      "offset": 1501,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2603,
+      "offset": 1597,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2933,
+      "offset": 1675,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1977,
+      "length": 3,
+      "value": "0.8"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3270,
+      "offset": 1989,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1998,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2008,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2107,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2155,
+      "length": 2,
+      "value": "28"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2205,
+      "length": 2,
+      "value": "34"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SpeedView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8730,
       "length": 1,
       "value": "1"
     },
@@ -99779,22 +99750,29 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
+      "kind": "Dictionary",
+      "offset": 2012,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 1879,
+      "offset": 2048,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "BooleanLiteral",
-      "offset": 1922,
+      "offset": 2091,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
       "kind": "StringLiteral",
-      "offset": 1985,
+      "offset": 2154,
       "length": 27,
       "value": "\"nbmap.audio.session.queue\""
     },
