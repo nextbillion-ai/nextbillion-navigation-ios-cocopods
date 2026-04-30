@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "NextBillionNavigation"
-  spec.version      = "3.3.0"
+  spec.version      = "3.3.1"
   spec.summary      = "The nextbillion.ai iOS  navigation cocoapods repo"
 
   spec.description  = "This is a iOS xcframework repository, users can integrate with Nextbillion iOS navigation through cocoaPods "
