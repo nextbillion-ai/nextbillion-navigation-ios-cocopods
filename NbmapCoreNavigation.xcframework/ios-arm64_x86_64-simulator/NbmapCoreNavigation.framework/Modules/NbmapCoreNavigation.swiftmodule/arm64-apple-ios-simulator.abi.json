@@ -146239,6 +146239,66 @@
             ]
           },
           {
+            "kind": "Function",
+            "name": "addObserver",
+            "printedName": "addObserver(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationServiceDelegate",
+                "printedName": "any NbmapCoreNavigation.NavigationServiceDelegate",
+                "usr": "s:19NbmapCoreNavigation0C15ServiceDelegateP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation0C7ServiceP11addObserveryyAA0cD8Delegate_pF",
+            "mangledName": "$s19NbmapCoreNavigation0C7ServiceP11addObserveryyAA0cD8Delegate_pF",
+            "moduleName": "NbmapCoreNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapCoreNavigation.NavigationService>",
+            "sugared_genericSig": "<Self where Self : NbmapCoreNavigation.NavigationService>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeObserver",
+            "printedName": "removeObserver(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationServiceDelegate",
+                "printedName": "any NbmapCoreNavigation.NavigationServiceDelegate",
+                "usr": "s:19NbmapCoreNavigation0C15ServiceDelegateP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation0C7ServiceP14removeObserveryyAA0cD8Delegate_pF",
+            "mangledName": "$s19NbmapCoreNavigation0C7ServiceP14removeObserveryyAA0cD8Delegate_pF",
+            "moduleName": "NbmapCoreNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapCoreNavigation.NavigationService>",
+            "sugared_genericSig": "<Self where Self : NbmapCoreNavigation.NavigationService>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Var",
             "name": "locationManager",
             "printedName": "locationManager",
@@ -147540,6 +147600,58 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "addObserver",
+            "printedName": "addObserver(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationServiceDelegate",
+                "printedName": "any NbmapCoreNavigation.NavigationServiceDelegate",
+                "usr": "s:19NbmapCoreNavigation0C15ServiceDelegateP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation19NBNavigationServiceC11addObserveryyAA0cE8Delegate_pF",
+            "mangledName": "$s19NbmapCoreNavigation19NBNavigationServiceC11addObserveryyAA0cE8Delegate_pF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeObserver",
+            "printedName": "removeObserver(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationServiceDelegate",
+                "printedName": "any NbmapCoreNavigation.NavigationServiceDelegate",
+                "usr": "s:19NbmapCoreNavigation0C15ServiceDelegateP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation19NBNavigationServiceC14removeObserveryyAA0cE8Delegate_pF",
+            "mangledName": "$s19NbmapCoreNavigation19NBNavigationServiceC14removeObserveryyAA0cE8Delegate_pF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Var",
@@ -255567,28 +255679,28 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "FloatLiteral",
-      "offset": 15053,
+      "offset": 15054,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "StringLiteral",
-      "offset": 15148,
+      "offset": 15149,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "Array",
-      "offset": 17218,
+      "offset": 17219,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBRouteOption.swift",
       "kind": "BooleanLiteral",
-      "offset": 22258,
+      "offset": 21943,
       "length": 4,
       "value": "true"
     },
@@ -265793,22 +265905,50 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
+      "kind": "StringLiteral",
+      "offset": 4500,
+      "length": 10,
+      "value": "\"delegate\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
+      "kind": "Array",
+      "offset": 5637,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6804,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6847,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3106,
+      "offset": 10441,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
       "kind": "FloatLiteral",
-      "offset": 3996,
+      "offset": 11331,
       "length": 3,
       "value": "2.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/NavigationService.swift",
       "kind": "FloatLiteral",
-      "offset": 5844,
+      "offset": 13179,
       "length": 3,
       "value": "1.0"
     },

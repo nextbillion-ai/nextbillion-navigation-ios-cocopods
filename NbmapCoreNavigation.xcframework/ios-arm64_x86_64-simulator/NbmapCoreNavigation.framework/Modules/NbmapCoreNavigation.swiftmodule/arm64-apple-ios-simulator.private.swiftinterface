@@ -5442,6 +5442,8 @@ public protocol NavigationService : CoreLocation.CLLocationManagerDelegate, Nbma
   #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any NbmapCoreNavigation.NavigationServiceDelegate)? { get set }
   #endif
+  func addObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
+  func removeObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
   var locationManager: NbmapCoreNavigation.NavigationLocationManager { get }
   var router: any NbmapCoreNavigation.Router { get }
   var dataTrackingEnable: Swift.Bool { get set }
@@ -5470,7 +5472,12 @@ public protocol NavigationService : CoreLocation.CLLocationManagerDelegate, Nbma
   #endif
 }
 @objc public class NBNavigationService : ObjectiveC.NSObject, NbmapCoreNavigation.NavigationService {
-  weak public var delegate: (any NbmapCoreNavigation.NavigationServiceDelegate)?
+  weak public var delegate: (any NbmapCoreNavigation.NavigationServiceDelegate)? {
+    get
+    set
+  }
+  public func addObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
+  public func removeObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
   public var locationManager: NbmapCoreNavigation.NavigationLocationManager {
     get
   }
