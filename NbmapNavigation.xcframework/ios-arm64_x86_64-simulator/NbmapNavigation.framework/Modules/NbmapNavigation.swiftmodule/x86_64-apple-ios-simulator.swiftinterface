@@ -100,6 +100,7 @@ extension NbmapNavigation.CarPlayManager : CarPlay.CPSearchTemplateDelegate {
   public func carPlayManager(_: CarPlay.CPSearchTemplate, selectedResult item: CarPlay.CPListItem, completionHandler: @escaping () -> Swift.Void)
 }
 public let NBRouteLineWidthByZoomLevel: [Swift.Int : Foundation.NSExpression]
+public let NBRouteStripeWidthByZoomLevel: [Swift.Int : Foundation.NSExpression]
 public var navigationMapViewMinimumDistanceForOverheadZooming: Swift.Double
 public let nbCurrentLegAttribute: Swift.String
 public let nbCongestionAttribute: Swift.String
@@ -337,7 +338,7 @@ public typealias ContainerViewController = UIKit.UIViewController & NbmapNavigat
   @_Concurrency.MainActor @preconcurrency public class func carPlayManagerDidEndNavigation(_: NbmapNavigation.CarPlayManager, window: UIKit.UIWindow)
 }
 extension NbmapNavigation.NavigationViewController {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapViewDidFinishRenderingFrame(_ mapView: Nbmap.NGLMapView, fullyRendered: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapViewDidFinishRenderingFrame(_: Nbmap.NGLMapView, fullyRendered: Swift.Bool)
 }
 extension NbmapNavigation.NavigationViewController : NbmapCoreNavigation.NavigationServiceDelegate {
   @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: _LocationEssentials.CLLocation, rawLocation: _LocationEssentials.CLLocation)
@@ -819,6 +820,7 @@ extension NbmapNavigation.CPNavigationView {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func safeAreaInsetsDidChange()
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public class CarPlayNavigationViewController : UIKit.UIViewController, Nbmap.NGLMapViewDelegate {
@@ -840,7 +842,7 @@ extension NbmapNavigation.CPNavigationView {
     get
   }
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(for navigationService: any NbmapCoreNavigation.NavigationService, mapTemplate: CarPlay.CPMapTemplate, interfaceController: CarPlay.CPInterfaceController, manager: NbmapNavigation.CarPlayManager, styles: [NbmapNavigation.Style]? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(for navigationService: any NbmapCoreNavigation.NavigationService, mapTemplate: CarPlay.CPMapTemplate, interfaceController: CarPlay.CPInterfaceController, manager: NbmapNavigation.CarPlayManager, styles: [NbmapNavigation.Style]? = nil, ownsNavigationService: Swift.Bool = true)
   #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
@@ -894,6 +896,10 @@ extension NbmapNavigation.CarPlayNavigationViewController : NbmapNavigation.TopB
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : NbmapNavigation.NavigationMapViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
+}
+@available(iOS 13.0, *)
+extension NbmapNavigation.CarPlayNavigationViewController {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapViewDidFinishRenderingFrame(_: Nbmap.NGLMapView, fullyRendered: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers public class SpeedLimitStyleKit : ObjectiveC.NSObject {
   @objc dynamic public class func drawMUTCD(frame targetFrame: CoreFoundation.CGRect = CGRect(x: 0, y: 0, width: 56, height: 66), resizing: NbmapNavigation.SpeedLimitStyleKit.ResizingBehavior = .aspectFit, signBackColor: UIKit.UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000), strokeColor: UIKit.UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), limit: Swift.String = "50", legend: Swift.String = "MAX")
@@ -1130,7 +1136,7 @@ extension NbmapNavigation.CarPlayManager : CarPlay.CPListTemplateDelegate {
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayManager : CarPlay.CPMapTemplateDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapTemplate(_: CarPlay.CPMapTemplate, startedTrip trip: CarPlay.CPTrip, using routeChoice: CarPlay.CPRouteChoice)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapTemplate(_ mapTemplate: CarPlay.CPMapTemplate, startedTrip trip: CarPlay.CPTrip, using routeChoice: CarPlay.CPRouteChoice)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapTemplate(_ mapTemplate: CarPlay.CPMapTemplate, selectedPreviewFor trip: CarPlay.CPTrip, using routeChoice: CarPlay.CPRouteChoice)
   public func getFinalRoutes(trip: CarPlay.CPTrip, routeChoice: CarPlay.CPRouteChoice) -> [NbmapCoreNavigation.Route]
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapTemplateDidCancelNavigation(_: CarPlay.CPMapTemplate)
@@ -1154,6 +1160,9 @@ extension NbmapNavigation.CarPlayManager : NbmapNavigation.CarplayOperationsDele
   public func onRouteFeatched(origin: NbmapCoreNavigation.Waypoint, destination: NbmapCoreNavigation.Waypoint, routes: [NbmapCoreNavigation.Route])
   public func onRouteCancled()
   public func onNavigationStart(routes: [NbmapCoreNavigation.Route])
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onNavigationStart(routes: [NbmapCoreNavigation.Route], navigationService: (any NbmapCoreNavigation.NavigationService)?)
+  #endif
   public func onNavigationTerminated()
 }
 public struct NavigationGeocodedPlacemark : Swift.Equatable, Swift.Codable {
@@ -2709,15 +2718,29 @@ public enum NBErrorCode : Swift.Int {
 public protocol CarplayOperationsDelegate : AnyObject {
   func onRouteFeatched(origin: NbmapCoreNavigation.Waypoint, destination: NbmapCoreNavigation.Waypoint, routes: [NbmapCoreNavigation.Route])
   func onNavigationStart(routes: [NbmapCoreNavigation.Route])
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onNavigationStart(routes: [NbmapCoreNavigation.Route], navigationService: (any NbmapCoreNavigation.NavigationService)?)
+  #endif
   func onNavigationTerminated()
   func onRouteCancled()
+}
+extension NbmapNavigation.CarplayOperationsDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onNavigationStart(routes: [NbmapCoreNavigation.Route], navigationService _: (any NbmapCoreNavigation.NavigationService)?)
+  #endif
 }
 @_hasMissingDesignatedInitializers public class CarplayOperationsManager {
   public static let shared: NbmapNavigation.CarplayOperationsManager
   weak public var carplayDelegate: (any NbmapNavigation.CarplayOperationsDelegate)?
   weak public var navigationDelegate: (any NbmapNavigation.CarplayOperationsDelegate)?
+  weak public var activeNavigationService: (any NbmapCoreNavigation.NavigationService)? {
+    get
+    set
+  }
   public func onRouteFeatched(fromCarplay carplay: Swift.Bool = false, origin: NbmapCoreNavigation.Waypoint, destination: NbmapCoreNavigation.Waypoint, routes: [NbmapCoreNavigation.Route])
-  public func onNavigationStart(fromCarplay carplay: Swift.Bool = false, routes: [NbmapCoreNavigation.Route])
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onNavigationStart(fromCarplay carplay: Swift.Bool = false, routes: [NbmapCoreNavigation.Route], navigationService: (any NbmapCoreNavigation.NavigationService)? = nil)
+  #endif
   public func onNavigationTerminated(fromCarplay carplay: Swift.Bool = false)
   public func onRouteCancled(fromCarplay carplay: Swift.Bool = false)
   @objc deinit

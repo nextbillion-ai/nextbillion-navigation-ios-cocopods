@@ -534,6 +534,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation16CPNavigationView")
 
 @interface CPNavigationView (SWIFT_EXTENSION(NbmapNavigation))
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)safeAreaInsetsDidChange;
 @end
 
 /// :nodoc:
@@ -613,7 +614,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 @class CPRouteChoice;
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPMapTemplateDelegate>
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate selectedPreviewForTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)_;
 - (void)mapTemplateDidBeginPanGesture:(CPMapTemplate * _Nonnull)mapTemplate;
@@ -663,6 +664,12 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 /// When this property is true, the map follows the user’s location and rotates when their course changes. Otherwise, the map shows an overview of the route.
 @property (nonatomic) BOOL tracksUserCourse;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+@class NGLMapView;
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)_ fullyRendered:(BOOL)fullyRendered;
 @end
 
 @class CPSessionConfiguration;
@@ -792,7 +799,6 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 - (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class NGLMapView;
 @class NGLStyle;
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
@@ -1521,7 +1527,7 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @end
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
-- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)mapView fullyRendered:(BOOL)fullyRendered;
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)_ fullyRendered:(BOOL)fullyRendered;
 @end
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
@@ -2475,6 +2481,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation16CPNavigationView")
 
 @interface CPNavigationView (SWIFT_EXTENSION(NbmapNavigation))
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)safeAreaInsetsDidChange;
 @end
 
 /// :nodoc:
@@ -2554,7 +2561,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 @class CPRouteChoice;
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPMapTemplateDelegate>
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate selectedPreviewForTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)_;
 - (void)mapTemplateDidBeginPanGesture:(CPMapTemplate * _Nonnull)mapTemplate;
@@ -2604,6 +2611,12 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 /// When this property is true, the map follows the user’s location and rotates when their course changes. Otherwise, the map shows an overview of the route.
 @property (nonatomic) BOOL tracksUserCourse;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+@class NGLMapView;
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)_ fullyRendered:(BOOL)fullyRendered;
 @end
 
 @class CPSessionConfiguration;
@@ -2733,7 +2746,6 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 - (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class NGLMapView;
 @class NGLStyle;
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
@@ -3462,7 +3474,7 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @end
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
-- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)mapView fullyRendered:(BOOL)fullyRendered;
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)_ fullyRendered:(BOOL)fullyRendered;
 @end
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>

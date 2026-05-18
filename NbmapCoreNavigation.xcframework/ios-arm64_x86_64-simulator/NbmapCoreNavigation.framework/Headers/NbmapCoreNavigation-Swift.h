@@ -940,7 +940,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// Please note this parameter is effective only when  <code>mapOption</code> is<code>.flexible</code>
 /// The default value is set to <code>false</code>
 @property (nonatomic) BOOL crossBorder;
-/// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
+/// Specify the total load per axle (including the weight of trailers and shipped goods) o f the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
 /// Please note this parameter is effective only when <code>profileIdentifier</code> is <code>.truck</code> and <code>mapOption</code> is<code>.valhalla</code>
 @property (nonatomic) double truckAxleLoad;
 /// Allowed Values:  <code>taxi</code> <code>hov</code>
@@ -2857,7 +2857,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// Please note this parameter is effective only when  <code>mapOption</code> is<code>.flexible</code>
 /// The default value is set to <code>false</code>
 @property (nonatomic) BOOL crossBorder;
-/// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
+/// Specify the total load per axle (including the weight of trailers and shipped goods) o f the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
 /// Please note this parameter is effective only when <code>profileIdentifier</code> is <code>.truck</code> and <code>mapOption</code> is<code>.valhalla</code>
 @property (nonatomic) double truckAxleLoad;
 /// Allowed Values:  <code>taxi</code> <code>hov</code>
