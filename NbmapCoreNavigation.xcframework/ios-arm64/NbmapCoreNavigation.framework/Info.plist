@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.4.0</string>
+	<string>3.4.1</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>
@@ -41,7 +41,7 @@
 	<key>DTXcodeBuild</key>
 	<string>17C52</string>
 	<key>GIT_REVISION</key>
-	<string>cfa1873</string>
+	<string>e6bbb3340</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>NSAppTransportSecurity</key>
