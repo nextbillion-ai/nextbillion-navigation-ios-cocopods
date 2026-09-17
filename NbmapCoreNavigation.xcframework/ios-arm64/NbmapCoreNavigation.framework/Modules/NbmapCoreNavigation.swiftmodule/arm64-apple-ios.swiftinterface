@@ -1,22 +1,24 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NbmapCoreNavigation
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NbmapCoreNavigation
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import CarPlay
 import CommonCrypto
+import CoreFoundation
 import CoreLocation
 import CoreMotion
+import CryptoKit
 import Darwin
 import Dispatch
 import Foundation
-import MachO
 import MapKit
 import NBTurf
 import Nbmap
 @_exported import NbmapCoreNavigation
 import Network
 import OSLog
+import ObjectiveC
 import Swift
 import UIKit.UIDevice
 import UIKit
@@ -241,6 +243,9 @@ extension UIKit.UIDevice {
   public init(navConfig: NbmapCoreNavigation.NavigationEngineConfig, routingProvider: (any NbmapCoreNavigation.RoutingProvider)? = nil)
   #endif
   @objc deinit
+  #if compiler(>=5.3) && $NonescapableTypes
+  open func reroute(from location: _LocationEssentials.CLLocation, heading: CoreLocation.CLHeading?, along progress: NbmapCoreNavigation.RouteProgress, baseRoute: NbmapCoreNavigation.Route, lastOnRoutePosition: _LocationEssentials.CLLocationCoordinate2D, callOptions: NbmapCoreNavigation.OfflineRerouteCallOptions = .default, diagnosticsSink: NbmapCoreNavigation.OfflineRerouteDiagnosticsSink? = nil)
+  #endif
   public func getTravelledLocationList(travelledLocations: NbmapCoreNavigation.RingBuffer<NbmapCoreNavigation.TravelledRawLocation>) -> [NbmapCoreNavigation.TravelledRawLocation]
 }
 public protocol Sampler : AnyObject, Swift.CustomStringConvertible {
@@ -412,14 +417,6 @@ extension NbmapCoreNavigation.Message {
   public init(jsonUTF8Data: Foundation.Data, extensions: (any NbmapCoreNavigation.ExtensionMap)? = nil, options: NbmapCoreNavigation.JSONDecodingOptions = JSONDecodingOptions()) throws
   #endif
 }
-public protocol RoutingProvider {
-  #if compiler(>=5.3) && $NonescapableTypes
-  func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
-  #endif
-}
-public protocol NavigationProviderRequest {
-  func cancel()
-}
 @objc public protocol NavigationEventTracking {
   @objc func trackingRouteData(route: [Swift.String : Any])
   @objc func trackingRawLocation(rawLocation: [Swift.String : Any])
@@ -501,11 +498,32 @@ public protocol Telemetry {
 public let NBDirectionsErrorDomain: Swift.String
 @_inheritsConvenienceInitializers @objc(NBDirections) open class Directions : ObjectiveC.NSObject {
   public typealias RouteCompletionHandler = (_ routes: [NbmapCoreNavigation.Route]?, _ error: Foundation.NSError?) -> Swift.Void
+  @available(iOS 13.0, *)
+  public typealias SourceAwareRouteCompletionHandler = (_ routes: [NbmapCoreNavigation.Route]?, _ source: NbmapCoreNavigation.RouteSource?, _ error: Foundation.NSError?) -> Swift.Void
+  @available(iOS 13.0, *)
+  public typealias RuntimeConfig = NbmapCoreNavigation.NBNavigation.NavigationRuntimeConfig
   @objc(sharedDirections) public static let shared: NbmapCoreNavigation.Directions
   final public let nbId: Swift.String
   public var crossInfo: Swift.String
+  @available(iOS 13.0, *)
+  public class func setRouteMode(_ mode: NbmapCoreNavigation.RouteMode)
+  @available(iOS 13.0, *)
+  public class func routeMode() -> NbmapCoreNavigation.RouteMode
+  @available(iOS 13.0, *)
+  public class func setRuntimeConfig(_ config: NbmapCoreNavigation.Directions.RuntimeConfig)
+  @available(iOS 13.0, *)
+  public class func runtimeConfig() -> NbmapCoreNavigation.Directions.RuntimeConfig
+  @available(iOS 13.0, *)
+  public class func routingProvider() -> any NbmapCoreNavigation.RoutingProvider
   @discardableResult
   @objc(calculateNavigationWithOptions:completionHandler:) open func calculate(_ options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> Foundation.URLSessionDataTask
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(iOS 13.0, *)
+  @discardableResult
+  open func calculate(_ options: NbmapCoreNavigation.RouteOptions, completionWithSource: @escaping NbmapCoreNavigation.Directions.SourceAwareRouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  @available(iOS 13.0, *)
+  open func calculateWithSource(options: NbmapCoreNavigation.RouteOptions) async throws -> NbmapCoreNavigation.NBNavigation.RouteFetchResult
   @objc(URLForCalculatingDirectionsWithOptions:) open func url(forCalculating options: NbmapCoreNavigation.DirectionsOptions) -> Foundation.URL
   #if compiler(>=5.3) && $NonescapableTypes
   open func requestBody(forCalculating options: NbmapCoreNavigation.DirectionsOptions) -> Foundation.Data?
@@ -1161,19 +1179,6 @@ public protocol NavigationEventsManagerDataSource : AnyObject {
   var router: any NbmapCoreNavigation.Router { get }
   var desiredAccuracy: _LocationEssentials.CLLocationAccuracy { get }
   var locationManagerType: NbmapCoreNavigation.NavigationLocationManager.Type { get }
-}
-public class NbRoutingProvider : NbmapCoreNavigation.RoutingProvider {
-  public var settings: NbmapCoreNavigation.NavigationSettings {
-    get
-  }
-  public struct Request : NbmapCoreNavigation.NavigationProviderRequest {
-    public func cancel()
-  }
-  public init(settings: NbmapCoreNavigation.NavigationSettings = .shared)
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
-  #endif
-  @objc deinit
 }
 extension Swift.Double {
   public func shortestRotation(angle: _LocationEssentials.CLLocationDirection) -> _LocationEssentials.CLLocationDirection
@@ -2601,19 +2606,6 @@ public protocol OffRouteDetector {
   func newRouteHasBeenSet()
   func updateLastReroutePoint(location: _LocationEssentials.CLLocation)
 }
-public class NBOffRouteDetector : NbmapCoreNavigation.OffRouteDetector {
-  weak public var delegate: (any NbmapCoreNavigation.OffRouteDetectorDelegate)?
-  public var validOffRouteCheckOfTrip: Swift.Bool {
-    get
-  }
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig, snapDistanceTracker _: NbmapCoreNavigation.SnapDistanceTracker? = nil, delegate: (any NbmapCoreNavigation.OffRouteDetectorDelegate)? = nil, toleranceCalculator: (any NbmapCoreNavigation.ThresholdCalculator)? = nil, movingAwayHelper: NbmapCoreNavigation.MovingAwayHelper? = nil)
-  #endif
-  public func userOffRouteStatus(_ location: _LocationEssentials.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> NbmapCoreNavigation.OffRouteStatus
-  public func updateLastReroutePoint(location: _LocationEssentials.CLLocation)
-  public func newRouteHasBeenSet()
-  @objc deinit
-}
 extension NbmapCoreNavigation.RouteOptions {
   public func without(waypoint: NbmapCoreNavigation.Waypoint) -> NbmapCoreNavigation.RouteOptions
 }
@@ -2644,12 +2636,12 @@ public class TelemetryDataSource : NbmapCoreNavigation.ITelemetryDataSource {
   #endif
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers open class AlternativeRouteManager : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AlternativeRouteManager : ObjectiveC.NSObject {
   weak public var delegate: (any NbmapCoreNavigation.AlternativeRouteDelegate)?
+  @objc override dynamic public init()
   #if compiler(>=5.3) && $NonescapableTypes
   public func getFirstToForkManeuverPoint(routes: [NbmapCoreNavigation.Route], currentRoute: NbmapCoreNavigation.Route, routeProgress: NbmapCoreNavigation.RouteProgress) -> _LocationEssentials.CLLocationCoordinate2D?
   #endif
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(NBIntersection) public class Intersection : ObjectiveC.NSObject, Foundation.NSSecureCoding {
@@ -2844,6 +2836,32 @@ public struct NavigationEngineConfig : Swift.Equatable {
   public var enhancedOffRouteRadiusMultiplier: Swift.Double
   public var minimumDistanceToTriggerRerouteMultiplier: Swift.Double
   public var minimumDistanceBetweenRecordedLocations: Swift.Double
+  public var enableSnapToRoadParallelRoadDetection: Swift.Bool
+  public var snapToRoadRequestInterval: Swift.Double
+  public var snapToRoadMinimumPathPoints: Swift.Int
+  public var snapToRoadMaximumPathPoints: Swift.Int
+  public var snapToRoadObservationDistanceThreshold: Swift.Double
+  public var snapToRoadObservationExitDistanceThreshold: Swift.Double
+  public var snapToRoadObservationHoldSeconds: Swift.Double
+  public var snapToRoadComparisonLength: Swift.Double
+  public var snapToRoadGeometryMismatchThreshold: Swift.Double
+  public var snapToRoadMinimumComparableGeometryLength: Swift.Double
+  public var snapToRoadIncludeDestinationParameter: Swift.Bool
+  public var snapToRoadRerouteReason: Swift.String
+  public var enableSnapToRoadTrendDetector: Swift.Bool
+  public var snapToRoadTrendDistanceFloor: Swift.Double
+  public var snapToRoadTrendMinDeltaFromBaseline: Swift.Double
+  public var snapToRoadTrendPlateauStdThreshold: Swift.Double
+  public var snapToRoadTrendPlateauConfirmSeconds: Swift.Double
+  public var snapToRoadTrendPlateauConfirmSecondsFast: Swift.Double
+  public var snapToRoadTrendSuddenSlopeThreshold: Swift.Double
+  public var snapToRoadTrendTrackerWindowSeconds: Swift.Double
+  public var snapToRoadTrendShortWindowSeconds: Swift.Double
+  public var snapToRoadTrendAbsoluteElevatedThreshold: Swift.Double
+  public var stepCalibrationNonAdjacentMaxDistance: Swift.Double
+  public var stepCalibrationNonAdjacentStrongDistance: Swift.Double
+  public var stepCalibrationNonAdjacentMinImprovement: Swift.Double
+  public var stepCalibrationNonAdjacentHeadingGate: Swift.Double
   public var minDistanceToReEnableAfterArrival: Swift.Double
   public static func == (a: NbmapCoreNavigation.NavigationEngineConfig, b: NbmapCoreNavigation.NavigationEngineConfig) -> Swift.Bool
 }
@@ -4617,7 +4635,7 @@ extension NbmapCoreNavigation.Google_Protobuf_GeneratedCodeInfo.Annotation : Nbm
 extension NbmapCoreNavigation.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic : NbmapCoreNavigation._ProtoNameProviding {
   public static let _protobuf_nameMap: NbmapCoreNavigation._NameMap
 }
-@_inheritsConvenienceInitializers @objc(NBNavRoute) open class Route : NbmapCoreNavigation.DirectionsResult {
+@_hasMissingDesignatedInitializers @objc(NBNavRoute) open class Route : NbmapCoreNavigation.DirectionsResult {
   #if compiler(>=5.3) && $NonescapableTypes
   @objc(initWithJson:legs:distance:expectedTravelTime:coordinates:speechLocale:geometry:options:) public init(json: [Swift.String : Any], legs: [NbmapCoreNavigation.RouteLeg], distance: _LocationEssentials.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, coordinates: [_LocationEssentials.CLLocationCoordinate2D]?, speechLocale: Foundation.Locale?, geometry: Any? = nil, options: NbmapCoreNavigation.DirectionsOptions)
   #endif
@@ -4659,7 +4677,7 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
     get
   }
 }
-@objc open class RouteController : ObjectiveC.NSObject, NbmapCoreNavigation.Router {
+@objc open class RouteController : ObjectiveC.NSObject, NbmapCoreNavigation.Router, NbmapCoreNavigation.PuckStateProviding {
   public enum DefaultBehavior {
     public static let shouldRerouteFromLocation: Swift.Bool
     public static let shouldDiscardLocation: Swift.Bool
@@ -4692,6 +4710,9 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
     set
   }
   public var resolvedRoutingProvider: any NbmapCoreNavigation.RoutingProvider {
+    get
+  }
+  public var puckState: NbmapCoreNavigation.PuckState {
     get
   }
   #if compiler(>=5.3) && $NonescapableTypes
@@ -4861,6 +4882,7 @@ public protocol DoubleObserverMetricHandle {
   #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(_ telemetry: NbmapCoreNavigation.OpenTelemetry? = nil, eventConfigration: NbmapCoreNavigation.EventConfigration? = nil, tracerProvider: (any NbmapCoreNavigation.TracerProvider)? = nil, tracer: NbmapCoreNavigation.TracerSdk? = nil, spanProcessor: (any NbmapCoreNavigation.SpanProcessor)? = nil, jaegerExporter: NbmapCoreNavigation.OtlpHttpTraceExporter? = nil, resources: NbmapCoreNavigation.Resource? = nil)
   #endif
+  @objc deinit
   public func setup(withAccessToken: Swift.String, userAgentBase: Swift.String, hostSDKVersion: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
   public func track(spanName: Swift.String, with attributes: [Swift.String : Any]?, end: Swift.Bool? = true) -> any NbmapCoreNavigation.Span
@@ -4877,7 +4899,6 @@ public protocol DoubleObserverMetricHandle {
   public func enqueueEvent(withName name: Swift.String, attributes: [Swift.String : Any] = [:])
   public func flush()
   public func shutdowm()
-  @objc deinit
 }
 public enum Google_Protobuf_NullValue : NbmapCoreNavigation.Enum {
   public typealias RawValue = Swift.Int
@@ -5430,13 +5451,16 @@ public class JaegerBaggagePropagator : NbmapCoreNavigation.TextMapBaggagePropaga
   @objc deinit
 }
 public func defaultOltpHttpTracesEndpoint() -> Foundation.URL
-@_inheritsConvenienceInitializers public class OtlpHttpTraceExporter : NbmapCoreNavigation.OtlpHttpExporterBase, NbmapCoreNavigation.SpanExporter {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class OtlpHttpTraceExporter : NbmapCoreNavigation.OtlpHttpExporterBase, NbmapCoreNavigation.SpanExporter {
   #if compiler(>=5.3) && $NonescapableTypes
   override public init(endpoint: Foundation.URL = defaultOltpHttpTracesEndpoint(), useSession: Foundation.URLSession? = nil, token: Swift.String? = nil)
   #endif
   public func export(spans: [NbmapCoreNavigation.SpanData]) -> NbmapCoreNavigation.SpanExporterResultCode
   public func flush() -> NbmapCoreNavigation.SpanExporterResultCode
+  override public func shutdown()
   @objc deinit
+}
+extension NbmapCoreNavigation.OtlpHttpTraceExporter : @unchecked Swift.Sendable {
 }
 public protocol NavigationService : CoreLocation.CLLocationManagerDelegate, NbmapCoreNavigation.NavigationEventsManagerDataSource {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -5472,10 +5496,7 @@ public protocol NavigationService : CoreLocation.CLLocationManagerDelegate, Nbma
   #endif
 }
 @objc public class NBNavigationService : ObjectiveC.NSObject, NbmapCoreNavigation.NavigationService {
-  weak public var delegate: (any NbmapCoreNavigation.NavigationServiceDelegate)? {
-    get
-    set
-  }
+  weak public var delegate: (any NbmapCoreNavigation.NavigationServiceDelegate)?
   public func addObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
   public func removeObserver(_ observer: any NbmapCoreNavigation.NavigationServiceDelegate)
   public var locationManager: NbmapCoreNavigation.NavigationLocationManager {
@@ -5576,24 +5597,6 @@ open class RoundaboutCalibrator {
 }
 public protocol BaggageManagerProvider {
   func create() -> any NbmapCoreNavigation.BaggageManager
-}
-public class MovingAwayHelper {
-  public var currentPointIsMovingAway: Swift.Bool {
-    get
-  }
-  public var moveAwayCount: Swift.Int {
-    get
-  }
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(config: NbmapCoreNavigation.NavigationEngineConfig, movingAwayFromManeuverCounter: NbmapCoreNavigation.RingBuffer<Swift.Int>? = nil, currentPointIsMovingAway: Swift.Bool = false)
-  #endif
-  public func movingAwayFromManeuver(location: _LocationEssentials.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> Swift.Bool
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func userDistanceToManeuver(location: _LocationEssentials.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> _LocationEssentials.CLLocationDistance?
-  #endif
-  public func size() -> Swift.Int
-  public func clear()
-  @objc deinit
 }
 public enum Severity : Swift.Int, Swift.Comparable, Swift.CustomStringConvertible {
   case trace, trace2, trace3, trace4, debug, debug2, debug3, debug4, info, info2, info3, info4, warn, warn2, warn3, warn4, error, error2, error3, error4, fatal, fatal2, fatal3, fatal4
@@ -6268,6 +6271,257 @@ public protocol TripSession {
   func onTripSession(didUpdate progress: NbmapCoreNavigation.RouteProgress)
   func onTripSession(didSet routes: [NbmapCoreNavigation.Route])
 }
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation {
+  public enum OfflineInitializationState : Swift.String, Swift.Sendable, Swift.Equatable {
+    case notStarted
+    case initializing
+    case initialized
+    case failed
+    case shuttingDown
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum OfflineDownloadNetworkPolicy : Swift.String, Swift.Sendable {
+    case wifiOnly
+    case anyNetwork
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct OfflineMapConfig : Swift.Sendable {
+    public var mapsBaseUrl: Swift.String
+    public init(mapsBaseUrl: Swift.String = NBNavigation.mapsBaseUrl)
+  }
+  public struct NavigationRuntimeConfig : Swift.Sendable {
+    public var routing: NbmapCoreNavigation.RoutingConfig
+    public var offlineDownloadNetworkPolicy: NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy
+    public var offlineMap: NbmapCoreNavigation.NBNavigation.OfflineMapConfig
+    public init(routing: NbmapCoreNavigation.RoutingConfig = RoutingConfig(), offlineDownloadNetworkPolicy: NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy = .wifiOnly, offlineMap: NbmapCoreNavigation.NBNavigation.OfflineMapConfig = OfflineMapConfig())
+  }
+  public struct RouteFetchResult {
+    public let routes: [NbmapCoreNavigation.Route]
+    public let source: NbmapCoreNavigation.RouteSource
+    public init(routes: [NbmapCoreNavigation.Route], source: NbmapCoreNavigation.RouteSource)
+  }
+  public struct OfflineRegionProgressEntry : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let downloadStatus: NbmapCoreNavigation.RegionDownloadStatus
+    public let tilesDone: Swift.Int64
+    public let tilesTotal: Swift.Int64
+    public let isDownloaded: Swift.Bool
+    public let isPartial: Swift.Bool
+    public let displayName: Swift.String
+    public let updatedAt: Foundation.Date
+    public init(regionId: Swift.Int64, downloadStatus: NbmapCoreNavigation.RegionDownloadStatus, tilesDone: Swift.Int64, tilesTotal: Swift.Int64, isDownloaded: Swift.Bool, isPartial: Swift.Bool, displayName: Swift.String, updatedAt: Foundation.Date)
+  }
+  public struct OfflineMapCatalogEntry : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let name: Swift.String
+    public let adminL0: Swift.String
+    public let adminL1: Swift.String
+    public let adminL3: Swift.String
+    public let version: Swift.String?
+    public let totalSizeBytes: Swift.Int64
+    public let tileCount: Swift.Int
+    public let updateAvailable: Swift.Bool
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(regionId: Swift.Int64, name: Swift.String, adminL0: Swift.String, adminL1: Swift.String, adminL3: Swift.String, version: Swift.String?, totalSizeBytes: Swift.Int64, tileCount: Swift.Int, updateAvailable: Swift.Bool = false)
+    #endif
+  }
+  public struct OfflineMapInstalledRegionEntry : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let displayName: Swift.String
+    public let packageCount: Swift.Int
+    public let totalBytes: Swift.Int64
+    public let regionVersion: Swift.String?
+    public let allPackagesOk: Swift.Bool
+    public let dataSourceId: Swift.Int
+    public let dataSourceLabel: Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(regionId: Swift.Int64, displayName: Swift.String, packageCount: Swift.Int, totalBytes: Swift.Int64, regionVersion: Swift.String?, allPackagesOk: Swift.Bool, dataSourceId: Swift.Int, dataSourceLabel: Swift.String)
+    #endif
+  }
+  public struct OfflineMapProgressEntry : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let state: Swift.String
+    public let downloadedBytes: Swift.Int64
+    public let totalBytes: Swift.Int64
+    public let percent: Swift.Int
+    public let currentPackageName: Swift.String?
+    public let errorMessage: Swift.String?
+    public let updatedAt: Foundation.Date
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(regionId: Swift.Int64, state: Swift.String, downloadedBytes: Swift.Int64, totalBytes: Swift.Int64, percent: Swift.Int, currentPackageName: Swift.String?, errorMessage: Swift.String?, updatedAt: Foundation.Date)
+    #endif
+  }
+  public struct OfflineMapPreviewStatus : Swift.Sendable {
+    public let previewBundleReady: Swift.Bool
+    public let styleJsonCached: Swift.Bool
+    public let spritesReady: Swift.Bool
+    public let tileJsonReady: Swift.Bool
+    public let cachedPreviewStyleNames: [Swift.String]
+    public init(previewBundleReady: Swift.Bool, styleJsonCached: Swift.Bool, spritesReady: Swift.Bool, tileJsonReady: Swift.Bool, cachedPreviewStyleNames: [Swift.String])
+  }
+  public struct MapTileRegionListResult : Swift.Sendable {
+    public let total: Swift.Int
+    public let regions: [NbmapCoreNavigation.NBNavigation.OfflineMapCatalogEntry]
+    public init(total: Swift.Int, regions: [NbmapCoreNavigation.NBNavigation.OfflineMapCatalogEntry])
+  }
+  public struct OfflineRegionListRow : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let routeRegion: NbmapCoreNavigation.OfflineRegionLeaf?
+    public let mapRegion: NbmapCoreNavigation.NBNavigation.OfflineMapCatalogEntry?
+    public let mapInstalledRegion: NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry?
+    public let displayName: Swift.String
+    public let country: Swift.String?
+    public let adminL1: Swift.String?
+    public let adminL2: Swift.String?
+    public let adminL3: Swift.String?
+    public let routeSizeBytes: Swift.Int64?
+    public let mapSizeBytes: Swift.Int64?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(regionId: Swift.Int64, routeRegion: NbmapCoreNavigation.OfflineRegionLeaf?, mapRegion: NbmapCoreNavigation.NBNavigation.OfflineMapCatalogEntry?, mapInstalledRegion: NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry?, displayName: Swift.String, country: Swift.String?, adminL1: Swift.String?, adminL2: Swift.String?, adminL3: Swift.String?, routeSizeBytes: Swift.Int64?, mapSizeBytes: Swift.Int64?)
+    #endif
+  }
+  public struct OfflineRegionListResult : Swift.Sendable {
+    public let routeRegionList: NbmapCoreNavigation.OfflineRegionCatalog?
+    public let mapRegionList: NbmapCoreNavigation.NBNavigation.MapTileRegionListResult?
+    public let mapInstalledRegionList: [NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry]?
+    public let routeError: Swift.String?
+    public let mapError: Swift.String?
+    public let mapInstalledError: Swift.String?
+    public let regionRows: [NbmapCoreNavigation.NBNavigation.OfflineRegionListRow]
+    public let updatedAt: Foundation.Date
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(routeRegionList: NbmapCoreNavigation.OfflineRegionCatalog?, mapRegionList: NbmapCoreNavigation.NBNavigation.MapTileRegionListResult?, mapInstalledRegionList: [NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry]?, routeError: Swift.String?, mapError: Swift.String?, mapInstalledError: Swift.String?, regionRows: [NbmapCoreNavigation.NBNavigation.OfflineRegionListRow], updatedAt: Foundation.Date = Date())
+    #endif
+  }
+  public enum OfflineTaskState : Swift.String, Swift.Sendable {
+    case notStarted
+    case queued
+    case running
+    case paused
+    case partial
+    case failed
+    case completed
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct OfflineSubtaskProgress : Swift.Sendable {
+    public let state: NbmapCoreNavigation.NBNavigation.OfflineTaskState
+    public let percent: Swift.Int
+    public let downloaded: Swift.Int64?
+    public let total: Swift.Int64?
+    public let message: Swift.String?
+    public let error: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(state: NbmapCoreNavigation.NBNavigation.OfflineTaskState, percent: Swift.Int, downloaded: Swift.Int64? = nil, total: Swift.Int64? = nil, message: Swift.String? = nil, error: Swift.String? = nil)
+    #endif
+  }
+  public struct OfflineRegionProgress : Swift.Sendable {
+    public let regionId: Swift.Int64
+    public let routeNetwork: NbmapCoreNavigation.NBNavigation.OfflineSubtaskProgress?
+    public let mapTile: NbmapCoreNavigation.NBNavigation.OfflineSubtaskProgress?
+    public let overallState: NbmapCoreNavigation.NBNavigation.OfflineTaskState
+    public let overallPercent: Swift.Int
+    public let updatedAt: Foundation.Date
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(regionId: Swift.Int64, routeNetwork: NbmapCoreNavigation.NBNavigation.OfflineSubtaskProgress?, mapTile: NbmapCoreNavigation.NBNavigation.OfflineSubtaskProgress?, overallState: NbmapCoreNavigation.NBNavigation.OfflineTaskState, overallPercent: Swift.Int, updatedAt: Foundation.Date = Date())
+    #endif
+  }
+  public enum OfflineRegionKind : Swift.String, Swift.Sendable {
+    case routing
+    case map
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum OfflineRegionManageAction : Swift.String, Swift.Sendable {
+    case download
+    case pause
+    case resume
+    case cancel
+    case delete
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct UnifiedOfflineManageResult : Swift.Sendable {
+    public let kind: NbmapCoreNavigation.NBNavigation.OfflineRegionKind
+    public let regionId: Swift.Int64
+    public let action: NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction
+    public let state: Swift.String
+    public let errorCode: Swift.Int
+    public let message: Swift.String?
+    public let updatedAt: Foundation.Date
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(kind: NbmapCoreNavigation.NBNavigation.OfflineRegionKind, regionId: Swift.Int64, action: NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction, state: Swift.String, errorCode: Swift.Int, message: Swift.String?, updatedAt: Foundation.Date)
+    #endif
+  }
+  public struct UnifiedOfflineProgressEntry : Swift.Sendable {
+    public let kind: NbmapCoreNavigation.NBNavigation.OfflineRegionKind
+    public let regionId: Swift.Int64
+    public let state: Swift.String
+    public let done: Swift.Int64
+    public let total: Swift.Int64
+    public let percent: Swift.Int
+    public let isDownloaded: Swift.Bool
+    public let isPartial: Swift.Bool
+    public let displayName: Swift.String
+    public let currentItemName: Swift.String?
+    public let errorMessage: Swift.String?
+    public let updatedAt: Foundation.Date
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(kind: NbmapCoreNavigation.NBNavigation.OfflineRegionKind, regionId: Swift.Int64, state: Swift.String, done: Swift.Int64, total: Swift.Int64, percent: Swift.Int, isDownloaded: Swift.Bool, isPartial: Swift.Bool, displayName: Swift.String, currentItemName: Swift.String?, errorMessage: Swift.String?, updatedAt: Foundation.Date)
+    #endif
+  }
+  public struct OfflineProgressSnapshot : Swift.Sendable {
+    public let queue: NbmapCoreNavigation.OfflineRegionDownloadQueueSnapshot
+    public let regions: [NbmapCoreNavigation.NBNavigation.OfflineRegionProgressEntry]
+    public let mapRegions: [NbmapCoreNavigation.NBNavigation.OfflineMapProgressEntry]
+    public let unifiedEntries: [NbmapCoreNavigation.NBNavigation.UnifiedOfflineProgressEntry]
+    public let timestamp: Foundation.Date
+    public init(queue: NbmapCoreNavigation.OfflineRegionDownloadQueueSnapshot, regions: [NbmapCoreNavigation.NBNavigation.OfflineRegionProgressEntry], mapRegions: [NbmapCoreNavigation.NBNavigation.OfflineMapProgressEntry] = [], unifiedEntries: [NbmapCoreNavigation.NBNavigation.UnifiedOfflineProgressEntry] = [], timestamp: Foundation.Date)
+  }
+  public typealias OfflineProgressListener = @Sendable (NbmapCoreNavigation.NBNavigation.OfflineProgressSnapshot) -> Swift.Void
+  public typealias UnifiedOfflineProgressListener = @Sendable ([NbmapCoreNavigation.NBNavigation.UnifiedOfflineProgressEntry]) -> Swift.Void
+  public typealias OfflineRegionProgressListener = @Sendable ([NbmapCoreNavigation.NBNavigation.OfflineRegionProgress]) -> Swift.Void
+  @_hasMissingDesignatedInitializers final public class OfflineProgressSubscription {
+    final public var isCancelled: Swift.Bool {
+      get
+    }
+    final public func cancel()
+    @objc deinit
+  }
+}
 @objc(NBLane) public class Lane : ObjectiveC.NSObject, Foundation.NSSecureCoding {
   @objc final public let indications: NbmapCoreNavigation.LaneIndication
   @objc public init(indications: NbmapCoreNavigation.LaneIndication)
@@ -6328,6 +6582,340 @@ extension NbmapCoreNavigation.Meter {
   @objc public func suspendTunnelAnimation(at location: _LocationEssentials.CLLocation, routeController: NbmapCoreNavigation.RouteController)
   @objc override dynamic public init()
   @objc deinit
+}
+@available(iOS 13.0, *)
+public enum RouteSource : Swift.Sendable, Swift.Equatable {
+  case offline
+  case online
+  public static func == (a: NbmapCoreNavigation.RouteSource, b: NbmapCoreNavigation.RouteSource) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class NbRoutingProvider : NbmapCoreNavigation.RoutingProvider {
+  public var settings: NbmapCoreNavigation.NavigationSettings {
+    get
+  }
+  public struct Request : NbmapCoreNavigation.NavigationProviderRequest {
+    public func cancel()
+  }
+  public init(settings: NbmapCoreNavigation.NavigationSettings = .shared)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  @objc deinit
+}
+public enum RouteMode : Swift.Int, Swift.Sendable {
+  case onlineOnly
+  case offlineOnly
+  case onlinePreferred
+  case offlinePreferred
+  case smart
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct RoutingConfig : Swift.Sendable {
+  public var mode: NbmapCoreNavigation.RouteMode
+  public var onlineTimeoutMs: Swift.Int64
+  public var offlineTimeoutMs: Swift.Int64
+  public var onlineRetryCount: Swift.Int
+  public init(mode: NbmapCoreNavigation.RouteMode = .onlineOnly, onlineTimeoutMs: Swift.Int64 = 20_000, offlineTimeoutMs: Swift.Int64 = 20_000, onlineRetryCount: Swift.Int = 1)
+}
+public protocol RoutingProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+}
+public protocol NavigationProviderRequest {
+  func cancel()
+}
+@available(iOS 13.0, *)
+final public class HybridRoutingProvider : NbmapCoreNavigation.RoutingProvider {
+  public typealias RouteWithSourceCompletionHandler = (_ routes: [NbmapCoreNavigation.Route]?, _ source: NbmapCoreNavigation.RouteSource?, _ error: Foundation.NSError?) -> Swift.Void
+  final public let onlineProvider: NbmapCoreNavigation.NbRoutingProvider
+  final public let offlineProvider: NbmapCoreNavigation.OfflineNbRoutingProvider
+  final public let offlineEngine: NbmapCoreNavigation.OfflineNavigationEngine
+  public init(offlineEngine: NbmapCoreNavigation.OfflineNavigationEngine, settings: NbmapCoreNavigation.NavigationSettings = .shared, config: NbmapCoreNavigation.RoutingConfig = RoutingConfig())
+  convenience public init(settings: NbmapCoreNavigation.NavigationSettings = .shared, config: NbmapCoreNavigation.RoutingConfig = RoutingConfig())
+  @objc deinit
+  final public var routingConfig: NbmapCoreNavigation.RoutingConfig {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public var lastRouteSource: NbmapCoreNavigation.RouteSource? {
+    get
+  }
+  #endif
+  final public var isNetworkReachable: Swift.Bool {
+    get
+  }
+  final public func updateRoutingConfig(_ config: NbmapCoreNavigation.RoutingConfig)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionWithSource: @escaping NbmapCoreNavigation.HybridRoutingProvider.RouteWithSourceCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions) async throws -> [NbmapCoreNavigation.Route]
+  final public func calculateRoutesWithSource(options: NbmapCoreNavigation.RouteOptions) async throws -> ([NbmapCoreNavigation.Route], NbmapCoreNavigation.RouteSource)
+  final public func initializeOfflineEngine(config: NbmapCoreNavigation.OfflineInitializeConfig = .init()) async throws
+  final public func shutdownOfflineEngine() async
+  final public func clearOfflineTileCache() async throws
+  final public func handleOfflineMemoryPressure(level: NbmapCoreNavigation.MemoryPressureLevel = .aggressive) async throws
+  final public func offlineHealthCheck() async throws -> NbmapCoreNavigation.HealthStatus
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func listOfflineRegions(countries: [Swift.String]? = ["United States"]) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  final public func listOfflineRegionCountries() async throws -> NbmapCoreNavigation.OfflineRegionCountriesResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getCountiesInRadius(latitude: Swift.Double, longitude: Swift.Double, radiusMeters: Swift.Double, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getCountiesAlongRoute(route: NbmapCoreNavigation.Route, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  final public func syncOfflineRegionList(syncMode: Swift.String = "auto") async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func syncOfflineRegionList(syncMode: Swift.String = "auto", countries: [Swift.String]?) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  final public func syncOfflineRegionListResult(syncMode: Swift.String = "auto") async throws -> NbmapCoreNavigation.OfflineRegionListSyncResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func prefetchOfflineRegionTiles(regionId: Swift.Int64, regionsApiBase: Swift.String, tilesApiBase: Swift.String, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> Swift.String
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func downloadOfflineRegion(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  final public func pauseRoutingRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func resumeRoutingRegionDownload(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  final public func cancelRoutingRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionCancelResult
+  final public func deleteRoutingRegionData(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDeleteResult
+  final public func offlineRegionDownloadQueueSnapshot() -> NbmapCoreNavigation.OfflineRegionDownloadQueueSnapshot
+  final public func fetchOfflineRegionDetail(regionId: Swift.Int64, regionsApiBase: Swift.String) async throws -> Swift.String
+  final public func fetchOfflineRegionDetailSummary(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDetailSummary
+  final public func getOfflineRegionBoundary(regionId: Swift.Int64) async throws -> Swift.String
+  final public func getOfflineRegionBoundary(regionId: Swift.Int64, fetchDetailIfMissing: Swift.Bool = true) async throws -> NbmapCoreNavigation.OfflineRegionBoundary
+  final public func initialize(config: NbmapCoreNavigation.OfflineInitializeConfig) async throws
+  final public func clearTileCache() async throws
+  final public func handleMemoryPressure(level: NbmapCoreNavigation.MemoryPressureLevel) async throws
+  final public func syncRegionList(regionsApiBase: Swift.String, syncMode: Swift.String) async throws -> Swift.String
+  final public func listRegionCountries() async throws -> NbmapCoreNavigation.OfflineRegionCountriesResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func listRegions(countries: [Swift.String]?) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func prefetchRegionTiles(regionId: Swift.Int64, regionsApiBase: Swift.String, tilesApiBase: Swift.String, requestTimestampMs: Swift.Int64, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler?) async throws -> Swift.String
+  #endif
+  final public func fetchRegionDetail(regionId: Swift.Int64, regionsApiBase: Swift.String) async throws -> Swift.String
+  final public func getRegionBoundary(regionId: Swift.Int64) async throws -> Swift.String
+  final public func healthCheck() async throws -> NbmapCoreNavigation.HealthStatus
+  final public func shutdown() async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func rerouteNavigationRoutes(options: NbmapCoreNavigation.RouteOptions, baseRoute: NbmapCoreNavigation.Route, progress: NbmapCoreNavigation.RouteProgress, lastOnRoutePosition: _LocationEssentials.CLLocationCoordinate2D, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+}
+@available(iOS 13.0, *)
+final public class OfflineRerouteOrchestrator {
+  public init(hybridProvider: NbmapCoreNavigation.HybridRoutingProvider)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func reroute(options: NbmapCoreNavigation.RouteOptions, baseRoute: NbmapCoreNavigation.Route, progress: NbmapCoreNavigation.RouteProgress, lastOnRoutePosition: _LocationEssentials.CLLocationCoordinate2D, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  @objc deinit
+}
+@available(iOS 13.0, *)
+final public class HybridRoutingManager {
+  final public let settings: NbmapCoreNavigation.NavigationSettings
+  final public let offlineEngine: NbmapCoreNavigation.OfflineNavigationEngine
+  final public let routingProvider: NbmapCoreNavigation.HybridRoutingProvider
+  public init(settings: NbmapCoreNavigation.NavigationSettings = .shared, offlineEngine: NbmapCoreNavigation.OfflineNavigationEngine = OfflineNavigationEngine(), routingConfig: NbmapCoreNavigation.RoutingConfig = RoutingConfig())
+  final public var routingConfig: NbmapCoreNavigation.RoutingConfig {
+    get
+  }
+  final public func updateRoutingConfig(_ config: NbmapCoreNavigation.RoutingConfig)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionWithSource: @escaping NbmapCoreNavigation.HybridRoutingProvider.RouteWithSourceCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions) async throws -> [NbmapCoreNavigation.Route]
+  final public func calculateRoutesWithSource(options: NbmapCoreNavigation.RouteOptions) async throws -> ([NbmapCoreNavigation.Route], NbmapCoreNavigation.RouteSource)
+  final public func initializeOfflineEngine(config: NbmapCoreNavigation.OfflineInitializeConfig = .init()) async throws
+  final public func shutdownOfflineEngine() async
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public enum NBNavigation {
+  public typealias SourceAwareRoutingCompletion = NbmapCoreNavigation.HybridRoutingProvider.RouteWithSourceCompletionHandler
+  public static let regionsApiBaseGzip: Swift.String
+  public static let tileBaseUrlGzip: Swift.String
+  public static let mapsBaseUrl: Swift.String
+  public static func setRoutingConfig(_ config: NbmapCoreNavigation.RoutingConfig)
+  public static func getRoutingConfig() -> NbmapCoreNavigation.RoutingConfig
+  public static func setNavigationRuntimeConfig(_ config: NbmapCoreNavigation.NBNavigation.NavigationRuntimeConfig)
+  public static func getNavigationRuntimeConfig() -> NbmapCoreNavigation.NBNavigation.NavigationRuntimeConfig
+  public static func setOfflineDownloadNetworkPolicy(_ policy: NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy)
+  public static func getOfflineDownloadNetworkPolicy() -> NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy
+  public static func setOfflineMapConfig(_ config: NbmapCoreNavigation.NBNavigation.OfflineMapConfig)
+  public static func getOfflineMapConfig() -> NbmapCoreNavigation.NBNavigation.OfflineMapConfig
+  public static func setRuntimeConfig(_ config: NbmapCoreNavigation.NBNavigation.NavigationRuntimeConfig)
+  public static func getRuntimeConfig() -> NbmapCoreNavigation.NBNavigation.NavigationRuntimeConfig
+  public static func setDownloadNetworkPolicy(_ policy: NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy)
+  public static func getDownloadNetworkPolicy() -> NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy
+  public static func setNavigationSettings(_ settings: NbmapCoreNavigation.NavigationSettings)
+  public static func getNavigationSettings() -> NbmapCoreNavigation.NavigationSettings
+  @discardableResult
+  public static func createOfflineEngine() -> NbmapCoreNavigation.OfflineNavigationEngine
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func setOfflineEngine(_ engine: NbmapCoreNavigation.OfflineNavigationEngine?)
+  #endif
+  public static func hasOfflineEngine() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  public static func fetchRoute(options: NbmapCoreNavigation.RouteOptions, completion: @escaping NbmapCoreNavigation.NBNavigation.SourceAwareRoutingCompletion) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  public static func fetchRoute(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  public static func fetchRoute(options: NbmapCoreNavigation.RouteOptions) async throws -> NbmapCoreNavigation.NBNavigation.RouteFetchResult
+  public static func fetchRoute(options: NbmapCoreNavigation.RouteOptions, routingConfig overrideConfig: NbmapCoreNavigation.RoutingConfig) async throws -> NbmapCoreNavigation.NBNavigation.RouteFetchResult
+  public static func routingProvider() -> NbmapCoreNavigation.HybridRoutingProvider
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func makeNavigationService(routes: [NbmapCoreNavigation.Route], routeIndex: Swift.Int, locationSource: NbmapCoreNavigation.NavigationLocationManager? = nil, simulating simulationMode: NbmapCoreNavigation.SimulationMode? = nil, navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig? = nil) -> NbmapCoreNavigation.NBNavigationService
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func buildOfflineConfig(tileExtractPath: Swift.String, tileDirPath: Swift.String) -> Swift.String?
+  #endif
+  public static func offlineSdkVersion() -> Swift.String
+  public static func offlineEngineVersion() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func defaultOfflineInitializeConfig(dataRoot: Swift.String? = nil) -> NbmapCoreNavigation.OfflineInitializeConfig
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func initializeOffline(config: NbmapCoreNavigation.OfflineInitializeConfig? = nil) async throws
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func initialize(config: NbmapCoreNavigation.OfflineInitializeConfig? = nil) async throws
+  #endif
+  public static func getOfflineInitializationState() -> NbmapCoreNavigation.NBNavigation.OfflineInitializationState
+  public static var isOfflineInitialized: Swift.Bool {
+    get
+  }
+  public static func waitUntilOfflineInitialized() async throws
+  public static func syncOfflineRegionListResult(syncMode: NbmapCoreNavigation.RegionListSyncMode = .auto) async throws -> NbmapCoreNavigation.OfflineRegionListSyncResult
+  public static func syncOfflineRegionList(syncMode: NbmapCoreNavigation.RegionListSyncMode = .auto) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func syncOfflineRegionList(syncMode: NbmapCoreNavigation.RegionListSyncMode = .auto, countries: [Swift.String]?) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func listOfflineRegions(countries: [Swift.String]? = ["United States"]) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getCountiesInRadius(latitude: Swift.Double, longitude: Swift.Double, radiusMeters: Swift.Double, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getCountiesAlongRoute(route: NbmapCoreNavigation.Route, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  public static func listOfflineRegionCountries() async throws -> NbmapCoreNavigation.OfflineRegionCountriesResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func prefetchOfflineRegionTiles(regionId: Swift.Int64, regionsApiBase: Swift.String, tilesApiBase: Swift.String, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> Swift.String
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func downloadOfflineRoutingRegion(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func downloadRegion(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  public static func pauseRoutingRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseResult
+  public static func pauseRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseResult
+  public static func pauseRegion(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseResult
+  @_Concurrency.MainActor public static func pauseRegionWithDetails(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseData
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func resumeRoutingRegionDownload(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func resumeRegionDownload(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func resumeRegion(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public static func resumeRegionWithDetails(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionResumeData
+  #endif
+  public static func cancelRoutingRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionCancelResult
+  public static func cancelRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionCancelResult
+  public static func cancelRegion(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionCancelResult
+  public static func deleteRoutingRegionData(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDeleteResult
+  public static func deleteRegionAllData(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDeleteResult
+  public static func offlineRegionDownloadQueueSnapshot() -> NbmapCoreNavigation.OfflineRegionDownloadQueueSnapshot
+  public static func fetchOfflineRegionDetail(regionId: Swift.Int64, regionsApiBase: Swift.String) async throws -> Swift.String
+  public static func fetchOfflineRegionDetailSummary(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDetailSummary
+  public static func getOfflineRegionBoundary(regionId: Swift.Int64) async throws -> Swift.String
+  public static func getOfflineRegionBoundary(regionId: Swift.Int64, fetchDetailIfMissing: Swift.Bool) async throws -> NbmapCoreNavigation.OfflineRegionBoundary
+  public static func getOfflineRegionBoundary(regionIds: [Swift.Int64], fetchDetailIfMissing: Swift.Bool = true) async throws -> [NbmapCoreNavigation.OfflineRegionBoundary]
+  public static func getOfflineRegionBoundary(fetchDetailIfMissing: Swift.Bool = true) async throws -> [NbmapCoreNavigation.OfflineRegionBoundary]
+  public static func getInstalledOfflineRegionBoundary(fetchDetailIfMissing: Swift.Bool = true) async throws -> [NbmapCoreNavigation.OfflineRegionBoundary]
+  public static func getInstalledRegionBoundary(fetchDetailIfMissing: Swift.Bool = true) async throws -> [NbmapCoreNavigation.OfflineRegionBoundary]
+  public static func checkOfflineHealth() async throws -> NbmapCoreNavigation.HealthStatus
+  @discardableResult
+  public static func observeOfflineProgress(intervalMs: Swift.Int64 = 1_000, listener: @escaping NbmapCoreNavigation.NBNavigation.OfflineProgressListener) -> NbmapCoreNavigation.NBNavigation.OfflineProgressSubscription
+  @discardableResult
+  public static func observeUnifiedOfflineProgress(intervalMs: Swift.Int64 = 1_000, listener: @escaping NbmapCoreNavigation.NBNavigation.UnifiedOfflineProgressListener) -> NbmapCoreNavigation.NBNavigation.OfflineProgressSubscription
+  @discardableResult
+  public static func observeOfflineRegionProgress(intervalMs: Swift.Int64 = 1_000, listener: @escaping NbmapCoreNavigation.NBNavigation.OfflineRegionProgressListener) -> NbmapCoreNavigation.NBNavigation.OfflineProgressSubscription
+  public static func stopOfflineProgressObserver()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fetchRegionLists(countries: [Swift.String]? = ["United States"]) async -> NbmapCoreNavigation.NBNavigation.OfflineRegionListResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public static func manageOfflineRegion(kind: NbmapCoreNavigation.NBNavigation.OfflineRegionKind, action: NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction, regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.NBNavigation.UnifiedOfflineManageResult
+  #endif
+  public static var isOfflineMapDownloadSupported: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor public static func beginDownloadPageWithOwner(_ vc: UIKit.UIViewController)
+  @_Concurrency.MainActor public static func endDownloadPage()
+  @_Concurrency.MainActor public static func listOfflineMapCatalog() async throws -> [NbmapCoreNavigation.NBNavigation.OfflineMapCatalogEntry]
+  @_Concurrency.MainActor public static func listInstalledOfflineMapRegions() async throws -> [NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry]
+  @_Concurrency.MainActor public static func listInstalledMapTileRegions() async throws -> [NbmapCoreNavigation.NBNavigation.OfflineMapInstalledRegionEntry]
+  @_Concurrency.MainActor public static func offlineMapDownloadProgressSnapshot() async -> [NbmapCoreNavigation.NBNavigation.OfflineMapProgressEntry]
+  @_Concurrency.MainActor public static func offlineMapPreviewStatus() async throws -> NbmapCoreNavigation.NBNavigation.OfflineMapPreviewStatus
+  @_Concurrency.MainActor public static func enableCacheOnlyPreview(mapView: Nbmap.NGLMapView)
+  @_Concurrency.MainActor public static func disableCacheOnlyPreview(mapView: Nbmap.NGLMapView)
+  @_Concurrency.MainActor public static func fetchOfflineMapRegionDetail(regionId: Swift.String) async throws -> Swift.String
+  @_Concurrency.MainActor public static func downloadOfflineMapRegion(regionId: Swift.String) async throws
+  @_Concurrency.MainActor public static func pauseOfflineMapRegionDownload(regionId: Swift.String) async throws
+  @_Concurrency.MainActor public static func resumeOfflineMapRegionDownload(regionId: Swift.String) async throws
+  @_Concurrency.MainActor public static func cancelOfflineMapRegionDownload(regionId: Swift.String) async throws
+  @_Concurrency.MainActor public static func deleteOfflineMapRegionData(regionId: Swift.String) async throws
+  @discardableResult
+  @_Concurrency.MainActor public static func focusOfflineMapRegion(mapView: Nbmap.NGLMapView, regionId: Swift.String) throws -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public static func registerOfflineMapStyle(mapView: Nbmap.NGLMapView, styleURL: Foundation.URL?)
+  #endif
+  @_Concurrency.MainActor public static func onOfflineMapViewWillAppear()
+  @_Concurrency.MainActor public static func onOfflineMapTileServerChanged()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func refreshOfflineMapEngineOnMapResume(completion: (() -> Swift.Void)? = nil)
+  #endif
+  public static func isNetworkReachable() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func lastRouteSource() -> NbmapCoreNavigation.RouteSource?
+  #endif
+  public static func shutdownOffline() async
+  public static func shutdown() async
 }
 extension Foundation.NSAttributedString.Key {
   public static let quantity: Foundation.NSAttributedString.Key
@@ -7483,12 +8071,25 @@ extension NbmapCoreNavigation.NavigationHazmatTypes : Swift.CustomStringConverti
     get
   }
 }
-@objc open class TravelledRawLocation : ObjectiveC.NSObject {
+@objc open class TravelledRawLocation : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   final public let latitude: Swift.Double
   final public let longitude: Swift.Double
   final public let accuracy: Swift.Double
   final public let bearing: Swift.Double
   public init(latitude: Swift.Double, longitude: Swift.Double, accuracy: Swift.Double, bearing: Swift.Double)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc open func encode(with coder: Foundation.NSCoder)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override dynamic open func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
+  @objc override dynamic open var hash: Swift.Int {
+    @objc get
+  }
   public func toJSONDictionary() -> NbmapCoreNavigation.JSONDictionary
   @objc deinit
 }
@@ -7775,15 +8376,6 @@ public let NBEventTypeNavigationCrash: Swift.String
 public let NBDataTrackingKeyEvent: Swift.String
 public let NBDataTrackingKeyCreated: Swift.String
 public let BaseUrlKey: Swift.String
-public protocol ThresholdCalculator {
-  func createOffRouteRadius(location: _LocationEssentials.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, angularDiff: _LocationEssentials.CLLocationDegrees) -> _LocationEssentials.CLLocationDistance
-}
-@_hasMissingDesignatedInitializers public class OffRouteThresholdCalculator : NbmapCoreNavigation.ThresholdCalculator {
-  public func createOffRouteRadius(location: _LocationEssentials.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, angularDiff: _LocationEssentials.CLLocationDegrees) -> _LocationEssentials.CLLocationDistance
-  public func isNearingIntersection(location: _LocationEssentials.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig) -> Swift.Bool
-  public func calculateDynamicThreshold(location: _LocationEssentials.CLLocation, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, stepIndex: Swift.Int, angularDiff: _LocationEssentials.CLLocationDegrees) -> _LocationEssentials.CLLocationDistance
-  @objc deinit
-}
 public enum SimulationIntent : Swift.Int {
   case manual
   case poorGPS
@@ -8138,6 +8730,113 @@ open class SnapDistanceTracker {
   public static func calcDistanceOffsetTolerance(accuracy: Swift.Double, speed: Swift.Double) -> Swift.Double
   public static func getSpeedWeight(speed: Swift.Double) -> Swift.Double
   @objc deinit
+}
+public enum PuckState : Swift.String {
+  case raw
+  case snapped
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol PuckStateProviding : AnyObject {
+  var puckState: NbmapCoreNavigation.PuckState { get }
+}
+public enum ABBucket {
+  case bucketA
+  case bucketB
+  public static func == (a: NbmapCoreNavigation.ABBucket, b: NbmapCoreNavigation.ABBucket) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct DebugOut {
+  public let distance: Swift.Double
+  public let theta: Swift.Double
+  public let sdot: Swift.Double
+  public let reason: Swift.String
+  public let offroute: Swift.Bool
+  public let wrongWay: Swift.Bool
+  public let junction90: Swift.Bool
+  public let parallel: Swift.Bool
+  public let zOK: Swift.Bool
+  public let reroute: Swift.Bool
+  public let requestParallelCheck: Swift.Bool
+  public let rerouteReason: Swift.String
+  public init(distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double, reason: Swift.String = "", offroute: Swift.Bool = false, wrongWay: Swift.Bool = false, junction90: Swift.Bool = false, parallel: Swift.Bool = false, zOK: Swift.Bool = true, reroute: Swift.Bool = false, requestParallelCheck: Swift.Bool = false, rerouteReason: Swift.String = "")
+  public static let empty: NbmapCoreNavigation.DebugOut
+}
+public struct DecisionResult {
+  public let state: NbmapCoreNavigation.PuckState
+  public let debug: NbmapCoreNavigation.DebugOut
+  public let drHold: Swift.Bool
+  public init(state: NbmapCoreNavigation.PuckState, debug: NbmapCoreNavigation.DebugOut, drHold: Swift.Bool)
+}
+public enum StepAdjustmentSuggestion : Swift.Equatable {
+  case advance(confidence: Swift.Double)
+  case rollback(confidence: Swift.Double)
+  case jumpTo(stepIndex: Swift.Int, confidence: Swift.Double, reason: Swift.String)
+  case maintain
+  public static func == (a: NbmapCoreNavigation.StepAdjustmentSuggestion, b: NbmapCoreNavigation.StepAdjustmentSuggestion) -> Swift.Bool
+}
+public struct RegionProfile : Swift.Codable {
+  public let dOn: Swift.Double
+  public let dOff: Swift.Double
+  public let thetaOn: Swift.Double
+  public let thetaOff: Swift.Double
+  public let vOn: Swift.Double
+  public let vOff: Swift.Double
+  public let tOn: Swift.Double
+  public let tOff: Swift.Double
+  public let dJump: Swift.Double
+  public let cepGate: Swift.Double
+  public let offsetHintGate: Swift.Double
+  public let vGateStart: Swift.Double
+  public let vMotorist: Swift.Double
+  public let startGracePeriod: Swift.Double
+  public let vRerouteStartGate: Swift.Double
+  public let dRerouteStartTrig: Swift.Double
+  public let deltaMinStart: Swift.Double
+  public let tRerouteStartHold: Swift.Double
+  public let dAbsMax: Swift.Double
+  public let rerouteMinInterval: Swift.Double
+  public let exitWindow: Swift.Double
+  public let thetaWrongOn: Swift.Double
+  public let sDotGate: Swift.Double
+  public let vWrongGate: Swift.Double
+  public let dWrongGate: Swift.Double
+  public let tOffWrongway: Swift.Double
+  public let tOnRecover: Swift.Double
+  public let kOn: Swift.Double
+  public let kOff: Swift.Double
+  public let vHighwayEnter: Swift.Double
+  public let vHighwayStable: Swift.Double
+  public let vCityStable: Swift.Double
+  public let vCityDecel: Swift.Double
+  public init(dOn: Swift.Double, dOff: Swift.Double, thetaOn: Swift.Double, thetaOff: Swift.Double, vOn: Swift.Double, vOff: Swift.Double, tOn: Swift.Double, tOff: Swift.Double, dJump: Swift.Double, cepGate: Swift.Double, offsetHintGate: Swift.Double, vGateStart: Swift.Double, vMotorist: Swift.Double, startGracePeriod: Swift.Double, vRerouteStartGate: Swift.Double, dRerouteStartTrig: Swift.Double, deltaMinStart: Swift.Double, tRerouteStartHold: Swift.Double, dAbsMax: Swift.Double, rerouteMinInterval: Swift.Double, exitWindow: Swift.Double, thetaWrongOn: Swift.Double, sDotGate: Swift.Double, vWrongGate: Swift.Double, dWrongGate: Swift.Double, tOffWrongway: Swift.Double, tOnRecover: Swift.Double, kOn: Swift.Double, kOff: Swift.Double, vHighwayEnter: Swift.Double, vHighwayStable: Swift.Double, vCityStable: Swift.Double, vCityDecel: Swift.Double)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum RegionProfiles {
+  public static let usCity: NbmapCoreNavigation.RegionProfile
+  public static let usHighway: NbmapCoreNavigation.RegionProfile
+  public static let weCity: NbmapCoreNavigation.RegionProfile
+  public static let weHighway: NbmapCoreNavigation.RegionProfile
+  public static let inCity: NbmapCoreNavigation.RegionProfile
+  public static let inHighway: NbmapCoreNavigation.RegionProfile
+}
+public struct Features {
+  public let distance: Swift.Double
+  public let theta: Swift.Double
+  public let sdot: Swift.Double
+  public let snapCoord: _LocationEssentials.CLLocationCoordinate2D
+  public let indexOnRoute: Swift.Int
+  public let parallel: Swift.Bool
+  public let zOK: Swift.Bool
 }
 public struct Pose {
   public let ts: Foundation.TimeInterval
@@ -8597,7 +9296,7 @@ public protocol SpanExporter : AnyObject {
   func flush() -> NbmapCoreNavigation.SpanExporterResultCode
   func shutdown()
 }
-public enum SpanExporterResultCode {
+public enum SpanExporterResultCode : Swift.Equatable {
   case success
   case failure
   public static func == (a: NbmapCoreNavigation.SpanExporterResultCode, b: NbmapCoreNavigation.SpanExporterResultCode) -> Swift.Bool
@@ -8700,125 +9399,6 @@ open class BoundHistogramMetric<T> {
   }
   @objc deinit
 }
-public enum PuckState : Swift.String {
-  case raw, snapped
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.String)
-  #endif
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum ABBucket {
-  case bucketA, bucketB
-  public static func == (a: NbmapCoreNavigation.ABBucket, b: NbmapCoreNavigation.ABBucket) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct DebugOut {
-  public let distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double
-  public let reason: Swift.String
-  public let offroute: Swift.Bool, wrongWay: Swift.Bool, junction90: Swift.Bool, parallel: Swift.Bool, zOK: Swift.Bool, reroute: Swift.Bool
-  public let rerouteReason: Swift.String
-  public init(distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double, reason: Swift.String = "", offroute: Swift.Bool = false, wrongWay: Swift.Bool = false, junction90: Swift.Bool = false, parallel: Swift.Bool = false, zOK: Swift.Bool = true, reroute: Swift.Bool = false, rerouteReason: Swift.String = "")
-  public static let empty: NbmapCoreNavigation.DebugOut
-}
-public struct DecisionResult {
-  public let state: NbmapCoreNavigation.PuckState
-  public let debug: NbmapCoreNavigation.DebugOut
-  public let drHold: Swift.Bool
-  public init(state: NbmapCoreNavigation.PuckState, debug: NbmapCoreNavigation.DebugOut, drHold: Swift.Bool)
-}
-public struct RegionProfile : Swift.Codable {
-  public let dOn: Swift.Double
-  public let dOff: Swift.Double
-  public let thetaOn: Swift.Double
-  public let thetaOff: Swift.Double
-  public let vOn: Swift.Double
-  public let vOff: Swift.Double
-  public let tOn: Swift.Double
-  public let tOff: Swift.Double
-  public let dJump: Swift.Double
-  public let cepGate: Swift.Double
-  public let offsetHintGate: Swift.Double
-  public let vGateStart: Swift.Double
-  public let vMotorist: Swift.Double
-  public let startGracePeriod: Swift.Double
-  public let vRerouteStartGate: Swift.Double
-  public let dRerouteStartTrig: Swift.Double
-  public let deltaMinStart: Swift.Double
-  public let tRerouteStartHold: Swift.Double
-  public let dAbsMax: Swift.Double
-  public let rerouteMinInterval: Swift.Double
-  public let exitWindow: Swift.Double
-  public let thetaWrongOn: Swift.Double
-  public let sDotGate: Swift.Double
-  public let vWrongGate: Swift.Double
-  public let dWrongGate: Swift.Double
-  public let tOffWrongway: Swift.Double
-  public let tOnRecover: Swift.Double
-  public let kOn: Swift.Double
-  public let kOff: Swift.Double
-  public let vHighwayEnter: Swift.Double
-  public let vHighwayStable: Swift.Double
-  public let vCityStable: Swift.Double
-  public let vCityDecel: Swift.Double
-  public init(dOn: Swift.Double, dOff: Swift.Double, thetaOn: Swift.Double, thetaOff: Swift.Double, vOn: Swift.Double, vOff: Swift.Double, tOn: Swift.Double, tOff: Swift.Double, dJump: Swift.Double, cepGate: Swift.Double, offsetHintGate: Swift.Double, vGateStart: Swift.Double, vMotorist: Swift.Double, startGracePeriod: Swift.Double, vRerouteStartGate: Swift.Double, dRerouteStartTrig: Swift.Double, deltaMinStart: Swift.Double, tRerouteStartHold: Swift.Double, dAbsMax: Swift.Double, rerouteMinInterval: Swift.Double, exitWindow: Swift.Double, thetaWrongOn: Swift.Double, sDotGate: Swift.Double, vWrongGate: Swift.Double, dWrongGate: Swift.Double, tOffWrongway: Swift.Double, tOnRecover: Swift.Double, kOn: Swift.Double, kOff: Swift.Double, vHighwayEnter: Swift.Double, vHighwayStable: Swift.Double, vCityStable: Swift.Double, vCityDecel: Swift.Double)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public enum RegionProfiles {
-  public static let usCity: NbmapCoreNavigation.RegionProfile
-  public static let usHighway: NbmapCoreNavigation.RegionProfile
-  public static let weCity: NbmapCoreNavigation.RegionProfile
-  public static let weHighway: NbmapCoreNavigation.RegionProfile
-  public static let inCity: NbmapCoreNavigation.RegionProfile
-  public static let inHighway: NbmapCoreNavigation.RegionProfile
-}
-public struct Features {
-  public let distance: Swift.Double, theta: Swift.Double, sdot: Swift.Double
-  public let snapCoord: _LocationEssentials.CLLocationCoordinate2D
-  public let indexOnRoute: Swift.Int
-  public let parallel: Swift.Bool, zOK: Swift.Bool
-}
-final public class OffRouteDecisionEngine {
-  public enum ConfigMode : Swift.String {
-    case city
-    case highway
-    #if compiler(>=5.3) && $NonescapableTypes
-    public init?(rawValue: Swift.String)
-    #endif
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum StepAdjustmentSuggestion : Swift.Equatable {
-    case advance(confidence: Swift.Double)
-    case rollback(confidence: Swift.Double)
-    case jumpTo(stepIndex: Swift.Int, confidence: Swift.Double)
-    case maintain
-    public static func == (a: NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion, b: NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion) -> Swift.Bool
-  }
-  public init(cityProfile: NbmapCoreNavigation.RegionProfile, highwayProfile: NbmapCoreNavigation.RegionProfile)
-  final public func updateProfiles(city: NbmapCoreNavigation.RegionProfile, highway: NbmapCoreNavigation.RegionProfile)
-  #if compiler(>=5.3) && $NonescapableTypes
-  final public func applyAB(_ profile: NbmapCoreNavigation.RegionProfile?)
-  #endif
-  final public func getCurrentConfigMode() -> NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode
-  final public func getCurrentSpeedPattern() -> Swift.String
-  final public func getCurrentConfigConfidence() -> Swift.Double
-  final public var isPerformingInitialCalibration: Swift.Bool
-  final public func updateRouteContext(_ context: NbmapCoreNavigation.RouteCtx)
-  final public func resetEngineState()
-  final public func resetEngineStateForReroute()
-  final public func decide(pose: NbmapCoreNavigation.Pose, feat: NbmapCoreNavigation.Features) -> NbmapCoreNavigation.DecisionResult
-  final public func getStepAdjustmentSuggestion(pose: NbmapCoreNavigation.Pose, feat: NbmapCoreNavigation.Features, profile: NbmapCoreNavigation.RegionProfile, routeProgress: NbmapCoreNavigation.RouteProgress) -> NbmapCoreNavigation.OffRouteDecisionEngine.StepAdjustmentSuggestion
-  @objc deinit
-}
 public protocol DoubleObserverMetric {
   func observe(value: Swift.Double, labelset: NbmapCoreNavigation.LabelSet)
   func observe(value: Swift.Double, labels: [Swift.String : Swift.String])
@@ -8909,6 +9489,1178 @@ public protocol BinaryFormattable {
   #endif
   @objc deinit
 }
+@available(iOS 13.0, *)
+public enum ActionType : Swift.String, Swift.CaseIterable, Swift.Sendable {
+  case route
+  case traceRoute
+  case traceAttributes
+  case optimizedRoute
+  case locate
+  case sourcesToTargets
+  case isochrone
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias AllCases = [NbmapCoreNavigation.ActionType]
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [NbmapCoreNavigation.ActionType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct DatasetVersionRange : Swift.Sendable {
+  public let min: Swift.String
+  public let max: Swift.String
+}
+@available(iOS 13.0, *)
+public struct HealthStatus : Swift.Sendable {
+  public let sdkVersion: Swift.String
+  public let nativeBuildId: Swift.String
+  public let engineVersion: Swift.String
+  public let state: Swift.String
+  public let dataRoot: Swift.String
+  public let datasetVersion: Swift.String
+  public let schemaVersion: Swift.String
+  public let supportedSchemaVersion: Swift.String
+  public let supportedDatasetVersionRange: NbmapCoreNavigation.DatasetVersionRange
+  public let requestCount: Swift.UInt64
+  public let uptimeSeconds: Swift.Int64
+  public let tileSourceMode: Swift.String
+  public let activeReaderSource: Swift.String
+  public let dataMode: Swift.String
+  public let loadedTileCount: Swift.UInt64
+  public let duplicateTileCount: Swift.UInt64
+  public let sqliteRowsLoaded: Swift.UInt64
+  public let sqliteDbPath: Swift.String
+  public let sqliteTotalBlobBytes: Swift.UInt64
+  public let sqliteMinUpdatedAtUnix: Swift.Int64
+  public let sqliteMaxUpdatedAtUnix: Swift.Int64
+  public let sqliteImportedTileEntries: Swift.UInt64
+  public let sqliteImportedTilesUpserted: Swift.UInt64
+  public let sqliteImportedDuplicateTiles: Swift.UInt64
+  public let sqliteImportedSkippedNonTiles: Swift.UInt64
+  public let sqliteImportedConsistencyFailures: Swift.UInt64
+  public let tileCachePolicy: Swift.String
+  public let tileCacheCapacityBytes: Swift.UInt64
+  public let tileCacheCurrentBytes: Swift.UInt64
+  public let tilePayloadCurrentBytes: Swift.UInt64
+  public let lastTileCacheOperation: Swift.String
+  public let lastTileCachePeakBytes: Swift.UInt64
+  public let lastTilePayloadPeakBytes: Swift.UInt64
+  public let lastTileCacheHitCount: Swift.UInt64
+  public let lastTileCacheMissCount: Swift.UInt64
+  public let lastTileCacheEvictionCount: Swift.UInt64
+  public let lastSqliteTileLoadCount: Swift.UInt64
+  public let lastSqliteTileLoadBytes: Swift.UInt64
+  public let lastOversizedTileRejectionCount: Swift.UInt64
+  public let lastPrefetchCountyKey: Swift.String
+  public let lastPrefetchPlanTileCountBbox: Swift.UInt64
+  public let lastPrefetchPlanTileCountFinal: Swift.UInt64
+  public let lastPrefetchGeometryFilterApplied: Swift.Bool
+  public let lastPrefetchGeometryFilteredOutCount: Swift.UInt64
+  public let lastPrefetchDownloadSuccessCount: Swift.UInt64
+  public let lastPrefetchDownloadFailedCount: Swift.UInt64
+  public let lastPrefetchSampledHeaders: Swift.UInt64
+  public let lastPrefetchSampledNodes: Swift.UInt64
+  public let lastPrefetchSampledEdges: Swift.UInt64
+  public let lastPrefetchProbeRoutable: Swift.Bool
+  public let lastPrefetchProbePointsTested: Swift.UInt64
+  public let lastPrefetchProbePointsWithEdges: Swift.UInt64
+  public let lastPrefetchProbeRouteSuccessCount: Swift.UInt64
+  public let lastPrefetchNote: Swift.String
+  public let sampleTileIds: [Swift.UInt64]
+  public init(json: Swift.String) throws
+}
+@available(iOS 13.0, *)
+public enum NavigationError : Swift.Error, Swift.Sendable {
+  case invalidConfig(message: Swift.String, details: Swift.String?)
+  case engineNotInitialized(message: Swift.String)
+  case dataNotReady(message: Swift.String)
+  case dataVersionMismatch(message: Swift.String, details: Swift.String?)
+  case unsupportedAction(message: Swift.String)
+  case invalidRequest(message: Swift.String)
+  case executionFailed(message: Swift.String, details: Swift.String?)
+  case timeout(message: Swift.String)
+  case interrupted(message: Swift.String)
+  case internalError(message: Swift.String)
+  case insufficientMemory(message: Swift.String, details: Swift.String?)
+  case regionNotFound(message: Swift.String, details: Swift.String?)
+  case regionAlreadyActive(message: Swift.String, details: Swift.String?)
+  case regionNotDownloading(message: Swift.String, details: Swift.String?)
+  case regionNotPaused(message: Swift.String, details: Swift.String?)
+  case regionDeleteFailed(message: Swift.String, details: Swift.String?)
+  case regionCancelFailed(message: Swift.String, details: Swift.String?)
+  case regionInvalidState(message: Swift.String, details: Swift.String?)
+  case engineSuperseded(message: Swift.String)
+  public var numericCode: Swift.Int32 {
+    get
+  }
+  public var code: Swift.String {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NavigationError : Foundation.LocalizedError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.Route : @unchecked Swift.Sendable {
+}
+@available(iOS 13.0, *)
+@objc(NBOfflineDirections) final public class OfflineDirections : ObjectiveC.NSObject {
+  final public let engine: NbmapCoreNavigation.OfflineNavigationEngine
+  public typealias RouteCompletionHandler = NbmapCoreNavigation.Directions.RouteCompletionHandler
+  public init(engine: NbmapCoreNavigation.OfflineNavigationEngine)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setRouteProgressListener(_ listener: NbmapCoreNavigation.RouteProgressListener?)
+  #endif
+  @discardableResult
+  @objc(calculateNavigationWithOptions:completionHandler:) final public func calculate(_ options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.OfflineDirections.RouteCompletionHandler) -> Foundation.URLSessionDataTask
+  final public func calculate(_ options: NbmapCoreNavigation.RouteOptions) async throws -> [NbmapCoreNavigation.Route]
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public struct OfflineDirectionsConfiguration : Swift.Sendable {
+  public enum UnsupportedParameterPolicy : Swift.Sendable {
+    case ignore
+    case failFast
+    public static func == (a: NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy, b: NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var unsupportedParameterPolicy: NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy
+  public static let `default`: NbmapCoreNavigation.OfflineDirectionsConfiguration
+  public init(unsupportedParameterPolicy: NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy)
+}
+@available(iOS 13.0, *)
+public struct OfflineRerouteTuning : Swift.Sendable, Swift.Equatable {
+  public var allowLegEndFallback: Swift.Bool
+  public var legEndFallbackMaxDistanceM: Swift.Double
+  public var allowFullRemainingRouteFallback: Swift.Bool
+  public var fullRemainingRouteFallbackMaxDistanceM: Swift.Double?
+  public var windowBackwardM: Swift.Int
+  public var windowForwardM: Swift.Int
+  public var candidateExpansionStepM: Swift.Int
+  public var candidateExpansionCount: Swift.Int
+  public var maxDetourRatio: Swift.Double
+  public var uturnRejectDistanceM: Swift.Int
+  public static let `default`: NbmapCoreNavigation.OfflineRerouteTuning
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(allowLegEndFallback: Swift.Bool = true, legEndFallbackMaxDistanceM: Swift.Double = 10_000, allowFullRemainingRouteFallback: Swift.Bool = true, fullRemainingRouteFallbackMaxDistanceM: Swift.Double? = nil, windowBackwardM: Swift.Int = 3_000, windowForwardM: Swift.Int = 5_000, candidateExpansionStepM: Swift.Int = 1_000, candidateExpansionCount: Swift.Int = 5, maxDetourRatio: Swift.Double = 3, uturnRejectDistanceM: Swift.Int = 200)
+  #endif
+  public func normalized() -> NbmapCoreNavigation.OfflineRerouteTuning
+  public static func == (a: NbmapCoreNavigation.OfflineRerouteTuning, b: NbmapCoreNavigation.OfflineRerouteTuning) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRerouteDiagnosticsOptions : Swift.Sendable, Swift.Equatable {
+  public var enabled: Swift.Bool
+  public init(enabled: Swift.Bool = false)
+  public static func == (a: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions, b: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public typealias OfflineRerouteDiagnosticsSink = @Sendable (Swift.String) -> Swift.Void
+@available(iOS 13.0, *)
+public struct OfflineRerouteCallOptions : Swift.Sendable, Swift.Equatable {
+  public var allowLegEndFallback: Swift.Bool?
+  public var legEndFallbackMaxDistanceM: Swift.Double?
+  public var allowFullRemainingRouteFallback: Swift.Bool?
+  public var fullRemainingRouteFallbackMaxDistanceM: Swift.Double?
+  public var diagnostics: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions
+  public static let `default`: NbmapCoreNavigation.OfflineRerouteCallOptions
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(allowLegEndFallback: Swift.Bool? = nil, legEndFallbackMaxDistanceM: Swift.Double? = nil, allowFullRemainingRouteFallback: Swift.Bool? = nil, fullRemainingRouteFallbackMaxDistanceM: Swift.Double? = nil, diagnostics: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions = .init())
+  #endif
+  public static func == (a: NbmapCoreNavigation.OfflineRerouteCallOptions, b: NbmapCoreNavigation.OfflineRerouteCallOptions) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+final public class OfflineNavigationEngine : @unchecked Swift.Sendable {
+  final public var state: NbmapCoreNavigation.OfflineNavigationEngine.EngineState {
+    get
+  }
+  final public func setRerouteTuning(_ tuning: NbmapCoreNavigation.OfflineRerouteTuning)
+  final public func getRerouteTuning() -> NbmapCoreNavigation.OfflineRerouteTuning
+  public enum EngineState : Swift.String, Swift.Sendable {
+    case created
+    case initialized
+    case dataLoaded
+    case retiring
+    case shutdown
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    @available(iOS 13.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init()
+  final public func initialize(config: NbmapCoreNavigation.OfflineInitializeConfig = .init()) async throws
+  final public func clearTileCache() async throws
+  final public func handleMemoryPressure(level: NbmapCoreNavigation.MemoryPressureLevel = .aggressive) async throws
+  final public func reclaimTileDiskIfBloated() async throws -> NbmapCoreNavigation.OfflineTileDiskReclaimResult
+  final public func reclaimTileDiskSpace() async throws -> NbmapCoreNavigation.OfflineTileDiskReclaimResult
+  final public func matrix(_ request: NbmapCoreNavigation.OfflineMatrixRequest) async throws -> NbmapCoreNavigation.OfflineMatrixResult
+  final public func isochrone(_ request: NbmapCoreNavigation.OfflineIsochroneRequest) async throws -> NbmapCoreNavigation.OfflineIsochroneResult
+  final public func prepareRerouteDiagnostics(baseRoute: NbmapCoreNavigation.Route, options: NbmapCoreNavigation.RouteOptions, lastOnRoutePosition: _LocationEssentials.CLLocationCoordinate2D, progress: NbmapCoreNavigation.RouteProgress, diagnosticsOptions: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions) async throws -> Swift.String
+  final public func prepareRerouteDiagnostics(baseRoute: NbmapCoreNavigation.Route, currentPosition: _LocationEssentials.CLLocationCoordinate2D, lastOnRoutePosition: _LocationEssentials.CLLocationCoordinate2D, progress: NbmapCoreNavigation.RouteProgress, diagnosticsOptions: NbmapCoreNavigation.OfflineRerouteDiagnosticsOptions) async throws -> Swift.String
+  final public func rerouteToOriginalRoute(payloadJson: Swift.String) async throws -> Swift.String
+  final public func verifyRouteCorridor(originLat: Swift.Double, originLon: Swift.Double, destLat: Swift.Double, destLon: Swift.Double, bufferDeg: Swift.Double = 0.05) async throws -> NbmapCoreNavigation.RouteCorridorVerification
+  final public func syncRegionList(syncMode: Swift.String = "auto") async throws -> NbmapCoreNavigation.OfflineRegionListSyncResult
+  final public func listRegionCountries() async throws -> NbmapCoreNavigation.OfflineRegionCountriesResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func listRegions(countries: [Swift.String]? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getCountiesInRadius(latitude: Swift.Double, longitude: Swift.Double, radiusMeters: Swift.Double, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineCountyQueryResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getCountiesAlongRoute(route: NbmapCoreNavigation.Route, options: NbmapCoreNavigation.OfflineCountyQueryOptions = OfflineCountyQueryOptions(), onProgress: NbmapCoreNavigation.OfflineCountyQueryProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineCountyQueryResult
+  #endif
+  final public func cancelCountyQuery()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func downloadRegion(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  final public func pauseRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionPauseResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func resumeRegionDownload(regionId: Swift.Int64, requestTimestampMs: Swift.Int64 = 0, onProgress: NbmapCoreNavigation.RegionDownloadProgressHandler? = nil) async throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  #endif
+  final public func cancelRegionDownload(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionCancelResult
+  final public func deleteRegionData(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDeleteResult
+  final public func regionDownloadQueueSnapshot() -> NbmapCoreNavigation.OfflineRegionDownloadQueueSnapshot
+  final public func fetchRegionDetail(regionId: Swift.Int64) async throws -> NbmapCoreNavigation.OfflineRegionDetailSummary
+  final public func getRegionBoundary(regionId: Swift.Int64, fetchDetailIfMissing: Swift.Bool = true) async throws -> NbmapCoreNavigation.OfflineRegionBoundary
+  final public func healthCheck() async throws -> NbmapCoreNavigation.HealthStatus
+  final public func shutdown() async
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func buildConfig(tileExtractPath: Swift.String, tileDirPath: Swift.String) -> Swift.String?
+  #endif
+  public static var sdkVersion: Swift.String {
+    get
+  }
+  public static var engineVersion: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineNavigationEngine {
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setRouteProgressListener(_ listener: NbmapCoreNavigation.RouteProgressListener?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setRerouteProgressListener(_ listener: NbmapCoreNavigation.RerouteProgressListener?)
+  #endif
+  final public func cancelRoute()
+  final public func cancelReroute()
+}
+@available(iOS 13.0, *)
+public enum RoutePhase : Swift.String, Swift.Sendable, Swift.CaseIterable {
+  case sdkPrepare
+  case bridgeEnter
+  case nativeParseRequest
+  case nativeBeforeActorRoute
+  case nativeAfterActorRoute
+  case bridgeExit
+  case nativeBamboo
+  case sdkParseDirections
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromOrdinal(_ ordinal: Swift.Int) -> NbmapCoreNavigation.RoutePhase?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromWireName(_ name: Swift.String) -> NbmapCoreNavigation.RoutePhase?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias AllCases = [NbmapCoreNavigation.RoutePhase]
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [NbmapCoreNavigation.RoutePhase] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public enum ReroutePhase : Swift.String, Swift.Sendable, Swift.CaseIterable {
+  case demoEnter
+  case sdkPrepare
+  case bridgeEnter
+  case nativeParseRequest
+  case nativeSampleCandidates
+  case nativeBeforeMatrix
+  case nativeAfterMatrix
+  case nativeRouteAttempt
+  case nativeOsrmMerge
+  case nativeBamboo
+  case nativeResponseBuild
+  case bridgeExit
+  case sdkMerge
+  case sdkParseDirections
+  case demoApply
+  case demoExit
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromOrdinal(_ ordinal: Swift.Int) -> NbmapCoreNavigation.ReroutePhase?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromWireName(_ name: Swift.String) -> NbmapCoreNavigation.ReroutePhase?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias AllCases = [NbmapCoreNavigation.ReroutePhase]
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [NbmapCoreNavigation.ReroutePhase] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public enum RerouteTerminalStatus : Swift.String, Swift.Sendable {
+  case success
+  case failed
+  case cancelled
+  case superseded
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct RouteProgressEvent : Swift.Sendable {
+  public let sessionId: Swift.Int64
+  public let phase: NbmapCoreNavigation.RoutePhase
+  public let terminal: NbmapCoreNavigation.RerouteTerminalStatus?
+  public let nativeElapsedMs: Swift.Int64
+  public let sequence: Swift.Int
+  public let attemptIndex: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(sessionId: Swift.Int64, phase: NbmapCoreNavigation.RoutePhase, terminal: NbmapCoreNavigation.RerouteTerminalStatus? = nil, nativeElapsedMs: Swift.Int64 = -1, sequence: Swift.Int = -1, attemptIndex: Swift.Int = -1)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct RerouteProgressEvent : Swift.Sendable {
+  public let sessionId: Swift.Int64
+  public let phase: NbmapCoreNavigation.ReroutePhase
+  public let attemptIndex: Swift.Int
+  public let attemptLimit: Swift.Int
+  public let payloadBytes: Swift.Int64
+  public let terminal: NbmapCoreNavigation.RerouteTerminalStatus?
+  public let nativeElapsedMs: Swift.Int64
+  public let sequence: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(sessionId: Swift.Int64, phase: NbmapCoreNavigation.ReroutePhase, attemptIndex: Swift.Int = -1, attemptLimit: Swift.Int = -1, payloadBytes: Swift.Int64 = -1, terminal: NbmapCoreNavigation.RerouteTerminalStatus? = nil, nativeElapsedMs: Swift.Int64 = -1, sequence: Swift.Int = -1)
+  #endif
+}
+@available(iOS 13.0, *)
+public typealias RouteProgressListener = (NbmapCoreNavigation.RouteProgressEvent) -> Swift.Void
+@available(iOS 13.0, *)
+public typealias RerouteProgressListener = (NbmapCoreNavigation.RerouteProgressEvent) -> Swift.Void
+@available(iOS 13.0, *)
+final public class OfflineNbRoutingProvider : NbmapCoreNavigation.RoutingProvider {
+  public struct Request : NbmapCoreNavigation.NavigationProviderRequest {
+    public func cancel()
+  }
+  final public let engine: NbmapCoreNavigation.OfflineNavigationEngine
+  public init(engine: NbmapCoreNavigation.OfflineNavigationEngine)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func calculateRoutes(options: NbmapCoreNavigation.RouteOptions, completionHandler: @escaping NbmapCoreNavigation.Directions.RouteCompletionHandler) -> (any NbmapCoreNavigation.NavigationProviderRequest)?
+  #endif
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionGroupStats : Swift.Sendable {
+  public let regionCount: Swift.Int
+  public let totalSizeBytes: Swift.Int64
+  public let tilesTotal: Swift.Int64
+  public let tilesDone: Swift.Int64
+  public let downloadedCount: Swift.Int
+  public let partialCount: Swift.Int
+  public init(regionCount: Swift.Int, totalSizeBytes: Swift.Int64, tilesTotal: Swift.Int64, tilesDone: Swift.Int64, downloadedCount: Swift.Int, partialCount: Swift.Int)
+}
+@available(iOS 13.0, *)
+public struct OfflineCountrySummary : Swift.Sendable {
+  public let name: Swift.String
+  public let stats: NbmapCoreNavigation.OfflineRegionGroupStats
+  public init(name: Swift.String, stats: NbmapCoreNavigation.OfflineRegionGroupStats)
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCountriesResult : Swift.Sendable {
+  public let listSyncStatus: Swift.String
+  public let listSyncedAtMs: Swift.Int64
+  public let listTotal: Swift.Int64
+  public let regionsCachedCount: Swift.Int64
+  public let countries: [NbmapCoreNavigation.OfflineCountrySummary]
+  public init(listSyncStatus: Swift.String, listSyncedAtMs: Swift.Int64, listTotal: Swift.Int64, regionsCachedCount: Swift.Int64, countries: [NbmapCoreNavigation.OfflineCountrySummary])
+}
+@available(iOS 13.0, *)
+public enum OfflineRegionQueryScope : Swift.Sendable {
+  case full
+  case countries([Swift.String])
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionGeoBBox : Swift.Sendable {
+  public let minLon: Swift.Double
+  public let minLat: Swift.Double
+  public let maxLon: Swift.Double
+  public let maxLat: Swift.Double
+  public init(minLon: Swift.Double, minLat: Swift.Double, maxLon: Swift.Double, maxLat: Swift.Double)
+  public func intersects(viewportMinLon: Swift.Double, viewportMinLat: Swift.Double, viewportMaxLon: Swift.Double, viewportMaxLat: Swift.Double) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionLeaf : Swift.Identifiable, Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let country: Swift.String
+  public let adminL1: Swift.String
+  public let adminL2: Swift.String
+  public let adminL3: Swift.String
+  public let version: Swift.String
+  public let timestampSec: Swift.Int64
+  public let totalSizeBytes: Swift.Int64
+  public let downloadStatus: NbmapCoreNavigation.RegionDownloadStatus
+  public let tilesTotal: Swift.Int64
+  public let tilesDone: Swift.Int64
+  public let detailSyncStatus: Swift.String
+  public let catalogRemoved: Swift.Bool
+  public let catalogUpdateAvailable: Swift.Bool
+  public let boundaryBbox: NbmapCoreNavigation.OfflineRegionGeoBBox?
+  public var id: Swift.Int64 {
+    get
+  }
+  public var displayName: Swift.String {
+    get
+  }
+  public var sizeWithUnit: Swift.String {
+    get
+  }
+  public var isDownloaded: Swift.Bool {
+    get
+  }
+  public var isPartial: Swift.Bool {
+    get
+  }
+  public var updateAvailable: Swift.Bool {
+    get
+  }
+  public var dataVersionLabel: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(regionId: Swift.Int64, country: Swift.String, adminL1: Swift.String, adminL2: Swift.String, adminL3: Swift.String, version: Swift.String, timestampSec: Swift.Int64 = 0, totalSizeBytes: Swift.Int64, downloadStatus: NbmapCoreNavigation.RegionDownloadStatus, tilesTotal: Swift.Int64, tilesDone: Swift.Int64, detailSyncStatus: Swift.String, catalogRemoved: Swift.Bool = false, catalogUpdateAvailable: Swift.Bool = false, boundaryBbox: NbmapCoreNavigation.OfflineRegionGeoBBox? = nil)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias ID = Swift.Int64
+}
+@available(iOS 13.0, *)
+public struct AdminL2Section : Swift.Sendable {
+  public let name: Swift.String
+  public let stats: NbmapCoreNavigation.OfflineRegionGroupStats
+  public let startIndex: Swift.Int
+  public let endIndex: Swift.Int
+}
+@available(iOS 13.0, *)
+public struct AdminL1Section : Swift.Sendable {
+  public let name: Swift.String
+  public let stats: NbmapCoreNavigation.OfflineRegionGroupStats
+  public let startIndex: Swift.Int
+  public let endIndex: Swift.Int
+  public let adminL2: [NbmapCoreNavigation.AdminL2Section]
+}
+@available(iOS 13.0, *)
+public struct CountrySection : Swift.Sendable {
+  public let name: Swift.String
+  public let stats: NbmapCoreNavigation.OfflineRegionGroupStats
+  public let startIndex: Swift.Int
+  public let endIndex: Swift.Int
+  public let adminL1: [NbmapCoreNavigation.AdminL1Section]
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionSectionIndex : Swift.Sendable {
+  public let countries: [NbmapCoreNavigation.CountrySection]
+}
+@available(iOS 13.0, *)
+public struct RegionCatalogMeta : Swift.Sendable {
+  public let listSyncStatus: Swift.String
+  public let listSyncedAtMs: Swift.Int64
+  public let listTotal: Swift.Int64
+  public let regionsCachedCount: Swift.Int64
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCatalog : Swift.Sendable {
+  public let listSyncStatus: Swift.String
+  public let listSyncedAtMs: Swift.Int64
+  public let listTotal: Swift.Int64
+  public let regionsCachedCount: Swift.Int64
+  public let leafCount: Swift.Int
+  public let queryScope: NbmapCoreNavigation.OfflineRegionQueryScope
+  public let leaves: [NbmapCoreNavigation.OfflineRegionLeaf]
+  public let sections: NbmapCoreNavigation.OfflineRegionSectionIndex
+  public func isStale() -> Swift.Bool
+  public func allLeaves() -> [NbmapCoreNavigation.OfflineRegionLeaf]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func countrySection(name: Swift.String) -> NbmapCoreNavigation.CountrySection?
+  #endif
+  public func leaves(country: Swift.String, adminL1: Swift.String, adminL2: Swift.String) -> [NbmapCoreNavigation.OfflineRegionLeaf]
+  public static func build(meta: NbmapCoreNavigation.RegionCatalogMeta, leaves: [NbmapCoreNavigation.OfflineRegionLeaf], queryScope: NbmapCoreNavigation.OfflineRegionQueryScope) -> NbmapCoreNavigation.OfflineRegionCatalog
+  public static func buildSectionIndex(_ leaves: [NbmapCoreNavigation.OfflineRegionLeaf]) -> NbmapCoreNavigation.OfflineRegionSectionIndex
+}
+@available(iOS 13.0, *)
+public func normalizeCountryForNativeFilter(_ country: Swift.String) -> Swift.String
+@available(iOS 13.0, *)
+public func displayCountryName(_ raw: Swift.String) -> Swift.String
+@available(iOS 13.0, *)
+public struct OfflineCountyQueryOptions : Swift.Sendable {
+  public var supportedCountries: [Swift.String]
+  public var maxConcurrentDetailRequests: Swift.Int
+  public var maxAdditionalAttempts: Swift.Int
+  public var initialBackoffMs: Swift.Int64
+  public var maxBackoffMs: Swift.Int64
+  public var backoffMultiplier: Swift.Double
+  public var jitterRatio: Swift.Double
+  public init(supportedCountries: [Swift.String] = [], maxConcurrentDetailRequests: Swift.Int = 4, maxAdditionalAttempts: Swift.Int = 2, initialBackoffMs: Swift.Int64 = 400, maxBackoffMs: Swift.Int64 = 2_000, backoffMultiplier: Swift.Double = 2.0, jitterRatio: Swift.Double = 0.2)
+}
+@available(iOS 13.0, *)
+public enum OfflineCountyQueryFailureStage : Swift.String, Swift.Sendable {
+  case detailDownload
+  case detailParse
+  case detailPersist
+  case boundaryParse
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct OfflineCountyQueryFailure : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let regionName: Swift.String
+  public let stage: NbmapCoreNavigation.OfflineCountyQueryFailureStage
+  public let errorCode: Swift.String
+  public let errorMessage: Swift.String
+  public let attempts: Swift.Int
+  public let retryable: Swift.Bool
+  public init(regionId: Swift.Int64, regionName: Swift.String, stage: NbmapCoreNavigation.OfflineCountyQueryFailureStage, errorCode: Swift.String, errorMessage: Swift.String, attempts: Swift.Int, retryable: Swift.Bool)
+}
+@available(iOS 13.0, *)
+public struct OfflineCountyQueryStatistics : Swift.Sendable {
+  public let catalogCountyCount: Swift.Int64
+  public let countryEligibleCount: Swift.Int64
+  public let countryFilteredCount: Swift.Int64
+  public let bboxCandidateCount: Swift.Int64
+  public let detailCacheHitCount: Swift.Int64
+  public let detailDownloadedCount: Swift.Int64
+  public let preciseMatchCount: Swift.Int64
+  public let failedCandidateCount: Swift.Int64
+  public let bboxScanDurationMs: Swift.Int64
+  public init(catalogCountyCount: Swift.Int64, countryEligibleCount: Swift.Int64, countryFilteredCount: Swift.Int64, bboxCandidateCount: Swift.Int64, detailCacheHitCount: Swift.Int64, detailDownloadedCount: Swift.Int64, preciseMatchCount: Swift.Int64, failedCandidateCount: Swift.Int64, bboxScanDurationMs: Swift.Int64)
+}
+@available(iOS 13.0, *)
+public enum OfflineCountyQueryPhase : Swift.Sendable {
+  case started
+  case nativeQuery
+  case completed
+  public static func == (a: NbmapCoreNavigation.OfflineCountyQueryPhase, b: NbmapCoreNavigation.OfflineCountyQueryPhase) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct OfflineCountyQueryProgress : Swift.Sendable {
+  public let phase: NbmapCoreNavigation.OfflineCountyQueryPhase
+  public init(phase: NbmapCoreNavigation.OfflineCountyQueryPhase)
+}
+@available(iOS 13.0, *)
+public typealias OfflineCountyQueryProgressHandler = @Sendable (NbmapCoreNavigation.OfflineCountyQueryProgress) -> Swift.Void
+@available(iOS 13.0, *)
+public struct OfflineCountyQueryResult : Swift.Sendable {
+  public let counties: [NbmapCoreNavigation.OfflineRegionLeaf]
+  public let failures: [NbmapCoreNavigation.OfflineCountyQueryFailure]
+  public let statistics: NbmapCoreNavigation.OfflineCountyQueryStatistics
+  public let isComplete: Swift.Bool
+  public init(counties: [NbmapCoreNavigation.OfflineRegionLeaf], failures: [NbmapCoreNavigation.OfflineCountyQueryFailure], statistics: NbmapCoreNavigation.OfflineCountyQueryStatistics, isComplete: Swift.Bool)
+}
+@available(iOS 13.0, *)
+public struct RegionDownloadProgress : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let activity: NbmapCoreNavigation.RegionDownloadActivity
+  public let tilesDone: Swift.Int
+  public let tilesTotal: Swift.Int
+  public let percent: Swift.Int
+  public var fraction: Swift.Double {
+    get
+  }
+  public init(regionId: Swift.Int64, activity: NbmapCoreNavigation.RegionDownloadActivity, tilesDone: Swift.Int, tilesTotal: Swift.Int, percent: Swift.Int)
+  public static func fromNative(regionId: Swift.Int64, phase: Swift.Int, tilesDone: Swift.Int, tilesTotal: Swift.Int, nativePercent: Swift.Int) -> NbmapCoreNavigation.RegionDownloadProgress
+}
+@available(iOS 13.0, *)
+public typealias RegionDownloadProgressHandler = @Sendable (NbmapCoreNavigation.RegionDownloadProgress) -> Swift.Void
+@available(iOS 13.0, *)
+public enum MemoryPressureLevel : Swift.Sendable {
+  case moderate
+  case aggressive
+  public static func == (a: NbmapCoreNavigation.MemoryPressureLevel, b: NbmapCoreNavigation.MemoryPressureLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct OfflineInitializeConfig : Swift.Sendable, Swift.Equatable {
+  public var offline: NbmapCoreNavigation.OfflineInitializeConfig.Offline
+  public var mjolnir: NbmapCoreNavigation.OfflineInitializeConfig.Mjolnir
+  public var loki: NbmapCoreNavigation.OfflineInitializeConfig.Loki
+  public var serviceLimits: NbmapCoreNavigation.OfflineInitializeConfig.ServiceLimits
+  public init(offline: NbmapCoreNavigation.OfflineInitializeConfig.Offline = .init(), mjolnir: NbmapCoreNavigation.OfflineInitializeConfig.Mjolnir = .init(), loki: NbmapCoreNavigation.OfflineInitializeConfig.Loki = .init(), serviceLimits: NbmapCoreNavigation.OfflineInitializeConfig.ServiceLimits = .init())
+  public struct Offline : Swift.Sendable, Swift.Equatable {
+    public var dataRoot: Swift.String?
+    public var regionsApiBase: Swift.String?
+    public var tilesApiBase: Swift.String?
+    public var navigationCountryCode: Swift.String?
+    public var regions: NbmapCoreNavigation.OfflineInitializeConfig.Offline.Regions
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(dataRoot: Swift.String? = nil, regionsApiBase: Swift.String? = nil, tilesApiBase: Swift.String? = nil, navigationCountryCode: Swift.String? = nil, regions: NbmapCoreNavigation.OfflineInitializeConfig.Offline.Regions = .init())
+    #endif
+    public struct Regions : Swift.Sendable, Swift.Equatable {
+      public var listSyncTtlSec: Swift.Int
+      public var detailRequiredBeforePrefetch: Swift.Bool
+      public var gcTilesWhenRegionRemoved: Swift.Bool
+      public var catalogGzip: Swift.Bool
+      public var maxConcurrentDownloads: Swift.Int
+      public init(listSyncTtlSec: Swift.Int = 86_400, detailRequiredBeforePrefetch: Swift.Bool = true, gcTilesWhenRegionRemoved: Swift.Bool = true, catalogGzip: Swift.Bool = true, maxConcurrentDownloads: Swift.Int = 3)
+      public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig.Offline.Regions, b: NbmapCoreNavigation.OfflineInitializeConfig.Offline.Regions) -> Swift.Bool
+    }
+    public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig.Offline, b: NbmapCoreNavigation.OfflineInitializeConfig.Offline) -> Swift.Bool
+  }
+  public struct Mjolnir : Swift.Sendable, Swift.Equatable {
+    public static let defaultMaxCacheSizeBytes: Swift.Int64
+    public static let minimumMaxCacheSizeBytes: Swift.Int64
+    public var tileSourceMode: Swift.String
+    public var tileSqliteEnable: Swift.Bool
+    public var tileConsistencyStrict: Swift.Bool
+    public var maxCacheSizeBytes: Swift.Int64?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init(tileSourceMode: Swift.String = "sqlite", tileSqliteEnable: Swift.Bool = true, tileConsistencyStrict: Swift.Bool = false, maxCacheSizeBytes: Swift.Int64? = nil)
+    #endif
+    public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig.Mjolnir, b: NbmapCoreNavigation.OfflineInitializeConfig.Mjolnir) -> Swift.Bool
+  }
+  public struct Loki : Swift.Sendable, Swift.Equatable {
+    public var useConnectivity: Swift.Bool
+    public var radius: Swift.Int
+    public var minimumReachability: Swift.Int
+    public var searchCutoff: Swift.Int
+    public var nodeSnapTolerance: Swift.Int
+    public var streetSideTolerance: Swift.Int
+    public var streetSideMaxDistance: Swift.Int
+    public var headingTolerance: Swift.Int
+    public static let defaultRadius: Swift.Int
+    public static let defaultMinimumReachability: Swift.Int
+    public static let defaultSearchCutoff: Swift.Int
+    public static let defaultNodeSnapTolerance: Swift.Int
+    public static let defaultStreetSideTolerance: Swift.Int
+    public static let defaultStreetSideMaxDistance: Swift.Int
+    public static let defaultHeadingTolerance: Swift.Int
+    public init(useConnectivity: Swift.Bool = false, radius: Swift.Int = Loki.defaultRadius, minimumReachability: Swift.Int = Loki.defaultMinimumReachability, searchCutoff: Swift.Int = Loki.defaultSearchCutoff, nodeSnapTolerance: Swift.Int = Loki.defaultNodeSnapTolerance, streetSideTolerance: Swift.Int = Loki.defaultStreetSideTolerance, streetSideMaxDistance: Swift.Int = Loki.defaultStreetSideMaxDistance, headingTolerance: Swift.Int = Loki.defaultHeadingTolerance)
+    public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig.Loki, b: NbmapCoreNavigation.OfflineInitializeConfig.Loki) -> Swift.Bool
+  }
+  public struct ServiceLimits : Swift.Sendable, Swift.Equatable {
+    public var maxRadius: Swift.Int
+    public var maxReachability: Swift.Int
+    public static let defaultMaxRadius: Swift.Int
+    public static let defaultMaxReachability: Swift.Int
+    public init(maxRadius: Swift.Int = ServiceLimits.defaultMaxRadius, maxReachability: Swift.Int = ServiceLimits.defaultMaxReachability)
+    public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig.ServiceLimits, b: NbmapCoreNavigation.OfflineInitializeConfig.ServiceLimits) -> Swift.Bool
+  }
+  public static func == (a: NbmapCoreNavigation.OfflineInitializeConfig, b: NbmapCoreNavigation.OfflineInitializeConfig) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public enum ValhallaTripShape {
+  public static func resolveShape(trip: [Swift.String : Any]) -> Swift.String
+  public static func decodeRoutePoints(trip: [Swift.String : Any]) -> [_LocationEssentials.CLLocationCoordinate2D]
+}
+@available(iOS 13.0, *)
+public enum Polyline6Codec {
+  public static let maxHopDistanceM: Swift.Double
+  public static func decodePlausiblePoints(_ encoded: Swift.String) -> [_LocationEssentials.CLLocationCoordinate2D]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func decodeQualityPoints(_ encoded: Swift.String, leg: [Swift.String : Any]? = nil) -> [_LocationEssentials.CLLocationCoordinate2D]?
+  #endif
+  public static func decodesToPlausiblePoints(_ encoded: Swift.String) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func decodesToQualityPoints(_ encoded: Swift.String, leg: [Swift.String : Any]? = nil) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func shapeQualityOk(_ points: [_LocationEssentials.CLLocationCoordinate2D], leg: [Swift.String : Any]? = nil) -> Swift.Bool
+  #endif
+  public static func maxHopDistanceMeters(_ points: [_LocationEssentials.CLLocationCoordinate2D]) -> Swift.Double
+  public static func encode(_ coords: [_LocationEssentials.CLLocationCoordinate2D]) -> Swift.String
+}
+@available(iOS 13.0, *)
+@available(*, deprecated, message: "G3: replaced by OfflineDirectionsResponseParser")
+public enum OfflineRouteAdapter {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func mapToNbDirectionsRouteDict(valhallaRouteJsonObj: [Swift.String : Any], nativeGuidanceJson: Swift.String?) -> [Swift.String : Any]
+  #endif
+}
+@available(iOS 13.0, *)
+public struct RouteResult : Swift.Sendable {
+  public let rawJson: Swift.String
+  public let trip: NbmapCoreNavigation.Trip?
+  public init(json: Swift.String) throws
+}
+@available(iOS 13.0, *)
+public struct Trip : Swift.Sendable {
+  public let legs: [NbmapCoreNavigation.Leg]
+  public let summary: NbmapCoreNavigation.TripSummary?
+  public let shape: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(dict: [Swift.String : Any]?)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct TripSummary : Swift.Sendable {
+  public let length: Swift.Double
+  public let time: Swift.Double
+  public let minLat: Swift.Double
+  public let minLon: Swift.Double
+  public let maxLat: Swift.Double
+  public let maxLon: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(dict: [Swift.String : Any]?)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct Leg : Swift.Sendable {
+  public let maneuvers: [NbmapCoreNavigation.Maneuver]
+  public let shape: Swift.String?
+  public let summary: NbmapCoreNavigation.TripSummary?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(dict: [Swift.String : Any]?)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct Maneuver : Swift.Sendable, Swift.Identifiable {
+  public let id: Swift.Int
+  public let type: Swift.Int
+  public let instruction: Swift.String
+  public let verbalPreTransitionInstruction: Swift.String?
+  public let verbalTransitionAlertInstruction: Swift.String?
+  public let verbalPostTransitionInstruction: Swift.String?
+  public let length: Swift.Double
+  public let time: Swift.Double
+  public let beginShapeIndex: Swift.Int
+  public let endShapeIndex: Swift.Int
+  public let streetNames: [Swift.String]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(index: Swift.Int, type: Swift.Int, instruction: Swift.String, verbalPreTransitionInstruction: Swift.String?, verbalTransitionAlertInstruction: Swift.String?, verbalPostTransitionInstruction: Swift.String?, length: Swift.Double, time: Swift.Double, beginShapeIndex: Swift.Int, endShapeIndex: Swift.Int, streetNames: [Swift.String])
+  #endif
+  public init(dict: [Swift.String : Any], index: Swift.Int)
+  @available(iOS 13.0, *)
+  public typealias ID = Swift.Int
+}
+@available(iOS 13.0, *)
+public struct Location : Swift.Sendable {
+  public let lat: Swift.Double
+  public let lon: Swift.Double
+  public let type: Swift.String
+  public init(lat: Swift.Double, lon: Swift.Double, type: Swift.String = "break")
+  public func toDict() -> [Swift.String : Any]
+}
+@available(iOS 13.0, *)
+public struct TraceRouteResult : Swift.Sendable {
+  public let rawJson: Swift.String
+  public let trip: NbmapCoreNavigation.Trip?
+  public init(json: Swift.String) throws
+}
+@available(iOS 13.0, *)
+public struct TraceAttributesResult : Swift.Sendable {
+  public let rawJson: Swift.String
+  public let edges: [[Swift.String : Any]]
+  public init(json: Swift.String) throws
+}
+@available(iOS 13.0, *)
+public struct ShapePoint : Swift.Sendable {
+  public let lat: Swift.Double
+  public let lon: Swift.Double
+  public init(lat: Swift.Double, lon: Swift.Double)
+  public func toDict() -> [Swift.String : Any]
+}
+@available(iOS 13.0, *)
+public struct OfflineDateTime {
+  public let type: Swift.Int
+  public let value: Swift.String
+  public init(type: Swift.Int, value: Swift.String)
+}
+@available(iOS 13.0, *)
+public struct OfflineMatrixRequest {
+  public let sources: [_LocationEssentials.CLLocationCoordinate2D]
+  public let targets: [_LocationEssentials.CLLocationCoordinate2D]
+  public let costing: Swift.String
+  public let units: Swift.String?
+  public let verbose: Swift.Bool
+  public let shapeFormat: Swift.String
+  public let dateTime: NbmapCoreNavigation.OfflineDateTime?
+  public let costingOptions: [Swift.String : Any]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(sources: [_LocationEssentials.CLLocationCoordinate2D], targets: [_LocationEssentials.CLLocationCoordinate2D], costing: Swift.String = "auto", units: Swift.String? = nil, verbose: Swift.Bool = false, shapeFormat: Swift.String = "no_shape", dateTime: NbmapCoreNavigation.OfflineDateTime? = nil, costingOptions: [Swift.String : Any]? = nil)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct OfflineMatrixResult : Swift.Sendable {
+  public let units: Swift.String?
+  public let durationsSec: [[Swift.Double]]?
+  public let distances: [[Swift.Double]]?
+  public let rawJson: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(units: Swift.String?, durationsSec: [[Swift.Double]]?, distances: [[Swift.Double]]?, rawJson: Swift.String)
+  #endif
+  public static func fromJson(_ json: Swift.String) throws -> NbmapCoreNavigation.OfflineMatrixResult
+}
+@available(iOS 13.0, *)
+public struct OfflineIsochroneContour {
+  public let timeMinutes: Swift.Double?
+  public let distanceKm: Swift.Double?
+  public let color: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(timeMinutes: Swift.Double? = nil, distanceKm: Swift.Double? = nil, color: Swift.String? = nil)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct OfflineIsochroneRequest {
+  public let location: _LocationEssentials.CLLocationCoordinate2D
+  public let costing: Swift.String
+  public let contours: [NbmapCoreNavigation.OfflineIsochroneContour]
+  public let polygons: Swift.Bool
+  public let denoise: Swift.Double?
+  public let generalizeMeters: Swift.Double?
+  public let showLocations: Swift.Bool?
+  public let reverse: Swift.Bool?
+  public let dateTime: NbmapCoreNavigation.OfflineDateTime?
+  public let costingOptions: [Swift.String : Any]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(location: _LocationEssentials.CLLocationCoordinate2D, costing: Swift.String = "pedestrian", contours: [NbmapCoreNavigation.OfflineIsochroneContour], polygons: Swift.Bool = false, denoise: Swift.Double? = nil, generalizeMeters: Swift.Double? = nil, showLocations: Swift.Bool? = nil, reverse: Swift.Bool? = nil, dateTime: NbmapCoreNavigation.OfflineDateTime? = nil, costingOptions: [Swift.String : Any]? = nil)
+  #endif
+}
+@available(iOS 13.0, *)
+public struct OfflineIsochroneResult : Swift.Sendable {
+  public let geoJson: Swift.String
+  public init(geoJson: Swift.String)
+}
+@available(iOS 13.0, *)
+public struct RouteCorridorVerification : Swift.Sendable {
+  public let corridorTileCount: Swift.Int64
+  public let sqlitePresentCount: Swift.Int64
+  public let sqliteMissingCount: Swift.Int64
+  public let corridorTilesComplete: Swift.Bool
+  public let sqliteTotalRows: Swift.Int64
+  public let pathTileCount: Swift.Int64
+  public let pathSqlitePresentCount: Swift.Int64
+  public let pathTilesComplete: Swift.Bool
+  public let probeRouteOk: Swift.Bool
+  public let probeRouteError: Swift.String
+  public let odDistanceM: Swift.Double
+  public let sameL2TileId: Swift.Bool
+  public let rawJson: Swift.String
+  public var routingLikelyOk: Swift.Bool {
+    get
+  }
+  public var summary: Swift.String {
+    get
+  }
+  public init(json: Swift.String) throws
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionListSyncResult : Swift.Sendable {
+  public let listSyncStatus: Swift.String
+  public let listSyncedAtMs: Swift.Int64
+  public let listTotal: Swift.Int64
+  public let regionsUpserted: Swift.Int64
+  public let regionsRemoved: Swift.Int64
+  public let tilesGcDeleted: Swift.Int64
+  public let detailsMarkedStale: Swift.Int64
+  public init(listSyncStatus: Swift.String, listSyncedAtMs: Swift.Int64, listTotal: Swift.Int64, regionsUpserted: Swift.Int64, regionsRemoved: Swift.Int64, tilesGcDeleted: Swift.Int64, detailsMarkedStale: Swift.Int64)
+  public static func fromJson(_ json: Swift.String) throws -> NbmapCoreNavigation.OfflineRegionListSyncResult
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionTileSkipWarning : Swift.Sendable {
+  public let index: Swift.Int
+  public let level: Swift.Int
+  public let tileId: Swift.Int64
+  public let reason: Swift.String
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionDetailSummary : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let version: Swift.String
+  public let country: Swift.String
+  public let adminL1: Swift.String
+  public let adminL2: Swift.String
+  public let adminL3: Swift.String
+  public let timestampSec: Swift.Int64
+  public let totalSizeBytes: Swift.Int64
+  public let tileCount: Swift.Int
+  public let tilesSkippedCount: Swift.Int
+  public let tileListRawCount: Swift.Int
+  public let tileSkipWarnings: [NbmapCoreNavigation.OfflineRegionTileSkipWarning]
+  public let detailSyncStatus: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func parseTileSkipWarnings(_ array: [Any]?) -> [NbmapCoreNavigation.OfflineRegionTileSkipWarning]
+  #endif
+  public static func fromJson(_ json: Swift.String) throws -> NbmapCoreNavigation.OfflineRegionDetailSummary
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionDownloadResult : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let timestampSec: Swift.Int64
+  public let planTileCount: Swift.Int
+  public let downloadSuccessCount: Swift.Int64
+  public let downloadFailedCount: Swift.Int
+  public let tilesTotal: Swift.Int64
+  public let tilesDone: Swift.Int64
+  public let downloadStatus: NbmapCoreNavigation.RegionDownloadStatus
+  public let skipped: Swift.Bool
+  public let interrupted: Swift.Bool
+  public let interruptReason: Swift.String?
+  public let errorCode: Swift.Int
+  public let autoRetryAttempts: Swift.Int
+  public let completedAfterAutoRetry: Swift.Bool
+  public let tilesSkippedCount: Swift.Int
+  public let tileListRawCount: Swift.Int
+  public let manifestSkippedCount: Swift.Int
+  public let downloadSkippedCount: Swift.Int
+  public let tileSkipWarnings: [NbmapCoreNavigation.OfflineRegionTileSkipWarning]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(regionId: Swift.Int64, timestampSec: Swift.Int64, planTileCount: Swift.Int, downloadSuccessCount: Swift.Int64, downloadFailedCount: Swift.Int, tilesTotal: Swift.Int64, tilesDone: Swift.Int64, downloadStatus: NbmapCoreNavigation.RegionDownloadStatus, skipped: Swift.Bool = false, interrupted: Swift.Bool = false, interruptReason: Swift.String? = nil, errorCode: Swift.Int = 0, autoRetryAttempts: Swift.Int = 0, completedAfterAutoRetry: Swift.Bool = false, tilesSkippedCount: Swift.Int = 0, tileListRawCount: Swift.Int = 0, manifestSkippedCount: Swift.Int = 0, downloadSkippedCount: Swift.Int = 0, tileSkipWarnings: [NbmapCoreNavigation.OfflineRegionTileSkipWarning] = [])
+  #endif
+  public static func fromJson(_ json: Swift.String, skipped: Swift.Bool = false) throws -> NbmapCoreNavigation.OfflineRegionDownloadResult
+  public static func skipped(regionId: Swift.Int64, status: NbmapCoreNavigation.RegionDownloadStatus) -> NbmapCoreNavigation.OfflineRegionDownloadResult
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionDeleteResult : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let tilesGcDeleted: Swift.Int64
+  public let errorCode: Swift.Int
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionPauseResult : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let errorCode: Swift.Int
+  public init(regionId: Swift.Int64, errorCode: Swift.Int)
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionPauseData : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let routeRegion: NbmapCoreNavigation.OfflineRegionPauseResult
+  public let mapTileRegion: NbmapCoreNavigation.NBNavigation.UnifiedOfflineManageResult
+  public init(regionId: Swift.Int64, routeRegion: NbmapCoreNavigation.OfflineRegionPauseResult, mapTileRegion: NbmapCoreNavigation.NBNavigation.UnifiedOfflineManageResult)
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionResumeData : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let routeRegion: NbmapCoreNavigation.OfflineRegionDownloadResult
+  public let mapTileRegion: NbmapCoreNavigation.NBNavigation.UnifiedOfflineManageResult
+  public init(regionId: Swift.Int64, routeRegion: NbmapCoreNavigation.OfflineRegionDownloadResult, mapTileRegion: NbmapCoreNavigation.NBNavigation.UnifiedOfflineManageResult)
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionResumeResult : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let queued: Swift.Bool
+  public let errorCode: Swift.Int
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCancelResult : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let tilesGcDeleted: Swift.Int64
+  public let errorCode: Swift.Int
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionDownloadQueueSnapshot : Swift.Sendable {
+  public let activeRegionIds: [Swift.Int64]
+  public let queuedRegionIds: [Swift.Int64]
+  public let pausedRegionIds: [Swift.Int64]
+  public let pausingRegionIds: [Swift.Int64]
+  public let cancellingRegionIds: [Swift.Int64]
+  public let deletingRegionIds: [Swift.Int64]
+  public let maxConcurrentDownloads: Swift.Int
+  public init(activeRegionIds: [Swift.Int64], queuedRegionIds: [Swift.Int64], pausedRegionIds: [Swift.Int64], pausingRegionIds: [Swift.Int64] = [], cancellingRegionIds: [Swift.Int64] = [], deletingRegionIds: [Swift.Int64] = [], maxConcurrentDownloads: Swift.Int)
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionBoundary : Swift.Sendable {
+  public let regionId: Swift.Int64
+  public let geoJson: Swift.String
+  public var isEmpty: Swift.Bool {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct OfflineTileDiskReclaimResult : Swift.Sendable {
+  public let reclaimed: Swift.Bool
+  public let skipped: Swift.Bool
+  public let skipReason: Swift.String
+  public let fileBytesBefore: Swift.Int64
+  public let fileBytesAfter: Swift.Int64
+  public let blobBytes: Swift.Int64
+  public init(reclaimed: Swift.Bool, skipped: Swift.Bool, skipReason: Swift.String, fileBytesBefore: Swift.Int64, fileBytesAfter: Swift.Int64, blobBytes: Swift.Int64)
+  public static func fromJson(_ json: Swift.String) throws -> NbmapCoreNavigation.OfflineTileDiskReclaimResult
+}
+@available(iOS 13.0, *)
+public enum RegionDownloadStatus : Swift.String, Swift.Sendable {
+  case idle
+  case downloading
+  case complete
+  case partial
+  case failed
+  case paused
+  case unknown
+  public static func fromRaw(_ raw: Swift.String) -> NbmapCoreNavigation.RegionDownloadStatus
+  public func isDownloaded(tilesTotal: Swift.Int64, tilesDone: Swift.Int64) -> Swift.Bool
+  public func isPartial(tilesTotal: Swift.Int64, tilesDone: Swift.Int64) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public enum RegionListSyncMode : Swift.String, Swift.Sendable {
+  case auto
+  case force
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public enum RegionDownloadActivity : Swift.Sendable {
+  case fetchingRegionDetail
+  case downloadingTiles
+  public static func == (a: NbmapCoreNavigation.RegionDownloadActivity, b: NbmapCoreNavigation.RegionDownloadActivity) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public enum SimOffRouteLocationMarker {
+  public static func mark(_ location: _LocationEssentials.CLLocation) -> _LocationEssentials.CLLocation
+}
+@available(iOS 13.0, *)
+public enum GuidanceState : Swift.Sendable {
+  case idle
+  case routeReady(NbmapCoreNavigation.RouteResult)
+  case guiding(NbmapCoreNavigation.GuidanceInfo)
+  case offRoute
+  case recalculating
+  case arrived
+  case error(Swift.String)
+}
+@available(iOS 13.0, *)
+public struct GuidanceInfo : Swift.Sendable {
+  public let currentStepIndex: Swift.Int
+  public let maneuvers: [NbmapCoreNavigation.Maneuver]
+  public let totalDistance: Swift.Double
+  public let totalTime: Swift.Double
+  public let remainingDistance: Swift.Double
+  public let remainingTime: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var currentManeuver: NbmapCoreNavigation.Maneuver? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var nextManeuver: NbmapCoreNavigation.Maneuver? {
+    get
+  }
+  #endif
+}
+@available(iOS 13.0, *)
+public struct GuidanceConfig : Swift.Sendable {
+  public var stepAdvanceDistanceMeters: Swift.Double
+  public var offRouteDistanceMeters: Swift.Double
+  public var offRouteConsecutiveSamples: Swift.Int
+  public var arrivalDistanceMeters: Swift.Double
+  public init()
+}
+@available(iOS 13.0, *)
+final public class GuidanceSessionManager : @unchecked Swift.Sendable {
+  final public var lastMatchedOnRouteCoordinate: _LocationEssentials.CLLocationCoordinate2D? {
+    get
+  }
+  final public var frozenLastOnRouteCoordinate: _LocationEssentials.CLLocationCoordinate2D? {
+    get
+  }
+  final public var state: NbmapCoreNavigation.GuidanceState {
+    get
+  }
+  public init(config: NbmapCoreNavigation.GuidanceConfig = GuidanceConfig())
+  final public func startRoute(_ route: NbmapCoreNavigation.RouteResult) -> NbmapCoreNavigation.GuidanceState
+  final public func startNavigationRoute(_ route: NbmapCoreNavigation.Route) -> NbmapCoreNavigation.GuidanceState
+  final public func beginGuidance() -> NbmapCoreNavigation.GuidanceState
+  final public func advanceToNextStep() -> NbmapCoreNavigation.GuidanceState
+  final public func goToPreviousStep() -> NbmapCoreNavigation.GuidanceState
+  final public func updateLocation(lat: Swift.Double, lon: Swift.Double) -> NbmapCoreNavigation.GuidanceState
+  final public func setRecalculating() -> NbmapCoreNavigation.GuidanceState
+  final public func reset()
+  public static func decodePolyline(_ encoded: Swift.String, precision: Swift.Double = 1e6) -> [_LocationEssentials.CLLocationCoordinate2D]
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public struct TTSConfig : Swift.Sendable {
+  public var enabled: Swift.Bool
+  public var preAnnounceDistanceMeters: Swift.Double
+  public var language: Swift.String
+  public init()
+}
+@available(iOS 13.0, *)
+public protocol TTSProvider : Swift.Sendable {
+  func speak(_ text: Swift.String)
+  func stop()
+}
+@available(iOS 13.0, *)
+public enum ShapeAlongProjection {
+  public struct ProjectionResult {
+    public let point: _LocationEssentials.CLLocationCoordinate2D
+    public let residualM: Swift.Double
+    public let alongM: Swift.Double
+  }
+  public static func projectOnto(points: [_LocationEssentials.CLLocationCoordinate2D], lat: Swift.Double, lon: Swift.Double) -> NbmapCoreNavigation.ShapeAlongProjection.ProjectionResult
+}
 extension NbmapCoreNavigation.VisualInstructionComponentType : Swift.Equatable {}
 extension NbmapCoreNavigation.VisualInstructionComponentType : Swift.Hashable {}
 extension NbmapCoreNavigation.VisualInstructionComponentType : Swift.RawRepresentable {}
@@ -8983,6 +10735,39 @@ extension NbmapCoreNavigation.BinaryEncodingError : Swift.Hashable {}
 extension NbmapCoreNavigation.CongestionLevel : Swift.Equatable {}
 extension NbmapCoreNavigation.CongestionLevel : Swift.Hashable {}
 extension NbmapCoreNavigation.CongestionLevel : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineInitializationState : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineInitializationState : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineDownloadNetworkPolicy : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineTaskState : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineTaskState : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineTaskState : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionKind : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionKind : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionKind : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.NBNavigation.OfflineRegionManageAction : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RouteSource : Swift.Hashable {}
+extension NbmapCoreNavigation.RouteMode : Swift.Equatable {}
+extension NbmapCoreNavigation.RouteMode : Swift.Hashable {}
+extension NbmapCoreNavigation.RouteMode : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.RingBuffer.OverwriteOperation : Swift.Equatable {}
 extension NbmapCoreNavigation.RingBuffer.OverwriteOperation : Swift.Hashable {}
 extension NbmapCoreNavigation.ResourceAttributes : Swift.Equatable {}
@@ -9017,15 +10802,75 @@ extension NbmapCoreNavigation.SpeedQuality : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.SpeedSource : Swift.Equatable {}
 extension NbmapCoreNavigation.SpeedSource : Swift.Hashable {}
 extension NbmapCoreNavigation.SpeedSource : Swift.RawRepresentable {}
-extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Equatable {}
-extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Hashable {}
 extension NbmapCoreNavigation.PuckState : Swift.Equatable {}
 extension NbmapCoreNavigation.PuckState : Swift.Hashable {}
 extension NbmapCoreNavigation.PuckState : Swift.RawRepresentable {}
 extension NbmapCoreNavigation.ABBucket : Swift.Equatable {}
 extension NbmapCoreNavigation.ABBucket : Swift.Hashable {}
-extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.Equatable {}
-extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.Hashable {}
-extension NbmapCoreNavigation.OffRouteDecisionEngine.ConfigMode : Swift.RawRepresentable {}
+extension NbmapCoreNavigation.SpanExporterResultCode : Swift.Hashable {}
 extension NbmapCoreNavigation.BinaryDelimited.Error : Swift.Equatable {}
 extension NbmapCoreNavigation.BinaryDelimited.Error : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ActionType : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ActionType : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ActionType : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineDirectionsConfiguration.UnsupportedParameterPolicy : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineNavigationEngine.EngineState : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineNavigationEngine.EngineState : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineNavigationEngine.EngineState : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RoutePhase : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RoutePhase : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RoutePhase : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ReroutePhase : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ReroutePhase : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.ReroutePhase : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RerouteTerminalStatus : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RerouteTerminalStatus : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RerouteTerminalStatus : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineCountyQueryFailureStage : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineCountyQueryFailureStage : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineCountyQueryFailureStage : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineCountyQueryPhase : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.OfflineCountyQueryPhase : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.MemoryPressureLevel : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.MemoryPressureLevel : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionDownloadStatus : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionDownloadStatus : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionDownloadStatus : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionListSyncMode : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionListSyncMode : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionListSyncMode : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionDownloadActivity : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension NbmapCoreNavigation.RegionDownloadActivity : Swift.Hashable {}

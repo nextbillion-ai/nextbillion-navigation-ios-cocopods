@@ -1356,7 +1356,6 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (void)enableFrameByFrameCourseViewTrackingFor:(NSTimeInterval)duration;
 - (void)updateCourseTrackingWithLocation:(CLLocation * _Nullable)location camera:(NGLMapCamera * _Nullable)camera animated:(BOOL)animated;
 - (void)showcase:(NSArray<NBNavRoute *> * _Nonnull)routes padding:(UIEdgeInsets)padding animated:(BOOL)animated;
-/// Adds or updates both the route line and the route line casing
 - (void)showRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes legIndex:(NSInteger)legIndex;
 /// Removes route line and route line casing from map
 - (void)removeRoutes;
@@ -1498,6 +1497,10 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @property (nonatomic) BOOL snapsUserLocationAnnotationToRoute;
 /// Toggles sending of UILocalNotification upon upcoming steps when application is in the background. Defaults to <code>true</code>.
 @property (nonatomic) BOOL sendsNotifications;
+/// Stops every resource owned by this navigation UI. This method is
+/// intentionally independent from dismissal and ARC, and is safe to call
+/// more than once.
+- (void)endNavigation;
 /// If true, the map style and UI will automatically be updated given the time of day.
 @property (nonatomic) BOOL automaticallyAdjustsStyleForTimeOfDay;
 /// If <code>true</code>, <code>UIApplication.isIdleTimerDisabled</code> is set to <code>true</code> in <code>viewWillAppear(_:)</code> and <code>false</code> in <code>viewWillDisappear(_:)</code>. If your application manages the idle timer itself, set this property to <code>false</code>.
@@ -1632,6 +1635,12 @@ SWIFT_CLASS_NAMED("RouteVoiceController")
 @property (nonatomic) BOOL autoResumeOnInterruptionEnd;
 /// Reroute ding player (volume follows <code>NavigationSettings.shared.voiceVolume</code>).
 @property (nonatomic, readonly, strong) AVAudioPlayer * _Nullable rerouteSoundPlayer;
+/// Activates this controller for a navigation session. The operation is
+/// idempotent so a user-provided controller can safely be reused.
+- (void)start;
+/// Immediately ends speech and releases all session-scoped observers and
+/// audio resources. This does not depend on ARC or <code>deinit</code>.
+- (void)stop;
 /// Triggered when passing the instruction point; refines instruction and delegates to speechSynthesizer.
 - (void)didPassSpokenInstructionPointWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
