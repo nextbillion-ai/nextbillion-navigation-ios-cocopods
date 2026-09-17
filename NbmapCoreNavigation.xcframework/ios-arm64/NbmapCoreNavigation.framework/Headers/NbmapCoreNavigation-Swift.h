@@ -1136,6 +1136,16 @@ SWIFT_CLASS_NAMED("NetworkSessionManager")
 + (BOOL)isRetryableError:(NSError * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Offline facade that mirrors <code>NbmapCoreNavigation.Directions</code> route calculation shape.
+SWIFT_CLASS_NAMED("OfflineDirections") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface NBOfflineDirections : NSObject
+/// Mirrors <code>Directions.calculate(_:completionHandler:)</code> (offline uses Valhalla instead of HTTP).
+/// Returns a cancellable <code>URLSessionDataTask</code> handle for API compatibility.
+- (NSURLSessionDataTask * _Nonnull)calculateNavigationWithOptions:(NBRouteOptionss * _Nonnull)options completionHandler:(void (^ _Nonnull)(NSArray<NBNavRoute *> * _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// <code>ReplayLocationManager</code> replays an array of locations exactly as they were
 /// recorded with the single exception of the location’s timestamp which will be
 /// adjusted by interval between locations.
@@ -1446,11 +1456,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 @property (nonatomic, readonly, copy) NSString * _Nonnull instructions;
 @property (nonatomic, readonly, copy) NSString * _Nullable displayInstruction;
 /// Instructions about the next step’s maneuver, optimized for speech synthesis.
-/// As the user traverses this step, you can give them advance notice of the upcoming maneuver by reading aloud each item in this array in order as the user reaches the specified distances along this step. The text of the spoken instructions refers to the details in the next step, but the distances are measured from the beginning of this step.
+/// As the user traverses this step, you can give them advance notice of the upcoming maneuver by reading aloud each item in this array in order as the remaining distance to the end of this step reaches the specified value. The text of the spoken instructions refers to the details in the next step, and each distance is measured backward from the end of this step.
 /// This property is non-<code>nil</code> if the <code>RouteOptions.includesSpokenInstructions</code> option is set to <code>true</code>. For instructions designed for display, use the <code>instructions</code> property.
 @property (nonatomic, copy) NSArray<NBSpokenInstruction *> * _Nullable instructionsSpokenAlongStep;
 /// Instructions about the next step’s maneuver, optimized for display in real time.
-/// As the user traverses this step, you can give them advance notice of the upcoming maneuver by displaying each item in this array in order as the user reaches the specified distances along this step. The text and images of the visual instructions refer to the details in the next step, but the distances are measured from the beginning of this step.
+/// As the user traverses this step, you can give them advance notice of the upcoming maneuver by displaying each item in this array in order as the remaining distance to the end of this step reaches the specified value. The text and images of the visual instructions refer to the details in the next step, and each distance is measured backward from the end of this step.
 /// This property is non-<code>nil</code> if the <code>RouteOptions.includesVisualInstructions</code> option is set to <code>true</code>. For instructions designed for speech synthesis, use the <code>instructionsSpokenAlongStep</code> property. For instructions designed for display in a static list, use the <code>instructions</code> property.
 @property (nonatomic, copy) NSArray<NBVisualInstructionBanner *> * _Nullable instructionsDisplayedAlongStep;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
@@ -1706,7 +1716,13 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NBTransportType, "TransportType", open) {
 };
 
 SWIFT_CLASS("_TtC19NbmapCoreNavigation20TravelledRawLocation")
-@interface TravelledRawLocation : NSObject
+@interface TravelledRawLocation : NSObject <NSSecureCoding>
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

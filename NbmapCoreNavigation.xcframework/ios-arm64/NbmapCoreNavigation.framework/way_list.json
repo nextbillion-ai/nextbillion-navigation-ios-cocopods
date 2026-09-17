@@ -1,0 +1,20 @@
+{
+  "US": {
+    "I 95": "https://static.nextbillion.io/navigating-staging/highway-shield/target/US/I-95.png"
+  },
+  "SG": {
+    "ECP": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/ECP.png",
+    "KPE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/KPE.png",
+    "CTE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/CTE.png",
+    "KJE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/KJE.png",
+    "AYE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/AYE.png",
+    "SLE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/SLE.png",
+    "MCE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/MCE.png",
+    "BKE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/BKE.png",
+    "TPE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/TPE.png",
+    "PIE": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/PIE.png",
+    "AH2": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/AH2.png",
+    "AH143": "https://static.nextbillion.io/navigating-staging/highway-shield/target/SG/AH143.png"
+  },
+  "default": {}
+}

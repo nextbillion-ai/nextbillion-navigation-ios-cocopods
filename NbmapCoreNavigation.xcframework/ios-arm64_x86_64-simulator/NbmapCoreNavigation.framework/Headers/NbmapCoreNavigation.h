@@ -14,6 +14,9 @@ FOUNDATION_EXPORT const unsigned char NbmapCoreNavigationVersionString[];
 #import "NBRoadClasses.h"
 #import "NBTruckTypes.h"
 #import "NBTruckPrefer.h"
+#import "ValhallaBridge.h"
+#import "OffrouteDetectorBridge.h"
+#import "NBCrashHandlerBridge.h"
 
 
 /**

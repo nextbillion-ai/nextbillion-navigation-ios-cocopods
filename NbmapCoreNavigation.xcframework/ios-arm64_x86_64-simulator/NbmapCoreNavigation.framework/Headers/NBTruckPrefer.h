@@ -19,5 +19,10 @@ typedef NS_ENUM(NSUInteger, NBTruckPrefer) {
      When this is set, the `truckType` parameter becomes effective.
      */
     NBTruckPreferTruckRoute = 1,
+
+    /**
+     Prioritize highways when calculating routes (maps to Valhalla `use_highways = 1.0`).
+     */
+    NBTruckPreferHighway = 2,
 };
 
