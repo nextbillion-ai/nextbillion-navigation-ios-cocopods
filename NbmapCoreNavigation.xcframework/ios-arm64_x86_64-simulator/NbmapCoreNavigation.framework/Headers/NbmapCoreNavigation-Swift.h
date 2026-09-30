@@ -1552,6 +1552,13 @@ SWIFT_CLASS_NAMED("RouteStepProgress")
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nullable intersectionDistances;
 /// Index into <code>step.instructionsDisplayedAlongStep</code> representing the current visual instruction for the step.
 @property (nonatomic) NSInteger visualInstructionIndex;
+/// A completion-state arrival instruction generated for the active
+/// navigation session.
+/// This value deliberately belongs to progress rather than <code>RouteStep</code>.
+/// Routes may be reused across navigation sessions, so writing a synthetic
+/// completion instruction into the route model would make route data grow
+/// and leak state from one session into the next.
+@property (nonatomic, readonly, strong) NBVisualInstructionBanner * _Nullable arrivalVisualInstruction;
 /// An <code>Array</code> of remaining <code>VisualInstruction</code> for a step.
 @property (nonatomic, readonly, copy) NSArray<NBVisualInstructionBanner *> * _Nullable remainingVisualInstructions;
 /// Index into <code>step.instructionsSpokenAlongStep</code> representing the current spoken instruction.
@@ -3485,6 +3492,13 @@ SWIFT_CLASS_NAMED("RouteStepProgress")
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nullable intersectionDistances;
 /// Index into <code>step.instructionsDisplayedAlongStep</code> representing the current visual instruction for the step.
 @property (nonatomic) NSInteger visualInstructionIndex;
+/// A completion-state arrival instruction generated for the active
+/// navigation session.
+/// This value deliberately belongs to progress rather than <code>RouteStep</code>.
+/// Routes may be reused across navigation sessions, so writing a synthetic
+/// completion instruction into the route model would make route data grow
+/// and leak state from one session into the next.
+@property (nonatomic, readonly, strong) NBVisualInstructionBanner * _Nullable arrivalVisualInstruction;
 /// An <code>Array</code> of remaining <code>VisualInstruction</code> for a step.
 @property (nonatomic, readonly, copy) NSArray<NBVisualInstructionBanner *> * _Nullable remainingVisualInstructions;
 /// Index into <code>step.instructionsSpokenAlongStep</code> representing the current spoken instruction.

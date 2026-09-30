@@ -20562,6 +20562,13 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
+        "kind": "Import",
         "name": "NBTurf",
         "printedName": "NBTurf",
         "declKind": "Import",
@@ -198080,6 +198087,72 @@
           },
           {
             "kind": "Var",
+            "name": "arrivalVisualInstruction",
+            "printedName": "arrivalVisualInstruction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapCoreNavigation.VisualInstructionBanner?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VisualInstructionBanner",
+                    "printedName": "NbmapCoreNavigation.VisualInstructionBanner",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBVisualInstructionBanner"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteStepProgress(py)arrivalVisualInstruction",
+            "mangledName": "$s19NbmapCoreNavigation17RouteStepProgressC24arrivalVisualInstructionAA0hI6BannerCSgvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NbmapCoreNavigation.VisualInstructionBanner?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VisualInstructionBanner",
+                        "printedName": "NbmapCoreNavigation.VisualInstructionBanner",
+                        "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBVisualInstructionBanner"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteStepProgress(im)arrivalVisualInstruction",
+                "mangledName": "$s19NbmapCoreNavigation17RouteStepProgressC24arrivalVisualInstructionAA0hI6BannerCSgvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "remainingVisualInstructions",
             "printedName": "remainingVisualInstructions",
             "children": [
@@ -254210,6 +254283,13 @@
       },
       {
         "kind": "Import",
+        "name": "CoreFoundation",
+        "printedName": "CoreFoundation",
+        "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -274478,6 +274558,13 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
+        "kind": "Import",
         "name": "CoreLocation",
         "printedName": "CoreLocation",
         "declKind": "Import",
@@ -274485,8 +274572,8 @@
       },
       {
         "kind": "Import",
-        "name": "CryptoKit",
-        "printedName": "CryptoKit",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "NbmapCoreNavigation"
       },
@@ -274508,6 +274595,13 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapCoreNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
         "declKind": "Import",
         "moduleName": "NbmapCoreNavigation"
       },
@@ -313866,6 +313960,90 @@
       "value": "2"
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 479,
+      "length": 17,
+      "value": "\"You will arrive\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 540,
+      "length": 38,
+      "value": "\"You have arrived at your destination\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 670,
+      "length": 32,
+      "value": "\"\\{waypoint_name(?::[^}]+)?\\}\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1185,
+      "length": 6,
+      "value": "\"lang\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1224,
+      "length": 6,
+      "value": "\"json\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1262,
+      "length": 26,
+      "value": "\"Resources\/NativeGuidance\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1330,
+      "length": 6,
+      "value": "\"lang\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1353,
+      "length": 6,
+      "value": "\"json\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "Dictionary",
+      "offset": 1653,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "StringLiteral",
+      "offset": 1825,
+      "length": 8,
+      "value": "\"arrive\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "Dictionary",
+      "offset": 1957,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteStep.swift",
+      "kind": "Dictionary",
+      "offset": 2554,
+      "length": 3,
+      "value": "[]"
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Telemetry\/OpenTelemetryApi\/Baggage\/Propagation\/W3CBaggagePropagator.swift",
       "kind": "StringLiteral",
       "offset": 201,
@@ -326321,7 +326499,7 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteProgress.swift",
       "kind": "IntegerLiteral",
-      "offset": 24553,
+      "offset": 25030,
       "length": 1,
       "value": "0"
     },
@@ -331165,42 +331343,42 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 1951,
+      "offset": 1994,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 1988,
+      "offset": 2031,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 4287,
+      "offset": 4351,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 4291,
+      "offset": 4355,
       "length": 5,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 4299,
+      "offset": 4363,
       "length": 5,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/OffRoute\/SnapToRoadModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 4353,
+      "offset": 4417,
       "length": 6,
       "value": "10000"
     },
@@ -331829,22 +332007,78 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "Array",
+      "offset": 137,
+      "length": 250,
+      "value": "[\"arrive\", \"continue\", \"depart\", \"end of road\", \"exit rotary\", \"exit roundabout\", \"fork\", \"merge\", \"new name\", \"notification\", \"off ramp\", \"on ramp\", \"rotary\", \"roundabout\", \"roundabout turn\", \"turn\", \"use lane\"]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "Array",
+      "offset": 436,
+      "length": 120,
+      "value": "[\"uturn\", \"sharp right\", \"right\", \"slight right\", \"straight\", \"slight left\", \"left\", \"sharp left\"]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
       "kind": "StringLiteral",
-      "offset": 10783,
+      "offset": 1115,
+      "length": 28,
+      "value": "\"current_position_proximity\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "StringLiteral",
+      "offset": 1182,
+      "length": 26,
+      "value": "\"remaining_distance_ratio\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "FloatLiteral",
+      "offset": 1439,
+      "length": 7,
+      "value": "2000.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "FloatLiteral",
+      "offset": 1479,
+      "length": 3,
+      "value": "3.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "FloatLiteral",
+      "offset": 1520,
+      "length": 5,
+      "value": "100.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "FloatLiteral",
+      "offset": 1574,
+      "length": 4,
+      "value": "1e-9"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
+      "kind": "StringLiteral",
+      "offset": 13559,
       "length": 15,
       "value": "\"no_connection\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
       "kind": "StringLiteral",
-      "offset": 10831,
+      "offset": 13607,
       "length": 24,
       "value": "\"route_quality_rejected\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/ReroutePrepareModels.swift",
       "kind": "StringLiteral",
-      "offset": 10886,
+      "offset": 13662,
       "length": 21,
       "value": "\"continuity_rejected\""
     },
@@ -331854,6 +332088,13 @@
       "offset": 564,
       "length": 6,
       "value": "30000"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/RerouteBoundarySerializer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7749,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/PlatformActiveLegMerger.swift",
@@ -332157,11 +332398,11 @@
       "value": "false"
     },
     {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/FrozenRouteFingerprint.swift",
-      "kind": "StringLiteral",
-      "offset": 295,
-      "length": 17,
-      "value": "\"frozen-route-v2\""
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/FrozenRouteGuard.swift",
+      "kind": "IntegerLiteral",
+      "offset": 169,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/RerouteAttemptCoordinator.swift",
@@ -332248,6 +332489,104 @@
       "value": "\"local-fragments-v1\""
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2163,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "FloatLiteral",
+      "offset": 2200,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "FloatLiteral",
+      "offset": 2245,
+      "length": 4,
+      "value": "45.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2277,
+      "length": 5,
+      "value": "2000"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "FloatLiteral",
+      "offset": 2325,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "FloatLiteral",
+      "offset": 2371,
+      "length": 5,
+      "value": "0.001"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/HistoricalRerouteOriginResolver.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2529,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/LegEndRouteAssembler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5281,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1708,
+      "length": 4,
+      "value": "45.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1757,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1806,
+      "length": 3,
+      "value": "3.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1852,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1899,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/TerminalRouteSoftConstraint.swift",
+      "kind": "FloatLiteral",
+      "offset": 1945,
+      "length": 5,
+      "value": "0.001"
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/RouteAssemblyValidator.swift",
       "kind": "FloatLiteral",
       "offset": 302,
@@ -332306,175 +332645,336 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 2566,
+      "offset": 3018,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 5516,
+      "offset": 5968,
       "length": 28,
       "value": "\"com.valhalla.mobile.engine\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 5620,
+      "offset": 6072,
       "length": 30,
       "value": "\"com.valhalla.mobile.download\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6308,
+      "offset": 6760,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6350,
+      "offset": 6802,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 6373,
+      "offset": 6825,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 6415,
+      "offset": 6867,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6520,
+      "offset": 7029,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 6697,
+      "offset": 7206,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 6734,
+      "offset": 7243,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 6929,
+      "offset": 7438,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 6975,
+      "offset": 7484,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 7016,
+      "offset": 7525,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7457,
+      "offset": 7966,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7509,
+      "offset": 8018,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7554,
+      "offset": 8063,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7612,
+      "offset": 8121,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 9227,
+      "offset": 9736,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 9244,
+      "offset": 9753,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 74483,
+      "length": 23,
+      "value": "\"leg_end_initial_route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 75524,
+      "length": 13,
+      "value": "\"constrained\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 75540,
+      "length": 15,
+      "value": "\"unconstrained\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "BooleanLiteral",
+      "offset": 75769,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 76028,
+      "length": 17,
+      "value": "\"missing_heading\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "BooleanLiteral",
+      "offset": 76292,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 76800,
+      "length": 6,
+      "value": "\"none\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 77042,
+      "length": 13,
+      "value": "\"route_error\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "BooleanLiteral",
+      "offset": 77249,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 77829,
+      "length": 54,
+      "value": "\"terminal selector returned missing constrained route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 78219,
+      "length": 56,
+      "value": "\"terminal selector returned missing unconstrained route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 78580,
+      "length": 34,
+      "value": "\"leg-end route produced no result\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 79908,
+      "length": 22,
+      "value": "\"full_remaining_route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 80487,
+      "length": 22,
+      "value": "\"full_remaining_route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 81454,
+      "length": 15,
+      "value": "\"unconstrained\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 81751,
+      "length": 17,
+      "value": "\"missing_heading\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 82034,
+      "length": 13,
+      "value": "\"constrained\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 82566,
+      "length": 6,
+      "value": "\"none\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 82808,
+      "length": 13,
+      "value": "\"route_error\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 83096,
+      "length": 15,
+      "value": "\"unconstrained\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 83707,
+      "length": 54,
+      "value": "\"terminal selector returned missing constrained route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 84097,
+      "length": 56,
+      "value": "\"terminal selector returned missing unconstrained route\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 84458,
+      "length": 41,
+      "value": "\"full remaining route produced no result\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "FloatLiteral",
-      "offset": 90576,
+      "offset": 110287,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 91052,
+      "offset": 110763,
       "length": 6,
       "value": "\"auto\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 102059,
+      "offset": 121770,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 103054,
+      "offset": 122765,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 113501,
+      "offset": 133212,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 114299,
+      "offset": 134010,
       "length": 1,
       "value": "0"
     },
@@ -333782,8 +334282,15 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/RejoinCandidatePlanBuilder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 655,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/RejoinCandidatePlanBuilder.swift",
       "kind": "BooleanLiteral",
-      "offset": 617,
+      "offset": 864,
       "length": 5,
       "value": "false"
     }

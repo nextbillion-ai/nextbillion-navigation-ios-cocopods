@@ -8486,6 +8486,102 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "showsLiveTrafficOnRouteLine",
+            "printedName": "showsLiveTrafficOnRouteLine",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController(py)showsLiveTrafficOnRouteLine",
+            "mangledName": "$s15NbmapNavigation0B14ViewControllerC27showsLiveTrafficOnRouteLineSbvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController(im)showsLiveTrafficOnRouteLine",
+                "mangledName": "$s15NbmapNavigation0B14ViewControllerC27showsLiveTrafficOnRouteLineSbvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController(im)setShowsLiveTrafficOnRouteLine:",
+                "mangledName": "$s15NbmapNavigation0B14ViewControllerC27showsLiveTrafficOnRouteLineSbvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B14ViewControllerC27showsLiveTrafficOnRouteLineSbvM",
+                "mangledName": "$s15NbmapNavigation0B14ViewControllerC27showsLiveTrafficOnRouteLineSbvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "endNavigation",
             "printedName": "endNavigation()",
@@ -14597,6 +14693,97 @@
           },
           {
             "kind": "Var",
+            "name": "showsLiveTrafficOnRouteLine",
+            "printedName": "showsLiveTrafficOnRouteLine",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvp",
+            "mangledName": "$s15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvp",
+            "moduleName": "NbmapNavigation",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvg",
+                "mangledName": "$s15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvs",
+                "mangledName": "$s15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvM",
+                "mangledName": "$s15NbmapNavigation0B7OptionsC27showsLiveTrafficOnRouteLineSbvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "navigationService",
             "printedName": "navigationService",
             "children": [
@@ -14965,7 +15152,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(styles:navigationService:voiceController:topBanner:bottomBanner:navigationMapView:vehicleNavigationIconImage:)",
+            "printedName": "init(styles:navigationService:voiceController:topBanner:bottomBanner:navigationMapView:vehicleNavigationIconImage:showsLiveTrafficOnRouteLine:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -15083,11 +15270,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15NbmapNavigation0B7OptionsC6styles17navigationService15voiceController9topBanner06bottomJ00E7MapView07vehicleB9IconImageACSayAA5StyleCGSg_0a4CoreB00bF0_pSgAA010RouteVoiceH0CSgAA0B9Component_So06UIViewH0CXcSgAxA0blM0CSgSo7UIImageCSgtcfc",
-            "mangledName": "$s15NbmapNavigation0B7OptionsC6styles17navigationService15voiceController9topBanner06bottomJ00E7MapView07vehicleB9IconImageACSayAA5StyleCGSg_0a4CoreB00bF0_pSgAA010RouteVoiceH0CSgAA0B9Component_So06UIViewH0CXcSgAxA0blM0CSgSo7UIImageCSgtcfc",
+            "usr": "s:15NbmapNavigation0B7OptionsC6styles17navigationService15voiceController9topBanner06bottomJ00E7MapView07vehicleB9IconImage27showsLiveTrafficOnRouteLineACSayAA5StyleCGSg_0a4CoreB00bF0_pSgAA0u5VoiceH0CSgAA0B9Component_So06UIViewH0CXcSgAyA0blM0CSgSo7UIImageCSgSbtcfc",
+            "mangledName": "$s15NbmapNavigation0B7OptionsC6styles17navigationService15voiceController9topBanner06bottomJ00E7MapView07vehicleB9IconImage27showsLiveTrafficOnRouteLineACSayAA5StyleCGSg_0a4CoreB00bF0_pSgAA0u5VoiceH0CSgAA0B9Component_So06UIViewH0CXcSgAyA0blM0CSgSo7UIImageCSgSbtcfc",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
               "Convenience",
@@ -15764,6 +15958,102 @@
                 "declKind": "Accessor",
                 "usr": "s:15NbmapNavigation0B7MapViewC24routeLineTracksTraversalSbvM",
                 "mangledName": "$s15NbmapNavigation0B7MapViewC24routeLineTracksTraversalSbvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "showsLiveTrafficOnRouteLine",
+            "printedName": "showsLiveTrafficOnRouteLine",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)showsLiveTrafficOnRouteLine",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC27showsLiveTrafficOnRouteLineSbvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)showsLiveTrafficOnRouteLine",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC27showsLiveTrafficOnRouteLineSbvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setShowsLiveTrafficOnRouteLine:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC27showsLiveTrafficOnRouteLineSbvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7MapViewC27showsLiveTrafficOnRouteLineSbvM",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC27showsLiveTrafficOnRouteLineSbvM",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -91240,70 +91530,77 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7136,
+      "offset": 7183,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7620,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 13411,
+      "offset": 14070,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19033,
+      "offset": 19879,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19468,
+      "offset": 20314,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19639,
+      "offset": 20485,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 20105,
+      "offset": 20951,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 21068,
+      "offset": 21914,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 22479,
+      "offset": 23325,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 24325,
+      "offset": 25278,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 49527,
+      "offset": 50480,
       "length": 4,
       "value": "true"
     },
@@ -91317,28 +91614,35 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "IntegerLiteral",
-      "offset": 466,
+      "offset": 642,
+      "length": 7,
+      "value": "100000"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 753,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "IntegerLiteral",
-      "offset": 602,
+      "offset": 889,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 3860,
+      "offset": 4147,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 4441,
+      "offset": 4728,
       "length": 5,
       "value": "false"
     },
@@ -91630,6 +91934,20 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1762,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3605,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
       "offset": 676,
@@ -91702,504 +92020,518 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4612,
+      "offset": 4628,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5328,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4793,
+      "offset": 5580,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4828,
+      "offset": 5615,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4863,
+      "offset": 5650,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 4943,
+      "offset": 5730,
       "length": 13,
       "value": "\"routeSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 4990,
+      "offset": 5777,
       "length": 19,
       "value": "\"routeCasingSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5041,
+      "offset": 5828,
       "length": 12,
       "value": "\"routeLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5091,
+      "offset": 5878,
       "length": 18,
       "value": "\"routeLayerCasing\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5147,
+      "offset": 5934,
       "length": 30,
       "value": "\"alternativeRouteCasingSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5227,
+      "offset": 6014,
       "length": 24,
       "value": "\"alternativeRouteSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5293,
+      "offset": 6080,
       "length": 23,
       "value": "\"alternativeRouteLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5364,
+      "offset": 6151,
       "length": 33,
       "value": "\"alternativeRouteLineCasingLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5437,
+      "offset": 6224,
       "length": 30,
       "value": "\"currentAnimateLineIdentifier\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5583,
+      "offset": 6370,
       "length": 17,
       "value": "\"waypointsSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5636,
+      "offset": 6423,
       "length": 17,
       "value": "\"waypointsSymbol\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5691,
+      "offset": 6478,
       "length": 18,
       "value": "\"routeStartSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5747,
+      "offset": 6534,
       "length": 18,
       "value": "\"routeStartSymbol\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5802,
+      "offset": 6589,
       "length": 17,
       "value": "\"routeStartImage\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5852,
+      "offset": 6639,
       "length": 13,
       "value": "\"arrowSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5904,
+      "offset": 6691,
       "length": 19,
       "value": "\"arrowSourceStroke\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 5955,
+      "offset": 6742,
       "length": 12,
       "value": "\"arrowLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6005,
+      "offset": 6792,
       "length": 18,
       "value": "\"arrowSymbolLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6061,
+      "offset": 6848,
       "length": 18,
       "value": "\"arrowStrokeLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6123,
+      "offset": 6910,
       "length": 24,
       "value": "\"arrowCasingSymbolLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6186,
+      "offset": 6973,
       "length": 19,
       "value": "\"arrowSymbolSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6234,
+      "offset": 7021,
       "length": 19,
       "value": "\"instructionSource\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6281,
+      "offset": 7068,
       "length": 18,
       "value": "\"instructionLabel\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6328,
+      "offset": 7115,
       "length": 19,
       "value": "\"instructionCircle\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6389,
+      "offset": 7176,
       "length": 32,
       "value": "\"durationSymbolSourceIdentifier\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6462,
+      "offset": 7249,
       "length": 31,
       "value": "\"durationSymbolLayerIdentifier\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6533,
+      "offset": 7320,
       "length": 30,
       "value": "\"durationSymbolIconIdentifier\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6598,
+      "offset": 7385,
       "length": 14,
       "value": "\"openmaptiles\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6646,
+      "offset": 7433,
       "length": 16,
       "value": "\"nbWaynameLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6702,
+      "offset": 7489,
       "length": 21,
       "value": "\"transportation_name\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6764,
+      "offset": 7551,
       "length": 13,
       "value": "\"vectorTiles\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6817,
+      "offset": 7604,
       "length": 16,
       "value": "\"nbWaynameLayer\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 6879,
+      "offset": 7666,
       "length": 7,
       "value": "\"roads\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 8449,
+      "offset": 9236,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 8553,
+      "offset": 9340,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 8736,
+      "offset": 9523,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 9060,
+      "offset": 9850,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 9120,
+      "offset": 9910,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 9180,
+      "offset": 9970,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10315,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 9783,
+      "offset": 10797,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 10010,
+      "offset": 11024,
       "length": 5,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 10269,
+      "offset": 11283,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 10454,
+      "offset": 11468,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14003,
+      "offset": 15771,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 14100,
+      "offset": 15868,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 13876,
+      "offset": 15644,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 14741,
+      "offset": 16509,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 23886,
+      "offset": 25654,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 35608,
+      "offset": 37376,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 41211,
+      "offset": 42979,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 41221,
+      "offset": 42989,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 41233,
+      "offset": 43001,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 41244,
+      "offset": 43012,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 41378,
+      "offset": 43146,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 41884,
+      "offset": 43652,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 41964,
+      "offset": 43732,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 42802,
+      "offset": 44570,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 50882,
+      "offset": 53268,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "Array",
-      "offset": 78203,
+      "offset": 80824,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 78335,
+      "offset": 80956,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 78426,
+      "offset": 81047,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 78458,
+      "offset": 81079,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 78466,
+      "offset": 81087,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 78544,
+      "offset": 81165,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 78718,
+      "offset": 81339,
       "length": 16,
       "value": "\"isPrimaryRoute\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 78745,
+      "offset": 81366,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 79274,
+      "offset": 81895,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 79433,
+      "offset": 82054,
       "length": 1,
       "value": "0"
     },
@@ -102643,56 +102975,56 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 628,
+      "offset": 775,
       "length": 5,
       "value": "360.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 636,
+      "offset": 783,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 2391,
+      "offset": 2539,
       "length": 4,
       "value": "16.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 2451,
+      "offset": 2599,
       "length": 6,
       "value": "1000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 2460,
+      "offset": 2608,
       "length": 10,
       "value": "40075000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "FloatLiteral",
-      "offset": 2516,
+      "offset": 2664,
       "length": 10,
       "value": "40075000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "IntegerLiteral",
-      "offset": 2581,
+      "offset": 2729,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+RouteTrim.swift",
       "kind": "IntegerLiteral",
-      "offset": 2664,
+      "offset": 2812,
       "length": 2,
       "value": "20"
     },

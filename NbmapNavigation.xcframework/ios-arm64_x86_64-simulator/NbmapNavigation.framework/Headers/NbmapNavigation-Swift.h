@@ -1326,6 +1326,15 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic) CLLocationDistance longManeuverDistance;
 /// Maximum distance the user can tap for a selection to be valid when selecting an alternate route.
 @property (nonatomic) CGFloat tapGestureDistanceThreshold;
+/// Controls whether the main route line is colored using live-traffic
+/// congestion data. Defaults to <code>false</code>.
+/// Set this property on a standalone <code>NavigationMapView</code>. When using
+/// <code>NavigationViewController</code>, set the controller’s property with the same
+/// name instead. Changing the value updates an existing SDK-provided route
+/// layer without rebuilding the route or changing route calculations.
+/// Custom route style layers returned by <code>NavigationMapViewDelegate</code> remain
+/// under the delegate’s control.
+@property (nonatomic) BOOL showsLiveTrafficOnRouteLine;
 @property (nonatomic, strong) UIColor * _Nonnull trafficUnknownColor;
 @property (nonatomic, strong) UIColor * _Nonnull trafficLowColor;
 @property (nonatomic, strong) UIColor * _Nonnull trafficModerateColor;
@@ -1497,6 +1506,11 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @property (nonatomic) BOOL snapsUserLocationAnnotationToRoute;
 /// Toggles sending of UILocalNotification upon upcoming steps when application is in the background. Defaults to <code>true</code>.
 @property (nonatomic) BOOL sendsNotifications;
+/// Controls whether the main route line is colored using live-traffic
+/// congestion data. Defaults to <code>false</code>.
+/// This setting affects rendering only. It does not change route requests,
+/// ETA calculations, or rerouting behavior.
+@property (nonatomic) BOOL showsLiveTrafficOnRouteLine;
 /// Stops every resource owned by this navigation UI. This method is
 /// intentionally independent from dismissal and ARC, and is safe to call
 /// more than once.
@@ -3282,6 +3296,15 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic) CLLocationDistance longManeuverDistance;
 /// Maximum distance the user can tap for a selection to be valid when selecting an alternate route.
 @property (nonatomic) CGFloat tapGestureDistanceThreshold;
+/// Controls whether the main route line is colored using live-traffic
+/// congestion data. Defaults to <code>false</code>.
+/// Set this property on a standalone <code>NavigationMapView</code>. When using
+/// <code>NavigationViewController</code>, set the controller’s property with the same
+/// name instead. Changing the value updates an existing SDK-provided route
+/// layer without rebuilding the route or changing route calculations.
+/// Custom route style layers returned by <code>NavigationMapViewDelegate</code> remain
+/// under the delegate’s control.
+@property (nonatomic) BOOL showsLiveTrafficOnRouteLine;
 @property (nonatomic, strong) UIColor * _Nonnull trafficUnknownColor;
 @property (nonatomic, strong) UIColor * _Nonnull trafficLowColor;
 @property (nonatomic, strong) UIColor * _Nonnull trafficModerateColor;
@@ -3453,6 +3476,11 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @property (nonatomic) BOOL snapsUserLocationAnnotationToRoute;
 /// Toggles sending of UILocalNotification upon upcoming steps when application is in the background. Defaults to <code>true</code>.
 @property (nonatomic) BOOL sendsNotifications;
+/// Controls whether the main route line is colored using live-traffic
+/// congestion data. Defaults to <code>false</code>.
+/// This setting affects rendering only. It does not change route requests,
+/// ETA calculations, or rerouting behavior.
+@property (nonatomic) BOOL showsLiveTrafficOnRouteLine;
 /// Stops every resource owned by this navigation UI. This method is
 /// intentionally independent from dismissal and ARC, and is safe to call
 /// more than once.
