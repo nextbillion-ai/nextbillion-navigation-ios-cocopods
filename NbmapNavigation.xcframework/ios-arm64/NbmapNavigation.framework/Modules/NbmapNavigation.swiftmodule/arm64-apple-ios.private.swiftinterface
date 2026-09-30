@@ -290,7 +290,14 @@ public typealias ContainerViewController = UIKit.UIViewController & NbmapNavigat
   @_Concurrency.MainActor @preconcurrency public func traversingTunnel() -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var usesNightStyleWhileInTunnel: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var showsLiveTrafficOnRouteLine: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @objc @_Concurrency.MainActor @preconcurrency public func endNavigation()
   @_Concurrency.MainActor @preconcurrency public var showsArrivalWaypointSheet: Swift.Bool {
     get
@@ -531,12 +538,13 @@ open class NavigationOptions {
   open var topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)?
   open var bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)?
   open var navigationMapView: NbmapNavigation.NavigationMapView?
+  open var showsLiveTrafficOnRouteLine: Swift.Bool
   open var navigationService: (any NbmapCoreNavigation.NavigationService)?
   open var voiceController: NbmapNavigation.RouteVoiceController?
   open var vehicleNavigationIconImage: UIKit.UIImage?
   required public init()
   #if compiler(>=5.3) && $NonescapableTypes
-  convenience public init(styles: [NbmapNavigation.Style]? = [DayStyle(), NightStyle()], navigationService: (any NbmapCoreNavigation.NavigationService)? = nil, voiceController: NbmapNavigation.RouteVoiceController? = nil, topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, navigationMapView: NbmapNavigation.NavigationMapView? = nil, vehicleNavigationIconImage: UIKit.UIImage? = nil)
+  convenience public init(styles: [NbmapNavigation.Style]? = [DayStyle(), NightStyle()], navigationService: (any NbmapCoreNavigation.NavigationService)? = nil, voiceController: NbmapNavigation.RouteVoiceController? = nil, topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, navigationMapView: NbmapNavigation.NavigationMapView? = nil, vehicleNavigationIconImage: UIKit.UIImage? = nil, showsLiveTrafficOnRouteLine: Swift.Bool = false)
   #endif
   public class func navigationOptions() -> Self
   @objc deinit
@@ -550,6 +558,10 @@ open class NavigationOptions {
   @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool {
     get
     set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var showsLiveTrafficOnRouteLine: Swift.Bool {
+    @objc get
+    @objc set
   }
   @objc public enum DurationSymbolType : Swift.Int {
     case routeDuration = 0

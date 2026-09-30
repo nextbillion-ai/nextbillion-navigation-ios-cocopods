@@ -76,6 +76,7 @@
                 "upcoming": "You will arrive at your {nth} destination",
                 "short": "You have arrived",
                 "short-upcoming": "You will arrive",
+                "named-upcoming": "You will arrive at {waypoint_name}",
                 "named": "You have arrived at {waypoint_name}"
             },
             "left": {
@@ -603,68 +604,69 @@
         },
         "arrive": {
             "default": {
-                "destination": "您已经到达您的目的地",
+                "destination": "您已经到达目的地",
                 "default": "您已经到达您的{nth}个目的地",
                 "upcoming": "您即将到达您的{nth}个目的地",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}"
+                "named-upcoming": "即将到达{waypoint_name}",
+                "named": "您已经到达{waypoint_name}"
             },
             "left": {
-                "destination": "您已经到达您的目的地，目的地在道路左侧",
+                "destination": "您已经到达目的地，目的地在道路左侧",
                 "default": "您已经到达您的{nth}个目的地，目的地在道路左侧",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在道路左侧",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您左边。"
+                "named": "您已经到达{waypoint_name}，目的地在您左边。"
             },
             "right": {
-                "destination": "您已经到达您的目的地，目的地在道路右侧",
+                "destination": "您已经到达目的地，目的地在道路右侧",
                 "default": "您已经到达您的{nth}个目的地，目的地在道路右侧",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在道路右侧",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您右边。"
+                "named": "您已经到达{waypoint_name}，目的地在您右边。"
             },
             "sharp left": {
-                "destination": "您已经到达您的目的地，目的地在道路左侧",
+                "destination": "您已经到达目的地，目的地在道路左侧",
                 "default": "您已经到达您的{nth}个目的地，目的地在道路左侧",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在道路左侧",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您左边。"
+                "named": "您已经到达{waypoint_name}，目的地在您左边。"
             },
             "sharp right": {
-                "destination": "您已经到达您的目的地，目的地在道路右侧",
+                "destination": "您已经到达目的地，目的地在道路右侧",
                 "default": "您已经到达您的{nth}个目的地，目的地在道路右侧",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在道路右侧",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您右边。"
+                "named": "您已经到达{waypoint_name}，目的地在您右边。"
             },
             "slight right": {
-                "destination": "您已经到达您的目的地，目的地在道路左侧",
+                "destination": "您已经到达目的地，目的地在道路右侧",
+                "default": "您已经到达您的{nth}个目的地，目的地在道路右侧",
+                "upcoming": "您即将到达您的{nth}个目的地，目的地在道路右侧",
+                "short": "已到达目的地",
+                "short-upcoming": "即将到达目的地",
+                "named": "您已经到达{waypoint_name}，目的地在您右边。"
+            },
+            "slight left": {
+                "destination": "您已经到达目的地，目的地在道路左侧",
                 "default": "您已经到达您的{nth}个目的地，目的地在道路左侧",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在道路左侧",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您右边。"
-            },
-            "slight left": {
-                "destination": "您已经到达您的目的地，目的地在道路右侧",
-                "default": "您已经到达您的{nth}个目的地，目的地在道路右侧",
-                "upcoming": "您即将到达您的{nth}个目的地，目的地在道路右侧",
-                "short": "已到达目的地",
-                "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您左边。"
+                "named": "您已经到达{waypoint_name}，目的地在您左边。"
             },
             "straight": {
-                "destination": "您已经到达您的目的地，目的地在您正前方",
+                "destination": "您已经到达目的地，目的地在您正前方",
                 "default": "您已经到达您的{nth}个目的地，目的地在您正前方",
                 "upcoming": "您即将到达您的{nth}个目的地，目的地在您正前方",
                 "short": "已到达目的地",
                 "short-upcoming": "即将到达目的地",
-                "named": "您已到达{waypoint_name}，目的地在您前方。"
+                "named": "您已经到达{waypoint_name}，目的地在您前方。"
             }
         },
         "continue": {
@@ -1123,10 +1125,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "لقد وصلت إلى وجهتك",
                 "default": "لقد وصلت إلى الوجهة {nth}",
                 "upcoming": "ستصل إلى الوجهة {nth}",
                 "short": "لقد وصلت",
                 "short-upcoming": "ستصل",
+                "named-upcoming": "ستصل إلى {waypoint_name}",
                 "named": "لقد وصلت إلى {waypoint_name}"
             },
             "left": {
@@ -1626,10 +1630,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Du er ankommet til din destination",
                 "default": "Du er ankommet til din {nth} destination",
                 "upcoming": "Du vil ankomme til din {nth} destination",
                 "short": "Du er ankommet",
                 "short-upcoming": "Du vil ankomme",
+                "named-upcoming": "Du vil ankomme til {waypoint_name}",
                 "named": "Du er ankommet til {waypoint_name}"
             },
             "left": {
@@ -2137,9 +2143,10 @@
             "default": {
                 "destination": "Sie haben Ihr Ziel erreicht",
                 "default": "Sie haben Ihr {nth} Ziel erreicht",
-                "upcoming": "Sie haben Ihr {nth} Ziel erreicht",
+                "upcoming": "Sie werden Ihr {nth} Ziel erreichen",
                 "short": "Sie haben Ihr Ziel erreicht",
-                "short-upcoming": "Sie haben Ihr Ziel erreicht",
+                "short-upcoming": "Sie werden Ihr Ziel erreichen",
+                "named-upcoming": "Sie werden {waypoint_name} erreichen",
                 "named": "Sie haben Ihr Ziel {waypoint_name} erreicht"
             },
             "left": {
@@ -2685,10 +2692,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Vi atingis vian celon",
                 "default": "Vi atingis vian {nth} celon",
                 "upcoming": "Vi atingos vian {nth} celon",
                 "short": "Vi atingis",
                 "short-upcoming": "Vi atingos",
+                "named-upcoming": "Vi atingos {waypoint_name}",
                 "named": "Vi atingis {waypoint_name}"
             },
             "left": {
@@ -3188,10 +3197,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Has llegado a tu destino",
                 "default": "Has llegado a tu {nth} destino",
                 "upcoming": "Vas a llegar a tu {nth} destino",
                 "short": "Has llegado",
                 "short-upcoming": "Vas a llegar",
+                "named-upcoming": "Vas a llegar a {waypoint_name}",
                 "named": "Has llegado a {waypoint_name}"
             },
             "left": {
@@ -3692,10 +3703,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Has llegado a tu destino",
                 "default": "Has llegado a tu {nth} destino",
                 "upcoming": "Vas a llegar a tu {nth} destino",
                 "short": "Has llegado",
                 "short-upcoming": "Vas a llegar",
+                "named-upcoming": "Vas a llegar a {waypoint_name}",
                 "named": "Has llegado a {waypoint_name}"
             },
             "left": {
@@ -4204,10 +4217,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Olet saapunut määränpäähäsi",
                 "default": "Olet saapunut määränpäähäsi",
                 "upcoming": "Saavut {nth} määränpäähäsi",
                 "short": "Olet saapunut",
                 "short-upcoming": "Saavut",
+                "named-upcoming": "Saavut määränpäähän {waypoint_name}",
                 "named": "Olet saapunut määränpäähän {waypoint_name}"
             },
             "left": {
@@ -4718,6 +4733,7 @@
                 "upcoming": "Vous arriverez à votre {nth} destination",
                 "short": "Vous êtes arrivé",
                 "short-upcoming": "Vous arriverez",
+                "named-upcoming": "Vous arriverez à {waypoint_name}",
                 "named": "Vous êtes arrivé {waypoint_name:arrival}"
             },
             "left": {
@@ -5233,10 +5249,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "הגעת אל היעד שלך",
                 "default": "הגעת אל היעד ה{nth} שלך",
                 "upcoming": "אתה תגיע אל היעד ה{nth} שלך",
                 "short": "הגעת",
                 "short-upcoming": "תגיע",
+                "named-upcoming": "תגיע אל {waypoint_name}",
                 "named": "הגעת אל {waypoint_name}"
             },
             "left": {
@@ -5736,10 +5754,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Megérkezett a céljához",
                 "default": "Megérkezett {nth:article} célponthoz",
                 "upcoming": "Meg fog érkezni {nth:article} célponthoz",
                 "short": "Megérkezett",
                 "short-upcoming": "Meg fog érkezni",
+                "named-upcoming": "Meg fog érkezni a(z) {waypoint_name} célponthoz",
                 "named": "Megérkezett {waypoint_name:article} célponthoz"
             },
             "left": {
@@ -6239,10 +6259,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Anda telah tiba di tujuan",
                 "default": "Anda telah tiba di tujuan ke-{nth}",
-                "upcoming": "Anda telah tiba di tujuan ke-{nth}",
-                "short": "Anda telah tiba di tujuan ke-{nth}",
-                "short-upcoming": "Anda telah tiba di tujuan ke-{nth}",
+                "upcoming": "Anda akan tiba di tujuan ke-{nth}",
+                "short": "Anda telah tiba di tujuan",
+                "short-upcoming": "Anda akan tiba",
+                "named-upcoming": "Anda akan tiba di {waypoint_name}",
                 "named": "Anda telah tiba di {waypoint_name}"
             },
             "left": {
@@ -6772,10 +6794,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Sei arrivato a destinazione",
                 "default": "Sei arrivato alla tua {nth} destinazione",
-                "upcoming": "Sei arrivato alla tua {nth} destinazione",
-                "short": "Sei arrivato alla tua {nth} destinazione",
+                "upcoming": "Arriverai alla tua {nth} destinazione",
+                "short": "Sei arrivato",
                 "short-upcoming": "Arriverai",
+                "named-upcoming": "Arriverai a {waypoint_name}",
                 "named": "Sei arrivato in {waypoint_name}"
             },
             "left": {
@@ -7305,10 +7329,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "目的地に到着しました",
                 "default": "{nth}目の目的地に到着しました",
                 "upcoming": "まもなく{nth}目の目的地に到着します",
                 "short": "目的地に到着しました",
                 "short-upcoming": "まもなく目的地に到着します",
+                "named-upcoming": "まもなく{waypoint_name}に到着します",
                 "named": "{waypoint_name}に到着しました"
             },
             "left": {
@@ -7808,10 +7834,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "목적지에 도착하였습니다.",
                 "default": " {nth}목적지에 도착하였습니다.",
                 "upcoming": "{nth}목적지에 곧 도착할 예정입니다.",
                 "short": "도착하였습니다",
-                "short-upcoming": "도착할 예정입니다.",
+                "short-upcoming": "곧 목적지에 도착합니다.",
+                "named-upcoming": "곧 {waypoint_name}에 도착합니다.",
                 "named": "경유지 {waypoint_name}에 도착하였습니다."
             },
             "left": {
@@ -8311,10 +8339,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "သင်သွားလိုသော နေရာသို့ ရောက်ရှိပြီ",
                 "default": "{nth}သင် သွားလိုသော ခရီးပန်းတိုင်သို့ရောက်ရှိပြီ",
                 "upcoming": "သင် သွားလိုသော {nth}ခရီးပန်းတိုင်သို့ရောက်လိမ့်မည်",
                 "short": "သင်သွားလိုသော နေရာသို့ ရောက်ရှိပြီ",
                 "short-upcoming": "သင်သွားလိုသော နေရာသို့ ရောက်လိမ့်မည်",
+                "named-upcoming": "သင်သည် {waypoint_name} သို့ မကြာမီ ရောက်ရှိပါမည်",
                 "named": "သင် သည် {waypoint_name} မှာ ရောက်ရှိပြီ"
             },
             "left": {
@@ -8814,10 +8844,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "U bent op uw bestemming aangekomen",
                 "default": "Je bent gearriveerd op de {nth} bestemming.",
                 "upcoming": "U arriveert op de {nth} bestemming",
                 "short": "U bent gearriveerd",
                 "short-upcoming": "U zult aankomen",
+                "named-upcoming": "U zult aankomen bij {waypoint_name}",
                 "named": "U bent gearriveerd bij {waypoint_name}"
             },
             "left": {
@@ -9317,10 +9349,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Du har ankommet destinasjonen din",
                 "default": "Du har ankommet din {nth} destinasjon",
                 "upcoming": "Du vil ankomme din {nth} destinasjon",
                 "short": "Du har ankommet",
                 "short-upcoming": "Du vil ankomme",
+                "named-upcoming": "Du vil ankomme til {waypoint_name}",
                 "named": "Du har ankommet {waypoint_name}"
             },
             "left": {
@@ -9820,10 +9854,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Dojechano do miejsca docelowego",
                 "default": "Dojechano do miejsca docelowego {nth}",
-                "upcoming": "Dojechano do miejsca docelowego {nth}",
-                "short": "Dojechano do miejsca docelowego {nth}",
-                "short-upcoming": "Dojechano do miejsca docelowego {nth}",
+                "upcoming": "Wkrótce dotrzesz do miejsca docelowego {nth}",
+                "short": "Dojechano do miejsca docelowego",
+                "short-upcoming": "Wkrótce dotrzesz do celu",
+                "named-upcoming": "Wkrótce dotrzesz do {waypoint_name}",
                 "named": "Dojechano do {waypoint_name}"
             },
             "left": {
@@ -10353,10 +10389,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Você chegou ao seu destino",
                 "default": "Você chegou ao seu {nth} destino",
                 "upcoming": "Você chegará ao seu {nth} destino",
                 "short": "Você chegou",
                 "short-upcoming": "Você vai chegar",
+                "named-upcoming": "Você vai chegar a {waypoint_name}",
                 "named": "Você chegou a {waypoint_name}"
             },
             "left": {
@@ -10856,10 +10894,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Chegou ao seu destino",
                 "default": "Chegou ao seu {nth} destino",
                 "upcoming": "Está a chegar ao seu {nth} destino",
                 "short": "Chegou",
                 "short-upcoming": "Está a chegar",
+                "named-upcoming": "Está a chegar a {waypoint_name}",
                 "named": "Chegou a {waypoint_name}"
             },
             "left": {
@@ -11359,10 +11399,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Ați ajuns la destinație",
                 "default": "Ați ajuns la {nth} destinație",
                 "upcoming": "Ați ajuns la {nth} destinație",
                 "short": "Ați ajuns",
                 "short-upcoming": "Veți ajunge",
+                "named-upcoming": "Veți ajunge la {waypoint_name}",
                 "named": "Ați ajuns {waypoint_name}"
             },
             "left": {
@@ -11862,10 +11904,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Вы прибыли в пункт назначения",
                 "default": "Вы прибыли в {nth} пункт назначения",
                 "upcoming": "Вы прибываете в {nth} пункт назначения",
                 "short": "Вы прибыли",
                 "short-upcoming": "Вы скоро прибудете",
+                "named-upcoming": "Вы скоро прибудете в {waypoint_name}",
                 "named": "Вы прибыли в пункт назначения, {waypoint_name}"
             },
             "left": {
@@ -12365,10 +12409,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Prispeli ste na cilj",
                 "default": "Prispeli ste na {nth} cilj",
                 "upcoming": "Prispeli boste na {nth} cilj",
                 "short": "Prispeli ste",
                 "short-upcoming": "Prispeli boste",
+                "named-upcoming": "Prispeli boste na {waypoint_name}",
                 "named": "Prispeli ste na {waypoint_name}"
             },
             "left": {
@@ -12868,10 +12914,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Du är framme vid din destination",
                 "default": "Du är framme vid din {nth} destination",
                 "upcoming": "Du är snart framme vid din {nth} destination",
                 "short": "Du är framme",
                 "short-upcoming": "Du är snart framme",
+                "named-upcoming": "Du är snart framme vid {waypoint_name}",
                 "named": "Du är framme vid {waypoint_name}"
             },
             "left": {
@@ -13371,10 +13419,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Hedefinize ulaştınız",
                 "default": "{nth} hedefinize ulaştınız",
-                "upcoming": "{nth} hedefinize ulaştınız",
-                "short": "{nth} hedefinize ulaştınız",
-                "short-upcoming": "{nth} hedefinize ulaştınız",
+                "upcoming": "{nth} hedefinize ulaşacaksınız",
+                "short": "Hedefinize ulaştınız",
+                "short-upcoming": "Hedefinize ulaşacaksınız",
+                "named-upcoming": "{waypoint_name} konumuna ulaşacaksınız",
                 "named": "{waypoint_name} ulaştınız"
             },
             "left": {
@@ -13904,10 +13954,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Ви прибули до місця призначення",
                 "default": "Ви прибули у ваш {nth} пункт призначення",
                 "upcoming": "Ви наближаєтесь до вашого {nth} місця призначення",
                 "short": "Ви прибули",
                 "short-upcoming": "Ви прибудете",
+                "named-upcoming": "Ви скоро прибудете до {waypoint_name}",
                 "named": "Ви прибули у {waypoint_name}"
             },
             "left": {
@@ -14407,10 +14459,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Bạn đã đến nơi",
                 "default": "Đến nơi {nth}",
-                "upcoming": "Đến nơi {nth}",
+                "upcoming": "Sắp đến nơi {nth}",
                 "short": "Đến nơi",
-                "short-upcoming": "Đến nơi",
+                "short-upcoming": "Sắp đến nơi",
+                "named-upcoming": "Sắp đến {waypoint_name}",
                 "named": "Đến {waypoint_name}"
             },
             "left": {
@@ -14910,10 +14964,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "O ti de ibi ti o nlọ",
                 "default": "O ti de ọdọ rẹ {nth} ibi ti nlo",
                 "upcoming": "O yoo de ọdọ rẹ {nth} ibi ti nlo",
                 "short": "O ti de",
                 "short-upcoming": "Iwọ yoo de",
+                "named-upcoming": "Iwọ yoo de {waypoint_name}",
                 "named": "O ti de {waypoint_name}"
             },
             "left": {
@@ -15414,10 +15470,12 @@
         },
         "arrive": {
             "default": {
+                "destination": "Heu arribat al vostre destí",
                 "default": "Heu arribat al vostre {nth} destí",
                 "upcoming": "Arribareu al vostre {nth} destí",
                 "short": "Heu arribat",
                 "short-upcoming": "Arribareu",
+                "named-upcoming": "Arribareu a {waypoint_name}",
                 "named": "Heu arribat a {waypoint_name}"
             },
             "left": {

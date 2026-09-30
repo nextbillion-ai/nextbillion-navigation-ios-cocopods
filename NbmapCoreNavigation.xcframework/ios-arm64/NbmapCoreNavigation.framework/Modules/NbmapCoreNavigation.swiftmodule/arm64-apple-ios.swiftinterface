@@ -7173,6 +7173,9 @@ public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swif
   @objc public var intersectionDistances: [_LocationEssentials.CLLocationDistance]?
   public var userDistanceToUpcomingIntersection: _LocationEssentials.CLLocationDistance?
   @objc public var visualInstructionIndex: Swift.Int
+  @objc public var arrivalVisualInstruction: NbmapCoreNavigation.VisualInstructionBanner? {
+    get
+  }
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public var remainingVisualInstructions: [NbmapCoreNavigation.VisualInstructionBanner]? {
     @objc get
