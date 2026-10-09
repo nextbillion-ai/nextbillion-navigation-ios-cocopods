@@ -102,6 +102,8 @@ typedef void (^VHRegionDownloadProgressBlock)(int64_t regionId,
 - (nullable NSString *)getRegionBoundaryWithRegionId:(int64_t)regionId
                                                error:(NSError **)error;
 
+- (nullable NSString *)getInstalledRegionCoverageBoundsWithError:(NSError **)error;
+
 - (void)shutdown;
 
 + (nullable NSString *)buildConfigWithTileExtract:(NSString *)tileExtractPath

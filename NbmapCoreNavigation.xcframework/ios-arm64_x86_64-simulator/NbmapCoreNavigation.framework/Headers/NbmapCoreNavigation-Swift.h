@@ -1230,6 +1230,7 @@ SWIFT_CLASS_NAMED("Route")
 /// <code>NavigationViewController</code> is responsible for displaying a default drop-in navigation UI.
 SWIFT_CLASS("_TtC19NbmapCoreNavigation15RouteController")
 @interface RouteController : NSObject
+@property (nonatomic, readonly) BOOL isRerouting;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1816,6 +1817,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 /// This property is measured in degrees clockwise relative to the user’s initial heading. A value of 180° means continuing through the roundabout without changing course, whereas a value of 0° means traversing the entire roundabout back to the entry point.
 /// This property is only relevant if the <code>maneuverType</code> is any of the following values: <code>ManeuverType.takeRoundabout</code>, <code>ManeuverType.takeRotary</code>, <code>ManeuverType.turnAtRoundabout</code>, <code>ManeuverType.exitRoundabout</code>, or <code>ManeuverType.exitRotary</code>.
 @property (nonatomic) CLLocationDegrees finalHeading;
+/// False when an exit angle is unavailable; the view shows a circle without a precise exit arrow.
+@property (nonatomic) BOOL hasKnownRoundaboutAngle;
 /// Initializes a new visual instruction banner object that displays the given information.
 - (nonnull instancetype)initWithText:(NSString * _Nullable)text instruction:(NSString * _Nullable)instruction maneuverType:(enum NBManeuverType)maneuverType maneuverDirection:(enum NBManeuverDirection)maneuverDirection components:(NSArray<id <NBComponentRepresentable>> * _Nonnull)components degrees:(CLLocationDegrees)degrees OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new visual instruction object based on the given JSON dictionary representation.
@@ -3170,6 +3173,7 @@ SWIFT_CLASS_NAMED("Route")
 /// <code>NavigationViewController</code> is responsible for displaying a default drop-in navigation UI.
 SWIFT_CLASS("_TtC19NbmapCoreNavigation15RouteController")
 @interface RouteController : NSObject
+@property (nonatomic, readonly) BOOL isRerouting;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3756,6 +3760,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 /// This property is measured in degrees clockwise relative to the user’s initial heading. A value of 180° means continuing through the roundabout without changing course, whereas a value of 0° means traversing the entire roundabout back to the entry point.
 /// This property is only relevant if the <code>maneuverType</code> is any of the following values: <code>ManeuverType.takeRoundabout</code>, <code>ManeuverType.takeRotary</code>, <code>ManeuverType.turnAtRoundabout</code>, <code>ManeuverType.exitRoundabout</code>, or <code>ManeuverType.exitRotary</code>.
 @property (nonatomic) CLLocationDegrees finalHeading;
+/// False when an exit angle is unavailable; the view shows a circle without a precise exit arrow.
+@property (nonatomic) BOOL hasKnownRoundaboutAngle;
 /// Initializes a new visual instruction banner object that displays the given information.
 - (nonnull instancetype)initWithText:(NSString * _Nullable)text instruction:(NSString * _Nullable)instruction maneuverType:(enum NBManeuverType)maneuverType maneuverDirection:(enum NBManeuverDirection)maneuverDirection components:(NSArray<id <NBComponentRepresentable>> * _Nonnull)components degrees:(CLLocationDegrees)degrees OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new visual instruction object based on the given JSON dictionary representation.

@@ -2330,7 +2330,11 @@ public struct Attribute : Swift.Codable {
   @objc public var maneuverType: NbmapCoreNavigation.ManeuverType
   @objc public var maneuverDirection: NbmapCoreNavigation.ManeuverDirection
   @objc final public let components: [any NbmapCoreNavigation.ComponentRepresentable]
-  @objc public var finalHeading: Swift.Double
+  @objc public var finalHeading: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc public var hasKnownRoundaboutAngle: Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(text: Swift.String?, instruction: Swift.String?, maneuverType: NbmapCoreNavigation.ManeuverType, maneuverDirection: NbmapCoreNavigation.ManeuverDirection, components: [any NbmapCoreNavigation.ComponentRepresentable], degrees: _LocationEssentials.CLLocationDegrees = 180)
   #endif
@@ -4711,6 +4715,9 @@ public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
   }
   public var resolvedRoutingProvider: any NbmapCoreNavigation.RoutingProvider {
     get
+  }
+  @objc dynamic public var isRerouting: Swift.Bool {
+    @objc get
   }
   public var puckState: NbmapCoreNavigation.PuckState {
     get
@@ -9691,6 +9698,9 @@ public struct OfflineRerouteCallOptions : Swift.Sendable, Swift.Equatable {
   #endif
   public static func == (a: NbmapCoreNavigation.OfflineRerouteCallOptions, b: NbmapCoreNavigation.OfflineRerouteCallOptions) -> Swift.Bool
 }
+extension Foundation.NSNotification.Name {
+  public static let offlineRegionCoverageDidChange: Foundation.Notification.Name
+}
 @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
 final public class OfflineNavigationEngine : @unchecked Swift.Sendable {
   final public var state: NbmapCoreNavigation.OfflineNavigationEngine.EngineState {
@@ -9713,6 +9723,9 @@ final public class OfflineNavigationEngine : @unchecked Swift.Sendable {
       get
     }
   }
+  final public var installedRegionCoverageRevision: Swift.UInt64 {
+    get
+  }
   public init()
   final public func initialize(config: NbmapCoreNavigation.OfflineInitializeConfig = .init()) async throws
   final public func clearTileCache() async throws
@@ -9726,6 +9739,7 @@ final public class OfflineNavigationEngine : @unchecked Swift.Sendable {
   final public func rerouteToOriginalRoute(payloadJson: Swift.String) async throws -> Swift.String
   final public func verifyRouteCorridor(originLat: Swift.Double, originLon: Swift.Double, destLat: Swift.Double, destLon: Swift.Double, bufferDeg: Swift.Double = 0.05) async throws -> NbmapCoreNavigation.RouteCorridorVerification
   final public func syncRegionList(syncMode: Swift.String = "auto") async throws -> NbmapCoreNavigation.OfflineRegionListSyncResult
+  final public func installedRegionCoverageSnapshot() async throws -> NbmapCoreNavigation.OfflineRegionCoverageSnapshot
   final public func listRegionCountries() async throws -> NbmapCoreNavigation.OfflineRegionCountriesResult
   #if compiler(>=5.3) && $NonescapableTypes
   final public func listRegions(countries: [Swift.String]? = nil) async throws -> NbmapCoreNavigation.OfflineRegionCatalog
@@ -9929,13 +9943,44 @@ public enum OfflineRegionQueryScope : Swift.Sendable {
   case countries([Swift.String])
 }
 @available(iOS 13.0, *)
-public struct OfflineRegionGeoBBox : Swift.Sendable {
+public struct OfflineRegionGeoBBox : Swift.Sendable, Swift.Equatable {
   public let minLon: Swift.Double
   public let minLat: Swift.Double
   public let maxLon: Swift.Double
   public let maxLat: Swift.Double
   public init(minLon: Swift.Double, minLat: Swift.Double, maxLon: Swift.Double, maxLat: Swift.Double)
   public func intersects(viewportMinLon: Swift.Double, viewportMinLat: Swift.Double, viewportMaxLon: Swift.Double, viewportMaxLat: Swift.Double) -> Swift.Bool
+  public static func == (a: NbmapCoreNavigation.OfflineRegionGeoBBox, b: NbmapCoreNavigation.OfflineRegionGeoBBox) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCoverageCoordinate : Swift.Sendable, Swift.Equatable {
+  public let longitude: Swift.Double
+  public let latitude: Swift.Double
+  public init(longitude: Swift.Double, latitude: Swift.Double)
+  public static func == (a: NbmapCoreNavigation.OfflineRegionCoverageCoordinate, b: NbmapCoreNavigation.OfflineRegionCoverageCoordinate) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCoveragePolygon : Swift.Sendable, Swift.Equatable {
+  public let bounds: NbmapCoreNavigation.OfflineRegionGeoBBox
+  public let rings: [[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]]
+  public init(bounds: NbmapCoreNavigation.OfflineRegionGeoBBox, rings: [[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]])
+  public static func == (a: NbmapCoreNavigation.OfflineRegionCoveragePolygon, b: NbmapCoreNavigation.OfflineRegionCoveragePolygon) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCoverageBounds : Swift.Sendable, Swift.Equatable {
+  public let regionId: Swift.Int64
+  public let aggregate: NbmapCoreNavigation.OfflineRegionGeoBBox
+  public let parts: [NbmapCoreNavigation.OfflineRegionGeoBBox]
+  public let polygons: [NbmapCoreNavigation.OfflineRegionCoveragePolygon]
+  public init(regionId: Swift.Int64, aggregate: NbmapCoreNavigation.OfflineRegionGeoBBox, parts: [NbmapCoreNavigation.OfflineRegionGeoBBox], polygons: [NbmapCoreNavigation.OfflineRegionCoveragePolygon] = [])
+  public static func == (a: NbmapCoreNavigation.OfflineRegionCoverageBounds, b: NbmapCoreNavigation.OfflineRegionCoverageBounds) -> Swift.Bool
+}
+@available(iOS 13.0, *)
+public struct OfflineRegionCoverageSnapshot : Swift.Sendable, Swift.Equatable {
+  public let regions: [NbmapCoreNavigation.OfflineRegionCoverageBounds]
+  public let skippedRegionCount: Swift.Int
+  public init(regions: [NbmapCoreNavigation.OfflineRegionCoverageBounds], skippedRegionCount: Swift.Int = 0)
+  public static func == (a: NbmapCoreNavigation.OfflineRegionCoverageSnapshot, b: NbmapCoreNavigation.OfflineRegionCoverageSnapshot) -> Swift.Bool
 }
 @available(iOS 13.0, *)
 public struct OfflineRegionLeaf : Swift.Identifiable, Swift.Sendable {
