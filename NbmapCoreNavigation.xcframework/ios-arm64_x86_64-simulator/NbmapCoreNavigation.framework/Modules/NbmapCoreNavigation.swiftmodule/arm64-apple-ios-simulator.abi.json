@@ -66096,6 +66096,100 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "hasKnownRoundaboutAngle",
+            "printedName": "hasKnownRoundaboutAngle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBVisualInstruction(py)hasKnownRoundaboutAngle",
+            "mangledName": "$s19NbmapCoreNavigation17VisualInstructionC23hasKnownRoundaboutAngleSbvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBVisualInstruction(im)hasKnownRoundaboutAngle",
+                "mangledName": "$s19NbmapCoreNavigation17VisualInstructionC23hasKnownRoundaboutAngleSbvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBVisualInstruction(im)setHasKnownRoundaboutAngle:",
+                "mangledName": "$s19NbmapCoreNavigation17VisualInstructionC23hasKnownRoundaboutAngleSbvs",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation17VisualInstructionC23hasKnownRoundaboutAngleSbvM",
+                "mangledName": "$s19NbmapCoreNavigation17VisualInstructionC23hasKnownRoundaboutAngleSbvM",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(text:instruction:maneuverType:maneuverDirection:components:degrees:)",
@@ -129741,6 +129835,57 @@
                 "usr": "s:19NbmapCoreNavigation15RouteControllerC23resolvedRoutingProviderAA0gH0_pvg",
                 "mangledName": "$s19NbmapCoreNavigation15RouteControllerC23resolvedRoutingProviderAA0gH0_pvg",
                 "moduleName": "NbmapCoreNavigation",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isRerouting",
+            "printedName": "isRerouting",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapCoreNavigation@objc(cs)RouteController(py)isRerouting",
+            "mangledName": "$s19NbmapCoreNavigation15RouteControllerC11isReroutingSbvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)RouteController(im)isRerouting",
+                "mangledName": "$s19NbmapCoreNavigation15RouteControllerC11isReroutingSbvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -275139,6 +275284,51 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "installedRegionCoverageRevision",
+            "printedName": "installedRegionCoverageRevision",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt64",
+                "printedName": "Swift.UInt64",
+                "usr": "s:s6UInt64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageRevisions6UInt64Vvp",
+            "mangledName": "$s19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageRevisions6UInt64Vvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt64",
+                    "printedName": "Swift.UInt64",
+                    "usr": "s:s6UInt64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageRevisions6UInt64Vvg",
+                "mangledName": "$s19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageRevisions6UInt64Vvg",
+                "moduleName": "NbmapCoreNavigation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -275559,6 +275749,30 @@
             "declAttributes": [
               "Final",
               "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "installedRegionCoverageSnapshot",
+            "printedName": "installedRegionCoverageSnapshot()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageSnapshot",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageSnapshot",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageSnapshotAA0dghI0VyYaKF",
+            "mangledName": "$s19NbmapCoreNavigation07OfflineC6EngineC31installedRegionCoverageSnapshotAA0dghI0VyYaKF",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -280806,6 +281020,38 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19NbmapCoreNavigation20OfflineRegionGeoBBoxV2eeoiySbAC_ACtFZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -280839,6 +281085,1061 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OfflineRegionCoverageCoordinate",
+        "printedName": "OfflineRegionCoverageCoordinate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "longitude",
+            "printedName": "longitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitudeSdvp",
+            "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitudeSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitudeSdvg",
+                "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitudeSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "latitude",
+            "printedName": "latitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV8latitudeSdvp",
+            "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV8latitudeSdvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV8latitudeSdvg",
+                "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV8latitudeSdvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(longitude:latitude:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageCoordinate",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitude8latitudeACSd_Sdtcfc",
+            "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV9longitude8latitudeACSd_Sdtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageCoordinate",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageCoordinate",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV2eeoiySbAC_ACtFZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV",
+        "mangledName": "$s19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV",
+        "moduleName": "NbmapCoreNavigation",
+        "intro_iOS": "13.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OfflineRegionCoveragePolygon",
+        "printedName": "OfflineRegionCoveragePolygon",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bounds",
+            "printedName": "bounds",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6boundsAA0dE7GeoBBoxVvp",
+            "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6boundsAA0dE7GeoBBoxVvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionGeoBBox",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                    "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6boundsAA0dE7GeoBBoxVvg",
+                "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6boundsAA0dE7GeoBBoxVvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rings",
+            "printedName": "rings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OfflineRegionCoverageCoordinate",
+                        "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                        "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV5ringsSaySayAA0deF10CoordinateVGGvp",
+            "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV5ringsSaySayAA0deF10CoordinateVGGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "OfflineRegionCoverageCoordinate",
+                            "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                            "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV5ringsSaySayAA0deF10CoordinateVGGvg",
+                "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV5ringsSaySayAA0deF10CoordinateVGGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(bounds:rings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoveragePolygon",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageCoordinate]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OfflineRegionCoverageCoordinate",
+                        "printedName": "NbmapCoreNavigation.OfflineRegionCoverageCoordinate",
+                        "usr": "s:19NbmapCoreNavigation31OfflineRegionCoverageCoordinateV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6bounds5ringsAcA0dE7GeoBBoxV_SaySayAA0deF10CoordinateVGGtcfc",
+            "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV6bounds5ringsAcA0dE7GeoBBoxV_SaySayAA0deF10CoordinateVGGtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoveragePolygon",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoveragePolygon",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV2eeoiySbAC_ACtFZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV",
+        "mangledName": "$s19NbmapCoreNavigation28OfflineRegionCoveragePolygonV",
+        "moduleName": "NbmapCoreNavigation",
+        "intro_iOS": "13.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OfflineRegionCoverageBounds",
+        "printedName": "OfflineRegionCoverageBounds",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "regionId",
+            "printedName": "regionId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionIds5Int64Vvp",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionIds5Int64Vvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionIds5Int64Vvg",
+                "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionIds5Int64Vvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "aggregate",
+            "printedName": "aggregate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV9aggregateAA0dE7GeoBBoxVvp",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV9aggregateAA0dE7GeoBBoxVvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionGeoBBox",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                    "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV9aggregateAA0dE7GeoBBoxVvg",
+                "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV9aggregateAA0dE7GeoBBoxVvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "parts",
+            "printedName": "parts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionGeoBBox]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionGeoBBox",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                    "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV5partsSayAA0dE7GeoBBoxVGvp",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV5partsSayAA0dE7GeoBBoxVGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.OfflineRegionGeoBBox]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OfflineRegionGeoBBox",
+                        "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                        "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV5partsSayAA0dE7GeoBBoxVGvg",
+                "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV5partsSayAA0dE7GeoBBoxVGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "polygons",
+            "printedName": "polygons",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionCoveragePolygon]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionCoveragePolygon",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                    "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8polygonsSayAA0deF7PolygonVGvp",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8polygonsSayAA0deF7PolygonVGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.OfflineRegionCoveragePolygon]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OfflineRegionCoveragePolygon",
+                        "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                        "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8polygonsSayAA0deF7PolygonVGvg",
+                "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8polygonsSayAA0deF7PolygonVGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(regionId:aggregate:parts:polygons:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageBounds",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionGeoBBox",
+                "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionGeoBBox]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionGeoBBox",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionGeoBBox",
+                    "usr": "s:19NbmapCoreNavigation20OfflineRegionGeoBBoxV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionCoveragePolygon]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionCoveragePolygon",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionCoveragePolygon",
+                    "usr": "s:19NbmapCoreNavigation28OfflineRegionCoveragePolygonV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionId9aggregate5parts8polygonsACs5Int64V_AA0dE7GeoBBoxVSayAKGSayAA0deF7PolygonVGtcfc",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV8regionId9aggregate5parts8polygonsACs5Int64V_AA0dE7GeoBBoxVSayAKGSayAA0deF7PolygonVGtcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageBounds",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageBounds",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV2eeoiySbAC_ACtFZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV",
+        "mangledName": "$s19NbmapCoreNavigation27OfflineRegionCoverageBoundsV",
+        "moduleName": "NbmapCoreNavigation",
+        "intro_iOS": "13.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OfflineRegionCoverageSnapshot",
+        "printedName": "OfflineRegionCoverageSnapshot",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "regions",
+            "printedName": "regions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageBounds]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionCoverageBounds",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                    "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regionsSayAA0deF6BoundsVGvp",
+            "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regionsSayAA0deF6BoundsVGvp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageBounds]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OfflineRegionCoverageBounds",
+                        "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                        "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regionsSayAA0deF6BoundsVGvg",
+                "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regionsSayAA0deF6BoundsVGvg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "skippedRegionCount",
+            "printedName": "skippedRegionCount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV07skippedE5CountSivp",
+            "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV07skippedE5CountSivp",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV07skippedE5CountSivg",
+                "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV07skippedE5CountSivg",
+                "moduleName": "NbmapCoreNavigation",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(regions:skippedRegionCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageSnapshot",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageSnapshot",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.OfflineRegionCoverageBounds]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OfflineRegionCoverageBounds",
+                    "printedName": "NbmapCoreNavigation.OfflineRegionCoverageBounds",
+                    "usr": "s:19NbmapCoreNavigation27OfflineRegionCoverageBoundsV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regions07skippedE5CountACSayAA0deF6BoundsVG_Sitcfc",
+            "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV7regions07skippedE5CountACSayAA0deF6BoundsVG_Sitcfc",
+            "moduleName": "NbmapCoreNavigation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageSnapshot",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageSnapshot",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineRegionCoverageSnapshot",
+                "printedName": "NbmapCoreNavigation.OfflineRegionCoverageSnapshot",
+                "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV2eeoiySbAC_ACtFZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV",
+        "mangledName": "$s19NbmapCoreNavigation29OfflineRegionCoverageSnapshotV",
+        "moduleName": "NbmapCoreNavigation",
+        "intro_iOS": "13.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -312129,6 +313430,55 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "offlineRegionCoverageDidChange",
+            "printedName": "offlineRegionCoverageDidChange",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Name",
+                "printedName": "Foundation.NSNotification.Name",
+                "usr": "c:@T@NSNotificationName"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So18NSNotificationNamea19NbmapCoreNavigationE30offlineRegionCoverageDidChangeABvpZ",
+            "mangledName": "$sSo18NSNotificationNamea19NbmapCoreNavigationE30offlineRegionCoverageDidChangeABvpZ",
+            "moduleName": "NbmapCoreNavigation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Name",
+                    "printedName": "Foundation.NSNotification.Name",
+                    "usr": "c:@T@NSNotificationName"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So18NSNotificationNamea19NbmapCoreNavigationE30offlineRegionCoverageDidChangeABvgZ",
+                "mangledName": "$sSo18NSNotificationNamea19NbmapCoreNavigationE30offlineRegionCoverageDidChangeABvgZ",
+                "moduleName": "NbmapCoreNavigation",
+                "static": true,
+                "implicit": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -317209,8 +318559,15 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBVisualInstruction.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2007,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/Directions\/NBVisualInstruction.swift",
       "kind": "IntegerLiteral",
-      "offset": 2097,
+      "offset": 2367,
       "length": 3,
       "value": "180"
     },
@@ -322852,77 +324209,77 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5470,
+      "offset": 5504,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5600,
+      "offset": 5634,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5107,
+      "offset": 5141,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6035,
+      "offset": 6069,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6525,
+      "offset": 6559,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6830,
+      "offset": 6864,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6919,
+      "offset": 6953,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7251,
+      "offset": 7285,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7310,
+      "offset": 7344,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "FloatLiteral",
-      "offset": 7360,
+      "offset": 7394,
       "length": 3,
       "value": "6.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/RouteController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9829,
+      "offset": 9863,
       "length": 5,
       "value": "false"
     },
@@ -332644,337 +334001,435 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 230,
+      "length": 63,
+      "value": "\"com.nextbillion.navigation.offline-region-coverage-did-change\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 467,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 499,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 524,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 549,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 574,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 599,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 623,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 645,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 667,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 695,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 726,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 3018,
+      "offset": 5139,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 5968,
+      "offset": 8089,
       "length": 28,
       "value": "\"com.valhalla.mobile.engine\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6072,
+      "offset": 8193,
       "length": 30,
       "value": "\"com.valhalla.mobile.download\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6760,
+      "offset": 8324,
+      "length": 30,
+      "value": "\"com.valhalla.mobile.coverage\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "StringLiteral",
+      "offset": 8981,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 6802,
+      "offset": 9023,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 6825,
+      "offset": 9046,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 6867,
+      "offset": 9088,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 7029,
+      "offset": 9250,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7206,
+      "offset": 9427,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7243,
+      "offset": 9464,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 7438,
+      "offset": 9659,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 7484,
+      "offset": 9705,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 7525,
+      "offset": 9746,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 7966,
+      "offset": 9964,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 8018,
+      "offset": 10296,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 8063,
+      "offset": 10348,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 8121,
+      "offset": 10393,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10451,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 9736,
+      "offset": 12609,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 9753,
+      "offset": 12626,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 74483,
+      "offset": 77356,
       "length": 23,
       "value": "\"leg_end_initial_route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 75524,
+      "offset": 78397,
       "length": 13,
       "value": "\"constrained\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 75540,
+      "offset": 78413,
       "length": 15,
       "value": "\"unconstrained\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 75769,
+      "offset": 78642,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 76028,
+      "offset": 78901,
       "length": 17,
       "value": "\"missing_heading\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 76292,
+      "offset": 79165,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 76800,
+      "offset": 79673,
       "length": 6,
       "value": "\"none\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 77042,
+      "offset": 79915,
       "length": 13,
       "value": "\"route_error\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 77249,
+      "offset": 80122,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 77829,
+      "offset": 80702,
       "length": 54,
       "value": "\"terminal selector returned missing constrained route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 78219,
+      "offset": 81092,
       "length": 56,
       "value": "\"terminal selector returned missing unconstrained route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 78580,
+      "offset": 81453,
       "length": 34,
       "value": "\"leg-end route produced no result\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 79908,
+      "offset": 82781,
       "length": 22,
       "value": "\"full_remaining_route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 80487,
+      "offset": 83360,
       "length": 22,
       "value": "\"full_remaining_route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 81454,
+      "offset": 84327,
       "length": 15,
       "value": "\"unconstrained\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 81751,
+      "offset": 84624,
       "length": 17,
       "value": "\"missing_heading\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 82034,
+      "offset": 84907,
       "length": 13,
       "value": "\"constrained\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 82566,
+      "offset": 85439,
       "length": 6,
       "value": "\"none\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 82808,
+      "offset": 85681,
       "length": 13,
       "value": "\"route_error\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 83096,
+      "offset": 85969,
       "length": 15,
       "value": "\"unconstrained\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 83707,
+      "offset": 86580,
       "length": 54,
       "value": "\"terminal selector returned missing constrained route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 84097,
+      "offset": 86970,
       "length": 56,
       "value": "\"terminal selector returned missing unconstrained route\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 84458,
+      "offset": 87331,
       "length": 41,
       "value": "\"full remaining route produced no result\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "FloatLiteral",
-      "offset": 110287,
+      "offset": 113160,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "StringLiteral",
-      "offset": 110763,
+      "offset": 113636,
       "length": 6,
       "value": "\"auto\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 121770,
+      "offset": 130301,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 122765,
+      "offset": 131296,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "BooleanLiteral",
-      "offset": 133212,
+      "offset": 142068,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineNavigationEngine.swift",
       "kind": "IntegerLiteral",
-      "offset": 134010,
+      "offset": 142866,
       "length": 1,
       "value": "0"
     },
@@ -333337,22 +334792,36 @@
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineRegionModels.swift",
+      "kind": "Array",
+      "offset": 3997,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineRegionModels.swift",
       "kind": "IntegerLiteral",
-      "offset": 4167,
+      "offset": 4412,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineRegionModels.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6055,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineRegionModels.swift",
       "kind": "BooleanLiteral",
-      "offset": 4365,
+      "offset": 6253,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapCoreNavigation\/offline\/Core\/OfflineRegionModels.swift",
       "kind": "BooleanLiteral",
-      "offset": 4411,
+      "offset": 6299,
       "length": 5,
       "value": "false"
     },

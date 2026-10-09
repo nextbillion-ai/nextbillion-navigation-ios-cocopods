@@ -6,6 +6,41 @@
     "children": [
       {
         "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "NbmapCoreNavigation",
+        "printedName": "NbmapCoreNavigation",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -531,6 +566,20 @@
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
             "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -39891,6 +39940,20 @@
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
             "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -72991,6 +73054,20 @@
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
             "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -84102,6 +84179,20 @@
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
             "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -85027,6 +85118,13 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Copyable",
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
@@ -85129,13 +85227,6 @@
             "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
             "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
             "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_ExpressibleByBuiltinStringLiteral",
-            "printedName": "_ExpressibleByBuiltinStringLiteral",
-            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
-            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
           },
           {
             "kind": "Conformance",
@@ -85729,6 +85820,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ArrayProtocol",
             "printedName": "_ArrayProtocol",
             "children": [
@@ -86182,13 +86280,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -87252,6 +87343,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ObjectiveCBridgeable",
             "printedName": "_ObjectiveCBridgeable",
             "children": [
@@ -87292,13 +87390,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -88971,6 +89062,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
             "name": "_ObjectiveCBridgeable",
             "printedName": "_ObjectiveCBridgeable",
             "children": [
@@ -89011,13 +89109,6 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -89420,6 +89511,419 @@
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "FloatLiteral",
+      "offset": 2926,
+      "length": 5,
+      "value": "500.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "FloatLiteral",
+      "offset": 2982,
+      "length": 9,
+      "value": "111320.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "FloatLiteral",
+      "offset": 3040,
+      "length": 4,
+      "value": "0.01"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5478,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6322,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "StringLiteral",
+      "offset": 15657,
+      "length": 46,
+      "value": "\"com.nextbillion.navigation.route-source.path\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15811,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15851,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15966,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16048,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 21683,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 22246,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 23822,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 23879,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 23930,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 24073,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusMonitor.swift",
+      "kind": "BooleanLiteral",
+      "offset": 24123,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 132,
+      "length": 2,
+      "value": "36"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 144,
+      "length": 2,
+      "value": "36"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 193,
+      "length": 2,
+      "value": "22"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 205,
+      "length": 2,
+      "value": "22"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 252,
+      "length": 2,
+      "value": "18"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 319,
+      "length": 2,
+      "value": "31"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 324,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 2,
+      "value": "41"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 353,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 376,
+      "length": 2,
+      "value": "55"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 381,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 405,
+      "length": 3,
+      "value": "170"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 411,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 471,
+      "length": 2,
+      "value": "69"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 476,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 488,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 494,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 505,
+      "length": 2,
+      "value": "79"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 510,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 522,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 572,
+      "length": 3,
+      "value": "243"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 578,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 590,
+      "length": 3,
+      "value": "166"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 596,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 607,
+      "length": 2,
+      "value": "79"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 612,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 624,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 676,
+      "length": 3,
+      "value": "189"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 682,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 694,
+      "length": 3,
+      "value": "189"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 700,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 711,
+      "length": 3,
+      "value": "189"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 717,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 729,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 783,
+      "length": 3,
+      "value": "218"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 789,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 801,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 806,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 817,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 822,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 834,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteSourceStatusView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6611,
+      "length": 5,
+      "value": "false"
+    },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/TruckRouteOptionsSetting.swift",
       "kind": "StringLiteral",
@@ -91502,105 +92006,105 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5328,
+      "offset": 5496,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5525,
+      "offset": 5693,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6102,
+      "offset": 6270,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6460,
+      "offset": 6628,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7183,
+      "offset": 7351,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7620,
+      "offset": 7788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 14070,
+      "offset": 14714,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19879,
+      "offset": 21718,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 20314,
+      "offset": 22153,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 20485,
+      "offset": 22324,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 20951,
+      "offset": 22790,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 21914,
+      "offset": 23753,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 23325,
+      "offset": 25164,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 25278,
+      "offset": 27591,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 50480,
+      "offset": 54096,
       "length": 4,
       "value": "true"
     },
@@ -92903,111 +93407,132 @@
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "FloatLiteral",
       "offset": 926,
-      "length": 3,
-      "value": "8.0"
+      "length": 4,
+      "value": "16.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 981,
+      "length": 2,
+      "value": "48"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 993,
+      "length": 2,
+      "value": "48"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1050,
+      "length": 2,
+      "value": "24"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "StringLiteral",
-      "offset": 1008,
+      "offset": 1131,
       "length": 11,
       "value": "\"volume_up\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "StringLiteral",
-      "offset": 1146,
+      "offset": 1269,
       "length": 12,
       "value": "\"volume_off\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "StringLiteral",
-      "offset": 1284,
+      "offset": 1407,
       "length": 10,
       "value": "\"feedback\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2286,
+      "offset": 2409,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2331,
+      "offset": 2454,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2411,
+      "offset": 2534,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2637,
+      "offset": 2760,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3853,
+      "offset": 3976,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4046,
+      "offset": 4169,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5075,
+      "offset": 5660,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5130,
+      "offset": 5715,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5252,
+      "offset": 5837,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5480,
+      "offset": 6065,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5737,
+      "offset": 6322,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5820,
+      "offset": 6405,
       "length": 5,
       "value": "false"
     },
