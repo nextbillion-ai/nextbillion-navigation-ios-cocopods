@@ -1714,6 +1714,24 @@ SWIFT_CLASS("_TtC15NbmapNavigation9SpeedView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+/// Visual styles available for the speed indicator shown during navigation.
+typedef SWIFT_ENUM_NAMED(NSInteger, NBSpeedViewStyle, "SpeedViewStyle", open) {
+/// The original circular speed indicator.
+  NBSpeedViewStyleCircle = 0,
+/// A vertically stacked speed-limit and current-speed card.
+  NBSpeedViewStyleSquare = 1,
+};
+
+/// A vertically stacked speed indicator with the speed limit above the current
+/// speed. It consumes the same measurements and unit text as <code>SpeedView</code>; only
+/// the presentation differs.
+SWIFT_CLASS("_TtC15NbmapNavigation15SquareSpeedView")
+@interface SquareSpeedView : SpeedView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
 /// :nodoc:
 /// A translucent bar that responds to tap and swipe gestures, similar to a scrubber or stepper control, and expands and collapses to maximize screen real estate.
 IB_DESIGNABLE

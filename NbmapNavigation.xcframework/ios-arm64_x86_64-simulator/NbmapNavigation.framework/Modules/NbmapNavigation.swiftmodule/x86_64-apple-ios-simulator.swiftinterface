@@ -471,6 +471,17 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
   public func didTapInstructionsBanner(_: NbmapNavigation.BaseInstructionsBannerView)
   public func didSwipeInstructionsBanner(_: NbmapNavigation.BaseInstructionsBannerView, swipeDirection _: UIKit.UISwipeGestureRecognizer.Direction)
 }
+@objc(NBSpeedViewStyle) public enum SpeedViewStyle : Swift.Int {
+  case circle
+  case square
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class SpeedView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public var currentSpeed: Foundation.Measurement<Foundation.UnitSpeed>? {
     get
@@ -514,6 +525,14 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
   }
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class SquareSpeedView : NbmapNavigation.SpeedView {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc(NBStyleKitMarker) public class StyleKitMarker : ObjectiveC.NSObject {
   @objc dynamic public class func drawMarker(frame _: CoreFoundation.CGRect = CGRect(x: 57, y: 27, width: 50, height: 50), innerColor: UIKit.UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000), shadowColor: UIKit.UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), pinColor: UIKit.UIColor = UIColor(red: 0.290, green: 0.565, blue: 0.886, alpha: 1.000), strokeColor: UIKit.UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000))
   @objc override dynamic public init()
@@ -539,13 +558,14 @@ open class NavigationOptions {
   open var topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)?
   open var bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)?
   open var navigationMapView: NbmapNavigation.NavigationMapView?
+  open var speedViewStyle: NbmapNavigation.SpeedViewStyle
   open var showsLiveTrafficOnRouteLine: Swift.Bool
   open var navigationService: (any NbmapCoreNavigation.NavigationService)?
   open var voiceController: NbmapNavigation.RouteVoiceController?
   open var vehicleNavigationIconImage: UIKit.UIImage?
   required public init()
   #if compiler(>=5.3) && $NonescapableTypes
-  convenience public init(styles: [NbmapNavigation.Style]? = [DayStyle(), NightStyle()], navigationService: (any NbmapCoreNavigation.NavigationService)? = nil, voiceController: NbmapNavigation.RouteVoiceController? = nil, topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, navigationMapView: NbmapNavigation.NavigationMapView? = nil, vehicleNavigationIconImage: UIKit.UIImage? = nil, showsLiveTrafficOnRouteLine: Swift.Bool = false)
+  convenience public init(styles: [NbmapNavigation.Style]? = [DayStyle(), NightStyle()], navigationService: (any NbmapCoreNavigation.NavigationService)? = nil, voiceController: NbmapNavigation.RouteVoiceController? = nil, topBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, bottomBanner: (any UIKit.UIViewController & NbmapNavigation.NavigationComponent)? = nil, navigationMapView: NbmapNavigation.NavigationMapView? = nil, vehicleNavigationIconImage: UIKit.UIImage? = nil, speedViewStyle: NbmapNavigation.SpeedViewStyle = .circle, showsLiveTrafficOnRouteLine: Swift.Bool = false)
   #endif
   public class func navigationOptions() -> Self
   @objc deinit
@@ -829,6 +849,9 @@ extension NbmapNavigation.StepsViewController : UIKit.UITableViewDataSource {
   }
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil, speedViewStyle: NbmapNavigation.SpeedViewStyle)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
@@ -2892,6 +2915,9 @@ extension NbmapNavigation.SpeechFailureAction : Swift.Equatable {}
 extension NbmapNavigation.SpeechFailureAction : Swift.Hashable {}
 extension NbmapNavigation.SpeechFailureAction : Swift.RawRepresentable {}
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.InstructionsBannerViewDelegate {}
+extension NbmapNavigation.SpeedViewStyle : Swift.Equatable {}
+extension NbmapNavigation.SpeedViewStyle : Swift.Hashable {}
+extension NbmapNavigation.SpeedViewStyle : Swift.RawRepresentable {}
 extension NbmapNavigation.NavigationMapView.DurationSymbolType : Swift.Equatable {}
 extension NbmapNavigation.NavigationMapView.DurationSymbolType : Swift.Hashable {}
 extension NbmapNavigation.NavigationMapView.DurationSymbolType : Swift.RawRepresentable {}
